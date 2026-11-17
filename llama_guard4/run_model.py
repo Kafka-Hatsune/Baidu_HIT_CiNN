@@ -3,7 +3,11 @@ import os
 
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["NVIDIA_TF32_OVERRIDE"] = "0"
-import argparse, json, sys, time, subprocess
+# Stable reduction order for cuDNN on the reference (A100) side; must be set
+# before paddle is imported. Unknown FLAGS are ignored by the Metax build.
+os.environ.setdefault("FLAGS_cudnn_deterministic", "true")
+os.environ.setdefault("FLAGS_use_cudnn", "1")
+import argparse, json, sys, time, subprocess, random
 from pathlib import Path
 import numpy as np
 
@@ -30,12 +34,34 @@ p.add_argument("--infer", action="store_true")
 p.add_argument("--warmup", type=int, default=10)
 p.add_argument("--iterations", type=int, default=30)
 p.add_argument("--resume", type=Path)
+p.add_argument("--seed", type=int, default=20260922)
+p.add_argument(
+    "--init-device",
+    choices=["cpu", "device"],
+    default="cpu",
+    help="where weights are randomly initialized; cpu keeps the RNG stream "
+    "identical across CUDA/Metax builds",
+)
+p.add_argument(
+    "--inputs",
+    type=Path,
+    help="reuse an inputs.npz produced by another platform instead of rebuilding",
+)
 a = p.parse_args()
 a.output.mkdir(parents=True, exist_ok=False)
 if a.infer and (a.checkpoint is None or not a.checkpoint.is_file()):
     raise ValueError("Independent inference requires an existing checkpoint")
-paddle.set_device("gpu:0")
-paddle.seed(20260922)
+if paddle.device.is_compiled_with_cuda():
+    target_device = "gpu:0"
+else:
+    _custom = paddle.device.get_all_custom_device_type() or []
+    target_device = f"{_custom[0]}:0" if _custom else "cpu"
+random.seed(a.seed)
+np.random.seed(a.seed)
+# The CPU generator is platform independent, so the same seed yields the same
+# parameters on A100 and Metax. Device generators (cuRAND vs. Metax) are not.
+paddle.set_device("cpu" if a.init_device == "cpu" else target_device)
+paddle.seed(a.seed)
 if a.kind == "text":
     c = Llama4TextConfig.from_pretrained(str(Path(__file__).parent / "assets"))
     if not a.real:
@@ -59,6 +85,10 @@ if a.checkpoint:
         model.set_state_dict(paddle.load(str(a.checkpoint)))
     else:
         raise FileNotFoundError(a.checkpoint)
+if a.init_device == "cpu" and target_device != "cpu":
+    paddle.set_device(target_device)
+    paddle.seed(a.seed)  # also seeds the device generators for later random ops
+    model.to(device=target_device)
 c.save_pretrained(str(a.output / "config"))
 if a.adapt:
     import types
@@ -88,6 +118,9 @@ source_commit = (
         {
             "kind": a.kind,
             "mode": a.mode,
+            "seed": a.seed,
+            "init_device": a.init_device,
+            "device": target_device,
             "initial_parameter_hash": digest.hexdigest(),
             "parameters": sum(int(v.numel()) for v in model.parameters()),
             "source_commit": source_commit,
@@ -97,12 +130,19 @@ source_commit = (
             if a.infer
             else ("real-data tiny validation" if a.real else "synthetic smoke"),
             "steps": 0 if a.infer else a.steps,
+            "warmup_steps": 0 if a.infer else a.warmup,
+            "timed_iterations": 0 if a.infer else max(a.steps - a.warmup, 0),
         },
         indent=2,
     )
 )
+# Lets the other platform start from bit-identical weights via --checkpoint.
+paddle.save(state, str(a.output / "init.pdparams"))
+print("INIT_HASH", digest.hexdigest(), flush=True)
 ids = paddle.to_tensor([[1, 100, 2, 3, 4, 5, 6, 7]], dtype="int64")
-pixels = paddle.randn([1, 3, 28, 28])
+pixels = paddle.to_tensor(
+    np.random.RandomState(a.seed).randn(1, 3, 28, 28).astype("float32")
+)
 samples = []
 if a.real:
     from transformers import AutoTokenizer
@@ -190,6 +230,64 @@ class GuardNet(paddle.nn.Layer):
 
 net = TextNet() if a.kind == "text" else GuardNet()
 args = [ids] if a.kind == "text" else [ids, pixels]
+if samples:
+    # Exact training/eval batches, so a second platform can bypass tokenizer
+    # and image-preprocessing differences entirely.
+    payload = {
+        "n_samples": np.array(len(samples)),
+        "n_inputs": np.array(len(samples[0][0])),
+    }
+    for i, (values, label) in enumerate(samples):
+        for j, value in enumerate(values):
+            payload[f"x{i}_{j}"] = value.numpy()
+        payload[f"y{i}"] = label.numpy()
+    np.savez(a.output / "samples.npz", **payload)
+if a.inputs:
+    loaded = np.load(str(a.inputs))
+    if "n_samples" in loaded.files:
+        count = int(loaded["n_samples"])
+        per_sample = int(loaded["n_inputs"])
+        samples = [
+            (
+                [
+                    paddle.to_tensor(loaded[f"x{i}_{j}"])
+                    for j in range(per_sample)
+                ],
+                paddle.to_tensor(loaded[f"y{i}"]),
+            )
+            for i in range(count)
+        ]
+        ids = samples[0][0][0]
+        if per_sample > 1:
+            pixels = samples[0][0][1]
+        args = samples[0][0]
+    else:
+        args = [paddle.to_tensor(loaded[k]) for k in sorted(loaded.files)]
+input_digest = hashlib.sha256()
+for value in args:
+    input_digest.update(str(value.dtype).encode())
+    input_digest.update(value.numpy().tobytes())
+samples_digest = hashlib.sha256()
+for values, label in samples:
+    for value in [*values, label]:
+        samples_digest.update(value.numpy().tobytes())
+print("INPUT_HASH", input_digest.hexdigest(), flush=True)
+print("SAMPLES_HASH", samples_digest.hexdigest(), flush=True)
+(a.output / "repro.json").write_text(
+    json.dumps(
+        {
+            "seed": a.seed,
+            "init_device": a.init_device,
+            "device": target_device,
+            "initial_parameter_hash": digest.hexdigest(),
+            "input_hash": input_digest.hexdigest(),
+            "samples_hash": samples_digest.hexdigest(),
+            "inputs_source": str(a.inputs) if a.inputs else "rebuilt",
+            "checkpoint": str(a.checkpoint) if a.checkpoint else None,
+        },
+        indent=2,
+    )
+)
 np.savez(a.output / "inputs.npz", **{str(i): v.numpy() for i, v in enumerate(args)})
 if a.mode == "cinn":
     if a.adapt and a.kind == "guard":
@@ -341,6 +439,8 @@ def evaluate(step):
 
 if samples:
     evaluate(start_step)
+timings = []
+timed_from = max(start_step, a.warmup)
 with (a.output / "loss.jsonl").open("w") as f:
     for i in range(start_step, a.steps):
         if samples:
@@ -368,7 +468,10 @@ with (a.output / "loss.jsonl").open("w") as f:
         opt.step()
         opt.clear_grad()
         paddle.device.synchronize()
-        row = {"step": i, "loss": float(loss), "ms": 1000 * (time.perf_counter() - t)}
+        ms = 1000 * (time.perf_counter() - t)
+        if i >= timed_from:
+            timings.append(ms)
+        row = {"step": i, "loss": float(loss), "ms": ms}
         assert np.isfinite(row["loss"])
         f.write(json.dumps(row) + "\n")
         f.flush()
@@ -378,6 +481,23 @@ with (a.output / "loss.jsonl").open("w") as f:
         if (i + 1) % 500 == 0:
             save_training_state(i + 1)
 save_training_state(a.steps)
+if timings:
+    summary = {
+        "mode": a.mode,
+        "kind": a.kind,
+        "real": a.real,
+        "warmup_steps": timed_from - start_step,
+        "iterations": len(timings),
+        "median_ms": float(np.median(timings)),
+        "mean_ms": float(np.mean(timings)),
+        "min_ms": float(np.min(timings)),
+        "max_ms": float(np.max(timings)),
+        "std_ms": float(np.std(timings)),
+        "times_ms": timings,
+        "scope": "per training step: forward+backward+AdamW, warmup excluded, paddle.device.synchronize around each step",
+    }
+    (a.output / "timing.json").write_text(json.dumps(summary, indent=2))
+    print("TIMING", json.dumps({k: v for k, v in summary.items() if k != "times_ms"}), flush=True)
 if samples:
     paddle.save(model.state_dict(), str(a.output / "final.pdparams"))
 print("FINISHED", flush=True)
