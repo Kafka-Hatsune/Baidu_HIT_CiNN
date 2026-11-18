@@ -47,6 +47,17 @@ p.add_argument(
     type=Path,
     help="reuse an inputs.npz produced by another platform instead of rebuilding",
 )
+p.add_argument(
+    "--compile-scope",
+    choices=["layer", "stack", "full"],
+    default="layer",
+    help="CINN+adapt only: 'layer' compiles each decoder layer forward "
+    "separately (default); 'stack' compiles the whole language_model.model "
+    "decoder stack; 'full' compiles the whole net as one static graph "
+    "(needs the multimodal.py masked_scatter rewrite to be traceable)",
+)
+p.add_argument("--profile-output", type=Path)
+p.add_argument("--profile-steps", type=int, default=5)
 a = p.parse_args()
 a.output.mkdir(parents=True, exist_ok=False)
 if a.infer and (a.checkpoint is None or not a.checkpoint.is_file()):
@@ -290,7 +301,7 @@ print("SAMPLES_HASH", samples_digest.hexdigest(), flush=True)
 )
 np.savez(a.output / "inputs.npz", **{str(i): v.numpy() for i, v in enumerate(args)})
 if a.mode == "cinn":
-    if a.adapt and a.kind == "guard":
+    if a.adapt and a.kind == "guard" and a.compile_scope == "layer":
         if a.compile_vision:
             from paddleformers.transformers.model_outputs import (
                 BaseModelOutputWithPooling,
@@ -324,6 +335,10 @@ if a.mode == "cinn":
             layer.forward = paddle.jit.to_static(
                 layer.forward, full_graph=True, backend="CINN"
             )
+    elif a.adapt and a.kind == "guard" and a.compile_scope == "stack":
+        model.language_model.model.forward = paddle.jit.to_static(
+            model.language_model.model.forward, full_graph=True, backend="CINN"
+        )
     else:
         net = paddle.jit.to_static(
             net,
@@ -441,6 +456,20 @@ if samples:
     evaluate(start_step)
 timings = []
 timed_from = max(start_step, a.warmup)
+_prof = None
+if a.profile_output:
+    from paddle import profiler as _pf
+
+    a.profile_output.mkdir(parents=True, exist_ok=True)
+    _rec = max(int(a.profile_steps), 1)
+    _start = timed_from
+    _prof = _pf.Profiler(
+        targets=None,
+        scheduler=(_start, _start + _rec),
+        on_trace_ready=_pf.export_chrome_tracing(str(a.profile_output)),
+        record_shapes=False,
+    )
+    _prof.start()
 with (a.output / "loss.jsonl").open("w") as f:
     for i in range(start_step, a.steps):
         if samples:
@@ -476,10 +505,14 @@ with (a.output / "loss.jsonl").open("w") as f:
         f.write(json.dumps(row) + "\n")
         f.flush()
         print(row, flush=True)
+        if _prof is not None:
+            _prof.step()
         if samples and (i + 1) % 100 == 0:
             evaluate(i + 1)
         if (i + 1) % 500 == 0:
             save_training_state(i + 1)
+if _prof is not None:
+    _prof.stop()
 save_training_state(a.steps)
 if timings:
     summary = {
