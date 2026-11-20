@@ -1,0 +1,142 @@
+{
+  "case": "xpinn",
+  "mode": "cinn",
+  "model": "XPINN 2D Poisson with 3 subdomains",
+  "device": "gpu:0",
+  "paddle_version": "3.5.0.dev20261116+10a99906f58",
+  "paddle_compiled_with_cinn": true,
+  "ppsci_version": "1.4.0.post1.dev123+g348192149",
+  "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453",
+  "seed": 20261119,
+  "weights_sha256": "e9591efd42c5b33e50aa3d81eaeb09cfc59c8dc8de4f75dcb51c44982f94272d",
+  "inputs_sha256": "9ef5be5c1491a50462eff155624aa81cf1f349385d5f33ac88f20fee6ce36ee4",
+  "feeds": {
+    "residual1_x": [
+      5000,
+      1
+    ],
+    "residual1_y": [
+      5000,
+      1
+    ],
+    "residual2_x": [
+      1800,
+      1
+    ],
+    "residual2_y": [
+      1800,
+      1
+    ],
+    "residual3_x": [
+      1200,
+      1
+    ],
+    "residual3_y": [
+      1200,
+      1
+    ],
+    "interface1_x": [
+      100,
+      1
+    ],
+    "interface1_y": [
+      100,
+      1
+    ],
+    "interface2_x": [
+      100,
+      1
+    ],
+    "interface2_y": [
+      100,
+      1
+    ],
+    "boundary_x": [
+      200,
+      1
+    ],
+    "boundary_y": [
+      200,
+      1
+    ]
+  },
+  "outputs": {
+    "residual1_x": [
+      5000,
+      1
+    ],
+    "residual1_y": [
+      5000,
+      1
+    ],
+    "residual2_x": [
+      1800,
+      1
+    ],
+    "residual2_y": [
+      1800,
+      1
+    ],
+    "residual3_x": [
+      1200,
+      1
+    ],
+    "residual3_y": [
+      1200,
+      1
+    ],
+    "interface1_x": [
+      100,
+      1
+    ],
+    "interface1_y": [
+      100,
+      1
+    ],
+    "interface2_x": [
+      100,
+      1
+    ],
+    "interface2_y": [
+      100,
+      1
+    ],
+    "residual1_u": [
+      5000,
+      1
+    ],
+    "residual2_u": [
+      1800,
+      1
+    ],
+    "residual3_u": [
+      1200,
+      1
+    ],
+    "interface1_u_sub1": [
+      100,
+      1
+    ],
+    "interface1_u_sub2": [
+      100,
+      1
+    ],
+    "interface2_u_sub1": [
+      100,
+      1
+    ],
+    "interface2_u_sub3": [
+      100,
+      1
+    ],
+    "boundary_u": [
+      200,
+      1
+    ]
+  },
+  "warmup": 5,
+  "iters": 50,
+  "first_call_ms": 33376.80596485734,
+  "steady_batch_ms": 1.7610251158475876,
+  "batch_per_second": 567.8510720834873
+}

@@ -1,0 +1,26 @@
+W1120 07:37:27.800220 28397 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+[33m[2026/11/20 07:37:27] ppsci WARNING: Logger has already been automatically initialized as `log_file` is set to None by default, information will only be printed to terminal without writing to any file.[0m
+/work/.venv/lib/python3.10/site-packages/paddle/base/dygraph/base.py:102: UserWarning: paddle.grad has unsupported parameter in jit: create_graph, jit will discard it
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/base/dygraph/base.py:102: UserWarning: paddle.grad has unsupported parameter in jit: create_graph, jit will discard it
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/base/dygraph/base.py:102: UserWarning: paddle.grad has unsupported parameter in jit: create_graph, jit will discard it
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+W1120 07:37:28.773432 28397 eager_utils.cc:3617] Paddle static graph(PIR) not support input out tensor for now!!!!!
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+W1120 07:37:29.919838 28397 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:37:29.974202 28397 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+W1120 07:37:29.982199 28397 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:37:29.988011 28397 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:38:01.998530 28397 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:38:02.011713 28397 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:38:43.583266 28397 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 07:38:43.589107 28397 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+{"case": "darcy", "mode": "cinn", "task": "train", "model": "darcy 2D Darcy flow (MLP PINN)", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev123+g348192149", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "learning_rate": 0.001, "dropout_layers_disabled": 0, "warmup": 5, "iters": 500, "total_steps": 505, "init_weights_sha256": "64ee090b120e9a88a76ff84f6e0eb8207c23b412aff5bbc269ebb9b080f45256", "final_weights_sha256": "8b9ac2003393779ad3ba80e1aa39b7e43b840766b85064d5b45c89069ec7480c", "batch_sha256": "2509c07d1f5134585ba8b20c3a0d242d74e830f9407efa01391d4c58b617a0f0", "first_step_ms": 75955.79123869538, "steady_step_ms": 12.60611329972744, "steady_median_ms": 12.516284361481667}

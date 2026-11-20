@@ -1,0 +1,16 @@
+{
+  "case": "darcy",
+  "atol": 0.002,
+  "outputs": {
+    "p": {
+      "shape": [
+        9801,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.537449300289154,
+      "ok": true
+    }
+  },
+  "ok": true
+}

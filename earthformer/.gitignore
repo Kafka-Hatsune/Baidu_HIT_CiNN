@@ -1,4 +1,6 @@
-results/
+results/*
+!results/a100/
+!results/a100/**
 logs/
 __pycache__/
 *.pyc

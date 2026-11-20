@@ -1,0 +1,18 @@
+W1120 07:44:14.785338 32576 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+W1120 07:44:15.109349 32576 eager_utils.cc:3617] Paddle static graph(PIR) not support input out tensor for now!!!!!
+/work/.venv/lib/python3.10/site-packages/paddle/base/dygraph/base.py:102: UserWarning: paddle.grad has unsupported parameter in jit: retain_graph, jit will discard it
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/base/dygraph/base.py:102: UserWarning: paddle.grad has unsupported parameter in jit: create_graph, jit will discard it
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+[2026-11-20 07:44:19,268] [ WARNING] backward_utils.py:703 - input provided by inputs has no use
+W1120 07:44:27.171483 32576 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:44:27.432482 32576 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+W1120 07:44:27.462131 32576 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:44:27.486390 32576 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:47:11.186837 32576 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:47:11.266682 32576 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:50:19.918473 32576 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 07:50:20.023159 32576 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+{"case": "xpinn", "mode": "cinn", "task": "train", "model": "XPINN 2D Poisson with 3 subdomains", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev123+g348192149", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "learning_rate": 0.0008, "dropout_layers_disabled": 0, "warmup": 5, "iters": 500, "total_steps": 505, "init_weights_sha256": "e9591efd42c5b33e50aa3d81eaeb09cfc59c8dc8de4f75dcb51c44982f94272d", "final_weights_sha256": "b656ad9d587b75113f4c8e3b497c87824f0e60242f242829a4286720357fb1b6", "batch_sha256": "bb582937accce27389d701254a62bdfdb599fdc48da00610c1907813ad9ab8de", "first_step_ms": 366077.8180062771, "steady_step_ms": 60.41716010123491, "steady_median_ms": 62.604544684290886}

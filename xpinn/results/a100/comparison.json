@@ -1,0 +1,169 @@
+{
+  "case": "xpinn",
+  "atol": 0.002,
+  "outputs": {
+    "residual1_x": {
+      "shape": [
+        5000,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.9999428987503052,
+      "ok": true
+    },
+    "residual1_y": {
+      "shape": [
+        5000,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.9999265670776367,
+      "ok": true
+    },
+    "residual2_x": {
+      "shape": [
+        1800,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.999647855758667,
+      "ok": true
+    },
+    "residual2_y": {
+      "shape": [
+        1800,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.9992085695266724,
+      "ok": true
+    },
+    "residual3_x": {
+      "shape": [
+        1200,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.998931884765625,
+      "ok": true
+    },
+    "residual3_y": {
+      "shape": [
+        1200,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.9999831318855286,
+      "ok": true
+    },
+    "interface1_x": {
+      "shape": [
+        100,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.9982474446296692,
+      "ok": true
+    },
+    "interface1_y": {
+      "shape": [
+        100,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.9998520612716675,
+      "ok": true
+    },
+    "interface2_x": {
+      "shape": [
+        100,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.9976133704185486,
+      "ok": true
+    },
+    "interface2_y": {
+      "shape": [
+        100,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.998394250869751,
+      "ok": true
+    },
+    "residual1_u": {
+      "shape": [
+        5000,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.610990047454834,
+      "ok": true
+    },
+    "residual2_u": {
+      "shape": [
+        1800,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.5114544630050659,
+      "ok": true
+    },
+    "residual3_u": {
+      "shape": [
+        1200,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.8681772351264954,
+      "ok": true
+    },
+    "interface1_u_sub1": {
+      "shape": [
+        100,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.6103999614715576,
+      "ok": true
+    },
+    "interface1_u_sub2": {
+      "shape": [
+        100,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.5084342956542969,
+      "ok": true
+    },
+    "interface2_u_sub1": {
+      "shape": [
+        100,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.607275128364563,
+      "ok": true
+    },
+    "interface2_u_sub3": {
+      "shape": [
+        100,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.8680084943771362,
+      "ok": true
+    },
+    "boundary_u": {
+      "shape": [
+        200,
+        1
+      ],
+      "max_abs_diff": 0.0,
+      "max_abs_value": 0.6060835123062134,
+      "ok": true
+    }
+  },
+  "ok": true
+}

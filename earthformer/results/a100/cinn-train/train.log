@@ -1,0 +1,36 @@
+W1120 07:25:15.360906 21163 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+W1120 07:25:16.031984 21163 eager_utils.cc:3617] Paddle static graph(PIR) not support input out tensor for now!!!!!
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+W1120 07:25:27.459930 21163 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:25:27.659401 21163 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+W1120 07:25:28.941975 21163 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:25:29.043946 21163 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:30:16.879904 21163 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:30:16.925971 21163 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:34:47.558441 21163 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 07:34:47.592352 21163 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+I1120 07:34:47.942998 21163 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+{"case": "earthformer", "mode": "cinn", "task": "train", "model": "EarthFormer CuboidTransformer (ENSO)", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev123+g348192149", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "learning_rate": 0.0001, "dropout_layers_disabled": 44, "warmup": 5, "iters": 500, "total_steps": 505, "init_weights_sha256": "f50b9e5c92c1ada1ac17941d59133db8c034a3c76bc6c174abfbecdbb07964f2", "final_weights_sha256": "9f41310acb6b47cac5ce7920d331cedaa4bc2f269e926a364477a8cc1810ed18", "batch_sha256": "dc8f79e8ac055ea8f92680452d8c8ba7c042f34b48bed53ae6c2687302971df7", "first_step_ms": 572677.1578229964, "steady_step_ms": 94.63396991044283, "steady_median_ms": 94.55211460590363}

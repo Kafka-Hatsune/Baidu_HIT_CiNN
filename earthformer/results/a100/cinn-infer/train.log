@@ -1,0 +1,31 @@
+W1120 07:18:59.420809 17438 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+W1120 07:19:00.056977 17438 eager_utils.cc:3617] Paddle static graph(PIR) not support input out tensor for now!!!!!
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/work/.venv/lib/python3.10/site-packages/paddle/pir/math_op_patch.py:267: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+W1120 07:19:08.501483 17438 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:19:08.622313 17438 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+W1120 07:19:09.931195 17438 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:19:10.031040 17438 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:23:31.321153 17438 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 07:23:31.373746 17438 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+{"case": "earthformer", "mode": "cinn", "model": "EarthFormer CuboidTransformer (ENSO)", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev123+g348192149", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "weights_sha256": "f50b9e5c92c1ada1ac17941d59133db8c034a3c76bc6c174abfbecdbb07964f2", "inputs_sha256": "12db197bf4ec26fe4c3811601c9b93bbdaee576ec11bce41bed28b9c0d481100", "feeds": {"sst_data": [16, 12, 24, 48, 1]}, "outputs": {"sst_target": [16, 14, 24, 48, 1], "nino_target": [16, 14, 24, 48, 1]}, "warmup": 5, "iters": 50, "first_call_ms": 272226.1948361993, "steady_batch_ms": 29.398871958255768, "batch_per_second": 34.014910552347935}

@@ -1,0 +1,21 @@
+{
+  "case": "darcy",
+  "atol": 0.002,
+  "train": {
+    "window": [
+      400,
+      500
+    ],
+    "tol": 0.01,
+    "max_outliers": 10,
+    "total_steps": 505,
+    "first_loss_diff": 0.0,
+    "final_loss_diff": 3.638593542903384e-07,
+    "window_max_diff": 1.5653478396266147e-06,
+    "window_mean_diff": 4.778998246338432e-07,
+    "outliers": 0,
+    "outlier_steps": [],
+    "ok": true
+  },
+  "ok": true
+}

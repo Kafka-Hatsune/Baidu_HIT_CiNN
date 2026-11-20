@@ -1,0 +1,31 @@
+{
+  "case": "earthformer",
+  "atol": 0.002,
+  "outputs": {
+    "sst_target": {
+      "shape": [
+        16,
+        14,
+        24,
+        48,
+        1
+      ],
+      "max_abs_diff": 7.62939453125e-06,
+      "max_abs_value": 15.378435134887695,
+      "ok": true
+    },
+    "nino_target": {
+      "shape": [
+        16,
+        14,
+        24,
+        48,
+        1
+      ],
+      "max_abs_diff": 7.62939453125e-06,
+      "max_abs_value": 15.378435134887695,
+      "ok": true
+    }
+  },
+  "ok": true
+}

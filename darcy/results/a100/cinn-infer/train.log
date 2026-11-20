@@ -1,0 +1,9 @@
+W1120 07:36:56.018044 27862 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+[33m[2026/11/20 07:36:56] ppsci WARNING: Logger has already been automatically initialized as `log_file` is set to None by default, information will only be printed to terminal without writing to any file.[0m
+W1120 07:36:56.669589 27862 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:36:56.673712 27862 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+W1120 07:36:56.677011 27862 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:36:56.678274 27862 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:37:02.096290 27862 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 07:37:02.097160 27862 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+{"case": "darcy", "mode": "cinn", "model": "darcy 2D Darcy flow (MLP PINN)", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev123+g348192149", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "weights_sha256": "64ee090b120e9a88a76ff84f6e0eb8207c23b412aff5bbc269ebb9b080f45256", "inputs_sha256": "5dc502d5ecf1386238c976d49c047ce674be8d3d7fa0c33ee3967abd816207dc", "feeds": {"x": [9801, 1], "y": [9801, 1], "bc_x": [400, 1], "bc_y": [400, 1]}, "outputs": {"p": [9801, 1]}, "warmup": 5, "iters": 50, "first_call_ms": 6181.11664801836, "steady_batch_ms": 0.6708020716905594, "batch_per_second": 1490.752700688288}
