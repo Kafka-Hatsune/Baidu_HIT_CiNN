@@ -19,6 +19,17 @@ PaddleX 3.7 官方推理模型（只发布静态 PIR 图，因此对比的是同
 这些目录不绑定 Metax：默认在 CUDA 构建上用 `gpu:0`、否则用首个自定义设备（`metax_gpu:0`），
 可用 `PADDLE_DEVICE` 强制；`INPUTS_NPZ` 可复用另一平台保存的 `inputs.npz`，用于 A100 与 MetaX 的精度比对。
 
+PaddleScience 上游 CINN 用例（模型/批次来自 `$PADDLE_PSCI_DIR/test/cinn/cases`，动态图模型 +
+`to_static(backend="CINN")`，只覆盖推理前向）：
+
+- [darcy](darcy/run_model.md)：2D Darcy flow，MLP PINN。
+- [xpinn](xpinn/run_model.md)：2D Poisson，3 子域 XPINN。
+- [earthformer](earthformer/run_model.md)：ENSO CuboidTransformer。
+
+这些目录同样设备无关；dynamic 在 CPU 上固定种子初始化并把 `init.pdparams`/`inputs.npz` 写到结果目录，
+cinn 自动复用，A100 侧也可用 `CHECKPOINT_DIR`/`INPUTS_NPZ` 复用 MetaX 的权重与输入。训练阶段可用
+`$PADDLE_PSCI_DIR/test/cinn/run_cinn_test.py --cases <case> --stages train`。
+
 下表说明当前仓库对外文件和目录的功能。合作方可以根据模型需要增删辅助文件，不需要遵循统一的附加目录结构。
 
 | 文件或目录 | 功能 |

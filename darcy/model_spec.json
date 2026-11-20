@@ -1,0 +1,9 @@
+{
+  "case": "darcy",
+  "label": "darcy 2D Darcy flow (MLP PINN)",
+  "seed": 20261119,
+  "atol": 0.002,
+  "warmup": 5,
+  "iters": 50,
+  "notes": "case from $PADDLE_PSCI_DIR/test/cinn/cases/darcy.py; synthetic collocation points, no external data"
+}

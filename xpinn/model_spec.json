@@ -1,0 +1,9 @@
+{
+  "case": "xpinn",
+  "label": "XPINN 2D Poisson with 3 subdomains",
+  "seed": 20261119,
+  "atol": 0.002,
+  "warmup": 5,
+  "iters": 50,
+  "notes": "case from $PADDLE_PSCI_DIR/test/cinn/cases/xpinn.py; imports examples/xpinn/model.py (which enables prim eager, as the example does); synthetic points instead of the .mat dataset"
+}
