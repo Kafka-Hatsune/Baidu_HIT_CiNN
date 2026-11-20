@@ -1,0 +1,102 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 03:56:56.732756 3634155 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 03:56:56.732785 3634155 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 03:56:56.732863 3634155 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 03:56:56.733187 3634155 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 03:56:56.733608 3634155 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 03:56:57.016685 3634155 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 03:56:57.016700 3634155 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 03:56:57.163748 3634155 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 03:57:03.439958 3634155 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 03:57:03.440084 3634155 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 03:57:03.479126 3634155 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 03:57:03.480852 3634155 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 03:57:03.480909 3634155 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+[33m[2026/11/20 03:57:08] ppsci WARNING: Logger has already been automatically initialized as `log_file` is set to None by default, information will only be printed to terminal without writing to any file.[0m
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/base/dygraph/base.py:103: UserWarning: paddle.grad has unsupported parameter in jit: create_graph, jit will discard it
+  warnings.warn(
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/pir/math_op_patch.py:261: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/base/dygraph/base.py:103: UserWarning: paddle.grad has unsupported parameter in jit: create_graph, jit will discard it
+  warnings.warn(
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/pir/math_op_patch.py:261: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/base/dygraph/base.py:103: UserWarning: paddle.grad has unsupported parameter in jit: create_graph, jit will discard it
+  warnings.warn(
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/pir/math_op_patch.py:261: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+W1120 03:57:09.241582 3634155 eager_utils.cc:3618] Paddle static graph(PIR) not support input out tensor for now!!!!!
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/pir/math_op_patch.py:261: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+W1120 03:57:10.232378 3634155 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 03:57:10.279171 3634155 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+W1120 03:57:10.285624 3634155 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 03:57:10.290196 3634155 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_0.co /tmp/cinn_metax_3634155_0.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_1.co /tmp/cinn_metax_3634155_1.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_2.co /tmp/cinn_metax_3634155_2.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_3.co /tmp/cinn_metax_3634155_3.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_4.co /tmp/cinn_metax_3634155_4.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_5.co /tmp/cinn_metax_3634155_5.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_6.co /tmp/cinn_metax_3634155_6.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_7.co /tmp/cinn_metax_3634155_7.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_8.co /tmp/cinn_metax_3634155_8.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_9.co /tmp/cinn_metax_3634155_9.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_10.co /tmp/cinn_metax_3634155_10.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_11.co /tmp/cinn_metax_3634155_11.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_12.co /tmp/cinn_metax_3634155_12.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_13.co /tmp/cinn_metax_3634155_13.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_8.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_5.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_4.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_2.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_0.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_1.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_6.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_10.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_12.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_9.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_11.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_7.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_3.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_13.co
+W1120 03:57:16.391197 3634155 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 03:57:16.410315 3634155 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_14.co /tmp/cinn_metax_3634155_14.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_15.co /tmp/cinn_metax_3634155_15.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_16.co /tmp/cinn_metax_3634155_16.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_17.co /tmp/cinn_metax_3634155_17.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_18.co /tmp/cinn_metax_3634155_18.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_19.co /tmp/cinn_metax_3634155_19.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_20.co /tmp/cinn_metax_3634155_20.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_21.co /tmp/cinn_metax_3634155_21.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_22.co /tmp/cinn_metax_3634155_22.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_23.co /tmp/cinn_metax_3634155_23.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_24.co /tmp/cinn_metax_3634155_24.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_25.co /tmp/cinn_metax_3634155_25.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_27.co /tmp/cinn_metax_3634155_27.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_26.co /tmp/cinn_metax_3634155_26.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_28.co /tmp/cinn_metax_3634155_28.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_29.co /tmp/cinn_metax_3634155_29.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3634155_30.co /tmp/cinn_metax_3634155_30.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_14.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_15.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_18.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_16.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_20.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_19.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_17.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_21.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_24.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_22.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_23.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_26.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_27.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_29.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_25.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_28.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3634155_30.co
+I1120 03:57:24.915292 3634155 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 03:57:24.926267 3634155 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+{"case": "darcy", "mode": "cinn", "task": "train", "model": "darcy 2D Darcy flow (MLP PINN)", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev116+g4b908bd49.d20261119", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "learning_rate": 0.001, "dropout_layers_disabled": 0, "warmup": 5, "iters": 500, "total_steps": 505, "init_weights_sha256": "64ee090b120e9a88a76ff84f6e0eb8207c23b412aff5bbc269ebb9b080f45256", "final_weights_sha256": "7839eb4bc827926c09c6e6315625cf697f880fabdc304e730784f9349824d11b", "batch_sha256": "f175e3d8ddd81084b68fa0afc476c9c7becc7b9245d04c8361ce53ae01850a99", "first_step_ms": 17681.315004825592, "steady_step_ms": 18.50767915137112, "steady_median_ms": 18.264031037688255}

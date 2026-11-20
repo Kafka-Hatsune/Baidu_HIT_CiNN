@@ -1,0 +1,14 @@
+{
+  "model": "ppocrv4_server_det",
+  "mode": "dynamic",
+  "device": "metax_gpu:0",
+  "status": "ok",
+  "steps_logged": 50,
+  "loss_first": 2.178566,
+  "loss_last": 1.427273,
+  "first_step_ms": 750.86,
+  "steady_step_ms": 199.05999999999997,
+  "losses_sha256": "51a04495ec789a5dfb4182ff0588159c7bd876c24d5fc2a7500793a0736f28a4",
+  "log_sha256": "44d43015a025fec0a0bcd763a274abfe9502ab9fbfe083ef08f65c0d45c8786f",
+  "source_log": "results/dynamic-train/stdout.log"
+}

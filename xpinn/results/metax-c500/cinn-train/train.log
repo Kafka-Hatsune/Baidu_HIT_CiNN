@@ -1,0 +1,314 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 03:42:28.126509 3347675 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 03:42:28.126538 3347675 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 03:42:28.126636 3347675 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 03:42:28.126979 3347675 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 03:42:28.127411 3347675 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 03:42:28.405452 3347675 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 03:42:28.405467 3347675 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 03:42:28.540879 3347675 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 03:42:34.703971 3347675 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 03:42:34.704020 3347675 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 03:42:34.720788 3347675 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 03:42:34.721223 3347675 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 03:42:34.721261 3347675 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+W1120 03:42:39.885272 3347675 eager_utils.cc:3618] Paddle static graph(PIR) not support input out tensor for now!!!!!
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/base/dygraph/base.py:103: UserWarning: paddle.grad has unsupported parameter in jit: retain_graph, jit will discard it
+  warnings.warn(
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/base/dygraph/base.py:103: UserWarning: paddle.grad has unsupported parameter in jit: create_graph, jit will discard it
+  warnings.warn(
+/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/pir/math_op_patch.py:261: UserWarning: Tensor do not have 'place' interface for pir graph mode, try not to use it. None will be returned.
+  warnings.warn(
+[2026-11-20 03:42:43,697] [ WARNING] backward_utils.py:703 - input provided by inputs has no use
+W1120 03:42:49.915458 3347675 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 03:42:50.131788 3347675 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+W1120 03:42:50.153237 3347675 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 03:42:50.171214 3347675 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_0.co /tmp/cinn_metax_3347675_0.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_1.co /tmp/cinn_metax_3347675_1.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_2.co /tmp/cinn_metax_3347675_2.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_3.co /tmp/cinn_metax_3347675_3.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_4.co /tmp/cinn_metax_3347675_4.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_5.co /tmp/cinn_metax_3347675_5.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_6.co /tmp/cinn_metax_3347675_6.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_7.co /tmp/cinn_metax_3347675_7.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_8.co /tmp/cinn_metax_3347675_8.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_9.co /tmp/cinn_metax_3347675_9.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_10.co /tmp/cinn_metax_3347675_10.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_11.co /tmp/cinn_metax_3347675_11.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_12.co /tmp/cinn_metax_3347675_12.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_13.co /tmp/cinn_metax_3347675_13.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_14.co /tmp/cinn_metax_3347675_14.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_15.co /tmp/cinn_metax_3347675_15.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_16.co /tmp/cinn_metax_3347675_16.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_17.co /tmp/cinn_metax_3347675_17.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_20.co /tmp/cinn_metax_3347675_20.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_21.co /tmp/cinn_metax_3347675_21.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_18.co /tmp/cinn_metax_3347675_18.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_19.co /tmp/cinn_metax_3347675_19.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_22.co /tmp/cinn_metax_3347675_22.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_23.co /tmp/cinn_metax_3347675_23.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_24.co /tmp/cinn_metax_3347675_24.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_25.co /tmp/cinn_metax_3347675_25.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_26.co /tmp/cinn_metax_3347675_26.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_27.co /tmp/cinn_metax_3347675_27.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_28.co /tmp/cinn_metax_3347675_28.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_29.co /tmp/cinn_metax_3347675_29.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_30.co /tmp/cinn_metax_3347675_30.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_31.co /tmp/cinn_metax_3347675_31.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_32.co /tmp/cinn_metax_3347675_32.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_33.co /tmp/cinn_metax_3347675_33.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_34.co /tmp/cinn_metax_3347675_34.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_35.co /tmp/cinn_metax_3347675_35.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_36.co /tmp/cinn_metax_3347675_36.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_37.co /tmp/cinn_metax_3347675_37.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_38.co /tmp/cinn_metax_3347675_38.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_39.co /tmp/cinn_metax_3347675_39.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_40.co /tmp/cinn_metax_3347675_40.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_41.co /tmp/cinn_metax_3347675_41.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_42.co /tmp/cinn_metax_3347675_42.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_43.co /tmp/cinn_metax_3347675_43.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_44.co /tmp/cinn_metax_3347675_44.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_45.co /tmp/cinn_metax_3347675_45.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_46.co /tmp/cinn_metax_3347675_46.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_47.co /tmp/cinn_metax_3347675_47.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_48.co /tmp/cinn_metax_3347675_48.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_49.co /tmp/cinn_metax_3347675_49.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_50.co /tmp/cinn_metax_3347675_50.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_51.co /tmp/cinn_metax_3347675_51.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_52.co /tmp/cinn_metax_3347675_52.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_53.co /tmp/cinn_metax_3347675_53.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_54.co /tmp/cinn_metax_3347675_54.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_55.co /tmp/cinn_metax_3347675_55.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_56.co /tmp/cinn_metax_3347675_56.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_57.co /tmp/cinn_metax_3347675_57.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_58.co /tmp/cinn_metax_3347675_58.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_59.co /tmp/cinn_metax_3347675_59.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_60.co /tmp/cinn_metax_3347675_60.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_61.co /tmp/cinn_metax_3347675_61.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_62.co /tmp/cinn_metax_3347675_62.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_63.co /tmp/cinn_metax_3347675_63.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_64.co /tmp/cinn_metax_3347675_64.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_65.co /tmp/cinn_metax_3347675_65.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_47.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_43.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_50.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_35.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_55.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_1.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_32.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_7.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_11.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_20.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_12.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_39.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_57.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_18.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_9.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_28.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_10.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_22.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_37.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_27.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_2.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_3.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_38.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_13.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_4.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_8.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_51.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_14.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_41.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_31.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_44.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_25.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_17.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_52.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_23.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_64.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_19.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_45.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_49.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_40.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_58.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_5.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_29.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_59.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_42.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_56.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_60.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_61.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_48.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_30.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_21.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_63.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_46.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_24.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_16.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_54.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_15.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_36.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_26.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_33.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_62.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_34.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_53.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_6.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_0.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_65.co
+W1120 03:43:36.439602 3347675 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 03:43:36.495051 3347675 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_66.co /tmp/cinn_metax_3347675_66.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_67.co /tmp/cinn_metax_3347675_67.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_68.co /tmp/cinn_metax_3347675_68.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_69.co /tmp/cinn_metax_3347675_69.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_70.co /tmp/cinn_metax_3347675_70.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_71.co /tmp/cinn_metax_3347675_71.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_72.co /tmp/cinn_metax_3347675_72.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_73.co /tmp/cinn_metax_3347675_73.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_74.co /tmp/cinn_metax_3347675_74.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_75.co /tmp/cinn_metax_3347675_75.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_76.co /tmp/cinn_metax_3347675_76.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_77.co /tmp/cinn_metax_3347675_77.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_78.co /tmp/cinn_metax_3347675_78.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_79.co /tmp/cinn_metax_3347675_79.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_80.co /tmp/cinn_metax_3347675_80.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_81.co /tmp/cinn_metax_3347675_81.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_82.co /tmp/cinn_metax_3347675_82.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_83.co /tmp/cinn_metax_3347675_83.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_84.co /tmp/cinn_metax_3347675_84.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_85.co /tmp/cinn_metax_3347675_85.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_86.co /tmp/cinn_metax_3347675_86.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_87.co /tmp/cinn_metax_3347675_87.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_88.co /tmp/cinn_metax_3347675_88.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_89.co /tmp/cinn_metax_3347675_89.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_90.co /tmp/cinn_metax_3347675_90.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_91.co /tmp/cinn_metax_3347675_91.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_92.co /tmp/cinn_metax_3347675_92.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_93.co /tmp/cinn_metax_3347675_93.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_94.co /tmp/cinn_metax_3347675_94.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_95.co /tmp/cinn_metax_3347675_95.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_96.co /tmp/cinn_metax_3347675_96.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_97.co /tmp/cinn_metax_3347675_97.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_98.co /tmp/cinn_metax_3347675_98.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_99.co /tmp/cinn_metax_3347675_99.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_100.co /tmp/cinn_metax_3347675_100.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_101.co /tmp/cinn_metax_3347675_101.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_102.co /tmp/cinn_metax_3347675_102.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_103.co /tmp/cinn_metax_3347675_103.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_104.co /tmp/cinn_metax_3347675_104.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_105.co /tmp/cinn_metax_3347675_105.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_106.co /tmp/cinn_metax_3347675_106.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_107.co /tmp/cinn_metax_3347675_107.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_108.co /tmp/cinn_metax_3347675_108.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_109.co /tmp/cinn_metax_3347675_109.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_110.co /tmp/cinn_metax_3347675_110.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_111.co /tmp/cinn_metax_3347675_111.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_112.co /tmp/cinn_metax_3347675_112.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_113.co /tmp/cinn_metax_3347675_113.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_114.co /tmp/cinn_metax_3347675_114.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_115.co /tmp/cinn_metax_3347675_115.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_116.co /tmp/cinn_metax_3347675_116.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_117.co /tmp/cinn_metax_3347675_117.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_118.co /tmp/cinn_metax_3347675_118.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_119.co /tmp/cinn_metax_3347675_119.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_120.co /tmp/cinn_metax_3347675_120.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_121.co /tmp/cinn_metax_3347675_121.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_122.co /tmp/cinn_metax_3347675_122.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_123.co /tmp/cinn_metax_3347675_123.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_124.co /tmp/cinn_metax_3347675_124.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_125.co /tmp/cinn_metax_3347675_125.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_126.co /tmp/cinn_metax_3347675_126.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_127.co /tmp/cinn_metax_3347675_127.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_128.co /tmp/cinn_metax_3347675_128.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_129.co /tmp/cinn_metax_3347675_129.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_87.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_130.co /tmp/cinn_metax_3347675_130.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_131.co /tmp/cinn_metax_3347675_131.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_132.co /tmp/cinn_metax_3347675_132.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_72.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_83.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_74.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_99.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_66.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_95.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_69.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_85.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_77.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_71.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_133.co /tmp/cinn_metax_3347675_133.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_100.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_92.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_93.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_101.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_98.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_90.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_88.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_89.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_97.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_91.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_78.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_81.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_73.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_109.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_106.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_115.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_70.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_82.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_80.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_86.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_76.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_84.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_134.co /tmp/cinn_metax_3347675_134.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_104.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_108.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_102.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_110.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_118.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_114.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_103.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_121.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_68.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_135.co /tmp/cinn_metax_3347675_135.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_75.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_116.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_136.co /tmp/cinn_metax_3347675_136.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_112.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_111.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_107.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_137.co /tmp/cinn_metax_3347675_137.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_94.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_126.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_79.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_67.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_129.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_120.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_124.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_105.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_117.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_127.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_96.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_125.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_123.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_113.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_122.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_128.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_132.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_138.co /tmp/cinn_metax_3347675_138.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_119.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_131.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_130.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_133.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_134.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_135.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_136.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_137.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_138.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_139.co /tmp/cinn_metax_3347675_139.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3347675_140.co /tmp/cinn_metax_3347675_140.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_139.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3347675_140.co
+I1120 03:44:44.763525 3347675 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 03:44:44.864888 3347675 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+{"case": "xpinn", "mode": "cinn", "task": "train", "model": "XPINN 2D Poisson with 3 subdomains", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev116+g4b908bd49.d20261119", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "learning_rate": 0.0008, "dropout_layers_disabled": 0, "warmup": 5, "iters": 500, "total_steps": 505, "init_weights_sha256": "e9591efd42c5b33e50aa3d81eaeb09cfc59c8dc8de4f75dcb51c44982f94272d", "final_weights_sha256": "dfc6cfc6ed8306de3b3a52de7c830657acc4a52ead8f473fbb2aeb52d1b6c5de", "batch_sha256": "1e5b71872ea599a5496da1217e727d9a390bb73b0d7aa00a956342dc2805e4fc", "first_step_ms": 127365.64823100343, "steady_step_ms": 95.85776778217405, "steady_median_ms": 95.7527318969369}

@@ -1,0 +1,863 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 05:27:53.338325 3834207 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 05:27:53.338358 3834207 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 05:27:53.338441 3834207 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 05:27:53.338744 3834207 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 05:27:53.339152 3834207 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 05:27:53.936192 3834207 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 05:27:53.936206 3834207 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 05:27:54.082325 3834207 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 05:28:00.265239 3834207 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 05:28:00.265287 3834207 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 05:28:00.281708 3834207 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 05:28:00.282143 3834207 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 05:28:00.282181 3834207 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+A new field (use_cinn) detected!
+A new field (seed) detected!
+[2026/11/20 05:28:04] ppcls INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2026/11/20 05:28:04] ppcls INFO: Arch : 
+[2026/11/20 05:28:04] ppcls INFO:     class_num : 102
+[2026/11/20 05:28:04] ppcls INFO:     drop_path_rate : 0.02
+[2026/11/20 05:28:04] ppcls INFO:     drop_rate : 0
+[2026/11/20 05:28:04] ppcls INFO:     name : StarNet_S4
+[2026/11/20 05:28:04] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:28:04] ppcls INFO: DataLoader : 
+[2026/11/20 05:28:04] ppcls INFO:     Eval : 
+[2026/11/20 05:28:04] ppcls INFO:         dataset : 
+[2026/11/20 05:28:04] ppcls INFO:             cls_label_path : /data/paddlex_train/datasets/cls_flowers_examples/val.txt
+[2026/11/20 05:28:04] ppcls INFO:             image_root : /data/paddlex_train/datasets/cls_flowers_examples
+[2026/11/20 05:28:04] ppcls INFO:             name : ClsDataset
+[2026/11/20 05:28:04] ppcls INFO:             transform_ops : 
+[2026/11/20 05:28:04] ppcls INFO:                 DecodeImage : 
+[2026/11/20 05:28:04] ppcls INFO:                     backend : pil
+[2026/11/20 05:28:04] ppcls INFO:                     channel_first : False
+[2026/11/20 05:28:04] ppcls INFO:                 ResizeImage : 
+[2026/11/20 05:28:04] ppcls INFO:                     backend : pil
+[2026/11/20 05:28:04] ppcls INFO:                     interpolation : bicubic
+[2026/11/20 05:28:04] ppcls INFO:                     resize_short : 256
+[2026/11/20 05:28:04] ppcls INFO:                 CropImage : 
+[2026/11/20 05:28:04] ppcls INFO:                     size : 224
+[2026/11/20 05:28:04] ppcls INFO:                 NormalizeImage : 
+[2026/11/20 05:28:04] ppcls INFO:                     mean : [0.485, 0.456, 0.406]
+[2026/11/20 05:28:04] ppcls INFO:                     order : hwc
+[2026/11/20 05:28:04] ppcls INFO:                     scale : 1.0/255.0
+[2026/11/20 05:28:04] ppcls INFO:                     std : [0.229, 0.224, 0.225]
+[2026/11/20 05:28:04] ppcls INFO:         loader : 
+[2026/11/20 05:28:04] ppcls INFO:             num_workers : 4
+[2026/11/20 05:28:04] ppcls INFO:             use_shared_memory : False
+[2026/11/20 05:28:04] ppcls INFO:         sampler : 
+[2026/11/20 05:28:04] ppcls INFO:             batch_size : 4
+[2026/11/20 05:28:04] ppcls INFO:             drop_last : False
+[2026/11/20 05:28:04] ppcls INFO:             name : DistributedBatchSampler
+[2026/11/20 05:28:04] ppcls INFO:             shuffle : False
+[2026/11/20 05:28:04] ppcls INFO:     Train : 
+[2026/11/20 05:28:04] ppcls INFO:         dataset : 
+[2026/11/20 05:28:04] ppcls INFO:             batch_transform_ops : 
+[2026/11/20 05:28:04] ppcls INFO:                 OpSampler : 
+[2026/11/20 05:28:04] ppcls INFO:                     CutmixOperator : 
+[2026/11/20 05:28:04] ppcls INFO:                         alpha : 0.2
+[2026/11/20 05:28:04] ppcls INFO:                         prob : 0.5
+[2026/11/20 05:28:04] ppcls INFO:                     MixupOperator : 
+[2026/11/20 05:28:04] ppcls INFO:                         alpha : 0.8
+[2026/11/20 05:28:04] ppcls INFO:                         prob : 0.5
+[2026/11/20 05:28:04] ppcls INFO:             cls_label_path : /data/paddlex_train/datasets/cls_flowers_examples/train.txt
+[2026/11/20 05:28:04] ppcls INFO:             image_root : /data/paddlex_train/datasets/cls_flowers_examples
+[2026/11/20 05:28:04] ppcls INFO:             name : ClsDataset
+[2026/11/20 05:28:04] ppcls INFO:             transform_ops : 
+[2026/11/20 05:28:04] ppcls INFO:                 DecodeImage : 
+[2026/11/20 05:28:04] ppcls INFO:                     channel_first : False
+[2026/11/20 05:28:04] ppcls INFO:                     to_rgb : True
+[2026/11/20 05:28:04] ppcls INFO:                 RandCropImage : 
+[2026/11/20 05:28:04] ppcls INFO:                     size : 224
+[2026/11/20 05:28:04] ppcls INFO:                 RandFlipImage : 
+[2026/11/20 05:28:04] ppcls INFO:                     flip_code : 1
+[2026/11/20 05:28:04] ppcls INFO:                 TimmAutoAugment : 
+[2026/11/20 05:28:04] ppcls INFO:                     config_str : rand-m1-mstd0.5-inc1
+[2026/11/20 05:28:04] ppcls INFO:                     img_size : 224
+[2026/11/20 05:28:04] ppcls INFO:                     interpolation : random
+[2026/11/20 05:28:04] ppcls INFO:                 NormalizeImage : 
+[2026/11/20 05:28:04] ppcls INFO:                     mean : [0.485, 0.456, 0.406]
+[2026/11/20 05:28:04] ppcls INFO:                     order : 
+[2026/11/20 05:28:04] ppcls INFO:                     scale : 1.0/255.0
+[2026/11/20 05:28:04] ppcls INFO:                     std : [0.229, 0.224, 0.225]
+[2026/11/20 05:28:04] ppcls INFO:                 RandomErasing : 
+[2026/11/20 05:28:04] ppcls INFO:                     EPSILON : 0.25
+[2026/11/20 05:28:04] ppcls INFO:                     mode : pixel
+[2026/11/20 05:28:04] ppcls INFO:         loader : 
+[2026/11/20 05:28:04] ppcls INFO:             num_workers : 4
+[2026/11/20 05:28:04] ppcls INFO:             use_shared_memory : False
+[2026/11/20 05:28:04] ppcls INFO:         sampler : 
+[2026/11/20 05:28:04] ppcls INFO:             batch_size : 64
+[2026/11/20 05:28:04] ppcls INFO:             drop_last : False
+[2026/11/20 05:28:04] ppcls INFO:             name : DistributedBatchSampler
+[2026/11/20 05:28:04] ppcls INFO:             shuffle : True
+[2026/11/20 05:28:04] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:28:04] ppcls INFO: Global : 
+[2026/11/20 05:28:04] ppcls INFO:     checkpoints : None
+[2026/11/20 05:28:04] ppcls INFO:     device : metax_gpu
+[2026/11/20 05:28:04] ppcls INFO:     epochs : 32
+[2026/11/20 05:28:04] ppcls INFO:     eval_during_train : False
+[2026/11/20 05:28:04] ppcls INFO:     eval_interval : 32
+[2026/11/20 05:28:04] ppcls INFO:     export_with_pir : True
+[2026/11/20 05:28:04] ppcls INFO:     image_shape : [3, 224, 224]
+[2026/11/20 05:28:04] ppcls INFO:     output_dir : /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train
+[2026/11/20 05:28:04] ppcls INFO:     pdx_model_name : StarNet-S4
+[2026/11/20 05:28:04] ppcls INFO:     pretrained_model : https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/StarNet-S4_pretrained.pdparams
+[2026/11/20 05:28:04] ppcls INFO:     print_batch_step : 1
+[2026/11/20 05:28:04] ppcls INFO:     save_inference_dir : ./inference
+[2026/11/20 05:28:04] ppcls INFO:     save_interval : 100000
+[2026/11/20 05:28:04] ppcls INFO:     to_static : False
+[2026/11/20 05:28:04] ppcls INFO:     uniform_output_enabled : True
+[2026/11/20 05:28:04] ppcls INFO:     use_visualdl : True
+[2026/11/20 05:28:04] ppcls INFO:     use_cinn : False
+[2026/11/20 05:28:04] ppcls INFO:     seed : 42
+[2026/11/20 05:28:04] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:28:04] ppcls INFO: Infer : 
+[2026/11/20 05:28:04] ppcls INFO:     PostProcess : 
+[2026/11/20 05:28:04] ppcls INFO:         class_id_map_file : /data/paddlex_train/datasets/cls_flowers_examples/label.txt
+[2026/11/20 05:28:04] ppcls INFO:         name : Topk
+[2026/11/20 05:28:04] ppcls INFO:         topk : 5
+[2026/11/20 05:28:04] ppcls INFO:     batch_size : 10
+[2026/11/20 05:28:04] ppcls INFO:     infer_imgs : docs/images/inference_deployment/whl_demo.jpg
+[2026/11/20 05:28:04] ppcls INFO:     transforms : 
+[2026/11/20 05:28:04] ppcls INFO:         DecodeImage : 
+[2026/11/20 05:28:04] ppcls INFO:             channel_first : False
+[2026/11/20 05:28:04] ppcls INFO:             to_rgb : True
+[2026/11/20 05:28:04] ppcls INFO:         ResizeImage : 
+[2026/11/20 05:28:04] ppcls INFO:             backend : pil
+[2026/11/20 05:28:04] ppcls INFO:             interpolation : bicubic
+[2026/11/20 05:28:04] ppcls INFO:             resize_short : 256
+[2026/11/20 05:28:04] ppcls INFO:         CropImage : 
+[2026/11/20 05:28:04] ppcls INFO:             size : 224
+[2026/11/20 05:28:04] ppcls INFO:         NormalizeImage : 
+[2026/11/20 05:28:04] ppcls INFO:             mean : [0.485, 0.456, 0.406]
+[2026/11/20 05:28:04] ppcls INFO:             order : 
+[2026/11/20 05:28:04] ppcls INFO:             scale : 1.0/255.0
+[2026/11/20 05:28:04] ppcls INFO:             std : [0.229, 0.224, 0.225]
+[2026/11/20 05:28:04] ppcls INFO:         ToCHWImage : None
+[2026/11/20 05:28:04] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:28:04] ppcls INFO: Loss : 
+[2026/11/20 05:28:04] ppcls INFO:     Eval : 
+[2026/11/20 05:28:04] ppcls INFO:         CELoss : 
+[2026/11/20 05:28:04] ppcls INFO:             weight : 1.0
+[2026/11/20 05:28:04] ppcls INFO:     Train : 
+[2026/11/20 05:28:04] ppcls INFO:         CELoss : 
+[2026/11/20 05:28:04] ppcls INFO:             epsilon : 0.1
+[2026/11/20 05:28:04] ppcls INFO:             weight : 1.0
+[2026/11/20 05:28:04] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:28:04] ppcls INFO: Metric : 
+[2026/11/20 05:28:04] ppcls INFO:     Eval : 
+[2026/11/20 05:28:04] ppcls INFO:         TopkAcc : 
+[2026/11/20 05:28:04] ppcls INFO:             topk : [1, 5]
+[2026/11/20 05:28:04] ppcls INFO:     Train : 
+[2026/11/20 05:28:04] ppcls INFO:         TopkAcc : 
+[2026/11/20 05:28:04] ppcls INFO:             topk : [1, 5]
+[2026/11/20 05:28:04] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:28:04] ppcls INFO: Optimizer : 
+[2026/11/20 05:28:04] ppcls INFO:     beta1 : 0.9
+[2026/11/20 05:28:04] ppcls INFO:     beta2 : 0.999
+[2026/11/20 05:28:04] ppcls INFO:     clip_grad : None
+[2026/11/20 05:28:04] ppcls INFO:     epsilon : 1e-08
+[2026/11/20 05:28:04] ppcls INFO:     lr : 
+[2026/11/20 05:28:04] ppcls INFO:         eta_min : 1e-05
+[2026/11/20 05:28:04] ppcls INFO:         learning_rate : 0.003
+[2026/11/20 05:28:04] ppcls INFO:         name : Cosine
+[2026/11/20 05:28:04] ppcls INFO:         warmup_epoch : 5
+[2026/11/20 05:28:04] ppcls INFO:         warmup_start_lr : 1e-06
+[2026/11/20 05:28:04] ppcls INFO:     name : AdamW
+[2026/11/20 05:28:04] ppcls INFO:     no_weight_decay_name : None
+[2026/11/20 05:28:04] ppcls INFO:     one_dim_param_no_weight_decay : True
+[2026/11/20 05:28:04] ppcls INFO:     weight_decay : 0.05
+[2026/11/20 05:28:04] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:28:04] ppcls INFO: profiler_options : None
+[2026/11/20 05:28:04] ppcls INFO: train with paddle 3.5.0.dev20260516 and device Place(metax_gpu:0)
+[2026/11/20 05:28:04] ppcls WARNING: Unable to calculate accuracy when using "batch_transform_ops". The metric "{'TopkAcc': {'topk': [1, 5]}}" has been removed.
+[2026/11/20 05:28:04] ppcls INFO: Found /root/.paddleclas/weights/StarNet-S4_pretrained.pdparams
+[2026/11/20 05:28:04] ppcls INFO: Finish load pretrained model from /root/.paddleclas/weights/StarNet-S4_pretrained.pdparams
+[2026/11/20 05:28:04] ppcls WARNING: The training strategy provided by PaddleClas is based on 8 gpus. But the number of gpu is 1 in current training. Please modify the stategy (learning rate, batch size and so on) if use this config to train.
+[2026/11/20 05:28:11] ppcls INFO: [Train][Epoch 1/32][Iter: 0/16]lr(LinearWarmup): 0.00003849, CELoss: 5.03656, loss: 5.03656, batch_cost: 6.80005s, reader_cost: 1.36883, ips: 9.41170 samples/s, eta: 0:58:01
+[2026/11/20 05:28:11] ppcls INFO: [Train][Epoch 1/32][Iter: 1/16]lr(LinearWarmup): 0.00007597, CELoss: 5.11112, loss: 5.11112, batch_cost: 0.22390s, reader_cost: 0.00063, ips: 285.84088 samples/s, eta: 0:01:54
+[2026/11/20 05:28:12] ppcls INFO: [Train][Epoch 1/32][Iter: 2/16]lr(LinearWarmup): 0.00011346, CELoss: 5.13890, loss: 5.13890, batch_cost: 0.22309s, reader_cost: 0.00029, ips: 286.88227 samples/s, eta: 0:01:53
+[2026/11/20 05:28:12] ppcls INFO: [Train][Epoch 1/32][Iter: 3/16]lr(LinearWarmup): 0.00015095, CELoss: 5.10510, loss: 5.10510, batch_cost: 0.22516s, reader_cost: 0.00044, ips: 284.23945 samples/s, eta: 0:01:54
+[2026/11/20 05:28:12] ppcls INFO: [Train][Epoch 1/32][Iter: 4/16]lr(LinearWarmup): 0.00018844, CELoss: 5.06328, loss: 5.06328, batch_cost: 0.38405s, reader_cost: 0.00046, ips: 166.64336 samples/s, eta: 0:03:15
+[2026/11/20 05:28:12] ppcls INFO: [Train][Epoch 1/32][Iter: 5/16]lr(LinearWarmup): 0.00022593, CELoss: 5.03539, loss: 5.03539, batch_cost: 0.24846s, reader_cost: 0.00041, ips: 257.58742 samples/s, eta: 0:02:05
+[2026/11/20 05:28:13] ppcls INFO: [Train][Epoch 1/32][Iter: 6/16]lr(LinearWarmup): 0.00026341, CELoss: 5.00592, loss: 5.00592, batch_cost: 0.29139s, reader_cost: 0.00033, ips: 219.63498 samples/s, eta: 0:02:27
+[2026/11/20 05:28:13] ppcls INFO: [Train][Epoch 1/32][Iter: 7/16]lr(LinearWarmup): 0.00030090, CELoss: 4.99858, loss: 4.99858, batch_cost: 0.22592s, reader_cost: 0.00047, ips: 283.28557 samples/s, eta: 0:01:54
+[2026/11/20 05:28:13] ppcls INFO: [Train][Epoch 1/32][Iter: 8/16]lr(LinearWarmup): 0.00033839, CELoss: 4.98935, loss: 4.98935, batch_cost: 0.36876s, reader_cost: 0.00723, ips: 173.55299 samples/s, eta: 0:03:05
+[2026/11/20 05:28:14] ppcls INFO: [Train][Epoch 1/32][Iter: 9/16]lr(LinearWarmup): 0.00037588, CELoss: 4.96787, loss: 4.96787, batch_cost: 0.32162s, reader_cost: 0.00733, ips: 198.99143 samples/s, eta: 0:02:41
+[2026/11/20 05:28:14] ppcls INFO: [Train][Epoch 1/32][Iter: 10/16]lr(LinearWarmup): 0.00041336, CELoss: 4.94205, loss: 4.94205, batch_cost: 0.22891s, reader_cost: 0.00023, ips: 279.58590 samples/s, eta: 0:01:54
+[2026/11/20 05:28:14] ppcls INFO: [Train][Epoch 1/32][Iter: 11/16]lr(LinearWarmup): 0.00045085, CELoss: 4.92584, loss: 4.92584, batch_cost: 0.22178s, reader_cost: 0.00028, ips: 288.57015 samples/s, eta: 0:01:51
+[2026/11/20 05:28:14] ppcls INFO: [Train][Epoch 1/32][Iter: 12/16]lr(LinearWarmup): 0.00048834, CELoss: 4.90495, loss: 4.90495, batch_cost: 0.22320s, reader_cost: 0.00030, ips: 286.74468 samples/s, eta: 0:01:51
+[2026/11/20 05:28:15] ppcls INFO: [Train][Epoch 1/32][Iter: 13/16]lr(LinearWarmup): 0.00052582, CELoss: 4.88844, loss: 4.88844, batch_cost: 0.22220s, reader_cost: 0.00032, ips: 288.02891 samples/s, eta: 0:01:50
+[2026/11/20 05:28:15] ppcls INFO: [Train][Epoch 1/32][Iter: 14/16]lr(LinearWarmup): 0.00056331, CELoss: 4.86221, loss: 4.86221, batch_cost: 0.21086s, reader_cost: 0.00023, ips: 303.52542 samples/s, eta: 0:01:45
+[2026/11/20 05:28:15] ppcls INFO: [Train][Epoch 1/32][Iter: 15/16]lr(LinearWarmup): 0.00060080, CELoss: 4.84257, loss: 4.84257, batch_cost: 0.20612s, reader_cost: 0.00024, ips: 291.09120 samples/s, eta: 0:01:42
+[2026/11/20 05:28:15] ppcls INFO: [Train][Epoch 1/32][Avg]CELoss: 4.84257, loss: 4.84257
+[2026/11/20 05:28:16] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:28:16] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+W1120 05:28:16.769755 3834207 eager_utils.cc:3618] Paddle static graph(PIR) not support input out tensor for now!!!!!
+[2026/11/20 05:28:19] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:28:19] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:28:21] ppcls INFO: [Train][Epoch 2/32][Iter: 0/16]lr(LinearWarmup): 0.00063829, CELoss: 4.40159, loss: 4.40159, batch_cost: 2.14211s, reader_cost: 1.88471, ips: 29.87707 samples/s, eta: 0:17:42
+[2026/11/20 05:28:21] ppcls INFO: [Train][Epoch 2/32][Iter: 1/16]lr(LinearWarmup): 0.00067578, CELoss: 4.29149, loss: 4.29149, batch_cost: 0.31571s, reader_cost: 0.00590, ips: 202.72086 samples/s, eta: 0:02:36
+[2026/11/20 05:28:22] ppcls INFO: [Train][Epoch 2/32][Iter: 2/16]lr(LinearWarmup): 0.00071326, CELoss: 4.31858, loss: 4.31858, batch_cost: 0.43698s, reader_cost: 0.00045, ips: 146.45931 samples/s, eta: 0:03:35
+[2026/11/20 05:28:22] ppcls INFO: [Train][Epoch 2/32][Iter: 3/16]lr(LinearWarmup): 0.00075075, CELoss: 4.36605, loss: 4.36605, batch_cost: 0.26431s, reader_cost: 0.00041, ips: 242.14351 samples/s, eta: 0:02:10
+[2026/11/20 05:28:22] ppcls INFO: [Train][Epoch 2/32][Iter: 4/16]lr(LinearWarmup): 0.00078824, CELoss: 4.36615, loss: 4.36615, batch_cost: 0.28388s, reader_cost: 0.00052, ips: 225.44454 samples/s, eta: 0:02:19
+[2026/11/20 05:28:22] ppcls INFO: [Train][Epoch 2/32][Iter: 5/16]lr(LinearWarmup): 0.00082572, CELoss: 4.23593, loss: 4.23593, batch_cost: 0.22758s, reader_cost: 0.00043, ips: 281.21705 samples/s, eta: 0:01:51
+[2026/11/20 05:28:23] ppcls INFO: [Train][Epoch 2/32][Iter: 6/16]lr(LinearWarmup): 0.00086321, CELoss: 4.22834, loss: 4.22834, batch_cost: 0.37596s, reader_cost: 0.00040, ips: 170.23234 samples/s, eta: 0:03:04
+[2026/11/20 05:28:23] ppcls INFO: [Train][Epoch 2/32][Iter: 7/16]lr(LinearWarmup): 0.00090070, CELoss: 4.23781, loss: 4.23781, batch_cost: 0.26804s, reader_cost: 0.00036, ips: 238.77315 samples/s, eta: 0:02:11
+[2026/11/20 05:28:23] ppcls INFO: [Train][Epoch 2/32][Iter: 8/16]lr(LinearWarmup): 0.00093819, CELoss: 4.17187, loss: 4.17187, batch_cost: 0.23184s, reader_cost: 0.00043, ips: 276.05655 samples/s, eta: 0:01:53
+[2026/11/20 05:28:24] ppcls INFO: [Train][Epoch 2/32][Iter: 9/16]lr(LinearWarmup): 0.00097568, CELoss: 4.12066, loss: 4.12066, batch_cost: 0.37863s, reader_cost: 0.00024, ips: 169.02857 samples/s, eta: 0:03:04
+[2026/11/20 05:28:24] ppcls INFO: [Train][Epoch 2/32][Iter: 10/16]lr(LinearWarmup): 0.00101316, CELoss: 4.09919, loss: 4.09919, batch_cost: 0.23046s, reader_cost: 0.00026, ips: 277.70267 samples/s, eta: 0:01:52
+[2026/11/20 05:28:24] ppcls INFO: [Train][Epoch 2/32][Iter: 11/16]lr(LinearWarmup): 0.00105065, CELoss: 4.08924, loss: 4.08924, batch_cost: 0.22789s, reader_cost: 0.00023, ips: 280.83253 samples/s, eta: 0:01:50
+[2026/11/20 05:28:24] ppcls INFO: [Train][Epoch 2/32][Iter: 12/16]lr(LinearWarmup): 0.00108814, CELoss: 4.09565, loss: 4.09565, batch_cost: 0.22248s, reader_cost: 0.00022, ips: 287.66716 samples/s, eta: 0:01:47
+[2026/11/20 05:28:25] ppcls INFO: [Train][Epoch 2/32][Iter: 13/16]lr(LinearWarmup): 0.00112562, CELoss: 4.09071, loss: 4.09071, batch_cost: 0.22448s, reader_cost: 0.00035, ips: 285.10770 samples/s, eta: 0:01:48
+[2026/11/20 05:28:25] ppcls INFO: [Train][Epoch 2/32][Iter: 14/16]lr(LinearWarmup): 0.00116311, CELoss: 4.08837, loss: 4.08837, batch_cost: 0.21239s, reader_cost: 0.00021, ips: 301.33727 samples/s, eta: 0:01:42
+[2026/11/20 05:28:25] ppcls INFO: [Train][Epoch 2/32][Iter: 15/16]lr(LinearWarmup): 0.00120060, CELoss: 4.09440, loss: 4.09440, batch_cost: 0.20348s, reader_cost: 0.00023, ips: 294.87203 samples/s, eta: 0:01:37
+[2026/11/20 05:28:25] ppcls INFO: [Train][Epoch 2/32][Avg]CELoss: 4.09440, loss: 4.09440
+[2026/11/20 05:28:26] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:28:26] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:28:29] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:28:29] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:28:32] ppcls INFO: [Train][Epoch 3/32][Iter: 0/16]lr(LinearWarmup): 0.00123809, CELoss: 3.44575, loss: 3.44575, batch_cost: 2.33164s, reader_cost: 2.02626, ips: 27.44845 samples/s, eta: 0:18:39
+[2026/11/20 05:28:32] ppcls INFO: [Train][Epoch 3/32][Iter: 1/16]lr(LinearWarmup): 0.00127557, CELoss: 3.94018, loss: 3.94018, batch_cost: 0.28795s, reader_cost: 0.00053, ips: 222.25783 samples/s, eta: 0:02:17
+[2026/11/20 05:28:32] ppcls INFO: [Train][Epoch 3/32][Iter: 2/16]lr(LinearWarmup): 0.00131306, CELoss: 3.93944, loss: 3.93944, batch_cost: 0.31022s, reader_cost: 0.00053, ips: 206.30790 samples/s, eta: 0:02:28
+[2026/11/20 05:28:32] ppcls INFO: [Train][Epoch 3/32][Iter: 3/16]lr(LinearWarmup): 0.00135055, CELoss: 4.00010, loss: 4.00010, batch_cost: 0.23665s, reader_cost: 0.00028, ips: 270.44186 samples/s, eta: 0:01:52
+[2026/11/20 05:28:33] ppcls INFO: [Train][Epoch 3/32][Iter: 4/16]lr(LinearWarmup): 0.00138804, CELoss: 4.03837, loss: 4.03837, batch_cost: 0.40009s, reader_cost: 0.00033, ips: 159.96211 samples/s, eta: 0:03:10
+[2026/11/20 05:28:33] ppcls INFO: [Train][Epoch 3/32][Iter: 5/16]lr(LinearWarmup): 0.00142552, CELoss: 3.99622, loss: 3.99622, batch_cost: 0.23488s, reader_cost: 0.00059, ips: 272.47905 samples/s, eta: 0:01:51
+[2026/11/20 05:28:33] ppcls INFO: [Train][Epoch 3/32][Iter: 6/16]lr(LinearWarmup): 0.00146301, CELoss: 4.02697, loss: 4.02697, batch_cost: 0.28830s, reader_cost: 0.00033, ips: 221.99371 samples/s, eta: 0:02:16
+[2026/11/20 05:28:34] ppcls INFO: [Train][Epoch 3/32][Iter: 7/16]lr(LinearWarmup): 0.00150050, CELoss: 3.97574, loss: 3.97574, batch_cost: 0.30703s, reader_cost: 0.00046, ips: 208.45130 samples/s, eta: 0:02:25
+[2026/11/20 05:28:34] ppcls INFO: [Train][Epoch 3/32][Iter: 8/16]lr(LinearWarmup): 0.00153799, CELoss: 3.97863, loss: 3.97863, batch_cost: 0.27904s, reader_cost: 0.00035, ips: 229.35850 samples/s, eta: 0:02:11
+[2026/11/20 05:28:34] ppcls INFO: [Train][Epoch 3/32][Iter: 9/16]lr(LinearWarmup): 0.00157547, CELoss: 3.93124, loss: 3.93124, batch_cost: 0.25786s, reader_cost: 0.00026, ips: 248.19491 samples/s, eta: 0:02:01
+[2026/11/20 05:28:34] ppcls INFO: [Train][Epoch 3/32][Iter: 10/16]lr(LinearWarmup): 0.00161296, CELoss: 3.89134, loss: 3.89134, batch_cost: 0.27818s, reader_cost: 0.00026, ips: 230.06302 samples/s, eta: 0:02:10
+[2026/11/20 05:28:35] ppcls INFO: [Train][Epoch 3/32][Iter: 11/16]lr(LinearWarmup): 0.00165045, CELoss: 3.88144, loss: 3.88144, batch_cost: 0.22534s, reader_cost: 0.00043, ips: 284.01991 samples/s, eta: 0:01:45
+[2026/11/20 05:28:35] ppcls INFO: [Train][Epoch 3/32][Iter: 12/16]lr(LinearWarmup): 0.00168794, CELoss: 3.82911, loss: 3.82911, batch_cost: 0.22396s, reader_cost: 0.00023, ips: 285.76937 samples/s, eta: 0:01:44
+[2026/11/20 05:28:35] ppcls INFO: [Train][Epoch 3/32][Iter: 13/16]lr(LinearWarmup): 0.00172542, CELoss: 3.82968, loss: 3.82968, batch_cost: 0.22505s, reader_cost: 0.00022, ips: 284.37646 samples/s, eta: 0:01:45
+[2026/11/20 05:28:35] ppcls INFO: [Train][Epoch 3/32][Iter: 14/16]lr(LinearWarmup): 0.00176291, CELoss: 3.84152, loss: 3.84152, batch_cost: 0.21179s, reader_cost: 0.00022, ips: 302.18431 samples/s, eta: 0:01:38
+[2026/11/20 05:28:35] ppcls INFO: [Train][Epoch 3/32][Iter: 15/16]lr(LinearWarmup): 0.00180040, CELoss: 3.85999, loss: 3.85999, batch_cost: 0.20434s, reader_cost: 0.00049, ips: 293.62281 samples/s, eta: 0:01:35
+[2026/11/20 05:28:36] ppcls INFO: [Train][Epoch 3/32][Avg]CELoss: 3.85999, loss: 3.85999
+[2026/11/20 05:28:36] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:28:36] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:28:39] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:28:39] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:28:42] ppcls INFO: [Train][Epoch 4/32][Iter: 0/16]lr(LinearWarmup): 0.00183789, CELoss: 3.11302, loss: 3.11302, batch_cost: 2.10858s, reader_cost: 1.89256, ips: 30.35223 samples/s, eta: 0:16:18
+[2026/11/20 05:28:42] ppcls INFO: [Train][Epoch 4/32][Iter: 1/16]lr(LinearWarmup): 0.00187537, CELoss: 3.24297, loss: 3.24297, batch_cost: 0.31608s, reader_cost: 0.00051, ips: 202.47849 samples/s, eta: 0:02:26
+[2026/11/20 05:28:42] ppcls INFO: [Train][Epoch 4/32][Iter: 2/16]lr(LinearWarmup): 0.00191286, CELoss: 3.26175, loss: 3.26175, batch_cost: 0.43842s, reader_cost: 0.00040, ips: 145.97856 samples/s, eta: 0:03:22
+[2026/11/20 05:28:43] ppcls INFO: [Train][Epoch 4/32][Iter: 3/16]lr(LinearWarmup): 0.00195035, CELoss: 3.27520, loss: 3.27520, batch_cost: 0.22802s, reader_cost: 0.00043, ips: 280.67572 samples/s, eta: 0:01:45
+[2026/11/20 05:28:43] ppcls INFO: [Train][Epoch 4/32][Iter: 4/16]lr(LinearWarmup): 0.00198784, CELoss: 3.48075, loss: 3.48075, batch_cost: 0.33432s, reader_cost: 0.00038, ips: 191.43182 samples/s, eta: 0:02:33
+[2026/11/20 05:28:43] ppcls INFO: [Train][Epoch 4/32][Iter: 5/16]lr(LinearWarmup): 0.00202533, CELoss: 3.56005, loss: 3.56005, batch_cost: 0.31724s, reader_cost: 0.00059, ips: 201.74107 samples/s, eta: 0:02:25
+[2026/11/20 05:28:43] ppcls INFO: [Train][Epoch 4/32][Iter: 6/16]lr(LinearWarmup): 0.00206281, CELoss: 3.69424, loss: 3.69424, batch_cost: 0.22717s, reader_cost: 0.00032, ips: 281.72410 samples/s, eta: 0:01:44
+[2026/11/20 05:28:44] ppcls INFO: [Train][Epoch 4/32][Iter: 7/16]lr(LinearWarmup): 0.00210030, CELoss: 3.70072, loss: 3.70072, batch_cost: 0.22753s, reader_cost: 0.00061, ips: 281.27716 samples/s, eta: 0:01:43
+[2026/11/20 05:28:44] ppcls INFO: [Train][Epoch 4/32][Iter: 8/16]lr(LinearWarmup): 0.00213779, CELoss: 3.67345, loss: 3.67345, batch_cost: 0.30312s, reader_cost: 0.00073, ips: 211.13459 samples/s, eta: 0:02:18
+[2026/11/20 05:28:44] ppcls INFO: [Train][Epoch 4/32][Iter: 9/16]lr(LinearWarmup): 0.00217527, CELoss: 3.69386, loss: 3.69386, batch_cost: 0.33500s, reader_cost: 0.00041, ips: 191.04475 samples/s, eta: 0:02:32
+[2026/11/20 05:28:45] ppcls INFO: [Train][Epoch 4/32][Iter: 10/16]lr(LinearWarmup): 0.00221276, CELoss: 3.75231, loss: 3.75231, batch_cost: 0.22317s, reader_cost: 0.00033, ips: 286.77531 samples/s, eta: 0:01:41
+[2026/11/20 05:28:45] ppcls INFO: [Train][Epoch 4/32][Iter: 11/16]lr(LinearWarmup): 0.00225025, CELoss: 3.76856, loss: 3.76856, batch_cost: 0.22070s, reader_cost: 0.00051, ips: 289.98136 samples/s, eta: 0:01:39
+[2026/11/20 05:28:45] ppcls INFO: [Train][Epoch 4/32][Iter: 12/16]lr(LinearWarmup): 0.00228774, CELoss: 3.80465, loss: 3.80465, batch_cost: 0.22187s, reader_cost: 0.00022, ips: 288.45201 samples/s, eta: 0:01:40
+[2026/11/20 05:28:45] ppcls INFO: [Train][Epoch 4/32][Iter: 13/16]lr(LinearWarmup): 0.00232523, CELoss: 3.84722, loss: 3.84722, batch_cost: 0.22479s, reader_cost: 0.00048, ips: 284.71458 samples/s, eta: 0:01:41
+[2026/11/20 05:28:45] ppcls INFO: [Train][Epoch 4/32][Iter: 14/16]lr(LinearWarmup): 0.00236271, CELoss: 3.87371, loss: 3.87371, batch_cost: 0.21095s, reader_cost: 0.00025, ips: 303.39129 samples/s, eta: 0:01:34
+[2026/11/20 05:28:46] ppcls INFO: [Train][Epoch 4/32][Iter: 15/16]lr(LinearWarmup): 0.00240020, CELoss: 3.89161, loss: 3.89161, batch_cost: 0.20410s, reader_cost: 0.00022, ips: 293.97061 samples/s, eta: 0:01:31
+[2026/11/20 05:28:46] ppcls INFO: [Train][Epoch 4/32][Avg]CELoss: 3.89161, loss: 3.89161
+[2026/11/20 05:28:46] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:28:46] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:28:49] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:28:49] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:28:52] ppcls INFO: [Train][Epoch 5/32][Iter: 0/16]lr(LinearWarmup): 0.00243769, CELoss: 4.66941, loss: 4.66941, batch_cost: 2.22211s, reader_cost: 1.76278, ips: 28.80150 samples/s, eta: 0:16:35
+[2026/11/20 05:28:52] ppcls INFO: [Train][Epoch 5/32][Iter: 1/16]lr(LinearWarmup): 0.00247518, CELoss: 4.41671, loss: 4.41671, batch_cost: 0.32674s, reader_cost: 0.00054, ips: 195.87352 samples/s, eta: 0:02:26
+[2026/11/20 05:28:52] ppcls INFO: [Train][Epoch 5/32][Iter: 2/16]lr(LinearWarmup): 0.00251266, CELoss: 4.48070, loss: 4.48070, batch_cost: 0.33036s, reader_cost: 0.00695, ips: 193.72753 samples/s, eta: 0:02:27
+[2026/11/20 05:28:53] ppcls INFO: [Train][Epoch 5/32][Iter: 3/16]lr(LinearWarmup): 0.00255015, CELoss: 4.43538, loss: 4.43538, batch_cost: 0.33236s, reader_cost: 0.00038, ips: 192.56130 samples/s, eta: 0:02:27
+[2026/11/20 05:28:53] ppcls INFO: [Train][Epoch 5/32][Iter: 4/16]lr(LinearWarmup): 0.00258764, CELoss: 4.46003, loss: 4.46003, batch_cost: 0.27236s, reader_cost: 0.00031, ips: 234.97995 samples/s, eta: 0:02:00
+[2026/11/20 05:28:53] ppcls INFO: [Train][Epoch 5/32][Iter: 5/16]lr(LinearWarmup): 0.00262513, CELoss: 4.44460, loss: 4.44460, batch_cost: 0.25820s, reader_cost: 0.00064, ips: 247.87085 samples/s, eta: 0:01:54
+[2026/11/20 05:28:54] ppcls INFO: [Train][Epoch 5/32][Iter: 6/16]lr(LinearWarmup): 0.00266261, CELoss: 4.48009, loss: 4.48009, batch_cost: 0.32172s, reader_cost: 0.00037, ips: 198.93052 samples/s, eta: 0:02:22
+[2026/11/20 05:28:54] ppcls INFO: [Train][Epoch 5/32][Iter: 7/16]lr(LinearWarmup): 0.00270010, CELoss: 4.50165, loss: 4.50165, batch_cost: 0.25674s, reader_cost: 0.00078, ips: 249.28073 samples/s, eta: 0:01:53
+[2026/11/20 05:28:54] ppcls INFO: [Train][Epoch 5/32][Iter: 8/16]lr(LinearWarmup): 0.00273759, CELoss: 4.48446, loss: 4.48446, batch_cost: 0.25963s, reader_cost: 0.00046, ips: 246.50400 samples/s, eta: 0:01:54
+[2026/11/20 05:28:54] ppcls INFO: [Train][Epoch 5/32][Iter: 9/16]lr(LinearWarmup): 0.00277508, CELoss: 4.51007, loss: 4.51007, batch_cost: 0.27279s, reader_cost: 0.00058, ips: 234.60987 samples/s, eta: 0:01:59
+[2026/11/20 05:28:55] ppcls INFO: [Train][Epoch 5/32][Iter: 10/16]lr(LinearWarmup): 0.00281256, CELoss: 4.53196, loss: 4.53196, batch_cost: 0.22477s, reader_cost: 0.00027, ips: 284.73904 samples/s, eta: 0:01:38
+[2026/11/20 05:28:55] ppcls INFO: [Train][Epoch 5/32][Iter: 11/16]lr(LinearWarmup): 0.00285005, CELoss: 4.51394, loss: 4.51394, batch_cost: 0.22667s, reader_cost: 0.00056, ips: 282.34876 samples/s, eta: 0:01:39
+[2026/11/20 05:28:55] ppcls INFO: [Train][Epoch 5/32][Iter: 12/16]lr(LinearWarmup): 0.00288754, CELoss: 4.52052, loss: 4.52052, batch_cost: 0.22318s, reader_cost: 0.00024, ips: 286.75907 samples/s, eta: 0:01:37
+[2026/11/20 05:28:55] ppcls INFO: [Train][Epoch 5/32][Iter: 13/16]lr(LinearWarmup): 0.00292502, CELoss: 4.50319, loss: 4.50319, batch_cost: 0.22454s, reader_cost: 0.00024, ips: 285.03171 samples/s, eta: 0:01:37
+[2026/11/20 05:28:55] ppcls INFO: [Train][Epoch 5/32][Iter: 14/16]lr(LinearWarmup): 0.00296251, CELoss: 4.50699, loss: 4.50699, batch_cost: 0.21114s, reader_cost: 0.00025, ips: 303.11140 samples/s, eta: 0:01:31
+[2026/11/20 05:28:56] ppcls INFO: [Train][Epoch 5/32][Iter: 15/16]lr(LinearWarmup): 0.00300000, CELoss: 4.50605, loss: 4.50605, batch_cost: 0.20424s, reader_cost: 0.00050, ips: 293.77534 samples/s, eta: 0:01:28
+[2026/11/20 05:28:56] ppcls INFO: [Train][Epoch 5/32][Avg]CELoss: 4.50605, loss: 4.50605
+[2026/11/20 05:28:56] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:28:56] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:28:59] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:29:00] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:29:02] ppcls INFO: [Train][Epoch 6/32][Iter: 0/16]lr(LinearWarmup): 0.00299996, CELoss: 4.53783, loss: 4.53783, batch_cost: 2.27129s, reader_cost: 1.80554, ips: 28.17784 samples/s, eta: 0:16:21
+[2026/11/20 05:29:02] ppcls INFO: [Train][Epoch 6/32][Iter: 1/16]lr(LinearWarmup): 0.00299984, CELoss: 4.47501, loss: 4.47501, batch_cost: 0.30588s, reader_cost: 0.00067, ips: 209.23510 samples/s, eta: 0:02:11
+[2026/11/20 05:29:03] ppcls INFO: [Train][Epoch 6/32][Iter: 2/16]lr(LinearWarmup): 0.00299964, CELoss: 4.41793, loss: 4.41793, batch_cost: 0.39304s, reader_cost: 0.00721, ips: 162.83352 samples/s, eta: 0:02:49
+[2026/11/20 05:29:03] ppcls INFO: [Train][Epoch 6/32][Iter: 3/16]lr(LinearWarmup): 0.00299937, CELoss: 4.33207, loss: 4.33207, batch_cost: 0.44214s, reader_cost: 0.00079, ips: 144.74909 samples/s, eta: 0:03:09
+[2026/11/20 05:29:03] ppcls INFO: [Train][Epoch 6/32][Iter: 4/16]lr(LinearWarmup): 0.00299901, CELoss: 4.33718, loss: 4.33718, batch_cost: 0.22699s, reader_cost: 0.00037, ips: 281.94751 samples/s, eta: 0:01:37
+[2026/11/20 05:29:04] ppcls INFO: [Train][Epoch 6/32][Iter: 5/16]lr(LinearWarmup): 0.00299858, CELoss: 4.27878, loss: 4.27878, batch_cost: 0.32381s, reader_cost: 0.01440, ips: 197.64380 samples/s, eta: 0:02:18
+[2026/11/20 05:29:04] ppcls INFO: [Train][Epoch 6/32][Iter: 6/16]lr(LinearWarmup): 0.00299806, CELoss: 4.30154, loss: 4.30154, batch_cost: 0.29447s, reader_cost: 0.00029, ips: 217.33993 samples/s, eta: 0:02:05
+[2026/11/20 05:29:04] ppcls INFO: [Train][Epoch 6/32][Iter: 7/16]lr(LinearWarmup): 0.00299747, CELoss: 4.23088, loss: 4.23088, batch_cost: 0.27959s, reader_cost: 0.00071, ips: 228.90729 samples/s, eta: 0:01:58
+[2026/11/20 05:29:04] ppcls INFO: [Train][Epoch 6/32][Iter: 8/16]lr(LinearWarmup): 0.00299680, CELoss: 4.24313, loss: 4.24313, batch_cost: 0.32392s, reader_cost: 0.00044, ips: 197.57921 samples/s, eta: 0:02:17
+[2026/11/20 05:29:05] ppcls INFO: [Train][Epoch 6/32][Iter: 9/16]lr(LinearWarmup): 0.00299605, CELoss: 4.25004, loss: 4.25004, batch_cost: 0.25855s, reader_cost: 0.00069, ips: 247.53029 samples/s, eta: 0:01:49
+[2026/11/20 05:29:05] ppcls INFO: [Train][Epoch 6/32][Iter: 10/16]lr(LinearWarmup): 0.00299522, CELoss: 4.25071, loss: 4.25071, batch_cost: 0.23057s, reader_cost: 0.00030, ips: 277.57001 samples/s, eta: 0:01:37
+[2026/11/20 05:29:05] ppcls INFO: [Train][Epoch 6/32][Iter: 11/16]lr(LinearWarmup): 0.00299431, CELoss: 4.25957, loss: 4.25957, batch_cost: 0.22715s, reader_cost: 0.00029, ips: 281.75101 samples/s, eta: 0:01:35
+[2026/11/20 05:29:05] ppcls INFO: [Train][Epoch 6/32][Iter: 12/16]lr(LinearWarmup): 0.00299332, CELoss: 4.22665, loss: 4.22665, batch_cost: 0.22591s, reader_cost: 0.00096, ips: 283.30291 samples/s, eta: 0:01:34
+[2026/11/20 05:29:06] ppcls INFO: [Train][Epoch 6/32][Iter: 13/16]lr(LinearWarmup): 0.00299226, CELoss: 4.23716, loss: 4.23716, batch_cost: 0.22569s, reader_cost: 0.00025, ips: 283.57585 samples/s, eta: 0:01:34
+[2026/11/20 05:29:06] ppcls INFO: [Train][Epoch 6/32][Iter: 14/16]lr(LinearWarmup): 0.00299111, CELoss: 4.23914, loss: 4.23914, batch_cost: 0.21202s, reader_cost: 0.00026, ips: 301.85605 samples/s, eta: 0:01:28
+[2026/11/20 05:29:06] ppcls INFO: [Train][Epoch 6/32][Iter: 15/16]lr(LinearWarmup): 0.00298989, CELoss: 4.23520, loss: 4.23520, batch_cost: 0.20537s, reader_cost: 0.00063, ips: 292.16248 samples/s, eta: 0:01:25
+[2026/11/20 05:29:06] ppcls INFO: [Train][Epoch 6/32][Avg]CELoss: 4.23520, loss: 4.23520
+[2026/11/20 05:29:07] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:29:07] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:29:10] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:29:10] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:29:13] ppcls INFO: [Train][Epoch 7/32][Iter: 0/16]lr(LinearWarmup): 0.00298859, CELoss: 3.86666, loss: 3.86666, batch_cost: 2.37739s, reader_cost: 2.04706, ips: 26.92028 samples/s, eta: 0:16:28
+[2026/11/20 05:29:13] ppcls INFO: [Train][Epoch 7/32][Iter: 1/16]lr(LinearWarmup): 0.00298721, CELoss: 3.79028, loss: 3.79028, batch_cost: 0.27333s, reader_cost: 0.00058, ips: 234.14534 samples/s, eta: 0:01:53
+[2026/11/20 05:29:13] ppcls INFO: [Train][Epoch 7/32][Iter: 2/16]lr(LinearWarmup): 0.00298575, CELoss: 3.82306, loss: 3.82306, batch_cost: 0.43143s, reader_cost: 0.00055, ips: 148.34352 samples/s, eta: 0:02:58
+[2026/11/20 05:29:14] ppcls INFO: [Train][Epoch 7/32][Iter: 3/16]lr(LinearWarmup): 0.00298422, CELoss: 3.78870, loss: 3.78870, batch_cost: 0.42400s, reader_cost: 0.00082, ips: 150.94347 samples/s, eta: 0:02:55
+[2026/11/20 05:29:14] ppcls INFO: [Train][Epoch 7/32][Iter: 4/16]lr(LinearWarmup): 0.00298260, CELoss: 3.89243, loss: 3.89243, batch_cost: 0.23093s, reader_cost: 0.00038, ips: 277.13786 samples/s, eta: 0:01:35
+[2026/11/20 05:29:14] ppcls INFO: [Train][Epoch 7/32][Iter: 5/16]lr(LinearWarmup): 0.00298091, CELoss: 3.97621, loss: 3.97621, batch_cost: 0.26202s, reader_cost: 0.00034, ips: 244.25584 samples/s, eta: 0:01:47
+[2026/11/20 05:29:14] ppcls INFO: [Train][Epoch 7/32][Iter: 6/16]lr(LinearWarmup): 0.00297914, CELoss: 3.95559, loss: 3.95559, batch_cost: 0.22509s, reader_cost: 0.00031, ips: 284.33038 samples/s, eta: 0:01:32
+[2026/11/20 05:29:15] ppcls INFO: [Train][Epoch 7/32][Iter: 7/16]lr(LinearWarmup): 0.00297729, CELoss: 3.91365, loss: 3.91365, batch_cost: 0.38579s, reader_cost: 0.00698, ips: 165.89239 samples/s, eta: 0:02:37
+[2026/11/20 05:29:15] ppcls INFO: [Train][Epoch 7/32][Iter: 8/16]lr(LinearWarmup): 0.00297536, CELoss: 3.90822, loss: 3.90822, batch_cost: 0.25293s, reader_cost: 0.00035, ips: 253.03833 samples/s, eta: 0:01:43
+[2026/11/20 05:29:15] ppcls INFO: [Train][Epoch 7/32][Iter: 9/16]lr(LinearWarmup): 0.00297336, CELoss: 3.83587, loss: 3.83587, batch_cost: 0.26945s, reader_cost: 0.00032, ips: 237.52113 samples/s, eta: 0:01:49
+[2026/11/20 05:29:16] ppcls INFO: [Train][Epoch 7/32][Iter: 10/16]lr(LinearWarmup): 0.00297127, CELoss: 3.81847, loss: 3.81847, batch_cost: 0.22285s, reader_cost: 0.00024, ips: 287.18336 samples/s, eta: 0:01:30
+[2026/11/20 05:29:16] ppcls INFO: [Train][Epoch 7/32][Iter: 11/16]lr(LinearWarmup): 0.00296911, CELoss: 3.79569, loss: 3.79569, batch_cost: 0.22401s, reader_cost: 0.00024, ips: 285.70641 samples/s, eta: 0:01:30
+[2026/11/20 05:29:16] ppcls INFO: [Train][Epoch 7/32][Iter: 12/16]lr(LinearWarmup): 0.00296688, CELoss: 3.81523, loss: 3.81523, batch_cost: 0.22312s, reader_cost: 0.00029, ips: 286.83844 samples/s, eta: 0:01:30
+[2026/11/20 05:29:16] ppcls INFO: [Train][Epoch 7/32][Iter: 13/16]lr(LinearWarmup): 0.00296456, CELoss: 3.83763, loss: 3.83763, batch_cost: 0.22593s, reader_cost: 0.00023, ips: 283.27182 samples/s, eta: 0:01:31
+[2026/11/20 05:29:17] ppcls INFO: [Train][Epoch 7/32][Iter: 14/16]lr(LinearWarmup): 0.00296217, CELoss: 3.85701, loss: 3.85701, batch_cost: 0.21108s, reader_cost: 0.00024, ips: 303.20350 samples/s, eta: 0:01:24
+[2026/11/20 05:29:17] ppcls INFO: [Train][Epoch 7/32][Iter: 15/16]lr(LinearWarmup): 0.00295970, CELoss: 3.85090, loss: 3.85090, batch_cost: 0.20479s, reader_cost: 0.00024, ips: 292.98903 samples/s, eta: 0:01:22
+[2026/11/20 05:29:17] ppcls INFO: [Train][Epoch 7/32][Avg]CELoss: 3.85090, loss: 3.85090
+[2026/11/20 05:29:17] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:29:18] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:29:21] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:29:21] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:29:23] ppcls INFO: [Train][Epoch 8/32][Iter: 0/16]lr(LinearWarmup): 0.00295716, CELoss: 4.03809, loss: 4.03809, batch_cost: 2.35515s, reader_cost: 2.05922, ips: 27.17455 samples/s, eta: 0:15:42
+[2026/11/20 05:29:24] ppcls INFO: [Train][Epoch 8/32][Iter: 1/16]lr(LinearWarmup): 0.00295453, CELoss: 3.81832, loss: 3.81832, batch_cost: 0.44870s, reader_cost: 0.00093, ips: 142.63300 samples/s, eta: 0:02:59
+[2026/11/20 05:29:24] ppcls INFO: [Train][Epoch 8/32][Iter: 2/16]lr(LinearWarmup): 0.00295183, CELoss: 3.62708, loss: 3.62708, batch_cost: 0.22797s, reader_cost: 0.00039, ips: 280.74030 samples/s, eta: 0:01:30
+[2026/11/20 05:29:24] ppcls INFO: [Train][Epoch 8/32][Iter: 3/16]lr(LinearWarmup): 0.00294906, CELoss: 3.77449, loss: 3.77449, batch_cost: 0.34121s, reader_cost: 0.00730, ips: 187.56613 samples/s, eta: 0:02:15
+[2026/11/20 05:29:25] ppcls INFO: [Train][Epoch 8/32][Iter: 4/16]lr(LinearWarmup): 0.00294621, CELoss: 3.67057, loss: 3.67057, batch_cost: 0.26767s, reader_cost: 0.00054, ips: 239.09727 samples/s, eta: 0:01:45
+[2026/11/20 05:29:25] ppcls INFO: [Train][Epoch 8/32][Iter: 5/16]lr(LinearWarmup): 0.00294328, CELoss: 3.73178, loss: 3.73178, batch_cost: 0.26059s, reader_cost: 0.00041, ips: 245.59534 samples/s, eta: 0:01:42
+[2026/11/20 05:29:25] ppcls INFO: [Train][Epoch 8/32][Iter: 6/16]lr(LinearWarmup): 0.00294027, CELoss: 3.78454, loss: 3.78454, batch_cost: 0.22796s, reader_cost: 0.00040, ips: 280.74500 samples/s, eta: 0:01:29
+[2026/11/20 05:29:25] ppcls INFO: [Train][Epoch 8/32][Iter: 7/16]lr(LinearWarmup): 0.00293719, CELoss: 3.82647, loss: 3.82647, batch_cost: 0.38956s, reader_cost: 0.00688, ips: 164.28993 samples/s, eta: 0:02:33
+[2026/11/20 05:29:26] ppcls INFO: [Train][Epoch 8/32][Iter: 8/16]lr(LinearWarmup): 0.00293404, CELoss: 3.84073, loss: 3.84073, batch_cost: 0.23641s, reader_cost: 0.00071, ips: 270.71488 samples/s, eta: 0:01:32
+[2026/11/20 05:29:26] ppcls INFO: [Train][Epoch 8/32][Iter: 9/16]lr(LinearWarmup): 0.00293081, CELoss: 3.73184, loss: 3.73184, batch_cost: 0.29813s, reader_cost: 0.00028, ips: 214.67211 samples/s, eta: 0:01:56
+[2026/11/20 05:29:26] ppcls INFO: [Train][Epoch 8/32][Iter: 10/16]lr(LinearWarmup): 0.00292750, CELoss: 3.76945, loss: 3.76945, batch_cost: 0.22534s, reader_cost: 0.00027, ips: 284.01450 samples/s, eta: 0:01:27
+[2026/11/20 05:29:26] ppcls INFO: [Train][Epoch 8/32][Iter: 11/16]lr(LinearWarmup): 0.00292412, CELoss: 3.70548, loss: 3.70548, batch_cost: 0.22440s, reader_cost: 0.00026, ips: 285.20494 samples/s, eta: 0:01:27
+[2026/11/20 05:29:27] ppcls INFO: [Train][Epoch 8/32][Iter: 12/16]lr(LinearWarmup): 0.00292066, CELoss: 3.63320, loss: 3.63320, batch_cost: 0.22800s, reader_cost: 0.00028, ips: 280.70331 samples/s, eta: 0:01:28
+[2026/11/20 05:29:27] ppcls INFO: [Train][Epoch 8/32][Iter: 13/16]lr(LinearWarmup): 0.00291713, CELoss: 3.58317, loss: 3.58317, batch_cost: 0.22676s, reader_cost: 0.00022, ips: 282.23328 samples/s, eta: 0:01:27
+[2026/11/20 05:29:27] ppcls INFO: [Train][Epoch 8/32][Iter: 14/16]lr(LinearWarmup): 0.00291352, CELoss: 3.61897, loss: 3.61897, batch_cost: 0.21469s, reader_cost: 0.00021, ips: 298.09733 samples/s, eta: 0:01:22
+[2026/11/20 05:29:27] ppcls INFO: [Train][Epoch 8/32][Iter: 15/16]lr(LinearWarmup): 0.00290984, CELoss: 3.64780, loss: 3.64780, batch_cost: 0.20510s, reader_cost: 0.00027, ips: 292.53674 samples/s, eta: 0:01:18
+[2026/11/20 05:29:27] ppcls INFO: [Train][Epoch 8/32][Avg]CELoss: 3.64780, loss: 3.64780
+[2026/11/20 05:29:28] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:29:28] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:29:31] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:29:31] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:29:34] ppcls INFO: [Train][Epoch 9/32][Iter: 0/16]lr(LinearWarmup): 0.00290608, CELoss: 2.84984, loss: 2.84984, batch_cost: 2.61091s, reader_cost: 1.91817, ips: 24.51252 samples/s, eta: 0:16:42
+[2026/11/20 05:29:34] ppcls INFO: [Train][Epoch 9/32][Iter: 1/16]lr(LinearWarmup): 0.00290226, CELoss: 3.34013, loss: 3.34013, batch_cost: 0.33334s, reader_cost: 0.00215, ips: 191.99702 samples/s, eta: 0:02:07
+[2026/11/20 05:29:34] ppcls INFO: [Train][Epoch 9/32][Iter: 2/16]lr(LinearWarmup): 0.00289835, CELoss: 3.19036, loss: 3.19036, batch_cost: 0.27231s, reader_cost: 0.00031, ips: 235.02686 samples/s, eta: 0:01:44
+[2026/11/20 05:29:35] ppcls INFO: [Train][Epoch 9/32][Iter: 3/16]lr(LinearWarmup): 0.00289437, CELoss: 3.07994, loss: 3.07994, batch_cost: 0.30907s, reader_cost: 0.00036, ips: 207.07356 samples/s, eta: 0:01:57
+[2026/11/20 05:29:35] ppcls INFO: [Train][Epoch 9/32][Iter: 4/16]lr(LinearWarmup): 0.00289032, CELoss: 3.23468, loss: 3.23468, batch_cost: 0.34910s, reader_cost: 0.00034, ips: 183.33025 samples/s, eta: 0:02:12
+[2026/11/20 05:29:35] ppcls INFO: [Train][Epoch 9/32][Iter: 5/16]lr(LinearWarmup): 0.00288620, CELoss: 3.17743, loss: 3.17743, batch_cost: 0.27263s, reader_cost: 0.00050, ips: 234.75206 samples/s, eta: 0:01:43
+[2026/11/20 05:29:36] ppcls INFO: [Train][Epoch 9/32][Iter: 6/16]lr(LinearWarmup): 0.00288200, CELoss: 3.26860, loss: 3.26860, batch_cost: 0.23924s, reader_cost: 0.00037, ips: 267.51627 samples/s, eta: 0:01:30
+[2026/11/20 05:29:36] ppcls INFO: [Train][Epoch 9/32][Iter: 7/16]lr(LinearWarmup): 0.00287773, CELoss: 3.37524, loss: 3.37524, batch_cost: 0.33733s, reader_cost: 0.00034, ips: 189.72634 samples/s, eta: 0:02:07
+[2026/11/20 05:29:36] ppcls INFO: [Train][Epoch 9/32][Iter: 8/16]lr(LinearWarmup): 0.00287339, CELoss: 3.43047, loss: 3.43047, batch_cost: 0.25298s, reader_cost: 0.00055, ips: 252.98562 samples/s, eta: 0:01:35
+[2026/11/20 05:29:37] ppcls INFO: [Train][Epoch 9/32][Iter: 9/16]lr(LinearWarmup): 0.00286898, CELoss: 3.45019, loss: 3.45019, batch_cost: 0.29825s, reader_cost: 0.00711, ips: 214.58597 samples/s, eta: 0:01:51
+[2026/11/20 05:29:37] ppcls INFO: [Train][Epoch 9/32][Iter: 10/16]lr(LinearWarmup): 0.00286449, CELoss: 3.48408, loss: 3.48408, batch_cost: 0.22044s, reader_cost: 0.00027, ips: 290.32761 samples/s, eta: 0:01:22
+[2026/11/20 05:29:37] ppcls INFO: [Train][Epoch 9/32][Iter: 11/16]lr(LinearWarmup): 0.00285993, CELoss: 3.49039, loss: 3.49039, batch_cost: 0.21964s, reader_cost: 0.00027, ips: 291.39158 samples/s, eta: 0:01:21
+[2026/11/20 05:29:37] ppcls INFO: [Train][Epoch 9/32][Iter: 12/16]lr(LinearWarmup): 0.00285530, CELoss: 3.51721, loss: 3.51721, batch_cost: 0.21809s, reader_cost: 0.00027, ips: 293.45034 samples/s, eta: 0:01:21
+[2026/11/20 05:29:37] ppcls INFO: [Train][Epoch 9/32][Iter: 13/16]lr(LinearWarmup): 0.00285060, CELoss: 3.52818, loss: 3.52818, batch_cost: 0.22690s, reader_cost: 0.00027, ips: 282.05831 samples/s, eta: 0:01:24
+[2026/11/20 05:29:38] ppcls INFO: [Train][Epoch 9/32][Iter: 14/16]lr(LinearWarmup): 0.00284582, CELoss: 3.55066, loss: 3.55066, batch_cost: 0.21712s, reader_cost: 0.00023, ips: 294.76667 samples/s, eta: 0:01:20
+[2026/11/20 05:29:38] ppcls INFO: [Train][Epoch 9/32][Iter: 15/16]lr(LinearWarmup): 0.00284098, CELoss: 3.56635, loss: 3.56635, batch_cost: 0.20705s, reader_cost: 0.00029, ips: 289.78129 samples/s, eta: 0:01:16
+[2026/11/20 05:29:38] ppcls INFO: [Train][Epoch 9/32][Avg]CELoss: 3.56635, loss: 3.56635
+[2026/11/20 05:29:39] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:29:39] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:29:42] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:29:42] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:29:45] ppcls INFO: [Train][Epoch 10/32][Iter: 0/16]lr(LinearWarmup): 0.00283607, CELoss: 3.46932, loss: 3.46932, batch_cost: 2.30171s, reader_cost: 2.04616, ips: 27.80543 samples/s, eta: 0:14:07
+[2026/11/20 05:29:45] ppcls INFO: [Train][Epoch 10/32][Iter: 1/16]lr(LinearWarmup): 0.00283108, CELoss: 3.00045, loss: 3.00045, batch_cost: 0.30436s, reader_cost: 0.00015, ips: 210.27786 samples/s, eta: 0:01:51
+[2026/11/20 05:29:45] ppcls INFO: [Train][Epoch 10/32][Iter: 2/16]lr(LinearWarmup): 0.00282603, CELoss: 3.00051, loss: 3.00051, batch_cost: 0.37488s, reader_cost: 0.00044, ips: 170.72061 samples/s, eta: 0:02:17
+[2026/11/20 05:29:46] ppcls INFO: [Train][Epoch 10/32][Iter: 3/16]lr(LinearWarmup): 0.00282090, CELoss: 3.17275, loss: 3.17275, batch_cost: 0.41518s, reader_cost: 0.00056, ips: 154.14834 samples/s, eta: 0:02:31
+[2026/11/20 05:29:46] ppcls INFO: [Train][Epoch 10/32][Iter: 4/16]lr(LinearWarmup): 0.00281571, CELoss: 3.17621, loss: 3.17621, batch_cost: 0.23541s, reader_cost: 0.00051, ips: 271.86256 samples/s, eta: 0:01:25
+[2026/11/20 05:29:46] ppcls INFO: [Train][Epoch 10/32][Iter: 5/16]lr(LinearWarmup): 0.00281044, CELoss: 3.30615, loss: 3.30615, batch_cost: 0.27778s, reader_cost: 0.00042, ips: 230.39771 samples/s, eta: 0:01:40
+[2026/11/20 05:29:47] ppcls INFO: [Train][Epoch 10/32][Iter: 6/16]lr(LinearWarmup): 0.00280511, CELoss: 3.31344, loss: 3.31344, batch_cost: 0.22628s, reader_cost: 0.00031, ips: 282.83397 samples/s, eta: 0:01:21
+[2026/11/20 05:29:47] ppcls INFO: [Train][Epoch 10/32][Iter: 7/16]lr(LinearWarmup): 0.00279971, CELoss: 3.31280, loss: 3.31280, batch_cost: 0.36967s, reader_cost: 0.00040, ips: 173.12642 samples/s, eta: 0:02:13
+[2026/11/20 05:29:47] ppcls INFO: [Train][Epoch 10/32][Iter: 8/16]lr(LinearWarmup): 0.00279424, CELoss: 3.37848, loss: 3.37848, batch_cost: 0.29577s, reader_cost: 0.00050, ips: 216.38458 samples/s, eta: 0:01:46
+[2026/11/20 05:29:48] ppcls INFO: [Train][Epoch 10/32][Iter: 9/16]lr(LinearWarmup): 0.00278870, CELoss: 3.32501, loss: 3.32501, batch_cost: 0.25464s, reader_cost: 0.00037, ips: 251.33794 samples/s, eta: 0:01:31
+[2026/11/20 05:29:48] ppcls INFO: [Train][Epoch 10/32][Iter: 10/16]lr(LinearWarmup): 0.00278309, CELoss: 3.36943, loss: 3.36943, batch_cost: 0.22531s, reader_cost: 0.00022, ips: 284.04696 samples/s, eta: 0:01:20
+[2026/11/20 05:29:48] ppcls INFO: [Train][Epoch 10/32][Iter: 11/16]lr(LinearWarmup): 0.00277742, CELoss: 3.32976, loss: 3.32976, batch_cost: 0.22554s, reader_cost: 0.00023, ips: 283.76771 samples/s, eta: 0:01:20
+[2026/11/20 05:29:48] ppcls INFO: [Train][Epoch 10/32][Iter: 12/16]lr(LinearWarmup): 0.00277168, CELoss: 3.31730, loss: 3.31730, batch_cost: 0.23436s, reader_cost: 0.00020, ips: 273.08806 samples/s, eta: 0:01:23
+[2026/11/20 05:29:48] ppcls INFO: [Train][Epoch 10/32][Iter: 13/16]lr(LinearWarmup): 0.00276587, CELoss: 3.33777, loss: 3.33777, batch_cost: 0.22670s, reader_cost: 0.00023, ips: 282.30897 samples/s, eta: 0:01:20
+[2026/11/20 05:29:49] ppcls INFO: [Train][Epoch 10/32][Iter: 14/16]lr(LinearWarmup): 0.00276000, CELoss: 3.38433, loss: 3.38433, batch_cost: 0.21273s, reader_cost: 0.00022, ips: 300.84926 samples/s, eta: 0:01:15
+[2026/11/20 05:29:49] ppcls INFO: [Train][Epoch 10/32][Iter: 15/16]lr(LinearWarmup): 0.00275405, CELoss: 3.40752, loss: 3.40752, batch_cost: 0.20429s, reader_cost: 0.00022, ips: 293.69512 samples/s, eta: 0:01:12
+[2026/11/20 05:29:49] ppcls INFO: [Train][Epoch 10/32][Avg]CELoss: 3.40752, loss: 3.40752
+[2026/11/20 05:29:50] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:29:50] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:29:53] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:29:53] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:29:55] ppcls INFO: [Train][Epoch 11/32][Iter: 0/16]lr(LinearWarmup): 0.00274805, CELoss: 2.43956, loss: 2.43956, batch_cost: 2.22480s, reader_cost: 1.84588, ips: 28.76662 samples/s, eta: 0:13:03
+[2026/11/20 05:29:56] ppcls INFO: [Train][Epoch 11/32][Iter: 1/16]lr(LinearWarmup): 0.00274197, CELoss: 3.06081, loss: 3.06081, batch_cost: 0.38554s, reader_cost: 0.00961, ips: 166.00185 samples/s, eta: 0:02:15
+[2026/11/20 05:29:56] ppcls INFO: [Train][Epoch 11/32][Iter: 2/16]lr(LinearWarmup): 0.00273584, CELoss: 3.09972, loss: 3.09972, batch_cost: 0.58845s, reader_cost: 0.00039, ips: 108.76110 samples/s, eta: 0:03:25
+[2026/11/20 05:29:56] ppcls INFO: [Train][Epoch 11/32][Iter: 3/16]lr(LinearWarmup): 0.00272963, CELoss: 3.26351, loss: 3.26351, batch_cost: 0.29736s, reader_cost: 0.00038, ips: 215.22945 samples/s, eta: 0:01:43
+[2026/11/20 05:29:57] ppcls INFO: [Train][Epoch 11/32][Iter: 4/16]lr(LinearWarmup): 0.00272336, CELoss: 3.16573, loss: 3.16573, batch_cost: 0.22526s, reader_cost: 0.00037, ips: 284.11400 samples/s, eta: 0:01:18
+[2026/11/20 05:29:57] ppcls INFO: [Train][Epoch 11/32][Iter: 5/16]lr(LinearWarmup): 0.00271703, CELoss: 3.09900, loss: 3.09900, batch_cost: 0.30837s, reader_cost: 0.00032, ips: 207.54233 samples/s, eta: 0:01:47
+[2026/11/20 05:29:57] ppcls INFO: [Train][Epoch 11/32][Iter: 6/16]lr(LinearWarmup): 0.00271063, CELoss: 3.20476, loss: 3.20476, batch_cost: 0.28377s, reader_cost: 0.00031, ips: 225.53204 samples/s, eta: 0:01:38
+[2026/11/20 05:29:58] ppcls INFO: [Train][Epoch 11/32][Iter: 7/16]lr(LinearWarmup): 0.00270417, CELoss: 3.29490, loss: 3.29490, batch_cost: 0.29396s, reader_cost: 0.00047, ips: 217.71415 samples/s, eta: 0:01:41
+[2026/11/20 05:29:58] ppcls INFO: [Train][Epoch 11/32][Iter: 8/16]lr(LinearWarmup): 0.00269765, CELoss: 3.21396, loss: 3.21396, batch_cost: 0.26410s, reader_cost: 0.00052, ips: 242.33063 samples/s, eta: 0:01:30
+[2026/11/20 05:29:58] ppcls INFO: [Train][Epoch 11/32][Iter: 9/16]lr(LinearWarmup): 0.00269106, CELoss: 3.13731, loss: 3.13731, batch_cost: 0.28188s, reader_cost: 0.00028, ips: 227.04801 samples/s, eta: 0:01:36
+[2026/11/20 05:29:58] ppcls INFO: [Train][Epoch 11/32][Iter: 10/16]lr(LinearWarmup): 0.00268441, CELoss: 3.06217, loss: 3.06217, batch_cost: 0.22369s, reader_cost: 0.00023, ips: 286.10928 samples/s, eta: 0:01:16
+[2026/11/20 05:29:59] ppcls INFO: [Train][Epoch 11/32][Iter: 11/16]lr(LinearWarmup): 0.00267770, CELoss: 3.12231, loss: 3.12231, batch_cost: 0.22404s, reader_cost: 0.00024, ips: 285.66019 samples/s, eta: 0:01:16
+[2026/11/20 05:29:59] ppcls INFO: [Train][Epoch 11/32][Iter: 12/16]lr(LinearWarmup): 0.00267093, CELoss: 3.15932, loss: 3.15932, batch_cost: 0.22427s, reader_cost: 0.00025, ips: 285.36714 samples/s, eta: 0:01:16
+[2026/11/20 05:29:59] ppcls INFO: [Train][Epoch 11/32][Iter: 13/16]lr(LinearWarmup): 0.00266409, CELoss: 3.17435, loss: 3.17435, batch_cost: 0.22128s, reader_cost: 0.00024, ips: 289.22432 samples/s, eta: 0:01:15
+[2026/11/20 05:29:59] ppcls INFO: [Train][Epoch 11/32][Iter: 14/16]lr(LinearWarmup): 0.00265719, CELoss: 3.17157, loss: 3.17157, batch_cost: 0.21225s, reader_cost: 0.00024, ips: 301.52885 samples/s, eta: 0:01:11
+[2026/11/20 05:29:59] ppcls INFO: [Train][Epoch 11/32][Iter: 15/16]lr(LinearWarmup): 0.00265024, CELoss: 3.10662, loss: 3.10662, batch_cost: 0.20352s, reader_cost: 0.00022, ips: 294.81641 samples/s, eta: 0:01:08
+[2026/11/20 05:29:59] ppcls INFO: [Train][Epoch 11/32][Avg]CELoss: 3.10662, loss: 3.10662
+[2026/11/20 05:30:00] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:30:00] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:30:03] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:30:04] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:30:06] ppcls INFO: [Train][Epoch 12/32][Iter: 0/16]lr(LinearWarmup): 0.00264322, CELoss: 3.79496, loss: 3.79496, batch_cost: 2.39155s, reader_cost: 2.04518, ips: 26.76094 samples/s, eta: 0:13:23
+[2026/11/20 05:30:06] ppcls INFO: [Train][Epoch 12/32][Iter: 1/16]lr(LinearWarmup): 0.00263614, CELoss: 3.49120, loss: 3.49120, batch_cost: 0.41757s, reader_cost: 0.00713, ips: 153.26802 samples/s, eta: 0:02:19
+[2026/11/20 05:30:07] ppcls INFO: [Train][Epoch 12/32][Iter: 2/16]lr(LinearWarmup): 0.00262900, CELoss: 3.59571, loss: 3.59571, batch_cost: 0.23443s, reader_cost: 0.00037, ips: 273.00751 samples/s, eta: 0:01:18
+[2026/11/20 05:30:07] ppcls INFO: [Train][Epoch 12/32][Iter: 3/16]lr(LinearWarmup): 0.00262180, CELoss: 3.28359, loss: 3.28359, batch_cost: 0.31477s, reader_cost: 0.00037, ips: 203.32415 samples/s, eta: 0:01:44
+[2026/11/20 05:30:07] ppcls INFO: [Train][Epoch 12/32][Iter: 4/16]lr(LinearWarmup): 0.00261455, CELoss: 3.43279, loss: 3.43279, batch_cost: 0.29278s, reader_cost: 0.00035, ips: 218.59761 samples/s, eta: 0:01:37
+[2026/11/20 05:30:08] ppcls INFO: [Train][Epoch 12/32][Iter: 5/16]lr(LinearWarmup): 0.00260723, CELoss: 3.39505, loss: 3.39505, batch_cost: 0.23683s, reader_cost: 0.00034, ips: 270.23277 samples/s, eta: 0:01:18
+[2026/11/20 05:30:08] ppcls INFO: [Train][Epoch 12/32][Iter: 6/16]lr(LinearWarmup): 0.00259986, CELoss: 3.41259, loss: 3.41259, batch_cost: 0.23218s, reader_cost: 0.00047, ips: 275.64325 samples/s, eta: 0:01:16
+[2026/11/20 05:30:08] ppcls INFO: [Train][Epoch 12/32][Iter: 7/16]lr(LinearWarmup): 0.00259242, CELoss: 3.35127, loss: 3.35127, batch_cost: 0.34447s, reader_cost: 0.00712, ips: 185.79214 samples/s, eta: 0:01:53
+[2026/11/20 05:30:08] ppcls INFO: [Train][Epoch 12/32][Iter: 8/16]lr(LinearWarmup): 0.00258493, CELoss: 3.35604, loss: 3.35604, batch_cost: 0.28620s, reader_cost: 0.00041, ips: 223.62298 samples/s, eta: 0:01:33
+[2026/11/20 05:30:09] ppcls INFO: [Train][Epoch 12/32][Iter: 9/16]lr(LinearWarmup): 0.00257739, CELoss: 3.38862, loss: 3.38862, batch_cost: 0.25759s, reader_cost: 0.00725, ips: 248.45243 samples/s, eta: 0:01:24
+[2026/11/20 05:30:09] ppcls INFO: [Train][Epoch 12/32][Iter: 10/16]lr(LinearWarmup): 0.00256978, CELoss: 3.40755, loss: 3.40755, batch_cost: 0.22532s, reader_cost: 0.00025, ips: 284.04666 samples/s, eta: 0:01:13
+[2026/11/20 05:30:09] ppcls INFO: [Train][Epoch 12/32][Iter: 11/16]lr(LinearWarmup): 0.00256212, CELoss: 3.30937, loss: 3.30937, batch_cost: 0.22606s, reader_cost: 0.00024, ips: 283.10750 samples/s, eta: 0:01:13
+[2026/11/20 05:30:09] ppcls INFO: [Train][Epoch 12/32][Iter: 12/16]lr(LinearWarmup): 0.00255441, CELoss: 3.28549, loss: 3.28549, batch_cost: 0.22461s, reader_cost: 0.00024, ips: 284.93520 samples/s, eta: 0:01:12
+[2026/11/20 05:30:10] ppcls INFO: [Train][Epoch 12/32][Iter: 13/16]lr(LinearWarmup): 0.00254664, CELoss: 3.32008, loss: 3.32008, batch_cost: 0.22595s, reader_cost: 0.00024, ips: 283.24880 samples/s, eta: 0:01:12
+[2026/11/20 05:30:10] ppcls INFO: [Train][Epoch 12/32][Iter: 14/16]lr(LinearWarmup): 0.00253881, CELoss: 3.25518, loss: 3.25518, batch_cost: 0.21188s, reader_cost: 0.00023, ips: 302.05713 samples/s, eta: 0:01:08
+[2026/11/20 05:30:10] ppcls INFO: [Train][Epoch 12/32][Iter: 15/16]lr(LinearWarmup): 0.00253093, CELoss: 3.18337, loss: 3.18337, batch_cost: 0.20577s, reader_cost: 0.00024, ips: 291.58463 samples/s, eta: 0:01:06
+[2026/11/20 05:30:10] ppcls INFO: [Train][Epoch 12/32][Avg]CELoss: 3.18337, loss: 3.18337
+[2026/11/20 05:30:11] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:30:11] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:30:14] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:30:14] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:30:16] ppcls INFO: [Train][Epoch 13/32][Iter: 0/16]lr(LinearWarmup): 0.00252300, CELoss: 2.16538, loss: 2.16538, batch_cost: 2.38330s, reader_cost: 2.13530, ips: 26.85354 samples/s, eta: 0:12:42
+[2026/11/20 05:30:17] ppcls INFO: [Train][Epoch 13/32][Iter: 1/16]lr(LinearWarmup): 0.00251501, CELoss: 2.04683, loss: 2.04683, batch_cost: 0.47073s, reader_cost: 0.00057, ips: 135.95868 samples/s, eta: 0:02:30
+[2026/11/20 05:30:17] ppcls INFO: [Train][Epoch 13/32][Iter: 2/16]lr(LinearWarmup): 0.00250697, CELoss: 2.44522, loss: 2.44522, batch_cost: 0.22657s, reader_cost: 0.00033, ips: 282.47414 samples/s, eta: 0:01:12
+[2026/11/20 05:30:17] ppcls INFO: [Train][Epoch 13/32][Iter: 3/16]lr(LinearWarmup): 0.00249887, CELoss: 2.42456, loss: 2.42456, batch_cost: 0.34377s, reader_cost: 0.00036, ips: 186.17200 samples/s, eta: 0:01:48
+[2026/11/20 05:30:18] ppcls INFO: [Train][Epoch 13/32][Iter: 4/16]lr(LinearWarmup): 0.00249072, CELoss: 2.36880, loss: 2.36880, batch_cost: 0.28241s, reader_cost: 0.00030, ips: 226.62420 samples/s, eta: 0:01:29
+[2026/11/20 05:30:18] ppcls INFO: [Train][Epoch 13/32][Iter: 5/16]lr(LinearWarmup): 0.00248252, CELoss: 2.39361, loss: 2.39361, batch_cost: 0.24835s, reader_cost: 0.00032, ips: 257.70587 samples/s, eta: 0:01:18
+[2026/11/20 05:30:18] ppcls INFO: [Train][Epoch 13/32][Iter: 6/16]lr(LinearWarmup): 0.00247427, CELoss: 2.56000, loss: 2.56000, batch_cost: 0.30160s, reader_cost: 0.00032, ips: 212.20345 samples/s, eta: 0:01:34
+[2026/11/20 05:30:18] ppcls INFO: [Train][Epoch 13/32][Iter: 7/16]lr(LinearWarmup): 0.00246597, CELoss: 2.66634, loss: 2.66634, batch_cost: 0.31609s, reader_cost: 0.00034, ips: 202.47620 samples/s, eta: 0:01:38
+[2026/11/20 05:30:19] ppcls INFO: [Train][Epoch 13/32][Iter: 8/16]lr(LinearWarmup): 0.00245761, CELoss: 2.58492, loss: 2.58492, batch_cost: 0.24326s, reader_cost: 0.00032, ips: 263.09412 samples/s, eta: 0:01:15
+[2026/11/20 05:30:19] ppcls INFO: [Train][Epoch 13/32][Iter: 9/16]lr(LinearWarmup): 0.00244921, CELoss: 2.63730, loss: 2.63730, batch_cost: 0.24415s, reader_cost: 0.00031, ips: 262.13299 samples/s, eta: 0:01:15
+[2026/11/20 05:30:19] ppcls INFO: [Train][Epoch 13/32][Iter: 10/16]lr(LinearWarmup): 0.00244076, CELoss: 2.71639, loss: 2.71639, batch_cost: 0.22233s, reader_cost: 0.00026, ips: 287.85749 samples/s, eta: 0:01:08
+[2026/11/20 05:30:19] ppcls INFO: [Train][Epoch 13/32][Iter: 11/16]lr(LinearWarmup): 0.00243225, CELoss: 2.65030, loss: 2.65030, batch_cost: 0.22441s, reader_cost: 0.00023, ips: 285.19766 samples/s, eta: 0:01:09
+[2026/11/20 05:30:20] ppcls INFO: [Train][Epoch 13/32][Iter: 12/16]lr(LinearWarmup): 0.00242370, CELoss: 2.63076, loss: 2.63076, batch_cost: 0.22455s, reader_cost: 0.00023, ips: 285.01234 samples/s, eta: 0:01:09
+[2026/11/20 05:30:20] ppcls INFO: [Train][Epoch 13/32][Iter: 13/16]lr(LinearWarmup): 0.00241510, CELoss: 2.64256, loss: 2.64256, batch_cost: 0.22493s, reader_cost: 0.00029, ips: 284.52778 samples/s, eta: 0:01:09
+[2026/11/20 05:30:20] ppcls INFO: [Train][Epoch 13/32][Iter: 14/16]lr(LinearWarmup): 0.00240645, CELoss: 2.61009, loss: 2.61009, batch_cost: 0.21289s, reader_cost: 0.00020, ips: 300.61880 samples/s, eta: 0:01:05
+[2026/11/20 05:30:20] ppcls INFO: [Train][Epoch 13/32][Iter: 15/16]lr(LinearWarmup): 0.00239775, CELoss: 2.65170, loss: 2.65170, batch_cost: 0.20459s, reader_cost: 0.00023, ips: 293.27379 samples/s, eta: 0:01:02
+[2026/11/20 05:30:20] ppcls INFO: [Train][Epoch 13/32][Avg]CELoss: 2.65170, loss: 2.65170
+[2026/11/20 05:30:21] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:30:21] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:30:24] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:30:25] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:30:27] ppcls INFO: [Train][Epoch 14/32][Iter: 0/16]lr(LinearWarmup): 0.00238901, CELoss: 2.77319, loss: 2.77319, batch_cost: 2.39527s, reader_cost: 2.03900, ips: 26.71935 samples/s, eta: 0:12:08
+[2026/11/20 05:30:27] ppcls INFO: [Train][Epoch 14/32][Iter: 1/16]lr(LinearWarmup): 0.00238022, CELoss: 2.67513, loss: 2.67513, batch_cost: 0.33260s, reader_cost: 0.00738, ips: 192.42271 samples/s, eta: 0:01:40
+[2026/11/20 05:30:28] ppcls INFO: [Train][Epoch 14/32][Iter: 2/16]lr(LinearWarmup): 0.00237138, CELoss: 2.53208, loss: 2.53208, batch_cost: 0.37343s, reader_cost: 0.00035, ips: 171.38397 samples/s, eta: 0:01:52
+[2026/11/20 05:30:28] ppcls INFO: [Train][Epoch 14/32][Iter: 3/16]lr(LinearWarmup): 0.00236250, CELoss: 2.79423, loss: 2.79423, batch_cost: 0.35382s, reader_cost: 0.00042, ips: 180.88094 samples/s, eta: 0:01:46
+[2026/11/20 05:30:28] ppcls INFO: [Train][Epoch 14/32][Iter: 4/16]lr(LinearWarmup): 0.00235357, CELoss: 2.81193, loss: 2.81193, batch_cost: 0.28798s, reader_cost: 0.00037, ips: 222.23851 samples/s, eta: 0:01:26
+[2026/11/20 05:30:28] ppcls INFO: [Train][Epoch 14/32][Iter: 5/16]lr(LinearWarmup): 0.00234460, CELoss: 2.93282, loss: 2.93282, batch_cost: 0.23729s, reader_cost: 0.00039, ips: 269.71769 samples/s, eta: 0:01:10
+[2026/11/20 05:30:29] ppcls INFO: [Train][Epoch 14/32][Iter: 6/16]lr(LinearWarmup): 0.00233558, CELoss: 2.76197, loss: 2.76197, batch_cost: 0.22679s, reader_cost: 0.00030, ips: 282.20450 samples/s, eta: 0:01:07
+[2026/11/20 05:30:29] ppcls INFO: [Train][Epoch 14/32][Iter: 7/16]lr(LinearWarmup): 0.00232652, CELoss: 2.67390, loss: 2.67390, batch_cost: 0.40124s, reader_cost: 0.00042, ips: 159.50729 samples/s, eta: 0:01:59
+[2026/11/20 05:30:29] ppcls INFO: [Train][Epoch 14/32][Iter: 8/16]lr(LinearWarmup): 0.00231741, CELoss: 2.62251, loss: 2.62251, batch_cost: 0.29408s, reader_cost: 0.00525, ips: 217.62678 samples/s, eta: 0:01:27
+[2026/11/20 05:30:30] ppcls INFO: [Train][Epoch 14/32][Iter: 9/16]lr(LinearWarmup): 0.00230826, CELoss: 2.68005, loss: 2.68005, batch_cost: 0.26333s, reader_cost: 0.00038, ips: 243.03843 samples/s, eta: 0:01:17
+[2026/11/20 05:30:30] ppcls INFO: [Train][Epoch 14/32][Iter: 10/16]lr(LinearWarmup): 0.00229907, CELoss: 2.71319, loss: 2.71319, batch_cost: 0.22691s, reader_cost: 0.00025, ips: 282.05446 samples/s, eta: 0:01:06
+[2026/11/20 05:30:30] ppcls INFO: [Train][Epoch 14/32][Iter: 11/16]lr(LinearWarmup): 0.00228984, CELoss: 2.76068, loss: 2.76068, batch_cost: 0.22589s, reader_cost: 0.00028, ips: 283.31995 samples/s, eta: 0:01:06
+[2026/11/20 05:30:30] ppcls INFO: [Train][Epoch 14/32][Iter: 12/16]lr(LinearWarmup): 0.00228057, CELoss: 2.72390, loss: 2.72390, batch_cost: 0.22309s, reader_cost: 0.00025, ips: 286.88105 samples/s, eta: 0:01:05
+[2026/11/20 05:30:31] ppcls INFO: [Train][Epoch 14/32][Iter: 13/16]lr(LinearWarmup): 0.00227125, CELoss: 2.66769, loss: 2.66769, batch_cost: 0.22263s, reader_cost: 0.00022, ips: 287.47708 samples/s, eta: 0:01:04
+[2026/11/20 05:30:31] ppcls INFO: [Train][Epoch 14/32][Iter: 14/16]lr(LinearWarmup): 0.00226190, CELoss: 2.61053, loss: 2.61053, batch_cost: 0.21158s, reader_cost: 0.00024, ips: 302.48941 samples/s, eta: 0:01:01
+[2026/11/20 05:30:31] ppcls INFO: [Train][Epoch 14/32][Iter: 15/16]lr(LinearWarmup): 0.00225250, CELoss: 2.62593, loss: 2.62593, batch_cost: 0.20477s, reader_cost: 0.00032, ips: 293.00984 samples/s, eta: 0:00:59
+[2026/11/20 05:30:31] ppcls INFO: [Train][Epoch 14/32][Avg]CELoss: 2.62593, loss: 2.62593
+[2026/11/20 05:30:32] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:30:32] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:30:35] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:30:35] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:30:37] ppcls INFO: [Train][Epoch 15/32][Iter: 0/16]lr(LinearWarmup): 0.00224306, CELoss: 3.29945, loss: 3.29945, batch_cost: 2.21700s, reader_cost: 1.98884, ips: 28.86784 samples/s, eta: 0:10:38
+[2026/11/20 05:30:38] ppcls INFO: [Train][Epoch 15/32][Iter: 1/16]lr(LinearWarmup): 0.00223359, CELoss: 2.47044, loss: 2.47044, batch_cost: 0.36950s, reader_cost: 0.00488, ips: 173.20730 samples/s, eta: 0:01:46
+[2026/11/20 05:30:38] ppcls INFO: [Train][Epoch 15/32][Iter: 2/16]lr(LinearWarmup): 0.00222408, CELoss: 2.34306, loss: 2.34306, batch_cost: 0.31633s, reader_cost: 0.00451, ips: 202.32283 samples/s, eta: 0:01:30
+[2026/11/20 05:30:38] ppcls INFO: [Train][Epoch 15/32][Iter: 3/16]lr(LinearWarmup): 0.00221453, CELoss: 2.16874, loss: 2.16874, batch_cost: 0.23435s, reader_cost: 0.00029, ips: 273.09723 samples/s, eta: 0:01:06
+[2026/11/20 05:30:39] ppcls INFO: [Train][Epoch 15/32][Iter: 4/16]lr(LinearWarmup): 0.00220494, CELoss: 2.38648, loss: 2.38648, batch_cost: 0.38512s, reader_cost: 0.00028, ips: 166.18334 samples/s, eta: 0:01:49
+[2026/11/20 05:30:39] ppcls INFO: [Train][Epoch 15/32][Iter: 5/16]lr(LinearWarmup): 0.00219531, CELoss: 2.35607, loss: 2.35607, batch_cost: 0.28440s, reader_cost: 0.00031, ips: 225.03668 samples/s, eta: 0:01:20
+[2026/11/20 05:30:39] ppcls INFO: [Train][Epoch 15/32][Iter: 6/16]lr(LinearWarmup): 0.00218565, CELoss: 2.47944, loss: 2.47944, batch_cost: 0.26442s, reader_cost: 0.00031, ips: 242.04133 samples/s, eta: 0:01:14
+[2026/11/20 05:30:39] ppcls INFO: [Train][Epoch 15/32][Iter: 7/16]lr(LinearWarmup): 0.00217595, CELoss: 2.58739, loss: 2.58739, batch_cost: 0.27678s, reader_cost: 0.00031, ips: 231.22808 samples/s, eta: 0:01:17
+[2026/11/20 05:30:40] ppcls INFO: [Train][Epoch 15/32][Iter: 8/16]lr(LinearWarmup): 0.00216622, CELoss: 2.68273, loss: 2.68273, batch_cost: 0.31168s, reader_cost: 0.00033, ips: 205.33624 samples/s, eta: 0:01:27
+[2026/11/20 05:30:40] ppcls INFO: [Train][Epoch 15/32][Iter: 9/16]lr(LinearWarmup): 0.00215645, CELoss: 2.72598, loss: 2.72598, batch_cost: 0.24310s, reader_cost: 0.00031, ips: 263.26803 samples/s, eta: 0:01:07
+[2026/11/20 05:30:40] ppcls INFO: [Train][Epoch 15/32][Iter: 10/16]lr(LinearWarmup): 0.00214665, CELoss: 2.66593, loss: 2.66593, batch_cost: 0.22562s, reader_cost: 0.00023, ips: 283.66126 samples/s, eta: 0:01:02
+[2026/11/20 05:30:40] ppcls INFO: [Train][Epoch 15/32][Iter: 11/16]lr(LinearWarmup): 0.00213681, CELoss: 2.72134, loss: 2.72134, batch_cost: 0.23152s, reader_cost: 0.00027, ips: 276.42838 samples/s, eta: 0:01:04
+[2026/11/20 05:30:41] ppcls INFO: [Train][Epoch 15/32][Iter: 12/16]lr(LinearWarmup): 0.00212694, CELoss: 2.72589, loss: 2.72589, batch_cost: 0.23115s, reader_cost: 0.00023, ips: 276.87345 samples/s, eta: 0:01:03
+[2026/11/20 05:30:41] ppcls INFO: [Train][Epoch 15/32][Iter: 13/16]lr(LinearWarmup): 0.00211704, CELoss: 2.77659, loss: 2.77659, batch_cost: 0.22835s, reader_cost: 0.00023, ips: 280.27219 samples/s, eta: 0:01:02
+[2026/11/20 05:30:41] ppcls INFO: [Train][Epoch 15/32][Iter: 14/16]lr(LinearWarmup): 0.00210711, CELoss: 2.80293, loss: 2.80293, batch_cost: 0.21361s, reader_cost: 0.00024, ips: 299.61220 samples/s, eta: 0:00:58
+[2026/11/20 05:30:41] ppcls INFO: [Train][Epoch 15/32][Iter: 15/16]lr(LinearWarmup): 0.00209714, CELoss: 2.85573, loss: 2.85573, batch_cost: 0.20483s, reader_cost: 0.00022, ips: 292.92969 samples/s, eta: 0:00:55
+[2026/11/20 05:30:41] ppcls INFO: [Train][Epoch 15/32][Avg]CELoss: 2.85573, loss: 2.85573
+[2026/11/20 05:30:42] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:30:42] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:30:45] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:30:45] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:30:48] ppcls INFO: [Train][Epoch 16/32][Iter: 0/16]lr(LinearWarmup): 0.00208714, CELoss: 1.66675, loss: 1.66675, batch_cost: 2.13217s, reader_cost: 1.68568, ips: 30.01638 samples/s, eta: 0:09:39
+[2026/11/20 05:30:48] ppcls INFO: [Train][Epoch 16/32][Iter: 1/16]lr(LinearWarmup): 0.00207711, CELoss: 2.25300, loss: 2.25300, batch_cost: 0.30633s, reader_cost: 0.00175, ips: 208.92423 samples/s, eta: 0:01:23
+[2026/11/20 05:30:48] ppcls INFO: [Train][Epoch 16/32][Iter: 2/16]lr(LinearWarmup): 0.00206705, CELoss: 2.50817, loss: 2.50817, batch_cost: 0.30404s, reader_cost: 0.00655, ips: 210.49617 samples/s, eta: 0:01:22
+[2026/11/20 05:30:48] ppcls INFO: [Train][Epoch 16/32][Iter: 3/16]lr(LinearWarmup): 0.00205696, CELoss: 2.38831, loss: 2.38831, batch_cost: 0.36600s, reader_cost: 0.00032, ips: 174.86478 samples/s, eta: 0:01:38
+[2026/11/20 05:30:49] ppcls INFO: [Train][Epoch 16/32][Iter: 4/16]lr(LinearWarmup): 0.00204684, CELoss: 2.39112, loss: 2.39112, batch_cost: 0.25882s, reader_cost: 0.00031, ips: 247.27650 samples/s, eta: 0:01:09
+[2026/11/20 05:30:49] ppcls INFO: [Train][Epoch 16/32][Iter: 5/16]lr(LinearWarmup): 0.00203670, CELoss: 2.55651, loss: 2.55651, batch_cost: 0.24321s, reader_cost: 0.00030, ips: 263.14364 samples/s, eta: 0:01:04
+[2026/11/20 05:30:49] ppcls INFO: [Train][Epoch 16/32][Iter: 6/16]lr(LinearWarmup): 0.00202652, CELoss: 2.46842, loss: 2.46842, batch_cost: 0.23066s, reader_cost: 0.00033, ips: 277.46184 samples/s, eta: 0:01:01
+[2026/11/20 05:30:50] ppcls INFO: [Train][Epoch 16/32][Iter: 7/16]lr(LinearWarmup): 0.00201632, CELoss: 2.57760, loss: 2.57760, batch_cost: 0.27673s, reader_cost: 0.00635, ips: 231.26832 samples/s, eta: 0:01:13
+[2026/11/20 05:30:50] ppcls INFO: [Train][Epoch 16/32][Iter: 8/16]lr(LinearWarmup): 0.00200609, CELoss: 2.64329, loss: 2.64329, batch_cost: 0.32030s, reader_cost: 0.00055, ips: 199.81112 samples/s, eta: 0:01:24
+[2026/11/20 05:30:50] ppcls INFO: [Train][Epoch 16/32][Iter: 9/16]lr(LinearWarmup): 0.00199583, CELoss: 2.61145, loss: 2.61145, batch_cost: 0.25846s, reader_cost: 0.00025, ips: 247.62116 samples/s, eta: 0:01:07
+[2026/11/20 05:30:50] ppcls INFO: [Train][Epoch 16/32][Iter: 10/16]lr(LinearWarmup): 0.00198555, CELoss: 2.53111, loss: 2.53111, batch_cost: 0.22498s, reader_cost: 0.00027, ips: 284.47350 samples/s, eta: 0:00:58
+[2026/11/20 05:30:51] ppcls INFO: [Train][Epoch 16/32][Iter: 11/16]lr(LinearWarmup): 0.00197524, CELoss: 2.47087, loss: 2.47087, batch_cost: 0.22734s, reader_cost: 0.00027, ips: 281.51197 samples/s, eta: 0:00:59
+[2026/11/20 05:30:51] ppcls INFO: [Train][Epoch 16/32][Iter: 12/16]lr(LinearWarmup): 0.00196491, CELoss: 2.42923, loss: 2.42923, batch_cost: 0.22352s, reader_cost: 0.00024, ips: 286.33115 samples/s, eta: 0:00:58
+[2026/11/20 05:30:51] ppcls INFO: [Train][Epoch 16/32][Iter: 13/16]lr(LinearWarmup): 0.00195456, CELoss: 2.47647, loss: 2.47647, batch_cost: 0.22500s, reader_cost: 0.00026, ips: 284.44909 samples/s, eta: 0:00:58
+[2026/11/20 05:30:51] ppcls INFO: [Train][Epoch 16/32][Iter: 14/16]lr(LinearWarmup): 0.00194417, CELoss: 2.42880, loss: 2.42880, batch_cost: 0.21320s, reader_cost: 0.00022, ips: 300.18413 samples/s, eta: 0:00:55
+[2026/11/20 05:30:51] ppcls INFO: [Train][Epoch 16/32][Iter: 15/16]lr(LinearWarmup): 0.00193377, CELoss: 2.48466, loss: 2.48466, batch_cost: 0.20457s, reader_cost: 0.00021, ips: 293.29669 samples/s, eta: 0:00:52
+[2026/11/20 05:30:51] ppcls INFO: [Train][Epoch 16/32][Avg]CELoss: 2.48466, loss: 2.48466
+[2026/11/20 05:30:52] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:30:52] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:30:55] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:30:55] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:30:58] ppcls INFO: [Train][Epoch 17/32][Iter: 0/16]lr(LinearWarmup): 0.00192334, CELoss: 2.51067, loss: 2.51067, batch_cost: 2.13888s, reader_cost: 1.66619, ips: 29.92220 samples/s, eta: 0:09:07
+[2026/11/20 05:30:58] ppcls INFO: [Train][Epoch 17/32][Iter: 1/16]lr(LinearWarmup): 0.00191290, CELoss: 2.27168, loss: 2.27168, batch_cost: 0.27563s, reader_cost: 0.00051, ips: 232.19534 samples/s, eta: 0:01:10
+[2026/11/20 05:30:58] ppcls INFO: [Train][Epoch 17/32][Iter: 2/16]lr(LinearWarmup): 0.00190243, CELoss: 2.09910, loss: 2.09910, batch_cost: 0.34019s, reader_cost: 0.00037, ips: 188.12941 samples/s, eta: 0:01:26
+[2026/11/20 05:30:59] ppcls INFO: [Train][Epoch 17/32][Iter: 3/16]lr(LinearWarmup): 0.00189193, CELoss: 2.33863, loss: 2.33863, batch_cost: 0.39897s, reader_cost: 0.00034, ips: 160.41416 samples/s, eta: 0:01:40
+[2026/11/20 05:30:59] ppcls INFO: [Train][Epoch 17/32][Iter: 4/16]lr(LinearWarmup): 0.00188142, CELoss: 2.35109, loss: 2.35109, batch_cost: 0.30682s, reader_cost: 0.00692, ips: 208.58817 samples/s, eta: 0:01:17
+[2026/11/20 05:30:59] ppcls INFO: [Train][Epoch 17/32][Iter: 5/16]lr(LinearWarmup): 0.00187089, CELoss: 2.21637, loss: 2.21637, batch_cost: 0.25974s, reader_cost: 0.00031, ips: 246.40217 samples/s, eta: 0:01:05
+[2026/11/20 05:31:00] ppcls INFO: [Train][Epoch 17/32][Iter: 6/16]lr(LinearWarmup): 0.00186034, CELoss: 2.17012, loss: 2.17012, batch_cost: 0.33520s, reader_cost: 0.00030, ips: 190.92857 samples/s, eta: 0:01:23
+[2026/11/20 05:31:00] ppcls INFO: [Train][Epoch 17/32][Iter: 7/16]lr(LinearWarmup): 0.00184977, CELoss: 2.09993, loss: 2.09993, batch_cost: 0.25909s, reader_cost: 0.00033, ips: 247.02210 samples/s, eta: 0:01:04
+[2026/11/20 05:31:00] ppcls INFO: [Train][Epoch 17/32][Iter: 8/16]lr(LinearWarmup): 0.00183918, CELoss: 2.09127, loss: 2.09127, batch_cost: 0.25700s, reader_cost: 0.00032, ips: 249.03119 samples/s, eta: 0:01:03
+[2026/11/20 05:31:00] ppcls INFO: [Train][Epoch 17/32][Iter: 9/16]lr(LinearWarmup): 0.00182858, CELoss: 2.14440, loss: 2.14440, batch_cost: 0.29793s, reader_cost: 0.00024, ips: 214.81315 samples/s, eta: 0:01:13
+[2026/11/20 05:31:01] ppcls INFO: [Train][Epoch 17/32][Iter: 10/16]lr(LinearWarmup): 0.00181795, CELoss: 2.23175, loss: 2.23175, batch_cost: 0.23057s, reader_cost: 0.00026, ips: 277.57575 samples/s, eta: 0:00:56
+[2026/11/20 05:31:01] ppcls INFO: [Train][Epoch 17/32][Iter: 11/16]lr(LinearWarmup): 0.00180732, CELoss: 2.29491, loss: 2.29491, batch_cost: 0.22679s, reader_cost: 0.00025, ips: 282.20420 samples/s, eta: 0:00:55
+[2026/11/20 05:31:01] ppcls INFO: [Train][Epoch 17/32][Iter: 12/16]lr(LinearWarmup): 0.00179666, CELoss: 2.34996, loss: 2.34996, batch_cost: 0.22561s, reader_cost: 0.00021, ips: 283.67505 samples/s, eta: 0:00:55
+[2026/11/20 05:31:01] ppcls INFO: [Train][Epoch 17/32][Iter: 13/16]lr(LinearWarmup): 0.00178599, CELoss: 2.30494, loss: 2.30494, batch_cost: 0.22607s, reader_cost: 0.00028, ips: 283.09974 samples/s, eta: 0:00:54
+[2026/11/20 05:31:02] ppcls INFO: [Train][Epoch 17/32][Iter: 14/16]lr(LinearWarmup): 0.00177530, CELoss: 2.35222, loss: 2.35222, batch_cost: 0.21330s, reader_cost: 0.00020, ips: 300.04086 samples/s, eta: 0:00:51
+[2026/11/20 05:31:02] ppcls INFO: [Train][Epoch 17/32][Iter: 15/16]lr(LinearWarmup): 0.00176460, CELoss: 2.35711, loss: 2.35711, batch_cost: 0.20767s, reader_cost: 0.00022, ips: 288.92195 samples/s, eta: 0:00:50
+[2026/11/20 05:31:02] ppcls INFO: [Train][Epoch 17/32][Avg]CELoss: 2.35711, loss: 2.35711
+[2026/11/20 05:31:02] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:31:03] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:31:05] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:31:06] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:31:08] ppcls INFO: [Train][Epoch 18/32][Iter: 0/16]lr(LinearWarmup): 0.00175389, CELoss: 2.89502, loss: 2.89502, batch_cost: 2.38074s, reader_cost: 1.77281, ips: 26.88238 samples/s, eta: 0:09:31
+[2026/11/20 05:31:09] ppcls INFO: [Train][Epoch 18/32][Iter: 1/16]lr(LinearWarmup): 0.00174316, CELoss: 2.85259, loss: 2.85259, batch_cost: 0.39619s, reader_cost: 0.00070, ips: 161.53694 samples/s, eta: 0:01:34
+[2026/11/20 05:31:09] ppcls INFO: [Train][Epoch 18/32][Iter: 2/16]lr(LinearWarmup): 0.00173242, CELoss: 2.42122, loss: 2.42122, batch_cost: 0.22784s, reader_cost: 0.00035, ips: 280.89571 samples/s, eta: 0:00:54
+[2026/11/20 05:31:09] ppcls INFO: [Train][Epoch 18/32][Iter: 3/16]lr(LinearWarmup): 0.00172167, CELoss: 2.55365, loss: 2.55365, batch_cost: 0.33425s, reader_cost: 0.00032, ips: 191.47155 samples/s, eta: 0:01:19
+[2026/11/20 05:31:09] ppcls INFO: [Train][Epoch 18/32][Iter: 4/16]lr(LinearWarmup): 0.00171091, CELoss: 2.65078, loss: 2.65078, batch_cost: 0.25725s, reader_cost: 0.00035, ips: 248.78055 samples/s, eta: 0:01:00
+[2026/11/20 05:31:10] ppcls INFO: [Train][Epoch 18/32][Iter: 5/16]lr(LinearWarmup): 0.00170014, CELoss: 2.46763, loss: 2.46763, batch_cost: 0.26348s, reader_cost: 0.00034, ips: 242.90581 samples/s, eta: 0:01:01
+[2026/11/20 05:31:10] ppcls INFO: [Train][Epoch 18/32][Iter: 6/16]lr(LinearWarmup): 0.00168935, CELoss: 2.33893, loss: 2.33893, batch_cost: 0.31773s, reader_cost: 0.00027, ips: 201.42922 samples/s, eta: 0:01:14
+[2026/11/20 05:31:10] ppcls INFO: [Train][Epoch 18/32][Iter: 7/16]lr(LinearWarmup): 0.00167856, CELoss: 2.40682, loss: 2.40682, batch_cost: 0.24072s, reader_cost: 0.00034, ips: 265.87350 samples/s, eta: 0:00:56
+[2026/11/20 05:31:11] ppcls INFO: [Train][Epoch 18/32][Iter: 8/16]lr(LinearWarmup): 0.00166776, CELoss: 2.31227, loss: 2.31227, batch_cost: 0.32047s, reader_cost: 0.00037, ips: 199.70588 samples/s, eta: 0:01:14
+[2026/11/20 05:31:11] ppcls INFO: [Train][Epoch 18/32][Iter: 9/16]lr(LinearWarmup): 0.00165694, CELoss: 2.21692, loss: 2.21692, batch_cost: 0.28269s, reader_cost: 0.00028, ips: 226.39847 samples/s, eta: 0:01:05
+[2026/11/20 05:31:11] ppcls INFO: [Train][Epoch 18/32][Iter: 10/16]lr(LinearWarmup): 0.00164612, CELoss: 2.15678, loss: 2.15678, batch_cost: 0.22723s, reader_cost: 0.00023, ips: 281.65848 samples/s, eta: 0:00:52
+[2026/11/20 05:31:11] ppcls INFO: [Train][Epoch 18/32][Iter: 11/16]lr(LinearWarmup): 0.00163530, CELoss: 2.13730, loss: 2.13730, batch_cost: 0.23230s, reader_cost: 0.00025, ips: 275.50944 samples/s, eta: 0:00:53
+[2026/11/20 05:31:12] ppcls INFO: [Train][Epoch 18/32][Iter: 12/16]lr(LinearWarmup): 0.00162446, CELoss: 2.17408, loss: 2.17408, batch_cost: 0.22411s, reader_cost: 0.00022, ips: 285.57419 samples/s, eta: 0:00:51
+[2026/11/20 05:31:12] ppcls INFO: [Train][Epoch 18/32][Iter: 13/16]lr(LinearWarmup): 0.00161362, CELoss: 2.16016, loss: 2.16016, batch_cost: 0.22443s, reader_cost: 0.00022, ips: 285.16161 samples/s, eta: 0:00:50
+[2026/11/20 05:31:12] ppcls INFO: [Train][Epoch 18/32][Iter: 14/16]lr(LinearWarmup): 0.00160278, CELoss: 2.20013, loss: 2.20013, batch_cost: 0.21353s, reader_cost: 0.00023, ips: 299.72561 samples/s, eta: 0:00:48
+[2026/11/20 05:31:12] ppcls INFO: [Train][Epoch 18/32][Iter: 15/16]lr(LinearWarmup): 0.00159193, CELoss: 2.27287, loss: 2.27287, batch_cost: 0.20493s, reader_cost: 0.00022, ips: 292.78144 samples/s, eta: 0:00:46
+[2026/11/20 05:31:12] ppcls INFO: [Train][Epoch 18/32][Avg]CELoss: 2.27287, loss: 2.27287
+[2026/11/20 05:31:13] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:31:13] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:31:16] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:31:16] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:31:19] ppcls INFO: [Train][Epoch 19/32][Iter: 0/16]lr(LinearWarmup): 0.00158107, CELoss: 2.50380, loss: 2.50380, batch_cost: 2.40755s, reader_cost: 1.96061, ips: 26.58307 samples/s, eta: 0:08:59
+[2026/11/20 05:31:19] ppcls INFO: [Train][Epoch 19/32][Iter: 1/16]lr(LinearWarmup): 0.00157021, CELoss: 1.91972, loss: 1.91972, batch_cost: 0.46097s, reader_cost: 0.00652, ips: 138.83834 samples/s, eta: 0:01:42
+[2026/11/20 05:31:20] ppcls INFO: [Train][Epoch 19/32][Iter: 2/16]lr(LinearWarmup): 0.00155935, CELoss: 1.87705, loss: 1.87705, batch_cost: 0.35881s, reader_cost: 0.00033, ips: 178.36930 samples/s, eta: 0:01:19
+[2026/11/20 05:31:20] ppcls INFO: [Train][Epoch 19/32][Iter: 3/16]lr(LinearWarmup): 0.00154848, CELoss: 1.79790, loss: 1.79790, batch_cost: 0.23408s, reader_cost: 0.00034, ips: 273.41350 samples/s, eta: 0:00:51
+[2026/11/20 05:31:20] ppcls INFO: [Train][Epoch 19/32][Iter: 4/16]lr(LinearWarmup): 0.00153761, CELoss: 1.72831, loss: 1.72831, batch_cost: 0.28892s, reader_cost: 0.00034, ips: 221.51265 samples/s, eta: 0:01:03
+[2026/11/20 05:31:21] ppcls INFO: [Train][Epoch 19/32][Iter: 5/16]lr(LinearWarmup): 0.00152674, CELoss: 1.93695, loss: 1.93695, batch_cost: 0.32561s, reader_cost: 0.00027, ips: 196.55320 samples/s, eta: 0:01:11
+[2026/11/20 05:31:21] ppcls INFO: [Train][Epoch 19/32][Iter: 6/16]lr(LinearWarmup): 0.00151587, CELoss: 1.97190, loss: 1.97190, batch_cost: 0.23735s, reader_cost: 0.00034, ips: 269.64265 samples/s, eta: 0:00:51
+[2026/11/20 05:31:21] ppcls INFO: [Train][Epoch 19/32][Iter: 7/16]lr(LinearWarmup): 0.00150500, CELoss: 2.12395, loss: 2.12395, batch_cost: 0.22426s, reader_cost: 0.00032, ips: 285.38504 samples/s, eta: 0:00:48
+[2026/11/20 05:31:21] ppcls INFO: [Train][Epoch 19/32][Iter: 8/16]lr(LinearWarmup): 0.00149413, CELoss: 2.26689, loss: 2.26689, batch_cost: 0.28898s, reader_cost: 0.00685, ips: 221.46824 samples/s, eta: 0:01:02
+[2026/11/20 05:31:22] ppcls INFO: [Train][Epoch 19/32][Iter: 9/16]lr(LinearWarmup): 0.00148326, CELoss: 2.19408, loss: 2.19408, batch_cost: 0.28530s, reader_cost: 0.00037, ips: 224.32263 samples/s, eta: 0:01:01
+[2026/11/20 05:31:22] ppcls INFO: [Train][Epoch 19/32][Iter: 10/16]lr(LinearWarmup): 0.00147239, CELoss: 2.14819, loss: 2.14819, batch_cost: 0.21964s, reader_cost: 0.00026, ips: 291.38304 samples/s, eta: 0:00:47
+[2026/11/20 05:31:22] ppcls INFO: [Train][Epoch 19/32][Iter: 11/16]lr(LinearWarmup): 0.00146152, CELoss: 2.17014, loss: 2.17014, batch_cost: 0.22671s, reader_cost: 0.00030, ips: 282.29828 samples/s, eta: 0:00:48
+[2026/11/20 05:31:22] ppcls INFO: [Train][Epoch 19/32][Iter: 12/16]lr(LinearWarmup): 0.00145065, CELoss: 2.23503, loss: 2.23503, batch_cost: 0.22180s, reader_cost: 0.00024, ips: 288.54316 samples/s, eta: 0:00:47
+[2026/11/20 05:31:22] ppcls INFO: [Train][Epoch 19/32][Iter: 13/16]lr(LinearWarmup): 0.00143979, CELoss: 2.27652, loss: 2.27652, batch_cost: 0.22085s, reader_cost: 0.00025, ips: 289.79322 samples/s, eta: 0:00:46
+[2026/11/20 05:31:23] ppcls INFO: [Train][Epoch 19/32][Iter: 14/16]lr(LinearWarmup): 0.00142893, CELoss: 2.23293, loss: 2.23293, batch_cost: 0.21122s, reader_cost: 0.00021, ips: 303.00020 samples/s, eta: 0:00:44
+[2026/11/20 05:31:23] ppcls INFO: [Train][Epoch 19/32][Iter: 15/16]lr(LinearWarmup): 0.00141807, CELoss: 2.18515, loss: 2.18515, batch_cost: 0.20139s, reader_cost: 0.00027, ips: 297.93005 samples/s, eta: 0:00:42
+[2026/11/20 05:31:23] ppcls INFO: [Train][Epoch 19/32][Avg]CELoss: 2.18515, loss: 2.18515
+[2026/11/20 05:31:24] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:31:24] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:31:27] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:31:27] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:31:29] ppcls INFO: [Train][Epoch 20/32][Iter: 0/16]lr(LinearWarmup): 0.00140722, CELoss: 3.26847, loss: 3.26847, batch_cost: 2.25935s, reader_cost: 1.76857, ips: 28.32667 samples/s, eta: 0:07:49
+[2026/11/20 05:31:30] ppcls INFO: [Train][Epoch 20/32][Iter: 1/16]lr(LinearWarmup): 0.00139638, CELoss: 3.10017, loss: 3.10017, batch_cost: 0.36643s, reader_cost: 0.00535, ips: 174.65987 samples/s, eta: 0:01:15
+[2026/11/20 05:31:30] ppcls INFO: [Train][Epoch 20/32][Iter: 2/16]lr(LinearWarmup): 0.00138554, CELoss: 2.48108, loss: 2.48108, batch_cost: 0.33034s, reader_cost: 0.00669, ips: 193.74068 samples/s, eta: 0:01:08
+[2026/11/20 05:31:30] ppcls INFO: [Train][Epoch 20/32][Iter: 3/16]lr(LinearWarmup): 0.00137470, CELoss: 2.60646, loss: 2.60646, batch_cost: 0.33206s, reader_cost: 0.00040, ips: 192.73661 samples/s, eta: 0:01:08
+[2026/11/20 05:31:31] ppcls INFO: [Train][Epoch 20/32][Iter: 4/16]lr(LinearWarmup): 0.00136388, CELoss: 2.71200, loss: 2.71200, batch_cost: 0.23491s, reader_cost: 0.00035, ips: 272.44199 samples/s, eta: 0:00:47
+[2026/11/20 05:31:31] ppcls INFO: [Train][Epoch 20/32][Iter: 5/16]lr(LinearWarmup): 0.00135306, CELoss: 2.48797, loss: 2.48797, batch_cost: 0.22763s, reader_cost: 0.00034, ips: 281.15726 samples/s, eta: 0:00:46
+[2026/11/20 05:31:31] ppcls INFO: [Train][Epoch 20/32][Iter: 6/16]lr(LinearWarmup): 0.00134224, CELoss: 2.53973, loss: 2.53973, batch_cost: 0.29008s, reader_cost: 0.00674, ips: 220.62602 samples/s, eta: 0:00:58
+[2026/11/20 05:31:32] ppcls INFO: [Train][Epoch 20/32][Iter: 7/16]lr(LinearWarmup): 0.00133144, CELoss: 2.59133, loss: 2.59133, batch_cost: 0.37092s, reader_cost: 0.00037, ips: 172.54386 samples/s, eta: 0:01:14
+[2026/11/20 05:31:32] ppcls INFO: [Train][Epoch 20/32][Iter: 8/16]lr(LinearWarmup): 0.00132065, CELoss: 2.62237, loss: 2.62237, batch_cost: 0.25624s, reader_cost: 0.00040, ips: 249.76804 samples/s, eta: 0:00:51
+[2026/11/20 05:31:32] ppcls INFO: [Train][Epoch 20/32][Iter: 9/16]lr(LinearWarmup): 0.00130986, CELoss: 2.65820, loss: 2.65820, batch_cost: 0.26749s, reader_cost: 0.00028, ips: 239.26307 samples/s, eta: 0:00:53
+[2026/11/20 05:31:32] ppcls INFO: [Train][Epoch 20/32][Iter: 10/16]lr(LinearWarmup): 0.00129909, CELoss: 2.66208, loss: 2.66208, batch_cost: 0.22669s, reader_cost: 0.00026, ips: 282.32916 samples/s, eta: 0:00:44
+[2026/11/20 05:31:33] ppcls INFO: [Train][Epoch 20/32][Iter: 11/16]lr(LinearWarmup): 0.00128833, CELoss: 2.65153, loss: 2.65153, batch_cost: 0.22852s, reader_cost: 0.00025, ips: 280.06545 samples/s, eta: 0:00:45
+[2026/11/20 05:31:33] ppcls INFO: [Train][Epoch 20/32][Iter: 12/16]lr(LinearWarmup): 0.00127758, CELoss: 2.66828, loss: 2.66828, batch_cost: 0.23302s, reader_cost: 0.00024, ips: 274.65446 samples/s, eta: 0:00:45
+[2026/11/20 05:31:33] ppcls INFO: [Train][Epoch 20/32][Iter: 13/16]lr(LinearWarmup): 0.00126684, CELoss: 2.69126, loss: 2.69126, batch_cost: 0.22996s, reader_cost: 0.00028, ips: 278.30354 samples/s, eta: 0:00:44
+[2026/11/20 05:31:33] ppcls INFO: [Train][Epoch 20/32][Iter: 14/16]lr(LinearWarmup): 0.00125611, CELoss: 2.61483, loss: 2.61483, batch_cost: 0.21387s, reader_cost: 0.00025, ips: 299.24881 samples/s, eta: 0:00:41
+[2026/11/20 05:31:33] ppcls INFO: [Train][Epoch 20/32][Iter: 15/16]lr(LinearWarmup): 0.00124540, CELoss: 2.65398, loss: 2.65398, batch_cost: 0.20682s, reader_cost: 0.00023, ips: 290.11301 samples/s, eta: 0:00:39
+[2026/11/20 05:31:33] ppcls INFO: [Train][Epoch 20/32][Avg]CELoss: 2.65398, loss: 2.65398
+[2026/11/20 05:31:34] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:31:34] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:31:37] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:31:38] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:31:40] ppcls INFO: [Train][Epoch 21/32][Iter: 0/16]lr(LinearWarmup): 0.00123470, CELoss: 2.23136, loss: 2.23136, batch_cost: 2.56253s, reader_cost: 1.87151, ips: 24.97529 samples/s, eta: 0:08:12
+[2026/11/20 05:31:41] ppcls INFO: [Train][Epoch 21/32][Iter: 1/16]lr(LinearWarmup): 0.00122401, CELoss: 2.54281, loss: 2.54281, batch_cost: 0.33914s, reader_cost: 0.00057, ips: 188.71253 samples/s, eta: 0:01:04
+[2026/11/20 05:31:41] ppcls INFO: [Train][Epoch 21/32][Iter: 2/16]lr(LinearWarmup): 0.00121334, CELoss: 2.60849, loss: 2.60849, batch_cost: 0.32684s, reader_cost: 0.00046, ips: 195.81708 samples/s, eta: 0:01:02
+[2026/11/20 05:31:41] ppcls INFO: [Train][Epoch 21/32][Iter: 3/16]lr(LinearWarmup): 0.00120268, CELoss: 2.32672, loss: 2.32672, batch_cost: 0.25236s, reader_cost: 0.00037, ips: 253.60945 samples/s, eta: 0:00:47
+[2026/11/20 05:31:42] ppcls INFO: [Train][Epoch 21/32][Iter: 4/16]lr(LinearWarmup): 0.00119205, CELoss: 2.50064, loss: 2.50064, batch_cost: 0.23243s, reader_cost: 0.00037, ips: 275.35202 samples/s, eta: 0:00:43
+[2026/11/20 05:31:42] ppcls INFO: [Train][Epoch 21/32][Iter: 5/16]lr(LinearWarmup): 0.00118142, CELoss: 2.59004, loss: 2.59004, batch_cost: 0.34382s, reader_cost: 0.00033, ips: 186.14192 samples/s, eta: 0:01:04
+[2026/11/20 05:31:42] ppcls INFO: [Train][Epoch 21/32][Iter: 6/16]lr(LinearWarmup): 0.00117082, CELoss: 2.62989, loss: 2.62989, batch_cost: 0.26159s, reader_cost: 0.00035, ips: 244.65834 samples/s, eta: 0:00:48
+[2026/11/20 05:31:42] ppcls INFO: [Train][Epoch 21/32][Iter: 7/16]lr(LinearWarmup): 0.00116023, CELoss: 2.68464, loss: 2.68464, batch_cost: 0.26467s, reader_cost: 0.00030, ips: 241.80695 samples/s, eta: 0:00:48
+[2026/11/20 05:31:43] ppcls INFO: [Train][Epoch 21/32][Iter: 8/16]lr(LinearWarmup): 0.00114966, CELoss: 2.74133, loss: 2.74133, batch_cost: 0.32926s, reader_cost: 0.00135, ips: 194.37703 samples/s, eta: 0:01:00
+[2026/11/20 05:31:43] ppcls INFO: [Train][Epoch 21/32][Iter: 9/16]lr(LinearWarmup): 0.00113911, CELoss: 2.60877, loss: 2.60877, batch_cost: 0.23328s, reader_cost: 0.00027, ips: 274.34597 samples/s, eta: 0:00:42
+[2026/11/20 05:31:43] ppcls INFO: [Train][Epoch 21/32][Iter: 10/16]lr(LinearWarmup): 0.00112858, CELoss: 2.61094, loss: 2.61094, batch_cost: 0.22604s, reader_cost: 0.00109, ips: 283.13617 samples/s, eta: 0:00:41
+[2026/11/20 05:31:43] ppcls INFO: [Train][Epoch 21/32][Iter: 11/16]lr(LinearWarmup): 0.00111807, CELoss: 2.50108, loss: 2.50108, batch_cost: 0.22548s, reader_cost: 0.00024, ips: 283.83552 samples/s, eta: 0:00:40
+[2026/11/20 05:31:44] ppcls INFO: [Train][Epoch 21/32][Iter: 12/16]lr(LinearWarmup): 0.00110757, CELoss: 2.51886, loss: 2.51886, batch_cost: 0.23139s, reader_cost: 0.00022, ips: 276.59387 samples/s, eta: 0:00:41
+[2026/11/20 05:31:44] ppcls INFO: [Train][Epoch 21/32][Iter: 13/16]lr(LinearWarmup): 0.00109710, CELoss: 2.54826, loss: 2.54826, batch_cost: 0.22777s, reader_cost: 0.00023, ips: 280.98774 samples/s, eta: 0:00:40
+[2026/11/20 05:31:44] ppcls INFO: [Train][Epoch 21/32][Iter: 14/16]lr(LinearWarmup): 0.00108666, CELoss: 2.52521, loss: 2.52521, batch_cost: 0.21363s, reader_cost: 0.00023, ips: 299.58111 samples/s, eta: 0:00:38
+[2026/11/20 05:31:44] ppcls INFO: [Train][Epoch 21/32][Iter: 15/16]lr(LinearWarmup): 0.00107623, CELoss: 2.45134, loss: 2.45134, batch_cost: 0.20529s, reader_cost: 0.00026, ips: 292.26970 samples/s, eta: 0:00:36
+[2026/11/20 05:31:44] ppcls INFO: [Train][Epoch 21/32][Avg]CELoss: 2.45134, loss: 2.45134
+[2026/11/20 05:31:45] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:31:45] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:31:48] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:31:49] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:31:51] ppcls INFO: [Train][Epoch 22/32][Iter: 0/16]lr(LinearWarmup): 0.00106583, CELoss: 1.55315, loss: 1.55315, batch_cost: 2.20221s, reader_cost: 1.93893, ips: 29.06170 samples/s, eta: 0:06:27
+[2026/11/20 05:31:51] ppcls INFO: [Train][Epoch 22/32][Iter: 1/16]lr(LinearWarmup): 0.00105544, CELoss: 1.51689, loss: 1.51689, batch_cost: 0.32209s, reader_cost: 0.00054, ips: 198.70184 samples/s, eta: 0:00:56
+[2026/11/20 05:31:52] ppcls INFO: [Train][Epoch 22/32][Iter: 2/16]lr(LinearWarmup): 0.00104509, CELoss: 2.06187, loss: 2.06187, batch_cost: 0.42309s, reader_cost: 0.00050, ips: 151.26704 samples/s, eta: 0:01:13
+[2026/11/20 05:31:52] ppcls INFO: [Train][Epoch 22/32][Iter: 3/16]lr(LinearWarmup): 0.00103476, CELoss: 2.00760, loss: 2.00760, batch_cost: 0.30786s, reader_cost: 0.00034, ips: 207.88403 samples/s, eta: 0:00:53
+[2026/11/20 05:31:52] ppcls INFO: [Train][Epoch 22/32][Iter: 4/16]lr(LinearWarmup): 0.00102445, CELoss: 2.06958, loss: 2.06958, batch_cost: 0.35125s, reader_cost: 0.08544, ips: 182.20867 samples/s, eta: 0:01:00
+[2026/11/20 05:31:53] ppcls INFO: [Train][Epoch 22/32][Iter: 5/16]lr(LinearWarmup): 0.00101417, CELoss: 2.14570, loss: 2.14570, batch_cost: 0.26287s, reader_cost: 0.00043, ips: 243.46849 samples/s, eta: 0:00:44
+[2026/11/20 05:31:53] ppcls INFO: [Train][Epoch 22/32][Iter: 6/16]lr(LinearWarmup): 0.00100391, CELoss: 2.12593, loss: 2.12593, batch_cost: 0.31093s, reader_cost: 0.00033, ips: 205.83742 samples/s, eta: 0:00:52
+[2026/11/20 05:31:53] ppcls INFO: [Train][Epoch 22/32][Iter: 7/16]lr(LinearWarmup): 0.00099368, CELoss: 2.15378, loss: 2.15378, batch_cost: 0.31901s, reader_cost: 0.00032, ips: 200.62021 samples/s, eta: 0:00:53
+[2026/11/20 05:31:53] ppcls INFO: [Train][Epoch 22/32][Iter: 8/16]lr(LinearWarmup): 0.00098348, CELoss: 2.25342, loss: 2.25342, batch_cost: 0.28210s, reader_cost: 0.00116, ips: 226.87377 samples/s, eta: 0:00:47
+[2026/11/20 05:31:54] ppcls INFO: [Train][Epoch 22/32][Iter: 9/16]lr(LinearWarmup): 0.00097330, CELoss: 2.16565, loss: 2.16565, batch_cost: 0.25448s, reader_cost: 0.00025, ips: 251.49218 samples/s, eta: 0:00:42
+[2026/11/20 05:31:54] ppcls INFO: [Train][Epoch 22/32][Iter: 10/16]lr(LinearWarmup): 0.00096316, CELoss: 2.23609, loss: 2.23609, batch_cost: 0.22248s, reader_cost: 0.00025, ips: 287.66407 samples/s, eta: 0:00:36
+[2026/11/20 05:31:54] ppcls INFO: [Train][Epoch 22/32][Iter: 11/16]lr(LinearWarmup): 0.00095304, CELoss: 2.14192, loss: 2.14192, batch_cost: 0.22752s, reader_cost: 0.00022, ips: 281.28954 samples/s, eta: 0:00:37
+[2026/11/20 05:31:54] ppcls INFO: [Train][Epoch 22/32][Iter: 12/16]lr(LinearWarmup): 0.00094295, CELoss: 2.12047, loss: 2.12047, batch_cost: 0.22825s, reader_cost: 0.00022, ips: 280.39456 samples/s, eta: 0:00:37
+[2026/11/20 05:31:55] ppcls INFO: [Train][Epoch 22/32][Iter: 13/16]lr(LinearWarmup): 0.00093289, CELoss: 2.04646, loss: 2.04646, batch_cost: 0.22341s, reader_cost: 0.00025, ips: 286.47202 samples/s, eta: 0:00:36
+[2026/11/20 05:31:55] ppcls INFO: [Train][Epoch 22/32][Iter: 14/16]lr(LinearWarmup): 0.00092286, CELoss: 2.02344, loss: 2.02344, batch_cost: 0.21329s, reader_cost: 0.00021, ips: 300.06534 samples/s, eta: 0:00:34
+[2026/11/20 05:31:55] ppcls INFO: [Train][Epoch 22/32][Iter: 15/16]lr(LinearWarmup): 0.00091286, CELoss: 2.05888, loss: 2.05888, batch_cost: 0.20537s, reader_cost: 0.00024, ips: 292.15162 samples/s, eta: 0:00:33
+[2026/11/20 05:31:55] ppcls INFO: [Train][Epoch 22/32][Avg]CELoss: 2.05888, loss: 2.05888
+[2026/11/20 05:31:56] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:31:56] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:31:59] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:31:59] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:32:02] ppcls INFO: [Train][Epoch 23/32][Iter: 0/16]lr(LinearWarmup): 0.00090289, CELoss: 1.25105, loss: 1.25105, batch_cost: 2.23358s, reader_cost: 1.98382, ips: 28.65357 samples/s, eta: 0:05:57
+[2026/11/20 05:32:02] ppcls INFO: [Train][Epoch 23/32][Iter: 1/16]lr(LinearWarmup): 0.00089296, CELoss: 2.06509, loss: 2.06509, batch_cost: 0.31885s, reader_cost: 0.00065, ips: 200.72057 samples/s, eta: 0:00:50
+[2026/11/20 05:32:02] ppcls INFO: [Train][Epoch 23/32][Iter: 2/16]lr(LinearWarmup): 0.00088306, CELoss: 2.07911, loss: 2.07911, batch_cost: 0.25168s, reader_cost: 0.00042, ips: 254.28717 samples/s, eta: 0:00:39
+[2026/11/20 05:32:02] ppcls INFO: [Train][Epoch 23/32][Iter: 3/16]lr(LinearWarmup): 0.00087319, CELoss: 2.20976, loss: 2.20976, batch_cost: 0.22333s, reader_cost: 0.00032, ips: 286.57019 samples/s, eta: 0:00:35
+[2026/11/20 05:32:03] ppcls INFO: [Train][Epoch 23/32][Iter: 4/16]lr(LinearWarmup): 0.00086335, CELoss: 2.23603, loss: 2.23603, batch_cost: 0.41433s, reader_cost: 0.00061, ips: 154.46624 samples/s, eta: 0:01:04
+[2026/11/20 05:32:03] ppcls INFO: [Train][Epoch 23/32][Iter: 5/16]lr(LinearWarmup): 0.00085355, CELoss: 2.11024, loss: 2.11024, batch_cost: 0.26189s, reader_cost: 0.00746, ips: 244.37302 samples/s, eta: 0:00:40
+[2026/11/20 05:32:03] ppcls INFO: [Train][Epoch 23/32][Iter: 6/16]lr(LinearWarmup): 0.00084378, CELoss: 2.09983, loss: 2.09983, batch_cost: 0.29551s, reader_cost: 0.00043, ips: 216.57312 samples/s, eta: 0:00:45
+[2026/11/20 05:32:04] ppcls INFO: [Train][Epoch 23/32][Iter: 7/16]lr(LinearWarmup): 0.00083405, CELoss: 2.18517, loss: 2.18517, batch_cost: 0.29163s, reader_cost: 0.00032, ips: 219.45488 samples/s, eta: 0:00:44
+[2026/11/20 05:32:04] ppcls INFO: [Train][Epoch 23/32][Iter: 8/16]lr(LinearWarmup): 0.00082435, CELoss: 2.22520, loss: 2.22520, batch_cost: 0.24504s, reader_cost: 0.00041, ips: 261.17937 samples/s, eta: 0:00:37
+[2026/11/20 05:32:04] ppcls INFO: [Train][Epoch 23/32][Iter: 9/16]lr(LinearWarmup): 0.00081469, CELoss: 2.28327, loss: 2.28327, batch_cost: 0.28311s, reader_cost: 0.00032, ips: 226.06347 samples/s, eta: 0:00:42
+[2026/11/20 05:32:04] ppcls INFO: [Train][Epoch 23/32][Iter: 10/16]lr(LinearWarmup): 0.00080506, CELoss: 2.28564, loss: 2.28564, batch_cost: 0.21838s, reader_cost: 0.00024, ips: 293.06077 samples/s, eta: 0:00:32
+[2026/11/20 05:32:05] ppcls INFO: [Train][Epoch 23/32][Iter: 11/16]lr(LinearWarmup): 0.00079547, CELoss: 2.26949, loss: 2.26949, batch_cost: 0.22806s, reader_cost: 0.00025, ips: 280.62555 samples/s, eta: 0:00:33
+[2026/11/20 05:32:05] ppcls INFO: [Train][Epoch 23/32][Iter: 12/16]lr(LinearWarmup): 0.00078592, CELoss: 2.21136, loss: 2.21136, batch_cost: 0.22529s, reader_cost: 0.00025, ips: 284.08394 samples/s, eta: 0:00:33
+[2026/11/20 05:32:05] ppcls INFO: [Train][Epoch 23/32][Iter: 13/16]lr(LinearWarmup): 0.00077641, CELoss: 2.24681, loss: 2.24681, batch_cost: 0.23260s, reader_cost: 0.00023, ips: 275.14994 samples/s, eta: 0:00:34
+[2026/11/20 05:32:05] ppcls INFO: [Train][Epoch 23/32][Iter: 14/16]lr(LinearWarmup): 0.00076694, CELoss: 2.29099, loss: 2.29099, batch_cost: 0.21148s, reader_cost: 0.00023, ips: 302.63094 samples/s, eta: 0:00:30
+[2026/11/20 05:32:06] ppcls INFO: [Train][Epoch 23/32][Iter: 15/16]lr(LinearWarmup): 0.00075750, CELoss: 2.31935, loss: 2.31935, batch_cost: 0.20573s, reader_cost: 0.00025, ips: 291.64073 samples/s, eta: 0:00:29
+[2026/11/20 05:32:06] ppcls INFO: [Train][Epoch 23/32][Avg]CELoss: 2.31935, loss: 2.31935
+[2026/11/20 05:32:06] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:32:06] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:32:09] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:32:10] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:32:12] ppcls INFO: [Train][Epoch 24/32][Iter: 0/16]lr(LinearWarmup): 0.00074810, CELoss: 2.25046, loss: 2.25046, batch_cost: 2.44161s, reader_cost: 2.05834, ips: 26.21225 samples/s, eta: 0:05:51
+[2026/11/20 05:32:12] ppcls INFO: [Train][Epoch 24/32][Iter: 1/16]lr(LinearWarmup): 0.00073875, CELoss: 2.09046, loss: 2.09046, batch_cost: 0.33652s, reader_cost: 0.00058, ips: 190.17906 samples/s, eta: 0:00:48
+[2026/11/20 05:32:13] ppcls INFO: [Train][Epoch 24/32][Iter: 2/16]lr(LinearWarmup): 0.00072943, CELoss: 2.27703, loss: 2.27703, batch_cost: 0.32215s, reader_cost: 0.00032, ips: 198.66581 samples/s, eta: 0:00:45
+[2026/11/20 05:32:13] ppcls INFO: [Train][Epoch 24/32][Iter: 3/16]lr(LinearWarmup): 0.00072016, CELoss: 2.08790, loss: 2.08790, batch_cost: 0.25059s, reader_cost: 0.00035, ips: 255.39353 samples/s, eta: 0:00:35
+[2026/11/20 05:32:13] ppcls INFO: [Train][Epoch 24/32][Iter: 4/16]lr(LinearWarmup): 0.00071093, CELoss: 1.95796, loss: 1.95796, batch_cost: 0.38486s, reader_cost: 0.00036, ips: 166.29577 samples/s, eta: 0:00:53
+[2026/11/20 05:32:14] ppcls INFO: [Train][Epoch 24/32][Iter: 5/16]lr(LinearWarmup): 0.00070174, CELoss: 1.95146, loss: 1.95146, batch_cost: 0.30122s, reader_cost: 0.00035, ips: 212.47202 samples/s, eta: 0:00:41
+[2026/11/20 05:32:14] ppcls INFO: [Train][Epoch 24/32][Iter: 6/16]lr(LinearWarmup): 0.00069259, CELoss: 1.89603, loss: 1.89603, batch_cost: 0.30055s, reader_cost: 0.00033, ips: 212.94008 samples/s, eta: 0:00:41
+[2026/11/20 05:32:14] ppcls INFO: [Train][Epoch 24/32][Iter: 7/16]lr(LinearWarmup): 0.00068348, CELoss: 1.87841, loss: 1.87841, batch_cost: 0.27797s, reader_cost: 0.00032, ips: 230.24061 samples/s, eta: 0:00:38
+[2026/11/20 05:32:15] ppcls INFO: [Train][Epoch 24/32][Iter: 8/16]lr(LinearWarmup): 0.00067442, CELoss: 1.80161, loss: 1.80161, batch_cost: 0.24836s, reader_cost: 0.00039, ips: 257.69548 samples/s, eta: 0:00:33
+[2026/11/20 05:32:15] ppcls INFO: [Train][Epoch 24/32][Iter: 9/16]lr(LinearWarmup): 0.00066540, CELoss: 1.76257, loss: 1.76257, batch_cost: 0.28207s, reader_cost: 0.00031, ips: 226.89237 samples/s, eta: 0:00:38
+[2026/11/20 05:32:15] ppcls INFO: [Train][Epoch 24/32][Iter: 10/16]lr(LinearWarmup): 0.00065643, CELoss: 1.70549, loss: 1.70549, batch_cost: 0.22537s, reader_cost: 0.00026, ips: 283.98085 samples/s, eta: 0:00:30
+[2026/11/20 05:32:15] ppcls INFO: [Train][Epoch 24/32][Iter: 11/16]lr(LinearWarmup): 0.00064750, CELoss: 1.67497, loss: 1.67497, batch_cost: 0.22863s, reader_cost: 0.00028, ips: 279.93373 samples/s, eta: 0:00:30
+[2026/11/20 05:32:16] ppcls INFO: [Train][Epoch 24/32][Iter: 12/16]lr(LinearWarmup): 0.00063862, CELoss: 1.70577, loss: 1.70577, batch_cost: 0.22688s, reader_cost: 0.00022, ips: 282.09091 samples/s, eta: 0:00:29
+[2026/11/20 05:32:16] ppcls INFO: [Train][Epoch 24/32][Iter: 13/16]lr(LinearWarmup): 0.00062978, CELoss: 1.67335, loss: 1.67335, batch_cost: 0.22936s, reader_cost: 0.00028, ips: 279.04242 samples/s, eta: 0:00:30
+[2026/11/20 05:32:16] ppcls INFO: [Train][Epoch 24/32][Iter: 14/16]lr(LinearWarmup): 0.00062099, CELoss: 1.75052, loss: 1.75052, batch_cost: 0.21188s, reader_cost: 0.00023, ips: 302.06359 samples/s, eta: 0:00:27
+[2026/11/20 05:32:16] ppcls INFO: [Train][Epoch 24/32][Iter: 15/16]lr(LinearWarmup): 0.00061225, CELoss: 1.73237, loss: 1.73237, batch_cost: 0.20727s, reader_cost: 0.00027, ips: 289.48428 samples/s, eta: 0:00:26
+[2026/11/20 05:32:16] ppcls INFO: [Train][Epoch 24/32][Avg]CELoss: 1.73237, loss: 1.73237
+[2026/11/20 05:32:17] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:32:17] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:32:20] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:32:20] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:32:23] ppcls INFO: [Train][Epoch 25/32][Iter: 0/16]lr(LinearWarmup): 0.00060355, CELoss: 3.01770, loss: 3.01770, batch_cost: 2.25525s, reader_cost: 2.01074, ips: 28.37817 samples/s, eta: 0:04:48
+[2026/11/20 05:32:23] ppcls INFO: [Train][Epoch 25/32][Iter: 1/16]lr(LinearWarmup): 0.00059490, CELoss: 2.03171, loss: 2.03171, batch_cost: 0.31775s, reader_cost: 0.00060, ips: 201.41728 samples/s, eta: 0:00:40
+[2026/11/20 05:32:23] ppcls INFO: [Train][Epoch 25/32][Iter: 2/16]lr(LinearWarmup): 0.00058630, CELoss: 2.27129, loss: 2.27129, batch_cost: 0.36154s, reader_cost: 0.00047, ips: 177.01897 samples/s, eta: 0:00:45
+[2026/11/20 05:32:24] ppcls INFO: [Train][Epoch 25/32][Iter: 3/16]lr(LinearWarmup): 0.00057775, CELoss: 2.00728, loss: 2.00728, batch_cost: 0.37433s, reader_cost: 0.00038, ips: 170.97397 samples/s, eta: 0:00:46
+[2026/11/20 05:32:24] ppcls INFO: [Train][Epoch 25/32][Iter: 4/16]lr(LinearWarmup): 0.00056924, CELoss: 1.88120, loss: 1.88120, batch_cost: 0.24762s, reader_cost: 0.00040, ips: 258.45969 samples/s, eta: 0:00:30
+[2026/11/20 05:32:24] ppcls INFO: [Train][Epoch 25/32][Iter: 5/16]lr(LinearWarmup): 0.00056079, CELoss: 1.81460, loss: 1.81460, batch_cost: 0.25687s, reader_cost: 0.00037, ips: 249.15185 samples/s, eta: 0:00:31
+[2026/11/20 05:32:24] ppcls INFO: [Train][Epoch 25/32][Iter: 6/16]lr(LinearWarmup): 0.00055239, CELoss: 1.95420, loss: 1.95420, batch_cost: 0.22585s, reader_cost: 0.00033, ips: 283.37349 samples/s, eta: 0:00:27
+[2026/11/20 05:32:25] ppcls INFO: [Train][Epoch 25/32][Iter: 7/16]lr(LinearWarmup): 0.00054403, CELoss: 1.91739, loss: 1.91739, batch_cost: 0.35913s, reader_cost: 0.00033, ips: 178.20802 samples/s, eta: 0:00:43
+[2026/11/20 05:32:25] ppcls INFO: [Train][Epoch 25/32][Iter: 8/16]lr(LinearWarmup): 0.00053573, CELoss: 1.99939, loss: 1.99939, batch_cost: 0.36349s, reader_cost: 0.00037, ips: 176.06851 samples/s, eta: 0:00:43
+[2026/11/20 05:32:25] ppcls INFO: [Train][Epoch 25/32][Iter: 9/16]lr(LinearWarmup): 0.00052748, CELoss: 2.03180, loss: 2.03180, batch_cost: 0.28596s, reader_cost: 0.00036, ips: 223.80681 samples/s, eta: 0:00:34
+[2026/11/20 05:32:26] ppcls INFO: [Train][Epoch 25/32][Iter: 10/16]lr(LinearWarmup): 0.00051928, CELoss: 2.06068, loss: 2.06068, batch_cost: 0.22743s, reader_cost: 0.00032, ips: 281.40632 samples/s, eta: 0:00:26
+[2026/11/20 05:32:26] ppcls INFO: [Train][Epoch 25/32][Iter: 11/16]lr(LinearWarmup): 0.00051113, CELoss: 2.07373, loss: 2.07373, batch_cost: 0.22672s, reader_cost: 0.00025, ips: 282.29086 samples/s, eta: 0:00:26
+[2026/11/20 05:32:26] ppcls INFO: [Train][Epoch 25/32][Iter: 12/16]lr(LinearWarmup): 0.00050303, CELoss: 2.12458, loss: 2.12458, batch_cost: 0.22357s, reader_cost: 0.00023, ips: 286.26733 samples/s, eta: 0:00:25
+[2026/11/20 05:32:26] ppcls INFO: [Train][Epoch 25/32][Iter: 13/16]lr(LinearWarmup): 0.00049499, CELoss: 2.07350, loss: 2.07350, batch_cost: 0.22864s, reader_cost: 0.00027, ips: 279.91855 samples/s, eta: 0:00:26
+[2026/11/20 05:32:27] ppcls INFO: [Train][Epoch 25/32][Iter: 14/16]lr(LinearWarmup): 0.00048700, CELoss: 2.08183, loss: 2.08183, batch_cost: 0.21325s, reader_cost: 0.00026, ips: 300.11600 samples/s, eta: 0:00:24
+[2026/11/20 05:32:27] ppcls INFO: [Train][Epoch 25/32][Iter: 15/16]lr(LinearWarmup): 0.00047907, CELoss: 2.11136, loss: 2.11136, batch_cost: 0.20506s, reader_cost: 0.00026, ips: 292.60170 samples/s, eta: 0:00:23
+[2026/11/20 05:32:27] ppcls INFO: [Train][Epoch 25/32][Avg]CELoss: 2.11136, loss: 2.11136
+[2026/11/20 05:32:27] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:32:27] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:32:30] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:32:31] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:32:33] ppcls INFO: [Train][Epoch 26/32][Iter: 0/16]lr(LinearWarmup): 0.00047119, CELoss: 2.20869, loss: 2.20869, batch_cost: 2.19953s, reader_cost: 1.97983, ips: 29.09718 samples/s, eta: 0:04:06
+[2026/11/20 05:32:33] ppcls INFO: [Train][Epoch 26/32][Iter: 1/16]lr(LinearWarmup): 0.00046336, CELoss: 2.19551, loss: 2.19551, batch_cost: 0.37182s, reader_cost: 0.00659, ips: 172.12708 samples/s, eta: 0:00:41
+[2026/11/20 05:32:34] ppcls INFO: [Train][Epoch 26/32][Iter: 2/16]lr(LinearWarmup): 0.00045559, CELoss: 1.99130, loss: 1.99130, batch_cost: 0.34362s, reader_cost: 0.00038, ips: 186.25170 samples/s, eta: 0:00:37
+[2026/11/20 05:32:34] ppcls INFO: [Train][Epoch 26/32][Iter: 3/16]lr(LinearWarmup): 0.00044788, CELoss: 1.92660, loss: 1.92660, batch_cost: 0.26044s, reader_cost: 0.00692, ips: 245.73720 samples/s, eta: 0:00:28
+[2026/11/20 05:32:34] ppcls INFO: [Train][Epoch 26/32][Iter: 4/16]lr(LinearWarmup): 0.00044022, CELoss: 2.15257, loss: 2.15257, batch_cost: 0.34351s, reader_cost: 0.00048, ips: 186.31376 samples/s, eta: 0:00:37
+[2026/11/20 05:32:35] ppcls INFO: [Train][Epoch 26/32][Iter: 5/16]lr(LinearWarmup): 0.00043261, CELoss: 1.98572, loss: 1.98572, batch_cost: 0.25446s, reader_cost: 0.00030, ips: 251.51056 samples/s, eta: 0:00:27
+[2026/11/20 05:32:35] ppcls INFO: [Train][Epoch 26/32][Iter: 6/16]lr(LinearWarmup): 0.00042507, CELoss: 2.14742, loss: 2.14742, batch_cost: 0.29314s, reader_cost: 0.00036, ips: 218.32292 samples/s, eta: 0:00:31
+[2026/11/20 05:32:35] ppcls INFO: [Train][Epoch 26/32][Iter: 7/16]lr(LinearWarmup): 0.00041758, CELoss: 2.12722, loss: 2.12722, batch_cost: 0.31503s, reader_cost: 0.00037, ips: 203.15781 samples/s, eta: 0:00:33
+[2026/11/20 05:32:36] ppcls INFO: [Train][Epoch 26/32][Iter: 8/16]lr(LinearWarmup): 0.00041014, CELoss: 2.04328, loss: 2.04328, batch_cost: 0.24235s, reader_cost: 0.00053, ips: 264.07687 samples/s, eta: 0:00:25
+[2026/11/20 05:32:36] ppcls INFO: [Train][Epoch 26/32][Iter: 9/16]lr(LinearWarmup): 0.00040277, CELoss: 2.11736, loss: 2.11736, batch_cost: 0.25345s, reader_cost: 0.00027, ips: 252.51371 samples/s, eta: 0:00:26
+[2026/11/20 05:32:36] ppcls INFO: [Train][Epoch 26/32][Iter: 10/16]lr(LinearWarmup): 0.00039545, CELoss: 2.18279, loss: 2.18279, batch_cost: 0.22316s, reader_cost: 0.00028, ips: 286.78542 samples/s, eta: 0:00:22
+[2026/11/20 05:32:36] ppcls INFO: [Train][Epoch 26/32][Iter: 11/16]lr(LinearWarmup): 0.00038820, CELoss: 2.22281, loss: 2.22281, batch_cost: 0.22805s, reader_cost: 0.00026, ips: 280.64345 samples/s, eta: 0:00:23
+[2026/11/20 05:32:36] ppcls INFO: [Train][Epoch 26/32][Iter: 12/16]lr(LinearWarmup): 0.00038100, CELoss: 2.28222, loss: 2.28222, batch_cost: 0.22655s, reader_cost: 0.00022, ips: 282.50357 samples/s, eta: 0:00:22
+[2026/11/20 05:32:37] ppcls INFO: [Train][Epoch 26/32][Iter: 13/16]lr(LinearWarmup): 0.00037386, CELoss: 2.31133, loss: 2.31133, batch_cost: 0.22815s, reader_cost: 0.00026, ips: 280.51939 samples/s, eta: 0:00:22
+[2026/11/20 05:32:37] ppcls INFO: [Train][Epoch 26/32][Iter: 14/16]lr(LinearWarmup): 0.00036678, CELoss: 2.32115, loss: 2.32115, batch_cost: 0.21178s, reader_cost: 0.00024, ips: 302.19927 samples/s, eta: 0:00:20
+[2026/11/20 05:32:37] ppcls INFO: [Train][Epoch 26/32][Iter: 15/16]lr(LinearWarmup): 0.00035976, CELoss: 2.32311, loss: 2.32311, batch_cost: 0.20625s, reader_cost: 0.00024, ips: 290.90512 samples/s, eta: 0:00:20
+[2026/11/20 05:32:37] ppcls INFO: [Train][Epoch 26/32][Avg]CELoss: 2.32311, loss: 2.32311
+[2026/11/20 05:32:38] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:32:38] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:32:41] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:32:41] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:32:44] ppcls INFO: [Train][Epoch 27/32][Iter: 0/16]lr(LinearWarmup): 0.00035281, CELoss: 1.40090, loss: 1.40090, batch_cost: 2.40203s, reader_cost: 1.91738, ips: 26.64418 samples/s, eta: 0:03:50
+[2026/11/20 05:32:44] ppcls INFO: [Train][Epoch 27/32][Iter: 1/16]lr(LinearWarmup): 0.00034591, CELoss: 1.88856, loss: 1.88856, batch_cost: 0.47163s, reader_cost: 0.00068, ips: 135.70012 samples/s, eta: 0:00:44
+[2026/11/20 05:32:44] ppcls INFO: [Train][Epoch 27/32][Iter: 2/16]lr(LinearWarmup): 0.00033907, CELoss: 1.65943, loss: 1.65943, batch_cost: 0.33038s, reader_cost: 0.00036, ips: 193.71817 samples/s, eta: 0:00:31
+[2026/11/20 05:32:45] ppcls INFO: [Train][Epoch 27/32][Iter: 3/16]lr(LinearWarmup): 0.00033230, CELoss: 1.82397, loss: 1.82397, batch_cost: 0.28638s, reader_cost: 0.00703, ips: 223.47646 samples/s, eta: 0:00:26
+[2026/11/20 05:32:45] ppcls INFO: [Train][Epoch 27/32][Iter: 4/16]lr(LinearWarmup): 0.00032559, CELoss: 1.76414, loss: 1.76414, batch_cost: 0.23765s, reader_cost: 0.00028, ips: 269.29883 samples/s, eta: 0:00:21
+[2026/11/20 05:32:45] ppcls INFO: [Train][Epoch 27/32][Iter: 5/16]lr(LinearWarmup): 0.00031894, CELoss: 1.90979, loss: 1.90979, batch_cost: 0.27892s, reader_cost: 0.00028, ips: 229.45672 samples/s, eta: 0:00:25
+[2026/11/20 05:32:46] ppcls INFO: [Train][Epoch 27/32][Iter: 6/16]lr(LinearWarmup): 0.00031235, CELoss: 2.06376, loss: 2.06376, batch_cost: 0.38209s, reader_cost: 0.04959, ips: 167.50144 samples/s, eta: 0:00:34
+[2026/11/20 05:32:46] ppcls INFO: [Train][Epoch 27/32][Iter: 7/16]lr(LinearWarmup): 0.00030583, CELoss: 1.97648, loss: 1.97648, batch_cost: 0.23666s, reader_cost: 0.00033, ips: 270.42742 samples/s, eta: 0:00:21
+[2026/11/20 05:32:46] ppcls INFO: [Train][Epoch 27/32][Iter: 8/16]lr(LinearWarmup): 0.00029937, CELoss: 2.01582, loss: 2.01582, batch_cost: 0.27009s, reader_cost: 0.00030, ips: 236.95608 samples/s, eta: 0:00:23
+[2026/11/20 05:32:46] ppcls INFO: [Train][Epoch 27/32][Iter: 9/16]lr(LinearWarmup): 0.00029297, CELoss: 1.95863, loss: 1.95863, batch_cost: 0.32136s, reader_cost: 0.00028, ips: 199.15323 samples/s, eta: 0:00:27
+[2026/11/20 05:32:47] ppcls INFO: [Train][Epoch 27/32][Iter: 10/16]lr(LinearWarmup): 0.00028664, CELoss: 2.02212, loss: 2.02212, batch_cost: 0.23546s, reader_cost: 0.00026, ips: 271.80943 samples/s, eta: 0:00:20
+[2026/11/20 05:32:47] ppcls INFO: [Train][Epoch 27/32][Iter: 11/16]lr(LinearWarmup): 0.00028037, CELoss: 2.07390, loss: 2.07390, batch_cost: 0.22648s, reader_cost: 0.00023, ips: 282.58059 samples/s, eta: 0:00:19
+[2026/11/20 05:32:47] ppcls INFO: [Train][Epoch 27/32][Iter: 12/16]lr(LinearWarmup): 0.00027416, CELoss: 2.11141, loss: 2.11141, batch_cost: 0.22388s, reader_cost: 0.00022, ips: 285.87284 samples/s, eta: 0:00:18
+[2026/11/20 05:32:47] ppcls INFO: [Train][Epoch 27/32][Iter: 13/16]lr(LinearWarmup): 0.00026803, CELoss: 2.15753, loss: 2.15753, batch_cost: 0.22829s, reader_cost: 0.00027, ips: 280.33922 samples/s, eta: 0:00:18
+[2026/11/20 05:32:48] ppcls INFO: [Train][Epoch 27/32][Iter: 14/16]lr(LinearWarmup): 0.00026195, CELoss: 2.16445, loss: 2.16445, batch_cost: 0.21178s, reader_cost: 0.00022, ips: 302.19553 samples/s, eta: 0:00:17
+[2026/11/20 05:32:48] ppcls INFO: [Train][Epoch 27/32][Iter: 15/16]lr(LinearWarmup): 0.00025595, CELoss: 2.18044, loss: 2.18044, batch_cost: 0.20525s, reader_cost: 0.00022, ips: 292.32674 samples/s, eta: 0:00:16
+[2026/11/20 05:32:48] ppcls INFO: [Train][Epoch 27/32][Avg]CELoss: 2.18044, loss: 2.18044
+[2026/11/20 05:32:48] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:32:49] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:32:51] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:32:52] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:32:55] ppcls INFO: [Train][Epoch 28/32][Iter: 0/16]lr(LinearWarmup): 0.00025000, CELoss: 2.33387, loss: 2.33387, batch_cost: 2.54662s, reader_cost: 2.12950, ips: 25.13136 samples/s, eta: 0:03:23
+[2026/11/20 05:32:55] ppcls INFO: [Train][Epoch 28/32][Iter: 1/16]lr(LinearWarmup): 0.00024413, CELoss: 2.21526, loss: 2.21526, batch_cost: 0.43791s, reader_cost: 0.00690, ips: 146.14968 samples/s, eta: 0:00:34
+[2026/11/20 05:32:55] ppcls INFO: [Train][Epoch 28/32][Iter: 2/16]lr(LinearWarmup): 0.00023832, CELoss: 2.47377, loss: 2.47377, batch_cost: 0.24725s, reader_cost: 0.00039, ips: 258.84624 samples/s, eta: 0:00:19
+[2026/11/20 05:32:56] ppcls INFO: [Train][Epoch 28/32][Iter: 3/16]lr(LinearWarmup): 0.00023258, CELoss: 2.56779, loss: 2.56779, batch_cost: 0.34298s, reader_cost: 0.00044, ips: 186.59881 samples/s, eta: 0:00:26
+[2026/11/20 05:32:56] ppcls INFO: [Train][Epoch 28/32][Iter: 4/16]lr(LinearWarmup): 0.00022691, CELoss: 2.54258, loss: 2.54258, batch_cost: 0.30397s, reader_cost: 0.00055, ips: 210.54603 samples/s, eta: 0:00:23
+[2026/11/20 05:32:56] ppcls INFO: [Train][Epoch 28/32][Iter: 5/16]lr(LinearWarmup): 0.00022130, CELoss: 2.33968, loss: 2.33968, batch_cost: 0.24975s, reader_cost: 0.00035, ips: 256.25342 samples/s, eta: 0:00:18
+[2026/11/20 05:32:56] ppcls INFO: [Train][Epoch 28/32][Iter: 6/16]lr(LinearWarmup): 0.00021576, CELoss: 2.39408, loss: 2.39408, batch_cost: 0.30209s, reader_cost: 0.00032, ips: 211.85427 samples/s, eta: 0:00:22
+[2026/11/20 05:32:57] ppcls INFO: [Train][Epoch 28/32][Iter: 7/16]lr(LinearWarmup): 0.00021029, CELoss: 2.42990, loss: 2.42990, batch_cost: 0.31418s, reader_cost: 0.00034, ips: 203.70727 samples/s, eta: 0:00:22
+[2026/11/20 05:32:57] ppcls INFO: [Train][Epoch 28/32][Iter: 8/16]lr(LinearWarmup): 0.00020489, CELoss: 2.44381, loss: 2.44381, batch_cost: 0.24470s, reader_cost: 0.00043, ips: 261.54454 samples/s, eta: 0:00:17
+[2026/11/20 05:32:57] ppcls INFO: [Train][Epoch 28/32][Iter: 9/16]lr(LinearWarmup): 0.00019956, CELoss: 2.31926, loss: 2.31926, batch_cost: 0.23795s, reader_cost: 0.00029, ips: 268.95993 samples/s, eta: 0:00:16
+[2026/11/20 05:32:57] ppcls INFO: [Train][Epoch 28/32][Iter: 10/16]lr(LinearWarmup): 0.00019429, CELoss: 2.27207, loss: 2.27207, batch_cost: 0.23038s, reader_cost: 0.00029, ips: 277.80383 samples/s, eta: 0:00:16
+[2026/11/20 05:32:58] ppcls INFO: [Train][Epoch 28/32][Iter: 11/16]lr(LinearWarmup): 0.00018910, CELoss: 2.30049, loss: 2.30049, batch_cost: 0.22689s, reader_cost: 0.00025, ips: 282.07580 samples/s, eta: 0:00:15
+[2026/11/20 05:32:58] ppcls INFO: [Train][Epoch 28/32][Iter: 12/16]lr(LinearWarmup): 0.00018397, CELoss: 2.21345, loss: 2.21345, batch_cost: 0.22064s, reader_cost: 0.00026, ips: 290.06126 samples/s, eta: 0:00:15
+[2026/11/20 05:32:58] ppcls INFO: [Train][Epoch 28/32][Iter: 13/16]lr(LinearWarmup): 0.00017892, CELoss: 2.23751, loss: 2.23751, batch_cost: 0.22349s, reader_cost: 0.00028, ips: 286.36109 samples/s, eta: 0:00:14
+[2026/11/20 05:32:58] ppcls INFO: [Train][Epoch 28/32][Iter: 14/16]lr(LinearWarmup): 0.00017393, CELoss: 2.22729, loss: 2.22729, batch_cost: 0.21194s, reader_cost: 0.00028, ips: 301.96913 samples/s, eta: 0:00:13
+[2026/11/20 05:32:59] ppcls INFO: [Train][Epoch 28/32][Iter: 15/16]lr(LinearWarmup): 0.00016902, CELoss: 2.25487, loss: 2.25487, batch_cost: 0.20396s, reader_cost: 0.00023, ips: 294.17713 samples/s, eta: 0:00:13
+[2026/11/20 05:32:59] ppcls INFO: [Train][Epoch 28/32][Avg]CELoss: 2.25487, loss: 2.25487
+[2026/11/20 05:32:59] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:32:59] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:33:03] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:33:03] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:33:06] ppcls INFO: [Train][Epoch 29/32][Iter: 0/16]lr(LinearWarmup): 0.00016418, CELoss: 2.55347, loss: 2.55347, batch_cost: 2.71611s, reader_cost: 2.18645, ips: 23.56314 samples/s, eta: 0:02:53
+[2026/11/20 05:33:06] ppcls INFO: [Train][Epoch 29/32][Iter: 1/16]lr(LinearWarmup): 0.00015940, CELoss: 2.55870, loss: 2.55870, batch_cost: 0.44289s, reader_cost: 0.00069, ips: 144.50473 samples/s, eta: 0:00:27
+[2026/11/20 05:33:07] ppcls INFO: [Train][Epoch 29/32][Iter: 2/16]lr(LinearWarmup): 0.00015470, CELoss: 2.25702, loss: 2.25702, batch_cost: 0.26621s, reader_cost: 0.00059, ips: 240.40927 samples/s, eta: 0:00:16
+[2026/11/20 05:33:07] ppcls INFO: [Train][Epoch 29/32][Iter: 3/16]lr(LinearWarmup): 0.00015007, CELoss: 1.98038, loss: 1.98038, batch_cost: 0.30577s, reader_cost: 0.00040, ips: 209.31032 samples/s, eta: 0:00:18
+[2026/11/20 05:33:07] ppcls INFO: [Train][Epoch 29/32][Iter: 4/16]lr(LinearWarmup): 0.00014551, CELoss: 2.08395, loss: 2.08395, batch_cost: 0.29985s, reader_cost: 0.00035, ips: 213.43786 samples/s, eta: 0:00:17
+[2026/11/20 05:33:08] ppcls INFO: [Train][Epoch 29/32][Iter: 5/16]lr(LinearWarmup): 0.00014102, CELoss: 2.03856, loss: 2.03856, batch_cost: 0.33837s, reader_cost: 0.00029, ips: 189.14468 samples/s, eta: 0:00:19
+[2026/11/20 05:33:08] ppcls INFO: [Train][Epoch 29/32][Iter: 6/16]lr(LinearWarmup): 0.00013661, CELoss: 2.04768, loss: 2.04768, batch_cost: 0.30458s, reader_cost: 0.00032, ips: 210.12708 samples/s, eta: 0:00:17
+[2026/11/20 05:33:08] ppcls INFO: [Train][Epoch 29/32][Iter: 7/16]lr(LinearWarmup): 0.00013227, CELoss: 1.96276, loss: 1.96276, batch_cost: 0.25556s, reader_cost: 0.00030, ips: 250.43074 samples/s, eta: 0:00:14
+[2026/11/20 05:33:09] ppcls INFO: [Train][Epoch 29/32][Iter: 8/16]lr(LinearWarmup): 0.00012800, CELoss: 1.96837, loss: 1.96837, batch_cost: 0.27255s, reader_cost: 0.00043, ips: 234.81839 samples/s, eta: 0:00:15
+[2026/11/20 05:33:09] ppcls INFO: [Train][Epoch 29/32][Iter: 9/16]lr(LinearWarmup): 0.00012380, CELoss: 1.91628, loss: 1.91628, batch_cost: 0.29135s, reader_cost: 0.00026, ips: 219.66571 samples/s, eta: 0:00:16
+[2026/11/20 05:33:09] ppcls INFO: [Train][Epoch 29/32][Iter: 10/16]lr(LinearWarmup): 0.00011968, CELoss: 1.95364, loss: 1.95364, batch_cost: 0.23967s, reader_cost: 0.00028, ips: 267.03433 samples/s, eta: 0:00:12
+[2026/11/20 05:33:09] ppcls INFO: [Train][Epoch 29/32][Iter: 11/16]lr(LinearWarmup): 0.00011563, CELoss: 2.04257, loss: 2.04257, batch_cost: 0.27224s, reader_cost: 0.00028, ips: 235.08655 samples/s, eta: 0:00:14
+[2026/11/20 05:33:10] ppcls INFO: [Train][Epoch 29/32][Iter: 12/16]lr(LinearWarmup): 0.00011165, CELoss: 2.11959, loss: 2.11959, batch_cost: 0.22278s, reader_cost: 0.00030, ips: 287.27710 samples/s, eta: 0:00:11
+[2026/11/20 05:33:10] ppcls INFO: [Train][Epoch 29/32][Iter: 13/16]lr(LinearWarmup): 0.00010774, CELoss: 2.13965, loss: 2.13965, batch_cost: 0.22634s, reader_cost: 0.00026, ips: 282.76217 samples/s, eta: 0:00:11
+[2026/11/20 05:33:10] ppcls INFO: [Train][Epoch 29/32][Iter: 14/16]lr(LinearWarmup): 0.00010392, CELoss: 2.17033, loss: 2.17033, batch_cost: 0.21185s, reader_cost: 0.00024, ips: 302.10575 samples/s, eta: 0:00:10
+[2026/11/20 05:33:10] ppcls INFO: [Train][Epoch 29/32][Iter: 15/16]lr(LinearWarmup): 0.00010016, CELoss: 2.19895, loss: 2.19895, batch_cost: 0.20492s, reader_cost: 0.00024, ips: 292.79677 samples/s, eta: 0:00:10
+[2026/11/20 05:33:10] ppcls INFO: [Train][Epoch 29/32][Avg]CELoss: 2.19895, loss: 2.19895
+[2026/11/20 05:33:11] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:33:11] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:33:14] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:33:15] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:33:17] ppcls INFO: [Train][Epoch 30/32][Iter: 0/16]lr(LinearWarmup): 0.00009648, CELoss: 2.16637, loss: 2.16637, batch_cost: 2.55560s, reader_cost: 1.96956, ips: 25.04302 samples/s, eta: 0:02:02
+[2026/11/20 05:33:18] ppcls INFO: [Train][Epoch 30/32][Iter: 1/16]lr(LinearWarmup): 0.00009287, CELoss: 1.82105, loss: 1.82105, batch_cost: 0.38652s, reader_cost: 0.00649, ips: 165.57835 samples/s, eta: 0:00:18
+[2026/11/20 05:33:18] ppcls INFO: [Train][Epoch 30/32][Iter: 2/16]lr(LinearWarmup): 0.00008934, CELoss: 2.02592, loss: 2.02592, batch_cost: 0.26029s, reader_cost: 0.00036, ips: 245.88329 samples/s, eta: 0:00:11
+[2026/11/20 05:33:18] ppcls INFO: [Train][Epoch 30/32][Iter: 3/16]lr(LinearWarmup): 0.00008588, CELoss: 2.23065, loss: 2.23065, batch_cost: 0.25020s, reader_cost: 0.00031, ips: 255.79338 samples/s, eta: 0:00:11
+[2026/11/20 05:33:18] ppcls INFO: [Train][Epoch 30/32][Iter: 4/16]lr(LinearWarmup): 0.00008250, CELoss: 2.03368, loss: 2.03368, batch_cost: 0.28927s, reader_cost: 0.00033, ips: 221.24756 samples/s, eta: 0:00:12
+[2026/11/20 05:33:19] ppcls INFO: [Train][Epoch 30/32][Iter: 5/16]lr(LinearWarmup): 0.00007919, CELoss: 2.13717, loss: 2.13717, batch_cost: 0.28994s, reader_cost: 0.00034, ips: 220.73850 samples/s, eta: 0:00:12
+[2026/11/20 05:33:19] ppcls INFO: [Train][Epoch 30/32][Iter: 6/16]lr(LinearWarmup): 0.00007596, CELoss: 2.18303, loss: 2.18303, batch_cost: 0.29107s, reader_cost: 0.00033, ips: 219.87713 samples/s, eta: 0:00:12
+[2026/11/20 05:33:19] ppcls INFO: [Train][Epoch 30/32][Iter: 7/16]lr(LinearWarmup): 0.00007281, CELoss: 2.11605, loss: 2.11605, batch_cost: 0.23268s, reader_cost: 0.00034, ips: 275.05521 samples/s, eta: 0:00:09
+[2026/11/20 05:33:20] ppcls INFO: [Train][Epoch 30/32][Iter: 8/16]lr(LinearWarmup): 0.00006973, CELoss: 2.21459, loss: 2.21459, batch_cost: 0.38772s, reader_cost: 0.00050, ips: 165.06946 samples/s, eta: 0:00:15
+[2026/11/20 05:33:20] ppcls INFO: [Train][Epoch 30/32][Iter: 9/16]lr(LinearWarmup): 0.00006672, CELoss: 2.31437, loss: 2.31437, batch_cost: 0.25739s, reader_cost: 0.00025, ips: 248.65081 samples/s, eta: 0:00:10
+[2026/11/20 05:33:20] ppcls INFO: [Train][Epoch 30/32][Iter: 10/16]lr(LinearWarmup): 0.00006379, CELoss: 2.30458, loss: 2.30458, batch_cost: 0.22359s, reader_cost: 0.00028, ips: 286.24169 samples/s, eta: 0:00:08
+[2026/11/20 05:33:20] ppcls INFO: [Train][Epoch 30/32][Iter: 11/16]lr(LinearWarmup): 0.00006094, CELoss: 2.27014, loss: 2.27014, batch_cost: 0.22457s, reader_cost: 0.00023, ips: 284.98693 samples/s, eta: 0:00:08
+[2026/11/20 05:33:20] ppcls INFO: [Train][Epoch 30/32][Iter: 12/16]lr(LinearWarmup): 0.00005817, CELoss: 2.30041, loss: 2.30041, batch_cost: 0.22367s, reader_cost: 0.00022, ips: 286.13277 samples/s, eta: 0:00:08
+[2026/11/20 05:33:21] ppcls INFO: [Train][Epoch 30/32][Iter: 13/16]lr(LinearWarmup): 0.00005547, CELoss: 2.29430, loss: 2.29430, batch_cost: 0.22827s, reader_cost: 0.00023, ips: 280.37026 samples/s, eta: 0:00:07
+[2026/11/20 05:33:21] ppcls INFO: [Train][Epoch 30/32][Iter: 14/16]lr(LinearWarmup): 0.00005284, CELoss: 2.31843, loss: 2.31843, batch_cost: 0.21217s, reader_cost: 0.00036, ips: 301.64236 samples/s, eta: 0:00:07
+[2026/11/20 05:33:21] ppcls INFO: [Train][Epoch 30/32][Iter: 15/16]lr(LinearWarmup): 0.00005030, CELoss: 2.35171, loss: 2.35171, batch_cost: 0.20477s, reader_cost: 0.00026, ips: 293.00575 samples/s, eta: 0:00:06
+[2026/11/20 05:33:21] ppcls INFO: [Train][Epoch 30/32][Avg]CELoss: 2.35171, loss: 2.35171
+[2026/11/20 05:33:22] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:33:22] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:33:25] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:33:26] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:33:28] ppcls INFO: [Train][Epoch 31/32][Iter: 0/16]lr(LinearWarmup): 0.00004783, CELoss: 1.02652, loss: 1.02652, batch_cost: 2.23549s, reader_cost: 1.80307, ips: 28.62902 samples/s, eta: 0:01:11
+[2026/11/20 05:33:28] ppcls INFO: [Train][Epoch 31/32][Iter: 1/16]lr(LinearWarmup): 0.00004544, CELoss: 1.04908, loss: 1.04908, batch_cost: 0.43875s, reader_cost: 0.00475, ips: 145.86909 samples/s, eta: 0:00:13
+[2026/11/20 05:33:29] ppcls INFO: [Train][Epoch 31/32][Iter: 2/16]lr(LinearWarmup): 0.00004312, CELoss: 1.73281, loss: 1.73281, batch_cost: 0.28656s, reader_cost: 0.00682, ips: 223.33608 samples/s, eta: 0:00:08
+[2026/11/20 05:33:29] ppcls INFO: [Train][Epoch 31/32][Iter: 3/16]lr(LinearWarmup): 0.00004089, CELoss: 1.59328, loss: 1.59328, batch_cost: 0.35192s, reader_cost: 0.00033, ips: 181.86167 samples/s, eta: 0:00:10
+[2026/11/20 05:33:29] ppcls INFO: [Train][Epoch 31/32][Iter: 4/16]lr(LinearWarmup): 0.00003873, CELoss: 1.54404, loss: 1.54404, batch_cost: 0.25323s, reader_cost: 0.00036, ips: 252.73100 samples/s, eta: 0:00:07
+[2026/11/20 05:33:29] ppcls INFO: [Train][Epoch 31/32][Iter: 5/16]lr(LinearWarmup): 0.00003664, CELoss: 1.66728, loss: 1.66728, batch_cost: 0.26018s, reader_cost: 0.00037, ips: 245.98603 samples/s, eta: 0:00:07
+[2026/11/20 05:33:30] ppcls INFO: [Train][Epoch 31/32][Iter: 6/16]lr(LinearWarmup): 0.00003464, CELoss: 1.79903, loss: 1.79903, batch_cost: 0.32788s, reader_cost: 0.00033, ips: 195.19512 samples/s, eta: 0:00:08
+[2026/11/20 05:33:30] ppcls INFO: [Train][Epoch 31/32][Iter: 7/16]lr(LinearWarmup): 0.00003271, CELoss: 1.72447, loss: 1.72447, batch_cost: 0.32101s, reader_cost: 0.00032, ips: 199.37111 samples/s, eta: 0:00:08
+[2026/11/20 05:33:30] ppcls INFO: [Train][Epoch 31/32][Iter: 8/16]lr(LinearWarmup): 0.00003086, CELoss: 1.75651, loss: 1.75651, batch_cost: 0.24782s, reader_cost: 0.00037, ips: 258.24858 samples/s, eta: 0:00:05
+[2026/11/20 05:33:31] ppcls INFO: [Train][Epoch 31/32][Iter: 9/16]lr(LinearWarmup): 0.00002909, CELoss: 1.69640, loss: 1.69640, batch_cost: 0.27241s, reader_cost: 0.00031, ips: 234.94314 samples/s, eta: 0:00:06
+[2026/11/20 05:33:31] ppcls INFO: [Train][Epoch 31/32][Iter: 10/16]lr(LinearWarmup): 0.00002740, CELoss: 1.67482, loss: 1.67482, batch_cost: 0.22483s, reader_cost: 0.00025, ips: 284.65993 samples/s, eta: 0:00:04
+[2026/11/20 05:33:31] ppcls INFO: [Train][Epoch 31/32][Iter: 11/16]lr(LinearWarmup): 0.00002578, CELoss: 1.74382, loss: 1.74382, batch_cost: 0.22678s, reader_cost: 0.00028, ips: 282.21340 samples/s, eta: 0:00:04
+[2026/11/20 05:33:31] ppcls INFO: [Train][Epoch 31/32][Iter: 12/16]lr(LinearWarmup): 0.00002425, CELoss: 1.78875, loss: 1.78875, batch_cost: 0.22758s, reader_cost: 0.00024, ips: 281.22530 samples/s, eta: 0:00:04
+[2026/11/20 05:33:32] ppcls INFO: [Train][Epoch 31/32][Iter: 13/16]lr(LinearWarmup): 0.00002279, CELoss: 1.83659, loss: 1.83659, batch_cost: 0.23074s, reader_cost: 0.00025, ips: 277.36380 samples/s, eta: 0:00:04
+[2026/11/20 05:33:32] ppcls INFO: [Train][Epoch 31/32][Iter: 14/16]lr(LinearWarmup): 0.00002141, CELoss: 1.86505, loss: 1.86505, batch_cost: 0.21178s, reader_cost: 0.00028, ips: 302.20472 samples/s, eta: 0:00:03
+[2026/11/20 05:33:32] ppcls INFO: [Train][Epoch 31/32][Iter: 15/16]lr(LinearWarmup): 0.00002011, CELoss: 1.91936, loss: 1.91936, batch_cost: 0.20039s, reader_cost: 0.00022, ips: 299.41706 samples/s, eta: 0:00:03
+[2026/11/20 05:33:32] ppcls INFO: [Train][Epoch 31/32][Avg]CELoss: 1.91936, loss: 1.91936
+[2026/11/20 05:33:33] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:33:33] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:33:36] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:33:36] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+[2026/11/20 05:33:39] ppcls INFO: [Train][Epoch 32/32][Iter: 0/16]lr(LinearWarmup): 0.00001889, CELoss: 2.96042, loss: 2.96042, batch_cost: 2.48284s, reader_cost: 1.98740, ips: 25.77698 samples/s, eta: 0:00:39
+[2026/11/20 05:33:39] ppcls INFO: [Train][Epoch 32/32][Iter: 1/16]lr(LinearWarmup): 0.00001774, CELoss: 2.85625, loss: 2.85625, batch_cost: 0.31822s, reader_cost: 0.00062, ips: 201.11818 samples/s, eta: 0:00:04
+[2026/11/20 05:33:39] ppcls INFO: [Train][Epoch 32/32][Iter: 2/16]lr(LinearWarmup): 0.00001668, CELoss: 2.49287, loss: 2.49287, batch_cost: 0.38126s, reader_cost: 0.00049, ips: 167.86554 samples/s, eta: 0:00:05
+[2026/11/20 05:33:40] ppcls INFO: [Train][Epoch 32/32][Iter: 3/16]lr(LinearWarmup): 0.00001569, CELoss: 2.26541, loss: 2.26541, batch_cost: 0.43926s, reader_cost: 0.00042, ips: 145.69974 samples/s, eta: 0:00:05
+[2026/11/20 05:33:40] ppcls INFO: [Train][Epoch 32/32][Iter: 4/16]lr(LinearWarmup): 0.00001478, CELoss: 2.28957, loss: 2.28957, batch_cost: 0.22661s, reader_cost: 0.00034, ips: 282.41827 samples/s, eta: 0:00:02
+[2026/11/20 05:33:40] ppcls INFO: [Train][Epoch 32/32][Iter: 5/16]lr(LinearWarmup): 0.00001395, CELoss: 2.32978, loss: 2.32978, batch_cost: 0.23024s, reader_cost: 0.00032, ips: 277.97385 samples/s, eta: 0:00:02
+[2026/11/20 05:33:40] ppcls INFO: [Train][Epoch 32/32][Iter: 6/16]lr(LinearWarmup): 0.00001320, CELoss: 2.40403, loss: 2.40403, batch_cost: 0.22816s, reader_cost: 0.00032, ips: 280.50678 samples/s, eta: 0:00:02
+[2026/11/20 05:33:41] ppcls INFO: [Train][Epoch 32/32][Iter: 7/16]lr(LinearWarmup): 0.00001253, CELoss: 2.33685, loss: 2.33685, batch_cost: 0.38135s, reader_cost: 0.00632, ips: 167.82565 samples/s, eta: 0:00:03
+[2026/11/20 05:33:41] ppcls INFO: [Train][Epoch 32/32][Iter: 8/16]lr(LinearWarmup): 0.00001194, CELoss: 2.37917, loss: 2.37917, batch_cost: 0.25432s, reader_cost: 0.00043, ips: 251.64684 samples/s, eta: 0:00:02
+[2026/11/20 05:33:41] ppcls INFO: [Train][Epoch 32/32][Iter: 9/16]lr(LinearWarmup): 0.00001142, CELoss: 2.28134, loss: 2.28134, batch_cost: 0.28657s, reader_cost: 0.00025, ips: 223.32754 samples/s, eta: 0:00:02
+[2026/11/20 05:33:42] ppcls INFO: [Train][Epoch 32/32][Iter: 10/16]lr(LinearWarmup): 0.00001099, CELoss: 2.19821, loss: 2.19821, batch_cost: 0.22337s, reader_cost: 0.00026, ips: 286.52125 samples/s, eta: 0:00:01
+[2026/11/20 05:33:42] ppcls INFO: [Train][Epoch 32/32][Iter: 11/16]lr(LinearWarmup): 0.00001063, CELoss: 2.21137, loss: 2.21137, batch_cost: 0.22832s, reader_cost: 0.00023, ips: 280.30526 samples/s, eta: 0:00:01
+[2026/11/20 05:33:42] ppcls INFO: [Train][Epoch 32/32][Iter: 12/16]lr(LinearWarmup): 0.00001036, CELoss: 2.12867, loss: 2.12867, batch_cost: 0.22622s, reader_cost: 0.00024, ips: 282.91594 samples/s, eta: 0:00:00
+[2026/11/20 05:33:42] ppcls INFO: [Train][Epoch 32/32][Iter: 13/16]lr(LinearWarmup): 0.00001016, CELoss: 2.19249, loss: 2.19249, batch_cost: 0.23108s, reader_cost: 0.00029, ips: 276.96372 samples/s, eta: 0:00:00
+[2026/11/20 05:33:43] ppcls INFO: [Train][Epoch 32/32][Iter: 14/16]lr(LinearWarmup): 0.00001004, CELoss: 2.21507, loss: 2.21507, batch_cost: 0.21346s, reader_cost: 0.00023, ips: 299.82705 samples/s, eta: 0:00:00
+[2026/11/20 05:33:43] ppcls INFO: [Train][Epoch 32/32][Iter: 15/16]lr(LinearWarmup): 0.00001000, CELoss: 2.21675, loss: 2.21675, batch_cost: 0.21940s, reader_cost: 0.00027, ips: 273.47171 samples/s, eta: 0:00:00
+[2026/11/20 05:33:43] ppcls INFO: [Train][Epoch 32/32][Avg]CELoss: 2.21675, loss: 2.21675
+[2026/11/20 05:33:43] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/latest
+[2026/11/20 05:33:43] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:33:46] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:33:47] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest
+file to /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference.yml
+[2026/11/20 05:33:46] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest/inference/inference".
+[2026/11/20 05:33:47] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/dynamic-train/latest

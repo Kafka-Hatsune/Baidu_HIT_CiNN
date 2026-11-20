@@ -1,0 +1,14 @@
+{
+  "model": "starnet_s4",
+  "mode": "dynamic",
+  "device": "metax_gpu:0",
+  "status": "ok",
+  "steps_logged": 512,
+  "loss_first": 5.03656,
+  "loss_last": 2.21675,
+  "first_step_ms": 6800.049999999999,
+  "steady_step_ms": 252.92999999999998,
+  "losses_sha256": "63351126ed7c50e1beed402b482b93f09a4a30d4ba1f4fced2c94dd55b8471d9",
+  "log_sha256": "56f7231036da513a8d685f881376b30b06a5ae871ed331479909ad5779b3cad9",
+  "source_log": "results/dynamic-train/train.log"
+}

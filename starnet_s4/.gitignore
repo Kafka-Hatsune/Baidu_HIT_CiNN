@@ -1,4 +1,8 @@
-results/
+results/*
+!results/metax-c500/
+!results/metax-c500/**
+!results/a100/
+!results/a100/**
 logs/
 __pycache__/
 *.pyc

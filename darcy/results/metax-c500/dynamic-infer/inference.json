@@ -1,0 +1,42 @@
+{
+  "case": "darcy",
+  "mode": "dynamic",
+  "model": "darcy 2D Darcy flow (MLP PINN)",
+  "device": "metax_gpu:0",
+  "paddle_version": "3.5.0.dev20260516",
+  "paddle_compiled_with_cinn": true,
+  "ppsci_version": "1.4.0.post1.dev116+g4b908bd49.d20261119",
+  "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453",
+  "seed": 20261119,
+  "weights_sha256": "64ee090b120e9a88a76ff84f6e0eb8207c23b412aff5bbc269ebb9b080f45256",
+  "inputs_sha256": "5dc502d5ecf1386238c976d49c047ce674be8d3d7fa0c33ee3967abd816207dc",
+  "feeds": {
+    "x": [
+      9801,
+      1
+    ],
+    "y": [
+      9801,
+      1
+    ],
+    "bc_x": [
+      400,
+      1
+    ],
+    "bc_y": [
+      400,
+      1
+    ]
+  },
+  "outputs": {
+    "p": [
+      9801,
+      1
+    ]
+  },
+  "warmup": 5,
+  "iters": 50,
+  "first_call_ms": 1058.0926882103086,
+  "steady_batch_ms": 0.9814056195318699,
+  "batch_per_second": 1018.9466822871868
+}

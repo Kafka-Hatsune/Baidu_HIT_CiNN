@@ -1,0 +1,854 @@
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[33mA new field (dy2st) detected![0m
+[33mSkip checking if model is supported on device because the flag `PADDLE_PDX_DISABLE_DEV_MODEL_WL` has been set.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 07:32:12.237155 1255747 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 07:32:12.237186 1255747 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 07:32:12.237272 1255747 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 07:32:12.237601 1255747 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 07:32:12.238052 1255747 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+all prim enabled:  True
+I1120 07:32:12.487051 1255747 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 07:32:12.487067 1255747 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 07:32:12.626560 1255747 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 07:32:18.663491 1255747 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 07:32:18.663515 1255747 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 07:32:18.672329 1255747 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 07:32:18.672744 1255747 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 07:32:18.672778 1255747 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+[32m['/opt/conda/envs/metax/bin/python', 'tools/train.py', '-c', '/root/.paddlex/tmp7j57datv/textdetmodel_PP-OCRv4_server_det.yml'][0m
+[32m
+Log path: /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/train.log 
+[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 07:32:19.479236 1255948 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 07:32:19.479259 1255948 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 07:32:19.479338 1255948 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 07:32:19.479637 1255948 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 07:32:19.480036 1255948 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+all prim enabled:  True
+I1120 07:32:19.864578 1255948 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 07:32:19.864593 1255948 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 07:32:20.000005 1255948 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 07:32:26.112740 1255948 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 07:32:26.112793 1255948 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 07:32:26.128988 1255948 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 07:32:26.129421 1255948 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 07:32:26.129458 1255948 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+Skipping import of the encryption module.
+[2026/11/20 07:32:29] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/11/20 07:32:29] ppocr INFO: Architecture : 
+[2026/11/20 07:32:29] ppocr INFO:     Backbone : 
+[2026/11/20 07:32:29] ppocr INFO:         det : True
+[2026/11/20 07:32:29] ppocr INFO:         name : PPHGNet_small
+[2026/11/20 07:32:29] ppocr INFO:     Head : 
+[2026/11/20 07:32:29] ppocr INFO:         fix_nan : True
+[2026/11/20 07:32:29] ppocr INFO:         k : 50
+[2026/11/20 07:32:29] ppocr INFO:         mode : large
+[2026/11/20 07:32:29] ppocr INFO:         name : PFHeadLocal
+[2026/11/20 07:32:29] ppocr INFO:     Neck : 
+[2026/11/20 07:32:29] ppocr INFO:         intracl : True
+[2026/11/20 07:32:29] ppocr INFO:         name : LKPAN
+[2026/11/20 07:32:29] ppocr INFO:         out_channels : 256
+[2026/11/20 07:32:29] ppocr INFO:     Transform : None
+[2026/11/20 07:32:29] ppocr INFO:     algorithm : DB
+[2026/11/20 07:32:29] ppocr INFO:     model_type : det
+[2026/11/20 07:32:29] ppocr INFO: Eval : 
+[2026/11/20 07:32:29] ppocr INFO:     dataset : 
+[2026/11/20 07:32:29] ppocr INFO:         data_dir : /data/paddlex_train/datasets/ocr_det_dataset_examples
+[2026/11/20 07:32:29] ppocr INFO:         label_file_list : ['/data/paddlex_train/datasets/ocr_det_dataset_examples/val.txt']
+[2026/11/20 07:32:29] ppocr INFO:         name : TextDetDataset
+[2026/11/20 07:32:29] ppocr INFO:         transforms : 
+[2026/11/20 07:32:29] ppocr INFO:             DecodeImage : 
+[2026/11/20 07:32:29] ppocr INFO:                 channel_first : False
+[2026/11/20 07:32:29] ppocr INFO:                 img_mode : BGR
+[2026/11/20 07:32:29] ppocr INFO:             DetLabelEncode : None
+[2026/11/20 07:32:29] ppocr INFO:             DetResizeForTest : 
+[2026/11/20 07:32:29] ppocr INFO:                 resize_long : 960
+[2026/11/20 07:32:29] ppocr INFO:             NormalizeImage : 
+[2026/11/20 07:32:29] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/11/20 07:32:29] ppocr INFO:                 order : hwc
+[2026/11/20 07:32:29] ppocr INFO:                 scale : 1./255.
+[2026/11/20 07:32:29] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/11/20 07:32:29] ppocr INFO:             ToCHWImage : None
+[2026/11/20 07:32:29] ppocr INFO:             KeepKeys : 
+[2026/11/20 07:32:29] ppocr INFO:                 keep_keys : ['image', 'shape', 'polys', 'ignore_tags']
+[2026/11/20 07:32:29] ppocr INFO:     loader : 
+[2026/11/20 07:32:29] ppocr INFO:         batch_size_per_card : 1
+[2026/11/20 07:32:29] ppocr INFO:         drop_last : False
+[2026/11/20 07:32:29] ppocr INFO:         num_workers : 0
+[2026/11/20 07:32:29] ppocr INFO:         shuffle : False
+[2026/11/20 07:32:29] ppocr INFO: Global : 
+[2026/11/20 07:32:29] ppocr INFO:     amp_level : OFF
+[2026/11/20 07:32:29] ppocr INFO:     cal_metric_during_train : False
+[2026/11/20 07:32:29] ppocr INFO:     checkpoints : 
+[2026/11/20 07:32:29] ppocr INFO:     d2s_train_image_shape : [3, 640, 640]
+[2026/11/20 07:32:29] ppocr INFO:     debug : False
+[2026/11/20 07:32:29] ppocr INFO:     distributed : False
+[2026/11/20 07:32:29] ppocr INFO:     epoch_num : 10
+[2026/11/20 07:32:29] ppocr INFO:     eval_batch_epoch : 1
+[2026/11/20 07:32:29] ppocr INFO:     eval_batch_step : [0, 100]
+[2026/11/20 07:32:29] ppocr INFO:     export_with_pir : True
+[2026/11/20 07:32:29] ppocr INFO:     log_smooth_window : 20
+[2026/11/20 07:32:29] ppocr INFO:     model_name : PP-OCRv4_server_det
+[2026/11/20 07:32:29] ppocr INFO:     pretrained_model : https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv4_server_det_pretrained.pdparams
+[2026/11/20 07:32:29] ppocr INFO:     print_batch_step : 10
+[2026/11/20 07:32:29] ppocr INFO:     save_epoch_step : 1
+[2026/11/20 07:32:29] ppocr INFO:     save_inference_dir : None
+[2026/11/20 07:32:29] ppocr INFO:     save_model_dir : /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train
+[2026/11/20 07:32:29] ppocr INFO:     to_static : True
+[2026/11/20 07:32:29] ppocr INFO:     uniform_output_enabled : True
+[2026/11/20 07:32:29] ppocr INFO:     use_amp : False
+[2026/11/20 07:32:29] ppocr INFO:     use_gcu : False
+[2026/11/20 07:32:29] ppocr INFO:     use_gpu : False
+[2026/11/20 07:32:29] ppocr INFO:     use_iluvatar_gpu : False
+[2026/11/20 07:32:29] ppocr INFO:     use_metax_gpu : True
+[2026/11/20 07:32:29] ppocr INFO:     use_mlu : False
+[2026/11/20 07:32:29] ppocr INFO:     use_npu : False
+[2026/11/20 07:32:29] ppocr INFO:     use_visualdl : True
+[2026/11/20 07:32:29] ppocr INFO:     use_xpu : False
+[2026/11/20 07:32:29] ppocr INFO: Loss : 
+[2026/11/20 07:32:29] ppocr INFO:     alpha : 5
+[2026/11/20 07:32:29] ppocr INFO:     balance_loss : True
+[2026/11/20 07:32:29] ppocr INFO:     beta : 10
+[2026/11/20 07:32:29] ppocr INFO:     main_loss_type : DiceLoss
+[2026/11/20 07:32:29] ppocr INFO:     name : DBLoss
+[2026/11/20 07:32:29] ppocr INFO:     ohem_ratio : 3
+[2026/11/20 07:32:29] ppocr INFO: Metric : 
+[2026/11/20 07:32:29] ppocr INFO:     main_indicator : hmean
+[2026/11/20 07:32:29] ppocr INFO:     name : DetMetric
+[2026/11/20 07:32:29] ppocr INFO: Optimizer : 
+[2026/11/20 07:32:29] ppocr INFO:     beta1 : 0.9
+[2026/11/20 07:32:29] ppocr INFO:     beta2 : 0.999
+[2026/11/20 07:32:29] ppocr INFO:     lr : 
+[2026/11/20 07:32:29] ppocr INFO:         learning_rate : 0.001
+[2026/11/20 07:32:29] ppocr INFO:         name : Cosine
+[2026/11/20 07:32:29] ppocr INFO:         warmup_epoch : 2
+[2026/11/20 07:32:29] ppocr INFO:     name : Adam
+[2026/11/20 07:32:29] ppocr INFO:     regularizer : 
+[2026/11/20 07:32:29] ppocr INFO:         factor : 1e-6
+[2026/11/20 07:32:29] ppocr INFO:         name : L2
+[2026/11/20 07:32:29] ppocr INFO: PostProcess : 
+[2026/11/20 07:32:29] ppocr INFO:     box_thresh : 0.6
+[2026/11/20 07:32:29] ppocr INFO:     max_candidates : 1000
+[2026/11/20 07:32:29] ppocr INFO:     name : DBPostProcess
+[2026/11/20 07:32:29] ppocr INFO:     thresh : 0.3
+[2026/11/20 07:32:29] ppocr INFO:     unclip_ratio : 1.5
+[2026/11/20 07:32:29] ppocr INFO: Train : 
+[2026/11/20 07:32:29] ppocr INFO:     dataset : 
+[2026/11/20 07:32:29] ppocr INFO:         data_dir : /data/paddlex_train/datasets/ocr_det_dataset_examples
+[2026/11/20 07:32:29] ppocr INFO:         label_file_list : ['/data/paddlex_train/datasets/ocr_det_dataset_examples/train.txt']
+[2026/11/20 07:32:29] ppocr INFO:         name : TextDetDataset
+[2026/11/20 07:32:29] ppocr INFO:         transforms : 
+[2026/11/20 07:32:29] ppocr INFO:             DecodeImage : 
+[2026/11/20 07:32:29] ppocr INFO:                 channel_first : False
+[2026/11/20 07:32:29] ppocr INFO:                 img_mode : BGR
+[2026/11/20 07:32:29] ppocr INFO:             DetLabelEncode : None
+[2026/11/20 07:32:29] ppocr INFO:             CopyPaste : None
+[2026/11/20 07:32:29] ppocr INFO:             IaaAugment : 
+[2026/11/20 07:32:29] ppocr INFO:                 augmenter_args : 
+[2026/11/20 07:32:29] ppocr INFO:                     args : 
+[2026/11/20 07:32:29] ppocr INFO:                         p : 0.5
+[2026/11/20 07:32:29] ppocr INFO:                     type : Fliplr
+[2026/11/20 07:32:29] ppocr INFO:                     args : 
+[2026/11/20 07:32:29] ppocr INFO:                         rotate : [-10, 10]
+[2026/11/20 07:32:29] ppocr INFO:                     type : Affine
+[2026/11/20 07:32:29] ppocr INFO:                     args : 
+[2026/11/20 07:32:29] ppocr INFO:                         size : [0.5, 3]
+[2026/11/20 07:32:29] ppocr INFO:                     type : Resize
+[2026/11/20 07:32:29] ppocr INFO:             EastRandomCropData : 
+[2026/11/20 07:32:29] ppocr INFO:                 keep_ratio : True
+[2026/11/20 07:32:29] ppocr INFO:                 max_tries : 50
+[2026/11/20 07:32:29] ppocr INFO:                 size : [640, 640]
+[2026/11/20 07:32:29] ppocr INFO:             MakeBorderMap : 
+[2026/11/20 07:32:29] ppocr INFO:                 shrink_ratio : 0.4
+[2026/11/20 07:32:29] ppocr INFO:                 thresh_max : 0.7
+[2026/11/20 07:32:29] ppocr INFO:                 thresh_min : 0.3
+[2026/11/20 07:32:29] ppocr INFO:                 total_epoch : 500
+[2026/11/20 07:32:29] ppocr INFO:             MakeShrinkMap : 
+[2026/11/20 07:32:29] ppocr INFO:                 min_text_size : 8
+[2026/11/20 07:32:29] ppocr INFO:                 shrink_ratio : 0.4
+[2026/11/20 07:32:29] ppocr INFO:                 total_epoch : 500
+[2026/11/20 07:32:29] ppocr INFO:             NormalizeImage : 
+[2026/11/20 07:32:29] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/11/20 07:32:29] ppocr INFO:                 order : hwc
+[2026/11/20 07:32:29] ppocr INFO:                 scale : 1./255.
+[2026/11/20 07:32:29] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/11/20 07:32:29] ppocr INFO:             ToCHWImage : None
+[2026/11/20 07:32:29] ppocr INFO:             KeepKeys : 
+[2026/11/20 07:32:29] ppocr INFO:                 keep_keys : ['image', 'threshold_map', 'threshold_mask', 'shrink_map', 'shrink_mask']
+[2026/11/20 07:32:29] ppocr INFO:     loader : 
+[2026/11/20 07:32:29] ppocr INFO:         batch_size_per_card : 4
+[2026/11/20 07:32:29] ppocr INFO:         drop_last : False
+[2026/11/20 07:32:29] ppocr INFO:         num_workers : 3
+[2026/11/20 07:32:29] ppocr INFO:         shuffle : True
+[2026/11/20 07:32:29] ppocr INFO: profiler_options : None
+[2026/11/20 07:32:29] ppocr INFO: train with paddle 3.5.0.dev20260516 and device Place(metax_gpu:0)
+[2026/11/20 07:32:29] ppocr INFO: Initialize indexs of datasets:['/data/paddlex_train/datasets/ocr_det_dataset_examples/train.txt']
+[2026/11/20 07:32:29] ppocr INFO: Initialize indexs of datasets:['/data/paddlex_train/datasets/ocr_det_dataset_examples/val.txt']
+[2026/11/20 07:32:29] ppocr INFO: Successfully to apply @to_static with specs: [InputSpec(shape=(-1, 3, 640, 640), dtype=paddle.float32, name=None, stop_gradient=False)]
+[2026-11-20 07:32:29,980] [    INFO] optimizer.py:254 - If regularizer of a Parameter has been set by 'paddle.ParamAttr' or 'static.WeightNormParamAttr' already. The weight_decay[1e-06] in Optimizer will not take effect, and it will only be applied to other Parameters!
+[2026/11/20 07:32:29] ppocr INFO: train dataloader has 50 iters
+[2026/11/20 07:32:29] ppocr INFO: valid dataloader has 50 iters
+download https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv4_server_det_pretrained.pdparams to /root/.paddleocr/models/PP-OCRv4_server_det_pretrained.pdparams
+[2026/11/20 07:32:29] ppocr INFO: Path /root/.paddleocr/models/PP-OCRv4_server_det_pretrained.pdparams already exists. Skipping...
+[2026/11/20 07:32:30] ppocr WARNING: The pretrained params backbone.last_conv.weight not in model
+[2026/11/20 07:32:30] ppocr WARNING: The pretrained params backbone.fc.weight not in model
+[2026/11/20 07:32:30] ppocr WARNING: The pretrained params backbone.fc.bias not in model
+[2026/11/20 07:32:30] ppocr INFO: load pretrain successful from /root/.paddleocr/models/PP-OCRv4_server_det_pretrained
+[2026/11/20 07:32:30] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 50 iterations
+W1120 07:32:32.611778 1255948 eager_utils.cc:3618] Paddle static graph(PIR) not support input out tensor for now!!!!!
+W1120 07:32:38.464195 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 07:32:38.617827 1255948 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+W1120 07:32:38.642190 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:32:38.664853 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_0.co /tmp/cinn_metax_1255948_0.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_1.co /tmp/cinn_metax_1255948_1.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_2.co /tmp/cinn_metax_1255948_2.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_3.co /tmp/cinn_metax_1255948_3.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_4.co /tmp/cinn_metax_1255948_4.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_5.co /tmp/cinn_metax_1255948_5.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_6.co /tmp/cinn_metax_1255948_6.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_7.co /tmp/cinn_metax_1255948_7.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_8.co /tmp/cinn_metax_1255948_8.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_9.co /tmp/cinn_metax_1255948_9.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_10.co /tmp/cinn_metax_1255948_10.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_11.co /tmp/cinn_metax_1255948_11.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_12.co /tmp/cinn_metax_1255948_12.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_13.co /tmp/cinn_metax_1255948_13.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_14.co /tmp/cinn_metax_1255948_14.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_15.co /tmp/cinn_metax_1255948_15.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_16.co /tmp/cinn_metax_1255948_16.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_17.co /tmp/cinn_metax_1255948_17.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_18.co /tmp/cinn_metax_1255948_18.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_19.co /tmp/cinn_metax_1255948_19.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_20.co /tmp/cinn_metax_1255948_20.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_21.co /tmp/cinn_metax_1255948_21.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_22.co /tmp/cinn_metax_1255948_22.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_23.co /tmp/cinn_metax_1255948_23.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_24.co /tmp/cinn_metax_1255948_24.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_25.co /tmp/cinn_metax_1255948_25.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_26.co /tmp/cinn_metax_1255948_26.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_27.co /tmp/cinn_metax_1255948_27.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_28.co /tmp/cinn_metax_1255948_28.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_29.co /tmp/cinn_metax_1255948_29.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_30.co /tmp/cinn_metax_1255948_30.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_31.co /tmp/cinn_metax_1255948_31.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_32.co /tmp/cinn_metax_1255948_32.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_33.co /tmp/cinn_metax_1255948_33.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_34.co /tmp/cinn_metax_1255948_34.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_35.co /tmp/cinn_metax_1255948_35.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_36.co /tmp/cinn_metax_1255948_36.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_37.co /tmp/cinn_metax_1255948_37.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_38.co /tmp/cinn_metax_1255948_38.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_39.co /tmp/cinn_metax_1255948_39.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_40.co /tmp/cinn_metax_1255948_40.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_41.co /tmp/cinn_metax_1255948_41.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_42.co /tmp/cinn_metax_1255948_42.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_43.co /tmp/cinn_metax_1255948_43.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_44.co /tmp/cinn_metax_1255948_44.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_45.co /tmp/cinn_metax_1255948_45.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_46.co /tmp/cinn_metax_1255948_46.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_47.co /tmp/cinn_metax_1255948_47.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_48.co /tmp/cinn_metax_1255948_48.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_49.co /tmp/cinn_metax_1255948_49.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_50.co /tmp/cinn_metax_1255948_50.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_51.co /tmp/cinn_metax_1255948_51.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_52.co /tmp/cinn_metax_1255948_52.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_53.co /tmp/cinn_metax_1255948_53.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_23.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_0.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_10.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_14.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_49.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_18.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_8.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_35.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_7.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_15.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_1.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_41.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_20.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_6.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_43.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_47.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_33.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_4.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_50.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_37.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_36.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_27.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_42.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_38.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_31.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_11.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_30.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_28.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_29.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_9.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_40.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_3.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_12.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_52.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_45.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_16.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_5.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_13.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_44.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_32.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_2.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_26.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_24.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_22.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_34.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_46.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_25.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_53.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_19.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_17.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_48.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_21.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_39.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_51.co
+W1120 07:33:17.897914 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_54.co /tmp/cinn_metax_1255948_54.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_55.co /tmp/cinn_metax_1255948_55.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_56.co /tmp/cinn_metax_1255948_56.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_57.co /tmp/cinn_metax_1255948_57.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_58.co /tmp/cinn_metax_1255948_58.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_59.co /tmp/cinn_metax_1255948_59.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_60.co /tmp/cinn_metax_1255948_60.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_61.co /tmp/cinn_metax_1255948_61.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_62.co /tmp/cinn_metax_1255948_62.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_63.co /tmp/cinn_metax_1255948_63.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_64.co /tmp/cinn_metax_1255948_64.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_66.co /tmp/cinn_metax_1255948_66.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_65.co /tmp/cinn_metax_1255948_65.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_67.co /tmp/cinn_metax_1255948_67.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_69.co /tmp/cinn_metax_1255948_69.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_68.co /tmp/cinn_metax_1255948_68.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_70.co /tmp/cinn_metax_1255948_70.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_71.co /tmp/cinn_metax_1255948_71.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_72.co /tmp/cinn_metax_1255948_72.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_74.co /tmp/cinn_metax_1255948_74.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_73.co /tmp/cinn_metax_1255948_73.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_75.co /tmp/cinn_metax_1255948_75.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_76.co /tmp/cinn_metax_1255948_76.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_77.co /tmp/cinn_metax_1255948_77.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_78.co /tmp/cinn_metax_1255948_78.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_79.co /tmp/cinn_metax_1255948_79.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_80.co /tmp/cinn_metax_1255948_80.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_81.co /tmp/cinn_metax_1255948_81.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_82.co /tmp/cinn_metax_1255948_82.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_83.co /tmp/cinn_metax_1255948_83.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_84.co /tmp/cinn_metax_1255948_84.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_85.co /tmp/cinn_metax_1255948_85.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_86.co /tmp/cinn_metax_1255948_86.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_87.co /tmp/cinn_metax_1255948_87.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_88.co /tmp/cinn_metax_1255948_88.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_89.co /tmp/cinn_metax_1255948_89.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_90.co /tmp/cinn_metax_1255948_90.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_91.co /tmp/cinn_metax_1255948_91.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_92.co /tmp/cinn_metax_1255948_92.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_93.co /tmp/cinn_metax_1255948_93.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_94.co /tmp/cinn_metax_1255948_94.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_95.co /tmp/cinn_metax_1255948_95.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_97.co /tmp/cinn_metax_1255948_97.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_96.co /tmp/cinn_metax_1255948_96.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_98.co /tmp/cinn_metax_1255948_98.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_99.co /tmp/cinn_metax_1255948_99.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_100.co /tmp/cinn_metax_1255948_100.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_101.co /tmp/cinn_metax_1255948_101.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_102.co /tmp/cinn_metax_1255948_102.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_103.co /tmp/cinn_metax_1255948_103.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_104.co /tmp/cinn_metax_1255948_104.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_106.co /tmp/cinn_metax_1255948_106.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_105.co /tmp/cinn_metax_1255948_105.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_107.co /tmp/cinn_metax_1255948_107.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_109.co /tmp/cinn_metax_1255948_109.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_108.co /tmp/cinn_metax_1255948_108.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_110.co /tmp/cinn_metax_1255948_110.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_111.co /tmp/cinn_metax_1255948_111.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_112.co /tmp/cinn_metax_1255948_112.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_113.co /tmp/cinn_metax_1255948_113.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_114.co /tmp/cinn_metax_1255948_114.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_115.co /tmp/cinn_metax_1255948_115.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_116.co /tmp/cinn_metax_1255948_116.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_117.co /tmp/cinn_metax_1255948_117.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_118.co /tmp/cinn_metax_1255948_118.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_119.co /tmp/cinn_metax_1255948_119.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_120.co /tmp/cinn_metax_1255948_120.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_121.co /tmp/cinn_metax_1255948_121.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_122.co /tmp/cinn_metax_1255948_122.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_123.co /tmp/cinn_metax_1255948_123.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_124.co /tmp/cinn_metax_1255948_124.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_125.co /tmp/cinn_metax_1255948_125.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_126.co /tmp/cinn_metax_1255948_126.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_127.co /tmp/cinn_metax_1255948_127.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_128.co /tmp/cinn_metax_1255948_128.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_129.co /tmp/cinn_metax_1255948_129.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_130.co /tmp/cinn_metax_1255948_130.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_131.co /tmp/cinn_metax_1255948_131.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_132.co /tmp/cinn_metax_1255948_132.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_133.co /tmp/cinn_metax_1255948_133.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_134.co /tmp/cinn_metax_1255948_134.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_135.co /tmp/cinn_metax_1255948_135.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_136.co /tmp/cinn_metax_1255948_136.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_137.co /tmp/cinn_metax_1255948_137.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_138.co /tmp/cinn_metax_1255948_138.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_139.co /tmp/cinn_metax_1255948_139.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_140.co /tmp/cinn_metax_1255948_140.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_141.co /tmp/cinn_metax_1255948_141.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_142.co /tmp/cinn_metax_1255948_142.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_143.co /tmp/cinn_metax_1255948_143.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_144.co /tmp/cinn_metax_1255948_144.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_145.co /tmp/cinn_metax_1255948_145.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_146.co /tmp/cinn_metax_1255948_146.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_147.co /tmp/cinn_metax_1255948_147.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_148.co /tmp/cinn_metax_1255948_148.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_149.co /tmp/cinn_metax_1255948_149.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_150.co /tmp/cinn_metax_1255948_150.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_151.co /tmp/cinn_metax_1255948_151.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_152.co /tmp/cinn_metax_1255948_152.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_153.co /tmp/cinn_metax_1255948_153.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_154.co /tmp/cinn_metax_1255948_154.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_155.co /tmp/cinn_metax_1255948_155.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_156.co /tmp/cinn_metax_1255948_156.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_157.co /tmp/cinn_metax_1255948_157.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_56.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_114.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_112.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_94.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_74.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_75.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_106.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_57.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_69.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_63.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_82.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_67.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_65.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_98.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_88.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_59.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_110.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_62.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_97.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_86.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_73.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_118.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_54.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_104.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_148.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_89.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_55.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_108.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_60.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_115.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_78.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_72.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_70.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_133.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_61.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_83.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_79.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_135.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_64.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_66.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_99.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_130.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_126.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_58.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_77.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_68.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_102.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_127.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_119.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_93.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_122.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_100.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_92.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_116.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_96.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_111.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_81.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_76.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_87.co[MetaX Success] Compiled: /tmp/cinn_metax_1255948_113.co
+
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_107.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_131.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_125.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_156.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_109.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_129.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_95.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_155.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_151.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_85.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_80.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_117.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_120.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_154.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_71.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_84.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_128.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_143.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_132.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_101.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_140.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_91.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_146.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_149.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_105.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_121.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_103.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_124.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_90.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_136.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_150.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_123.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_157.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_147.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_153.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_137.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_142.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_144.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_145.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_139.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_134.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_138.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_141.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_152.co
+I1120 07:34:56.706620 1255948 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 07:34:56.743220 1255948 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+[2026/11/20 07:35:08] ppocr INFO: epoch: [1/10], global_step: 10, lr: 0.000045, loss: 1.835154, loss_shrink_maps: 0.995872, loss_threshold_maps: 0.522907, loss_binary_maps: 0.198472, loss_cbn: 0.198472, avg_reader_cost: 0.06660 s, avg_batch_cost: 15.34074 s, avg_samples: 4.0, ips: 0.26074 samples/s, eta: 2:05:16
+[2026/11/20 07:35:16] ppocr INFO: epoch: [1/10], global_step: 20, lr: 0.000095, loss: 1.734146, loss_shrink_maps: 0.852641, loss_threshold_maps: 0.522907, loss_binary_maps: 0.171333, loss_cbn: 0.171333, avg_reader_cost: 0.00413 s, avg_batch_cost: 0.16014 s, avg_samples: 4.0, ips: 24.97835 samples/s, eta: 1:02:00
+[2026/11/20 07:35:23] ppocr INFO: epoch: [1/10], global_step: 30, lr: 0.000195, loss: 1.442873, loss_shrink_maps: 0.742846, loss_threshold_maps: 0.453639, loss_binary_maps: 0.149323, loss_cbn: 0.149323, avg_reader_cost: 0.00443 s, avg_batch_cost: 0.16377 s, avg_samples: 4.0, ips: 24.42380 samples/s, eta: 0:40:54
+[2026/11/20 07:35:30] ppocr INFO: epoch: [1/10], global_step: 40, lr: 0.000295, loss: 1.592164, loss_shrink_maps: 0.820594, loss_threshold_maps: 0.454046, loss_binary_maps: 0.163037, loss_cbn: 0.163037, avg_reader_cost: 0.00432 s, avg_batch_cost: 0.16366 s, avg_samples: 4.0, ips: 24.44043 samples/s, eta: 0:30:20
+[2026/11/20 07:35:37] ppocr INFO: epoch: [1/10], global_step: 50, lr: 0.000395, loss: 1.701344, loss_shrink_maps: 0.896665, loss_threshold_maps: 0.482874, loss_binary_maps: 0.177945, loss_cbn: 0.177945, avg_reader_cost: 0.00411 s, avg_batch_cost: 0.15781 s, avg_samples: 4.0, ips: 25.34614 samples/s, eta: 0:23:58
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]W1120 07:35:40.258461 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:35:40.266178 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_158.co /tmp/cinn_metax_1255948_158.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_159.co /tmp/cinn_metax_1255948_159.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_160.co /tmp/cinn_metax_1255948_160.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_161.co /tmp/cinn_metax_1255948_161.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_162.co /tmp/cinn_metax_1255948_162.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_163.co /tmp/cinn_metax_1255948_163.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_164.co /tmp/cinn_metax_1255948_164.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_165.co /tmp/cinn_metax_1255948_165.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_166.co /tmp/cinn_metax_1255948_166.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_167.co /tmp/cinn_metax_1255948_167.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_168.co /tmp/cinn_metax_1255948_168.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_169.co /tmp/cinn_metax_1255948_169.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_170.co /tmp/cinn_metax_1255948_170.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_171.co /tmp/cinn_metax_1255948_171.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_172.co /tmp/cinn_metax_1255948_172.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_173.co /tmp/cinn_metax_1255948_173.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_175.co /tmp/cinn_metax_1255948_175.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_174.co /tmp/cinn_metax_1255948_174.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_176.co /tmp/cinn_metax_1255948_176.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_177.co /tmp/cinn_metax_1255948_177.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_178.co /tmp/cinn_metax_1255948_178.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_179.co /tmp/cinn_metax_1255948_179.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_180.co /tmp/cinn_metax_1255948_180.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_173.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_158.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_161.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_160.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_170.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_165.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_172.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_167.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_164.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_163.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_175.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_166.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_159.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_168.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_162.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_169.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_176.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_179.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_171.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_180.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_177.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_174.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_178.co
+W1120 07:35:54.208384 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:35:54.211388 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_181.co /tmp/cinn_metax_1255948_181.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_182.co /tmp/cinn_metax_1255948_182.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_183.co /tmp/cinn_metax_1255948_183.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_184.co /tmp/cinn_metax_1255948_184.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_185.co /tmp/cinn_metax_1255948_185.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_187.co /tmp/cinn_metax_1255948_187.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_188.co /tmp/cinn_metax_1255948_188.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_189.co /tmp/cinn_metax_1255948_189.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_190.co /tmp/cinn_metax_1255948_190.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_186.co /tmp/cinn_metax_1255948_186.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_191.co /tmp/cinn_metax_1255948_191.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_192.co /tmp/cinn_metax_1255948_192.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_193.co /tmp/cinn_metax_1255948_193.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_194.co /tmp/cinn_metax_1255948_194.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_195.co /tmp/cinn_metax_1255948_195.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_197.co /tmp/cinn_metax_1255948_197.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_196.co /tmp/cinn_metax_1255948_196.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_198.co /tmp/cinn_metax_1255948_198.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_183.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_189.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_182.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_185.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_187.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_191.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_186.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_193.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_184.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_190.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_181.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_188.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_194.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_197.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_192.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_195.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_196.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_198.co
+W1120 07:36:03.588728 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+W1120 07:36:03.589696 1255948 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_199.co /tmp/cinn_metax_1255948_199.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_200.co /tmp/cinn_metax_1255948_200.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_201.co /tmp/cinn_metax_1255948_201.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_202.co /tmp/cinn_metax_1255948_202.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1255948_203.co /tmp/cinn_metax_1255948_203.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_199.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_200.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_201.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_202.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1255948_203.co
+eval model::   2%|▏         | 1/50 [00:28<23:35, 28.89s/it]eval model::   8%|▊         | 4/50 [00:29<04:12,  5.50s/it]eval model::  14%|█▍        | 7/50 [00:29<01:50,  2.57s/it]eval model::  20%|██        | 10/50 [00:29<00:58,  1.47s/it]eval model::  26%|██▌       | 13/50 [00:29<00:34,  1.07it/s]eval model::  32%|███▏      | 16/50 [00:29<00:21,  1.61it/s]eval model::  38%|███▊      | 19/50 [00:29<00:13,  2.32it/s]eval model::  42%|████▏     | 21/50 [00:29<00:09,  2.94it/s]eval model::  46%|████▌     | 23/50 [00:29<00:07,  3.73it/s]eval model::  50%|█████     | 25/50 [00:30<00:05,  4.73it/s]eval model::  54%|█████▍    | 27/50 [00:30<00:03,  5.93it/s]eval model::  58%|█████▊    | 29/50 [00:30<00:02,  7.32it/s]eval model::  62%|██████▏   | 31/50 [00:30<00:02,  8.86it/s]eval model::  66%|██████▌   | 33/50 [00:30<00:01, 10.40it/s]eval model::  70%|███████   | 35/50 [00:30<00:01, 11.91it/s]eval model::  74%|███████▍  | 37/50 [00:30<00:00, 13.25it/s]eval model::  78%|███████▊  | 39/50 [00:30<00:00, 14.42it/s]eval model::  82%|████████▏ | 41/50 [00:30<00:00, 15.34it/s]eval model::  86%|████████▌ | 43/50 [00:31<00:00, 16.04it/s]eval model::  90%|█████████ | 45/50 [00:31<00:00, 16.76it/s]eval model::  94%|█████████▍| 47/50 [00:31<00:00, 17.27it/s]eval model::  98%|█████████▊| 49/50 [00:31<00:00, 17.73it/s]eval model:: 100%|██████████| 50/50 [00:31<00:00,  1.59it/s]
+[2026/11/20 07:36:08] ppocr INFO: cur metric, precision: 0, recall: 0.0, hmean: 0, fps: 1.6082395775377254
+[2026/11/20 07:36:08] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:36:11] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference
+[2026/11/20 07:36:13] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy
+[2026/11/20 07:36:13] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/best_accuracy
+[2026/11/20 07:36:13] ppocr INFO: best metric, hmean: 0, is_float16: False, precision: 0, recall: 0.0, fps: 1.6082395775377254, best_epoch: 1
+[2026/11/20 07:36:13] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:36:15] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference
+[2026/11/20 07:36:17] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest
+[2026/11/20 07:36:17] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/latest
+[2026/11/20 07:36:17] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_1/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:36:19] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_1/inference/inference
+[2026/11/20 07:36:21] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_1
+[2026/11/20 07:36:21] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_1/iter_epoch_1
+[2026/11/20 07:36:29] ppocr INFO: epoch: [2/10], global_step: 60, lr: 0.000495, loss: 1.697502, loss_shrink_maps: 0.843268, loss_threshold_maps: 0.381788, loss_binary_maps: 0.169354, loss_cbn: 0.169354, avg_reader_cost: 0.09808 s, avg_batch_cost: 0.26220 s, avg_samples: 4.0, ips: 15.25570 samples/s, eta: 0:19:51
+[2026/11/20 07:36:36] ppocr INFO: epoch: [2/10], global_step: 70, lr: 0.000595, loss: 1.890328, loss_shrink_maps: 1.005388, loss_threshold_maps: 0.477223, loss_binary_maps: 0.199625, loss_cbn: 0.199625, avg_reader_cost: 0.00454 s, avg_batch_cost: 0.16040 s, avg_samples: 4.0, ips: 24.93755 samples/s, eta: 0:16:47
+[2026/11/20 07:36:43] ppocr INFO: epoch: [2/10], global_step: 80, lr: 0.000695, loss: 1.897443, loss_shrink_maps: 1.001465, loss_threshold_maps: 0.485277, loss_binary_maps: 0.197156, loss_cbn: 0.197156, avg_reader_cost: 0.00450 s, avg_batch_cost: 0.15986 s, avg_samples: 4.0, ips: 25.02253 samples/s, eta: 0:14:29
+[2026/11/20 07:36:50] ppocr INFO: epoch: [2/10], global_step: 90, lr: 0.000795, loss: 2.084420, loss_shrink_maps: 1.058969, loss_threshold_maps: 0.519709, loss_binary_maps: 0.211651, loss_cbn: 0.211651, avg_reader_cost: 0.00440 s, avg_batch_cost: 0.16137 s, avg_samples: 4.0, ips: 24.78730 samples/s, eta: 0:12:42
+[2026/11/20 07:36:57] ppocr INFO: epoch: [2/10], global_step: 100, lr: 0.000895, loss: 1.616015, loss_shrink_maps: 0.809733, loss_threshold_maps: 0.478471, loss_binary_maps: 0.168516, loss_cbn: 0.168516, avg_reader_cost: 0.00474 s, avg_batch_cost: 0.15581 s, avg_samples: 4.0, ips: 25.67166 samples/s, eta: 0:11:15
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:07,  6.43it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 12.14it/s]eval model::  10%|█         | 5/50 [00:00<00:03, 14.46it/s]eval model::  14%|█▍        | 7/50 [00:00<00:02, 15.79it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 16.77it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.39it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 17.74it/s]eval model::  30%|███       | 15/50 [00:00<00:01, 17.93it/s]eval model::  36%|███▌      | 18/50 [00:01<00:01, 18.88it/s]eval model::  40%|████      | 20/50 [00:01<00:01, 18.75it/s]eval model::  44%|████▍     | 22/50 [00:01<00:01, 18.69it/s]eval model::  48%|████▊     | 24/50 [00:01<00:01, 18.66it/s]eval model::  52%|█████▏    | 26/50 [00:01<00:01, 18.73it/s]eval model::  56%|█████▌    | 28/50 [00:01<00:01, 18.46it/s]eval model::  60%|██████    | 30/50 [00:01<00:01, 18.47it/s]eval model::  64%|██████▍   | 32/50 [00:01<00:00, 18.41it/s]eval model::  68%|██████▊   | 34/50 [00:01<00:00, 18.35it/s]eval model::  72%|███████▏  | 36/50 [00:02<00:00, 18.48it/s]eval model::  76%|███████▌  | 38/50 [00:02<00:00, 18.58it/s]eval model::  80%|████████  | 40/50 [00:02<00:00, 18.56it/s]eval model::  84%|████████▍ | 42/50 [00:02<00:00, 18.37it/s]eval model::  88%|████████▊ | 44/50 [00:02<00:00, 18.42it/s]eval model::  92%|█████████▏| 46/50 [00:02<00:00, 18.57it/s]eval model::  96%|█████████▌| 48/50 [00:02<00:00, 18.80it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 18.92it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 17.89it/s]
+[2026/11/20 07:37:00] ppocr INFO: cur metric, precision: 0, recall: 0.0, hmean: 0, fps: 20.502873518268817
+[2026/11/20 07:37:00] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:37:02] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference
+[2026/11/20 07:37:06] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy
+[2026/11/20 07:37:06] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/best_accuracy
+[2026/11/20 07:37:06] ppocr INFO: best metric, hmean: 0, is_float16: False, precision: 0, recall: 0.0, fps: 20.502873518268817, best_epoch: 2
+[2026/11/20 07:37:06] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:37:08] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference
+[2026/11/20 07:37:10] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest
+[2026/11/20 07:37:10] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/latest
+[2026/11/20 07:37:11] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_2/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:37:13] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_2/inference/inference
+[2026/11/20 07:37:15] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_2
+[2026/11/20 07:37:15] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_2/iter_epoch_2
+[2026/11/20 07:37:23] ppocr INFO: epoch: [3/10], global_step: 110, lr: 0.000995, loss: 1.498063, loss_shrink_maps: 0.732020, loss_threshold_maps: 0.454257, loss_binary_maps: 0.153144, loss_cbn: 0.153144, avg_reader_cost: 0.08982 s, avg_batch_cost: 0.24892 s, avg_samples: 4.0, ips: 16.06946 samples/s, eta: 0:10:07
+[2026/11/20 07:37:30] ppocr INFO: epoch: [3/10], global_step: 120, lr: 0.000999, loss: 1.834839, loss_shrink_maps: 0.921325, loss_threshold_maps: 0.498502, loss_binary_maps: 0.184093, loss_cbn: 0.184093, avg_reader_cost: 0.00459 s, avg_batch_cost: 0.16016 s, avg_samples: 4.0, ips: 24.97441 samples/s, eta: 0:09:07
+[2026/11/20 07:37:37] ppocr INFO: epoch: [3/10], global_step: 130, lr: 0.000996, loss: 1.834329, loss_shrink_maps: 0.953519, loss_threshold_maps: 0.507442, loss_binary_maps: 0.186518, loss_cbn: 0.186518, avg_reader_cost: 0.00466 s, avg_batch_cost: 0.16340 s, avg_samples: 4.0, ips: 24.47978 samples/s, eta: 0:08:16
+[2026/11/20 07:37:44] ppocr INFO: epoch: [3/10], global_step: 140, lr: 0.000991, loss: 1.714148, loss_shrink_maps: 0.876440, loss_threshold_maps: 0.512509, loss_binary_maps: 0.177184, loss_cbn: 0.177184, avg_reader_cost: 0.00447 s, avg_batch_cost: 0.16233 s, avg_samples: 4.0, ips: 24.64075 samples/s, eta: 0:07:33
+[2026/11/20 07:37:51] ppocr INFO: epoch: [3/10], global_step: 150, lr: 0.000985, loss: 1.789103, loss_shrink_maps: 0.923284, loss_threshold_maps: 0.532004, loss_binary_maps: 0.187623, loss_cbn: 0.187623, avg_reader_cost: 0.00446 s, avg_batch_cost: 0.15847 s, avg_samples: 4.0, ips: 25.24174 samples/s, eta: 0:06:54
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:07,  6.84it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 12.65it/s]eval model::  10%|█         | 5/50 [00:00<00:03, 14.93it/s]eval model::  14%|█▍        | 7/50 [00:00<00:02, 16.00it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 16.76it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.32it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 17.62it/s]eval model::  30%|███       | 15/50 [00:00<00:01, 17.89it/s]eval model::  34%|███▍      | 17/50 [00:01<00:01, 18.22it/s]eval model::  38%|███▊      | 19/50 [00:01<00:01, 18.32it/s]eval model::  42%|████▏     | 21/50 [00:01<00:01, 18.16it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 18.31it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 18.38it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 18.38it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:01, 18.50it/s]eval model::  62%|██████▏   | 31/50 [00:01<00:01, 18.38it/s]eval model::  66%|██████▌   | 33/50 [00:01<00:00, 18.15it/s]eval model::  70%|███████   | 35/50 [00:02<00:00, 18.16it/s]eval model::  74%|███████▍  | 37/50 [00:02<00:00, 18.26it/s]eval model::  78%|███████▊  | 39/50 [00:02<00:00, 18.24it/s]eval model::  82%|████████▏ | 41/50 [00:02<00:00, 18.18it/s]eval model::  86%|████████▌ | 43/50 [00:02<00:00, 18.35it/s]eval model::  90%|█████████ | 45/50 [00:02<00:00, 18.50it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 18.63it/s]eval model::  98%|█████████▊| 49/50 [00:02<00:00, 18.75it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 17.78it/s]
+[2026/11/20 07:37:54] ppocr INFO: cur metric, precision: 0, recall: 0.0, hmean: 0, fps: 20.226163621758225
+[2026/11/20 07:37:54] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:37:56] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference
+[2026/11/20 07:37:59] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy
+[2026/11/20 07:37:59] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/best_accuracy
+[2026/11/20 07:37:59] ppocr INFO: best metric, hmean: 0, is_float16: False, precision: 0, recall: 0.0, fps: 20.226163621758225, best_epoch: 3
+[2026/11/20 07:38:00] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:38:02] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference
+[2026/11/20 07:38:04] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest
+[2026/11/20 07:38:04] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/latest
+[2026/11/20 07:38:04] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_3/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:38:06] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_3/inference/inference
+[2026/11/20 07:38:08] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_3
+[2026/11/20 07:38:08] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_3/iter_epoch_3
+[2026/11/20 07:38:16] ppocr INFO: epoch: [4/10], global_step: 160, lr: 0.000976, loss: 1.783052, loss_shrink_maps: 0.932960, loss_threshold_maps: 0.527212, loss_binary_maps: 0.187623, loss_cbn: 0.187623, avg_reader_cost: 0.08945 s, avg_batch_cost: 0.25112 s, avg_samples: 4.0, ips: 15.92852 samples/s, eta: 0:06:23
+[2026/11/20 07:38:23] ppocr INFO: epoch: [4/10], global_step: 170, lr: 0.000965, loss: 1.759929, loss_shrink_maps: 0.883244, loss_threshold_maps: 0.526965, loss_binary_maps: 0.176079, loss_cbn: 0.176079, avg_reader_cost: 0.00424 s, avg_batch_cost: 0.16206 s, avg_samples: 4.0, ips: 24.68229 samples/s, eta: 0:05:53
+[2026/11/20 07:38:30] ppocr INFO: epoch: [4/10], global_step: 180, lr: 0.000953, loss: 1.883432, loss_shrink_maps: 1.012492, loss_threshold_maps: 0.532310, loss_binary_maps: 0.202990, loss_cbn: 0.202990, avg_reader_cost: 0.00443 s, avg_batch_cost: 0.16302 s, avg_samples: 4.0, ips: 24.53659 samples/s, eta: 0:05:26
+[2026/11/20 07:38:37] ppocr INFO: epoch: [4/10], global_step: 190, lr: 0.000939, loss: 1.996407, loss_shrink_maps: 1.025528, loss_threshold_maps: 0.532310, loss_binary_maps: 0.203774, loss_cbn: 0.203774, avg_reader_cost: 0.00467 s, avg_batch_cost: 0.16298 s, avg_samples: 4.0, ips: 24.54288 samples/s, eta: 0:05:02
+[2026/11/20 07:38:44] ppocr INFO: epoch: [4/10], global_step: 200, lr: 0.000923, loss: 1.534921, loss_shrink_maps: 0.845865, loss_threshold_maps: 0.441034, loss_binary_maps: 0.167480, loss_cbn: 0.167480, avg_reader_cost: 0.00439 s, avg_batch_cost: 0.15516 s, avg_samples: 4.0, ips: 25.77938 samples/s, eta: 0:04:40
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:07,  6.84it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 12.41it/s]eval model::  10%|█         | 5/50 [00:00<00:03, 14.82it/s]eval model::  14%|█▍        | 7/50 [00:00<00:02, 16.14it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 17.03it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.60it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 18.09it/s]eval model::  30%|███       | 15/50 [00:00<00:01, 18.21it/s]eval model::  34%|███▍      | 17/50 [00:01<00:01, 18.41it/s]eval model::  38%|███▊      | 19/50 [00:01<00:01, 18.57it/s]eval model::  42%|████▏     | 21/50 [00:01<00:01, 18.72it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 18.83it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 18.90it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 18.88it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:01, 18.80it/s]eval model::  62%|██████▏   | 31/50 [00:01<00:01, 18.63it/s]eval model::  66%|██████▌   | 33/50 [00:01<00:00, 18.66it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 18.71it/s]eval model::  74%|███████▍  | 37/50 [00:02<00:00, 18.73it/s]eval model::  78%|███████▊  | 39/50 [00:02<00:00, 18.60it/s]eval model::  82%|████████▏ | 41/50 [00:02<00:00, 18.63it/s]eval model::  86%|████████▌ | 43/50 [00:02<00:00, 18.74it/s]eval model::  90%|█████████ | 45/50 [00:02<00:00, 18.82it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 19.00it/s]eval model::  98%|█████████▊| 49/50 [00:02<00:00, 19.26it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 18.13it/s]
+[2026/11/20 07:38:47] ppocr INFO: cur metric, precision: 0, recall: 0.0, hmean: 0, fps: 20.695608220761628
+[2026/11/20 07:38:47] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:38:49] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference
+[2026/11/20 07:38:53] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy
+[2026/11/20 07:38:53] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/best_accuracy
+[2026/11/20 07:38:53] ppocr INFO: best metric, hmean: 0, is_float16: False, precision: 0, recall: 0.0, fps: 20.695608220761628, best_epoch: 4
+[2026/11/20 07:38:53] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:38:55] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference
+[2026/11/20 07:38:57] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest
+[2026/11/20 07:38:57] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/latest
+[2026/11/20 07:38:57] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_4/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:39:00] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_4/inference/inference
+[2026/11/20 07:39:02] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_4
+[2026/11/20 07:39:02] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_4/iter_epoch_4
+[2026/11/20 07:39:10] ppocr INFO: epoch: [5/10], global_step: 210, lr: 0.000905, loss: 1.517350, loss_shrink_maps: 0.845865, loss_threshold_maps: 0.452830, loss_binary_maps: 0.167480, loss_cbn: 0.167480, avg_reader_cost: 0.09897 s, avg_batch_cost: 0.25575 s, avg_samples: 4.0, ips: 15.64056 samples/s, eta: 0:04:21
+[2026/11/20 07:39:17] ppocr INFO: epoch: [5/10], global_step: 220, lr: 0.000886, loss: 1.587290, loss_shrink_maps: 0.774218, loss_threshold_maps: 0.485948, loss_binary_maps: 0.153875, loss_cbn: 0.153875, avg_reader_cost: 0.00493 s, avg_batch_cost: 0.16141 s, avg_samples: 4.0, ips: 24.78234 samples/s, eta: 0:04:02
+[2026/11/20 07:39:24] ppocr INFO: epoch: [5/10], global_step: 230, lr: 0.000866, loss: 1.587290, loss_shrink_maps: 0.774218, loss_threshold_maps: 0.473171, loss_binary_maps: 0.153875, loss_cbn: 0.153875, avg_reader_cost: 0.00517 s, avg_batch_cost: 0.16044 s, avg_samples: 4.0, ips: 24.93211 samples/s, eta: 0:03:45
+[2026/11/20 07:39:31] ppocr INFO: epoch: [5/10], global_step: 240, lr: 0.000843, loss: 1.926566, loss_shrink_maps: 0.989218, loss_threshold_maps: 0.495255, loss_binary_maps: 0.198530, loss_cbn: 0.198530, avg_reader_cost: 0.00436 s, avg_batch_cost: 0.16161 s, avg_samples: 4.0, ips: 24.75089 samples/s, eta: 0:03:30
+[2026/11/20 07:39:38] ppocr INFO: epoch: [5/10], global_step: 250, lr: 0.000820, loss: 1.747719, loss_shrink_maps: 0.904266, loss_threshold_maps: 0.506194, loss_binary_maps: 0.181713, loss_cbn: 0.181713, avg_reader_cost: 0.00471 s, avg_batch_cost: 0.15742 s, avg_samples: 4.0, ips: 25.40996 samples/s, eta: 0:03:15
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:05,  8.28it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 13.77it/s]eval model::  10%|█         | 5/50 [00:00<00:02, 15.55it/s]eval model::  14%|█▍        | 7/50 [00:00<00:02, 16.61it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 17.19it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.65it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 18.05it/s]eval model::  30%|███       | 15/50 [00:00<00:01, 18.30it/s]eval model::  34%|███▍      | 17/50 [00:00<00:01, 18.43it/s]eval model::  38%|███▊      | 19/50 [00:01<00:01, 18.72it/s]eval model::  42%|████▏     | 21/50 [00:01<00:01, 18.70it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 18.79it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 18.95it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 19.02it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:01, 18.72it/s]eval model::  62%|██████▏   | 31/50 [00:01<00:01, 18.80it/s]eval model::  66%|██████▌   | 33/50 [00:01<00:00, 18.68it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 18.61it/s]eval model::  74%|███████▍  | 37/50 [00:02<00:00, 18.65it/s]eval model::  80%|████████  | 40/50 [00:02<00:00, 19.26it/s]eval model::  84%|████████▍ | 42/50 [00:02<00:00, 19.11it/s]eval model::  88%|████████▊ | 44/50 [00:02<00:00, 19.03it/s]eval model::  92%|█████████▏| 46/50 [00:02<00:00, 19.01it/s]eval model::  96%|█████████▌| 48/50 [00:02<00:00, 19.13it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 19.25it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 18.34it/s]
+[2026/11/20 07:39:41] ppocr INFO: cur metric, precision: 0, recall: 0.0, hmean: 0, fps: 20.667847319336982
+[2026/11/20 07:39:41] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:39:43] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference
+[2026/11/20 07:39:46] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy
+[2026/11/20 07:39:46] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/best_accuracy
+[2026/11/20 07:39:46] ppocr INFO: best metric, hmean: 0, is_float16: False, precision: 0, recall: 0.0, fps: 20.667847319336982, best_epoch: 5
+[2026/11/20 07:39:46] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:39:49] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference
+[2026/11/20 07:39:50] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest
+[2026/11/20 07:39:50] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/latest
+[2026/11/20 07:39:50] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_5/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:39:52] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_5/inference/inference
+[2026/11/20 07:39:54] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_5
+[2026/11/20 07:39:54] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_5/iter_epoch_5
+[2026/11/20 07:40:02] ppocr INFO: epoch: [6/10], global_step: 260, lr: 0.000795, loss: 1.641138, loss_shrink_maps: 0.841053, loss_threshold_maps: 0.441602, loss_binary_maps: 0.169316, loss_cbn: 0.169316, avg_reader_cost: 0.09945 s, avg_batch_cost: 0.26465 s, avg_samples: 4.0, ips: 15.11408 samples/s, eta: 0:03:03
+[2026/11/20 07:40:09] ppocr INFO: epoch: [6/10], global_step: 270, lr: 0.000769, loss: 1.580592, loss_shrink_maps: 0.803853, loss_threshold_maps: 0.453173, loss_binary_maps: 0.159457, loss_cbn: 0.159457, avg_reader_cost: 0.00490 s, avg_batch_cost: 0.16424 s, avg_samples: 4.0, ips: 24.35482 samples/s, eta: 0:02:50
+[2026/11/20 07:40:16] ppocr INFO: epoch: [6/10], global_step: 280, lr: 0.000742, loss: 1.883801, loss_shrink_maps: 0.974798, loss_threshold_maps: 0.517331, loss_binary_maps: 0.194824, loss_cbn: 0.194824, avg_reader_cost: 0.00481 s, avg_batch_cost: 0.16262 s, avg_samples: 4.0, ips: 24.59708 samples/s, eta: 0:02:38
+[2026/11/20 07:40:23] ppocr INFO: epoch: [6/10], global_step: 290, lr: 0.000714, loss: 1.804550, loss_shrink_maps: 0.913878, loss_threshold_maps: 0.517331, loss_binary_maps: 0.182543, loss_cbn: 0.182543, avg_reader_cost: 0.00454 s, avg_batch_cost: 0.16448 s, avg_samples: 4.0, ips: 24.31867 samples/s, eta: 0:02:27
+[2026/11/20 07:40:30] ppocr INFO: epoch: [6/10], global_step: 300, lr: 0.000686, loss: 1.913228, loss_shrink_maps: 0.994915, loss_threshold_maps: 0.552536, loss_binary_maps: 0.199823, loss_cbn: 0.199823, avg_reader_cost: 0.00462 s, avg_batch_cost: 0.15588 s, avg_samples: 4.0, ips: 25.66126 samples/s, eta: 0:02:16
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:05,  8.71it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 14.12it/s]eval model::  10%|█         | 5/50 [00:00<00:02, 15.91it/s]eval model::  14%|█▍        | 7/50 [00:00<00:02, 16.63it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 17.23it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.62it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 17.96it/s]eval model::  30%|███       | 15/50 [00:00<00:01, 18.00it/s]eval model::  34%|███▍      | 17/50 [00:00<00:01, 18.24it/s]eval model::  38%|███▊      | 19/50 [00:01<00:01, 18.25it/s]eval model::  42%|████▏     | 21/50 [00:01<00:01, 18.17it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 18.29it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 18.45it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 18.48it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:01, 18.73it/s]eval model::  62%|██████▏   | 31/50 [00:01<00:01, 18.76it/s]eval model::  66%|██████▌   | 33/50 [00:01<00:00, 18.68it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 18.34it/s]eval model::  74%|███████▍  | 37/50 [00:02<00:00, 18.29it/s]eval model::  78%|███████▊  | 39/50 [00:02<00:00, 17.97it/s]eval model::  82%|████████▏ | 41/50 [00:02<00:00, 17.55it/s]eval model::  86%|████████▌ | 43/50 [00:02<00:00, 17.74it/s]eval model::  90%|█████████ | 45/50 [00:02<00:00, 17.99it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 18.43it/s]eval model::  98%|█████████▊| 49/50 [00:02<00:00, 18.68it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 17.94it/s]
+[2026/11/20 07:40:33] ppocr INFO: cur metric, precision: 0, recall: 0.0, hmean: 0, fps: 20.206702377039758
+[2026/11/20 07:40:33] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:40:35] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference
+[2026/11/20 07:40:40] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy
+[2026/11/20 07:40:40] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/best_accuracy
+[2026/11/20 07:40:40] ppocr INFO: best metric, hmean: 0, is_float16: False, precision: 0, recall: 0.0, fps: 20.206702377039758, best_epoch: 6
+[2026/11/20 07:40:40] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:40:42] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference
+[2026/11/20 07:40:44] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest
+[2026/11/20 07:40:44] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/latest
+[2026/11/20 07:40:44] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_6/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:40:46] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_6/inference/inference
+[2026/11/20 07:40:49] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_6
+[2026/11/20 07:40:49] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_6/iter_epoch_6
+[2026/11/20 07:40:56] ppocr INFO: epoch: [7/10], global_step: 310, lr: 0.000656, loss: 2.160334, loss_shrink_maps: 1.102994, loss_threshold_maps: 0.588184, loss_binary_maps: 0.221937, loss_cbn: 0.221937, avg_reader_cost: 0.08742 s, avg_batch_cost: 0.24795 s, avg_samples: 4.0, ips: 16.13228 samples/s, eta: 0:02:07
+[2026/11/20 07:41:03] ppocr INFO: epoch: [7/10], global_step: 320, lr: 0.000626, loss: 1.660252, loss_shrink_maps: 0.852346, loss_threshold_maps: 0.483201, loss_binary_maps: 0.169233, loss_cbn: 0.169233, avg_reader_cost: 0.00445 s, avg_batch_cost: 0.16167 s, avg_samples: 4.0, ips: 24.74203 samples/s, eta: 0:01:57
+[2026/11/20 07:41:11] ppocr INFO: epoch: [7/10], global_step: 330, lr: 0.000595, loss: 1.682585, loss_shrink_maps: 0.875504, loss_threshold_maps: 0.476162, loss_binary_maps: 0.175614, loss_cbn: 0.175614, avg_reader_cost: 0.00487 s, avg_batch_cost: 0.16122 s, avg_samples: 4.0, ips: 24.81020 samples/s, eta: 0:01:48
+[2026/11/20 07:41:18] ppocr INFO: epoch: [7/10], global_step: 340, lr: 0.000564, loss: 1.704475, loss_shrink_maps: 0.888141, loss_threshold_maps: 0.458556, loss_binary_maps: 0.176788, loss_cbn: 0.176788, avg_reader_cost: 0.00460 s, avg_batch_cost: 0.16715 s, avg_samples: 4.0, ips: 23.93082 samples/s, eta: 0:01:39
+[2026/11/20 07:41:25] ppocr INFO: epoch: [7/10], global_step: 350, lr: 0.000533, loss: 1.489698, loss_shrink_maps: 0.759572, loss_threshold_maps: 0.446574, loss_binary_maps: 0.152253, loss_cbn: 0.152253, avg_reader_cost: 0.00431 s, avg_batch_cost: 0.15542 s, avg_samples: 4.0, ips: 25.73649 samples/s, eta: 0:01:31
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:07,  6.98it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 12.55it/s]eval model::  10%|█         | 5/50 [00:00<00:03, 14.86it/s]eval model::  14%|█▍        | 7/50 [00:00<00:02, 15.92it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 16.77it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.20it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 17.52it/s]eval model::  30%|███       | 15/50 [00:00<00:01, 17.74it/s]eval model::  34%|███▍      | 17/50 [00:01<00:01, 17.92it/s]eval model::  38%|███▊      | 19/50 [00:01<00:01, 18.12it/s]eval model::  42%|████▏     | 21/50 [00:01<00:01, 18.24it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 18.35it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 18.35it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 18.52it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:01, 18.68it/s]eval model::  62%|██████▏   | 31/50 [00:01<00:01, 18.69it/s]eval model::  66%|██████▌   | 33/50 [00:01<00:00, 18.52it/s]eval model::  70%|███████   | 35/50 [00:02<00:00, 18.35it/s]eval model::  74%|███████▍  | 37/50 [00:02<00:00, 18.32it/s]eval model::  78%|███████▊  | 39/50 [00:02<00:00, 18.32it/s]eval model::  82%|████████▏ | 41/50 [00:02<00:00, 18.29it/s]eval model::  86%|████████▌ | 43/50 [00:02<00:00, 18.33it/s]eval model::  90%|█████████ | 45/50 [00:02<00:00, 18.44it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 18.64it/s]eval model::  98%|█████████▊| 49/50 [00:02<00:00, 18.83it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 17.82it/s]
+[2026/11/20 07:41:27] ppocr INFO: cur metric, precision: 0, recall: 0.0, hmean: 0, fps: 20.234459575502736
+[2026/11/20 07:41:28] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:41:30] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference
+[2026/11/20 07:41:33] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy
+[2026/11/20 07:41:33] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/best_accuracy
+[2026/11/20 07:41:33] ppocr INFO: best metric, hmean: 0, is_float16: False, precision: 0, recall: 0.0, fps: 20.234459575502736, best_epoch: 7
+[2026/11/20 07:41:34] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:41:36] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference
+[2026/11/20 07:41:38] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest
+[2026/11/20 07:41:38] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/latest
+[2026/11/20 07:41:38] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_7/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:41:40] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_7/inference/inference
+[2026/11/20 07:41:43] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_7
+[2026/11/20 07:41:43] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_7/iter_epoch_7
+[2026/11/20 07:41:51] ppocr INFO: epoch: [8/10], global_step: 360, lr: 0.000502, loss: 1.676758, loss_shrink_maps: 0.794297, loss_threshold_maps: 0.532456, loss_binary_maps: 0.160473, loss_cbn: 0.160473, avg_reader_cost: 0.08603 s, avg_batch_cost: 0.25074 s, avg_samples: 4.0, ips: 15.95259 samples/s, eta: 0:01:24
+[2026/11/20 07:41:58] ppocr INFO: epoch: [8/10], global_step: 370, lr: 0.000470, loss: 1.601725, loss_shrink_maps: 0.761403, loss_threshold_maps: 0.546379, loss_binary_maps: 0.152762, loss_cbn: 0.152762, avg_reader_cost: 0.00488 s, avg_batch_cost: 0.16225 s, avg_samples: 4.0, ips: 24.65284 samples/s, eta: 0:01:16
+[2026/11/20 07:42:05] ppocr INFO: epoch: [8/10], global_step: 380, lr: 0.000439, loss: 1.537471, loss_shrink_maps: 0.723278, loss_threshold_maps: 0.562438, loss_binary_maps: 0.145644, loss_cbn: 0.145644, avg_reader_cost: 0.00471 s, avg_batch_cost: 0.16467 s, avg_samples: 4.0, ips: 24.29052 samples/s, eta: 0:01:09
+[2026/11/20 07:42:12] ppocr INFO: epoch: [8/10], global_step: 390, lr: 0.000408, loss: 1.861228, loss_shrink_maps: 0.877337, loss_threshold_maps: 0.563382, loss_binary_maps: 0.174441, loss_cbn: 0.174441, avg_reader_cost: 0.00505 s, avg_batch_cost: 0.16492 s, avg_samples: 4.0, ips: 24.25455 samples/s, eta: 0:01:02
+[2026/11/20 07:42:19] ppocr INFO: epoch: [8/10], global_step: 400, lr: 0.000377, loss: 1.488221, loss_shrink_maps: 0.719498, loss_threshold_maps: 0.429314, loss_binary_maps: 0.145466, loss_cbn: 0.145466, avg_reader_cost: 0.00476 s, avg_batch_cost: 0.15613 s, avg_samples: 4.0, ips: 25.61991 samples/s, eta: 0:00:55
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:07,  6.83it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 12.51it/s]eval model::  10%|█         | 5/50 [00:00<00:03, 14.84it/s]eval model::  14%|█▍        | 7/50 [00:00<00:02, 16.12it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 17.03it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.70it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 18.12it/s]eval model::  30%|███       | 15/50 [00:00<00:01, 18.28it/s]eval model::  34%|███▍      | 17/50 [00:01<00:01, 18.42it/s]eval model::  38%|███▊      | 19/50 [00:01<00:01, 18.58it/s]eval model::  42%|████▏     | 21/50 [00:01<00:01, 18.49it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 18.50it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 18.59it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 18.57it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:01, 18.38it/s]eval model::  62%|██████▏   | 31/50 [00:01<00:01, 18.37it/s]eval model::  66%|██████▌   | 33/50 [00:01<00:00, 18.08it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 18.05it/s]eval model::  74%|███████▍  | 37/50 [00:02<00:00, 17.78it/s]eval model::  78%|███████▊  | 39/50 [00:02<00:00, 17.77it/s]eval model::  82%|████████▏ | 41/50 [00:02<00:00, 17.97it/s]eval model::  86%|████████▌ | 43/50 [00:02<00:00, 18.07it/s]eval model::  90%|█████████ | 45/50 [00:02<00:00, 18.18it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 18.10it/s]eval model::  98%|█████████▊| 49/50 [00:02<00:00, 18.42it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 17.75it/s]
+[2026/11/20 07:42:22] ppocr INFO: cur metric, precision: 0, recall: 0.0, hmean: 0, fps: 20.246109977934594
+[2026/11/20 07:42:22] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:42:24] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/inference/inference
+[2026/11/20 07:42:28] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy
+[2026/11/20 07:42:28] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/best_accuracy/best_accuracy
+[2026/11/20 07:42:28] ppocr INFO: best metric, hmean: 0, is_float16: False, precision: 0, recall: 0.0, fps: 20.246109977934594, best_epoch: 8
+[2026/11/20 07:42:28] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:42:30] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/inference/inference
+[2026/11/20 07:42:33] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest
+[2026/11/20 07:42:33] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/latest/latest
+[2026/11/20 07:42:33] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_8/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:42:35] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_8/inference/inference
+[2026/11/20 07:42:37] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_8
+[2026/11/20 07:42:37] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_det/results/cinn-train/iter_epoch_8/iter_epoch_8
+Traceback (most recent call last):
+  File "/data/PaddleX-release-3.7/paddlex/repo_manager/repos/PaddleOCR/tools/train.py", line 300, in <module>
+    main(config, device, logger, vdl_writer)
+  File "/data/PaddleX-release-3.7/paddlex/repo_manager/repos/PaddleOCR/tools/train.py", line 251, in main
+    program.train(
+  File "/data/PaddleX-release-3.7/paddlex/repo_manager/repos/PaddleOCR/tools/program.py", line 394, in train
+    loss = loss_class(preds, batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/nn/layer/layers.py", line 2139, in __call__
+    return self.forward(*inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/PaddleX-release-3.7/paddlex/repo_manager/repos/PaddleOCR/ppocr/losses/det_db_loss.py", line 91, in forward
+    loss_shrink_maps = self.bce_loss(
+                       ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/nn/layer/layers.py", line 2139, in __call__
+    return self.forward(*inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/PaddleX-release-3.7/paddlex/repo_manager/repos/PaddleOCR/ppocr/losses/det_basic_loss.py", line 94, in forward
+    loss = self.loss(pred, gt, mask=mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/nn/layer/layers.py", line 2139, in __call__
+    return self.forward(*inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/PaddleX-release-3.7/paddlex/repo_manager/repos/PaddleOCR/ppocr/losses/det_basic_loss.py", line 136, in forward
+    assert loss <= 1
+           ^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/data/PaddleX-release-3.7/paddlex/utils/result_saver.py", line 28, in wrap
+    result = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/PaddleX-release-3.7/paddlex/engine.py", line 41, in run
+    self._model.train()
+  File "/data/PaddleX-release-3.7/paddlex/model.py", line 132, in train
+    trainer.train()
+  File "/data/PaddleX-release-3.7/paddlex/modules/base/trainer.py", line 99, in train
+    train_result = self.pdx_model.train(**train_args)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/PaddleX-release-3.7/paddlex/repo_apis/PaddleOCR_api/text_rec/model.py", line 147, in train
+    return self.runner.train(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data/PaddleX-release-3.7/paddlex/repo_apis/PaddleOCR_api/text_rec/runner.py", line 55, in train
+    return self.run_cmd(
+           ^^^^^^^^^^^^^
+  File "/data/PaddleX-release-3.7/paddlex/repo_apis/base/runner.py", line 357, in run_cmd
+    raise CalledProcessError(
+paddlex.utils.errors.others.CalledProcessError: Command ['/opt/conda/envs/metax/bin/python', 'tools/train.py', '-c', '/root/.paddlex/tmp7j57datv/textdetmodel_PP-OCRv4_server_det.yml'] returned non-zero exit status 1.

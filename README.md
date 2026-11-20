@@ -1,173 +1,141 @@
 # PaddleFormers CINN Model Test Suite
 
-这是一个按模型组织的 PaddleFormers 动态图/CINN 测试仓。每个模型目录提供统一的运行入口和模型说明；其他文件由模型实现按需组织，不作为跨模型的固定模板。
-
-本仓库特别针对Metax平台（C500）和Ampere平台（A100）提供统一的资源记录和运行入口。
+按模型组织的动态图 / CINN 对照测试仓，覆盖 PaddleFormers、PaddleClas、PaddleX、PaddleScience 四类来源。
+每个模型目录提供统一的运行入口（推理，部分含训练）与模型说明（`README.md` 或 `run_model.md`）；特别针对
+Metax 平台（C500）与 Ampere 平台（A100）提供统一的资源记录和运行入口。
 
 ## 模型目录
 
-### PaddleFormers（动态图 `nn.Layer` + `to_static(backend="CINN")`，含训练入口）
+以**模型**为单位，标注「来源 / 推理依赖 / 训练依赖框架」。入口文档见各链接。
 
-- [Gemma3](gemma3/run_model.md)
-- [Llama4 text tiny](llama4/run_model.md)：FP32 框架测试，权重仅本地提供。
-- [Llama Guard4 图文 tiny](llama_guard4/run_model.md)
-- [DeepSeek-OCR2](deepseek_ocr2/run_model.md)
-- [FastVLM](fastvlm/run_model.md)
-- [LFM2-VL](lfm2_vl/run_model.md)
-- [MiniMax](minimax/run_model.md)
-- [Mistral3-Pixtral](mistral3_pixtral/run_model.md)
-- [Molmo](molmo/run_model.md)
-- [OLMo2](olmo2/run_model.md)
-- [Phi4-Multimodal](phi4_multimodal/run_model.md)
+- [Gemma3](gemma3/run_model.md) — 来源：PaddleFormers Gemma3；推理依赖：PaddleFormers（`nn.Layer`+`to_static(backend="CINN")`）；训练依赖：PaddleFormers。
+- [Llama4 text tiny](llama4/run_model.md) — 来源：PaddleFormers Llama4（FP32，权重本地）；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [Llama Guard4 图文 tiny](llama_guard4/run_model.md) — 来源：PaddleFormers LlamaGuard4；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [DeepSeek-OCR2](deepseek_ocr2/run_model.md) — 来源：PaddleFormers DeepSeek-OCR2；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [FastVLM](fastvlm/run_model.md) — 来源：PaddleFormers FastVLM；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [LFM2-VL](lfm2_vl/run_model.md) — 来源：PaddleFormers LFM2-VL；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [MiniMax](minimax/run_model.md) — 来源：PaddleFormers MiniMax；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [Mistral3-Pixtral](mistral3_pixtral/run_model.md) — 来源：PaddleFormers Mistral3-Pixtral；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [Molmo](molmo/run_model.md) — 来源：PaddleFormers Molmo；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [OLMo2](olmo2/run_model.md) — 来源：PaddleFormers OLMo2；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [Phi4-Multimodal](phi4_multimodal/run_model.md) — 来源：PaddleFormers Phi4-Multimodal；推理依赖：PaddleFormers；训练依赖：PaddleFormers。
+- [GhostNetV3-x1.0](ghostnetv3/run_model.md) — 来源：PaddleClas backbone；推理依赖：PaddleClas（`to_static(backend="CINN")`）；训练依赖：PaddleClas。
+- [MobileNetV5](mobilenetv5/run_model.md) — 来源：PaddleClas backbone；推理依赖：PaddleClas；训练依赖：PaddleClas。
+- [NaFlexViT](naflexvit/run_model.md) — 来源：PaddleClas backbone；推理依赖：PaddleClas；训练依赖：PaddleClas。
+- [YOLO11-cls-n](yolo11/run_model.md) — 来源：PaddleClas backbone；推理依赖：PaddleClas；训练依赖：PaddleClas。
+- [StarNet-S4](starnet_s4/README.md) — 来源：PaddleX 3.7 官方分类（224×224）；推理依赖：`paddle.inference`（PIR/CINN）；训练依赖：PaddleClas。
+- [MobileNetV4_hybrid_large](mobilenetv4_hybrid_large/README.md) — 来源：PaddleX 3.7 官方分类（448×448）；推理依赖：`paddle.inference`（PIR/CINN）；训练依赖：PaddleClas（训练用 224 裁剪）。
+- [PP-YOLOE_plus-S](ppyoloe_plus_s/README.md) — 来源：PaddleX 3.7 官方检测（640×640 + `scale_factor`）；推理依赖：`paddle.inference`（PIR/CINN）；训练依赖：PaddleDetection（CINN 训练发散，仅 dynamic）。
+- [PP-OCRv4_server_det](ppocrv4_server_det/README.md) — 来源：PaddleX 3.7 官方文本检测（960×960）；推理依赖：`paddle.inference`（PIR/CINN）；训练依赖：PaddleOCR（CINN 训练中段被 loss 断言中断）。
+- [PP-OCRv4_server_rec](ppocrv4_server_rec/README.md) — 来源：PaddleX 3.7 官方文本识别（48×320）；推理依赖：`paddle.inference`（PIR/CINN）；训练依赖：PaddleOCR。
+- [darcy](darcy/run_model.md) — 来源：PaddleScience `test/cinn/cases`（2D Darcy, MLP PINN）；推理依赖：PaddleScience（`to_static(backend="CINN")`）；训练依赖：PaddleScience。
+- [xpinn](xpinn/run_model.md) — 来源：PaddleScience `test/cinn/cases`（2D Poisson, 3 子域 XPINN）；推理依赖：PaddleScience；训练依赖：PaddleScience。
+- [earthformer](earthformer/run_model.md) — 来源：PaddleScience `test/cinn/cases`（ENSO CuboidTransformer）；推理依赖：PaddleScience；训练依赖：PaddleScience。
 
-### PaddleClas（PaddleClas backbone + `to_static(backend="CINN")`，含训练入口）
+## 框架依赖安装注意点
 
-- [GhostNetV3-x1.0](ghostnetv3/run_model.md)
-- [MobileNetV5](mobilenetv5/run_model.md)
-- [NaFlexViT](naflexvit/run_model.md)
-- [YOLO11-cls-n](yolo11/run_model.md)
+通用：本机先 `source /data/env.sh`（metax conda，Paddle `3.5.0.dev20260516`，`is_compiled_with_cinn()==True`）。
+核心红线是**绝不让 pip 把 `paddlepaddle-metax` 覆盖成 CPU 版**，恢复 wheel 在
+`/data/paddlepaddle_metax-3.5.0.dev20260516+maca3.8.4.9-cp312-cp312-linux_x86_64.whl`。
 
-### PaddleX 3.7 官方推理模型（静态 PIR 图，`AnalysisConfig.enable_cinn()`，仅推理）
+### PaddleX 训练后端（PaddleClas / PaddleDetection / PaddleOCR）
 
-PaddleX 只发布 `inference.json` + `inference.pdiparams`，没有动态图代码，因此对比的是同一张静态图在默认 PIR
-执行器与 CINN 执行器下的运行，没有 `train.sh`。
+- 一律用 `paddlex --install <Repo> --no_deps -y` 安装：`--no_deps` 避免其 requirements 里的 `paddlepaddle` 覆盖 metax 版。
+- 漏装的轻量依赖再单独补，且 opencv 必须 headless，否则 `import cv2` 报 `libGL.so.1`：
+  - PaddleClas：`pip install --no-deps opencv-python-headless==4.6.0.66 easydict faiss-cpu gast==0.3.3`
+  - PaddleDetection：`pip install pycocotools==2.0.8 typeguard shapely terminaltables Cython pyclipper "setuptools<81" scikit-image imageio six`（约束 `numpy==1.26.4`）+ `pip install --no-deps imgaug`。缺 `setuptools` 会报 `No module named pkg_resources`。
+  - PaddleOCR：`pip install shapely pyclipper scikit-image lmdb rapidfuzz albumentations albucore`（约束 `numpy==1.26.4`；albumentations 会把 opencv-headless 升到 4.11，不影响）。
+- **设备白名单**：这 5 个模型不全在 `paddlex/utils/custom_device_list.py:METAX_GPU_WHITELIST`，训练需
+  `export PADDLE_PDX_DISABLE_DEV_MODEL_WL=true`（各 `train.sh` 已内置）。
+- **PaddleOCR 设备名 bug**：`PaddleOCR/tools/program.py` 对 metax 拼成 `"metax:{id}"`（应 `"metax_gpu:{id}"`），本仓已本地修正。
+- **CINN 训练能力差异**：PaddleClas 走 `Global.use_cinn=True → to_static(backend="CINN")` 干净路径；
+  PaddleDetection/PaddleOCR 的 `apply_to_static` 无 CINN backend 参数，需 `FLAGS_use_cinn=1 + FLAGS_prim_all=true + Train.dy2st=True`。
+  检测类 loss（BCE/dice）在 CINN+prim 下数值不稳：PP-YOLOE 训练 NaN、PP-OCR det 触发 `assert loss<=1`；OCR rec（CTC）与分类模型正常。
 
-- [StarNet-S4](starnet_s4/run_model.md)：图像分类，输入 224×224。
-- [MobileNetV4_hybrid_large](mobilenetv4_hybrid_large/run_model.md)：图像分类，输入 448×448。
-- [PP-YOLOE_plus-S](ppyoloe_plus_s/run_model.md)：目标检测，输入 640×640（另有 `scale_factor` 输入）。
-- [PP-OCRv4_server_det](ppocrv4_server_det/run_model.md)：文本检测，输入 960×960。
-- [PP-OCRv4_server_rec](ppocrv4_server_rec/run_model.md)：文本识别，输入 48×320。
+### PaddleFormers / PaddleClas（独立仓）/ PaddleScience
 
-### PaddleScience（上游 CINN 用例 + `to_static(backend="CINN")`，含训练入口）
-
-模型与合成批次取自 `$PaddleScience/test/cinn/cases`，不复制架构。
-
-- [darcy](darcy/run_model.md)：2D Darcy flow，MLP PINN。
-- [xpinn](xpinn/run_model.md)：2D Poisson，3 子域 XPINN。
-- [earthformer](earthformer/run_model.md)：ENSO CuboidTransformer。
-
+- 这三类沿用各自仓库源码 + 环境变量（`PADDLEFORMERS_DIR` / `PADDLECLAS_DIR` / `PADDLE_PSCI_DIR`），见下「运行条件」。
 ## 运行条件
 
-所有入口都支持 `GPU_ID`（默认 0）和 `RESULTS_DIR`（默认 `<模型目录>/results`），拒绝覆盖已存在的结果目录；
-`ITERS` / `WARMUP` 在 PaddleX、PaddleScience 及部分 PaddleFormers 目录中生效（以各目录 `run_model.md` 为准）。
-CINN 模式的日志必须出现 `Compiling subgraph with CINN backend`，否则退出码 4。
-本机（Metax C500）先执行 `source /data/env.sh`（metax conda + Paddle 3.5.0.dev，已编入 CINN）；A100 侧换成带
-CINN 的 CUDA Paddle 环境即可，设备默认值 `auto` 会选择 `gpu:0`。
+所有入口支持 `GPU_ID`（默认 0）与 `RESULTS_DIR`（默认 `<模型目录>/results`），拒绝覆盖已存在的结果目录；
+`ITERS` / `WARMUP` 在 PaddleX、PaddleScience 及部分 PaddleFormers 目录生效（以各目录文档为准）。CINN 模式日志
+必须出现 `Compiling subgraph with CINN backend`，否则退出码 4。A100 侧换成带 CINN 的 CUDA Paddle，设备默认
+`auto` 选 `gpu:0`。
 
 ### PaddleFormers
 
-需要 PaddleFormers 源码和本地权重：
-
 ```bash
-export PADDLEFORMERS_DIR=/path/to/PaddleFormers   # HEAD 必须等于目录下的 paddleformers.commit
+export PADDLEFORMERS_DIR=/path/to/PaddleFormers   # HEAD 必须等于目录下 paddleformers.commit
 export CHECKPOINT_DIR=/path/to/local-weights      # 见各目录 checkpoint/README.md
 ./run_model.sh        # dynamic
 ./run_model_cinn.sh   # CINN
 ```
 
-入口会校验 `PADDLEFORMERS_DIR` 的 commit 与 `paddleformers.commit` 一致；`train.sh` / `infer.sh` 提供单独的
-训/推入口。Gemma3 未设 `PADDLEFORMERS_DIR` 时默认取 `../PaddleFormers`。
+入口校验 `PADDLEFORMERS_DIR` 的 commit；`train.sh`/`infer.sh` 为单独训/推入口。Gemma3 未设时默认取 `../PaddleFormers`。
 
-### PaddleClas
+### PaddleClas（独立仓）
 
 ```bash
 export PADDLECLAS_DIR=/path/to/PaddleClas         # HEAD 必须等于 paddleclas.commit
 export CHECKPOINT_DIR=/path/to/local-weights
-./run_model.sh
-./run_model_cinn.sh
+./run_model.sh ; ./run_model_cinn.sh
 ```
 
-GhostNetV3 使用的历史提交需要先应用 `ghostnetv3/patches/import-syntax.patch`（只修正导入语法），入口会严格
-检查工作树只包含这份补丁；其余目录要求干净工作树。当前这些目录的 `infer_impl.py` 固定
-`paddle.set_device("gpu:0")`，即面向 A100/CUDA，MetaX 上需按“跨平台”一节改成自定义设备。
+GhostNetV3 需先应用 `ghostnetv3/patches/import-syntax.patch`。这些目录的 `infer_impl.py` 固定 `gpu:0`（面向 A100），
+MetaX 上需按「跨平台」改成自定义设备。
 
-### PaddleX
-
-保证paddlex已在当前 Python 环境中安装(`import paddlex`).
-
-PaddleX 的 `PaddleStaticRunner` 只在 `gpu`/`dcu` 分支里打开 CINN，`metax_gpu` 分支没有接，所以这些目录直接配置 `paddle.inference`。可选 `PADDLE_DEVICE`、`INPUTS_NPZ`（复用另一平台的输入）。
+### PaddleX（含训练）
 
 ```bash
-# 默认 $PADDLEX_MODELS_DIR/<模型名>，未设置时为 ~/.paddlex/official_models/<模型名>
-export CHECKPOINT_DIR=/path/to/<模型名>   # 可选，覆盖默认目录；入口校验 3 个文件的 SHA256
-./run_model.sh        # dynamic：默认 PIR 执行器
-./run_model_cinn.sh   # cinn：AnalysisConfig.enable_cinn()
+# 推理：默认 ~/.paddlex/official_models/<模型名>，CHECKPOINT_DIR 可覆盖并校验 SHA256
+./run_model.sh ; ./run_model_cinn.sh        # dynamic / cinn（AnalysisConfig.enable_cinn）
+# 训练：见各目录 README.md（框架依赖见上「安装注意点」）
+MODE=dynamic ./train.sh ; MODE=cinn ./train.sh
+python plot_loss.py --dynamic results/dynamic-train/*.log --cinn results/cinn-train/*.log --out results/train --title <模型>
 ```
+
+PaddleX `PaddleStaticRunner` 只在 `gpu`/`dcu` 分支开 CINN，`metax_gpu` 没接，故推理直接配 `paddle.inference`。
 
 ### PaddleScience
 
-- 需要导出当前PaddleScience的位置到环境变量, 并保证已安装
-- 测试使用 PaddleScience HEAD = `34819214b3f616b1112012a71131193116301283`
-
 ```bash
-export PADDLE_PSCI_DIR=/data/PaddleScience
-./run_model.sh        # dynamic
-./run_model_cinn.sh   # cinn
+export PADDLE_PSCI_DIR=/data/PaddleScience          # HEAD=34819214b3f616b1112012a71131193116301283
+./run_model.sh ; ./run_model_cinn.sh               # 推理
+./train.sh ; MODE=cinn ./train.sh                  # 训练，默认 WARMUP=5 ITERS=500
 ```
 
-不使用外部权重：dynamic 在 CPU 上按固定种子初始化模型与批次并写入
-`results/dynamic-infer/{init.pdparams,inputs.npz}`，cinn 自动复用；`CHECKPOINT_DIR` / `INPUTS_NPZ` 可指定另一
-平台导出的同一份权重/输入，`inference.json` 的 `weights_sha256` / `inputs_sha256` 用于核对。
-
-本目录同时提供推理和训练入口；训练复用上游 case 的 `compute_loss`（Adam、lr 与用例一致、dropout 置 0），
-默认 `WARMUP=5`、`ITERS=500`（总步数 505，前 5 步不计时），权重与批次同样在 CPU 上按固定种子生成：
-
-```bash
-./train.sh              # dynamic
-MODE=cinn ./train.sh    # CINN，自动复用 dynamic-train 的 init.pdparams / batch.npz
-```
-
-产物：`results/{dynamic,cinn}-train/`（`train.json`、`losses.npz`、`init.pdparams`、`batch.npz`、`final.pdparams`），
-比对写入 `results/comparison-train.json`，口径为 400-500 窗口、tol 1e-2、最多 10 个离群步（与上游 harness 一致）。
-跨平台时用 `CHECKPOINT_DIR`（init.pdparams）+ `BATCH_NPZ`（batch.npz 及其同名 `.json`）复用另一端的权重与批次，
-`train.json` 的 `init_weights_sha256` / `batch_sha256` 可确认两端同源。
-
-2026-11-20 在 MetaX 上实测（默认 5/500）：
-
-- `darcy`：PASS，窗口最大差 1.24e-2、1 个离群步，训练 38.96 → 18.51 ms/step（CINN 2.1×）。
-- `xpinn`：PASS，窗口最大差 2.74e-5、0 个离群步，训练 120.55 → 95.86 ms/step（CINN 1.26×）。
-- `earthformer`：PASS（窗口最大相对差 1.28e-1、9 个离群步，接近 10 的上限），训练 399.68 → 173.15 ms/step（CINN 2.31×）。
-
+权重/批次在 CPU 按固定种子生成并落盘，cinn 自动复用；跨平台用 `CHECKPOINT_DIR`+`INPUTS_NPZ`/`BATCH_NPZ`。
 ## 跨平台（A100 / Metax C500）
 
 设备选择现状（以各目录代码为准）：
 
-- **设备无关**：PaddleX 5 个目录、PaddleScience 3 个目录（CUDA 构建自动用 `gpu:0`，否则用首个自定义设备
-  `metax_gpu:0`，`PADDLE_DEVICE` 可强制）；`llama4`、`llama_guard4` 同样自动选择；`gemma3` 通过 `--device` 指定。
+- **设备无关**：PaddleX 5 个目录、PaddleScience 3 个目录（CUDA→`gpu:0`，否则首个自定义设备 `metax_gpu:0`，
+  `PADDLE_DEVICE` 可强制）；`llama4`、`llama_guard4` 同样自动选择；`gemma3` 用 `--device`。
 - **当前固定 `gpu:0`（A100/CUDA）**：`deepseek_ocr2`、`fastvlm`、`lfm2_vl`、`minimax`、`mistral3_pixtral`、
-  `molmo`、`olmo2`、`phi4_multimodal` 以及 PaddleClas 的 `ghostnetv3`、`mobilenetv5`、`naflexvit`、`yolo11`。
-  在 MetaX 上运行需要先把 `paddle.set_device("gpu:0")` 换成自定义设备（或按 llama4 的方式自动选择）。
+  `molmo`、`olmo2`、`phi4_multimodal` 及 PaddleClas 的 `ghostnetv3`、`mobilenetv5`、`naflexvit`、`yolo11`，
+  MetaX 上需改成自定义设备。
 
-跨平台比对：
-
-- PaddleX 用 `INPUTS_NPZ` 复用输入；PaddleScience 推理用 `CHECKPOINT_DIR` + `INPUTS_NPZ`，训练用
-  `CHECKPOINT_DIR` + `BATCH_NPZ` 复用权重与批次。
-- `python compare.py --dynamic <平台A/dynamic-infer> --cinn <平台B/dynamic-infer> --report ...`，
-  差异按各目录 `model_spec.json` 的 `atol` 判定（不同平台浮点实现不同）。
+比对：PaddleX 用 `INPUTS_NPZ` 复用输入；PaddleScience 推理用 `CHECKPOINT_DIR`+`INPUTS_NPZ`、训练用
+`CHECKPOINT_DIR`+`BATCH_NPZ`。`python compare.py --dynamic <A/dynamic-infer> --cinn <B/dynamic-infer>`，差异按各
+目录 `model_spec.json` 的 `atol` 判定。
 
 ## 主要交付物说明
 
-| 文件或目录 | 功能 |
-| --- | --- |
-| `run_model.sh` | dynamic 快速入口。 |
-| `run_model_cinn.sh` | CINN 快速入口。 |
-| `train.sh` | 单独训练入口（PaddleFormers / PaddleClas / PaddleScience 目录提供）。 |
-| `infer.sh` | 单独推理入口。 |
-| `run_model.py` / `infer_impl.py` / `train_impl.py` | 构建模型/批次、执行推理或训练、记录性能与结果。 |
-| `compare.py` | dynamic 与 CINN 输出比对（PaddleX / PaddleScience 目录）。 |
-| `model_spec.json` | 输入规格、种子、比对阈值（PaddleX / PaddleScience 目录）。 |
-| `run_model.md` | 模型专属环境、数据、运行方式和结果说明。 |
-| `checkpoint/` | 权重说明或外部存放位置记录；权重不入库。 |
-| `results/`、`logs/` | 运行产物，默认只保存在本地。 |
-
-- 每个模型应能从自己的 `run_model.md` 中找到入口、环境变量和结果查看方式。
-- `logs/` 和 `results/` 中的产物默认不提交；已存在的结果目录不会被覆盖。
-- PaddleX 目录没有 `train.sh`（只发布静态推理图）；PaddleScience 的 `train.sh` 复用上游 case 的
-  `compute_loss`，默认 `WARMUP=5`、`ITERS=500`。
+- `run_model.sh` / `run_model_cinn.sh`：dynamic / CINN 推理入口。
+- `train.sh`：训练入口（PaddleFormers / PaddleClas / PaddleScience / **PaddleX 5 目录**；PaddleX 用 `MODE=dynamic|cinn`）。
+- `plot_loss.py`：把 dynamic 与 CINN 两条训练 loss 叠加成一张图（PaddleX 目录，无 lr 轴）。
+- `infer.sh` / `run_model.py` / `infer_impl.py` / `train_impl.py`：构建模型/批次、执行推理或训练、记录结果。
+- `compare.py` / `model_spec.json`：输出比对与输入规格/阈值（PaddleX / PaddleScience）。
+- `README.md`（PaddleX 5 目录）/ `run_model.md`（其余）：模型专属环境、训推流程与结果。
+- `checkpoint/`：权重说明/外部位置；`results/`、`logs/`：运行产物，默认不入库、不覆盖已有目录。
 
 ## 验收记录
 
-- PaddleX 5 个模型：2026-11-20 在 `metax_gpu:0` 上 dynamic/CINN 推理均通过，数值差异见各目录 `run_model.md`。
-- PaddleScience 3 个用例：推理 dynamic/CINN 均通过；训练（默认 `WARMUP=5`、`ITERS=500`）`darcy`、`xpinn`、
-  `earthformer` 的实测结果见各目录 `run_model.md`。
-- PaddleFormers / PaddleClas 各目录的验收结果记录在各自的 `run_model.md` 中。
+- PaddleX 推理：5 个模型 2026-11-20 在 `metax_gpu:0` 上 dynamic/CINN 均 PASS（差异见各目录 `README.md`）。
+- PaddleX 训练（2026-11-20，`metax_gpu:0`，dynamic vs CINN loss 叠加，详见各目录 `README.md`）：
+  - StarNet-S4：dynamic/CINN 均跑满 512 步，loss 5.04→2.22 / 5.04→1.93，曲线贴合。
+  - MobileNetV4_hybrid_large：512 步（**训练用 224 裁剪**，384/448 触发 MCDNN 不支持），loss 4.90→4.62 / 4.90→4.61。
+  - PP-OCRv4_server_rec：dynamic/CINN 同步下降 21.2→11.7 / 23.8→10.0，CINN 训练无异常。
+  - PP-OCRv4_server_det：dynamic 跑满（2.18→1.43），CINN 到 ~step400 被 `assert loss<=1` 中断（非 NaN）。
+  - PP-YOLOE_plus-S：dynamic 跑满（4.79→1.44），**CINN 训练 NaN 发散**（检测 BCE loss 在 CINN+prim 下不稳）。
+- PaddleScience 3 用例、PaddleFormers / PaddleClas 各目录：结果见各自文档。

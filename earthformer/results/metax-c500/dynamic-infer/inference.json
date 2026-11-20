@@ -1,0 +1,43 @@
+{
+  "case": "earthformer",
+  "mode": "dynamic",
+  "model": "EarthFormer CuboidTransformer (ENSO)",
+  "device": "metax_gpu:0",
+  "paddle_version": "3.5.0.dev20260516",
+  "paddle_compiled_with_cinn": true,
+  "ppsci_version": "1.4.0.post1.dev116+g4b908bd49.d20261119",
+  "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453",
+  "seed": 20261119,
+  "weights_sha256": "36d9e42d2e1259ff0981a2f51dd816f82df90e9a8ddb035796b02f6d18f65cbe",
+  "inputs_sha256": "386ca4d9ace756c69b387c48a02061fe48269f267365b8fcefef80ae04740da9",
+  "feeds": {
+    "sst_data": [
+      16,
+      12,
+      24,
+      48,
+      1
+    ]
+  },
+  "outputs": {
+    "sst_target": [
+      16,
+      14,
+      24,
+      48,
+      1
+    ],
+    "nino_target": [
+      16,
+      14,
+      24,
+      48,
+      1
+    ]
+  },
+  "warmup": 5,
+  "iters": 50,
+  "first_call_ms": 5805.266520939767,
+  "steady_batch_ms": 114.31313912384212,
+  "batch_per_second": 8.747900789572766
+}

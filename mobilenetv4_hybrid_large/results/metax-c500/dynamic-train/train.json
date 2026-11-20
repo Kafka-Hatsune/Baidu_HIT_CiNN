@@ -1,0 +1,14 @@
+{
+  "model": "mobilenetv4_hybrid_large",
+  "mode": "dynamic",
+  "device": "metax_gpu:0",
+  "status": "ok",
+  "steps_logged": 512,
+  "loss_first": 4.9038,
+  "loss_last": 4.62071,
+  "first_step_ms": 7112.2300000000005,
+  "steady_step_ms": 387.1,
+  "losses_sha256": "605019a3998171bac34ed0bbbaca63b50cbee9fa00371d2adb9459bf7ec14152",
+  "log_sha256": "9865fe37be462733a475581fa30f2742df07ae825489cdf6d45ec853b4f44584",
+  "source_log": "results/dynamic-train/train.log"
+}

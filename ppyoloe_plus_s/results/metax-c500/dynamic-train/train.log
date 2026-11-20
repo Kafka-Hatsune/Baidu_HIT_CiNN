@@ -1,0 +1,264 @@
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[33mSkip checking if model is supported on device because the flag `PADDLE_PDX_DISABLE_DEV_MODEL_WL` has been set.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 06:32:19.893594 951608 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 06:32:19.893631 951608 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 06:32:19.893723 951608 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 06:32:19.894061 951608 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 06:32:19.894516 951608 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 06:32:20.148348 951608 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 06:32:20.148371 951608 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 06:32:20.291857 951608 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 06:32:51.329114 951608 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 06:32:51.329172 951608 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 06:32:51.346094 951608 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 06:32:51.346534 951608 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 06:32:51.346575 951608 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+[32m['/opt/conda/envs/metax/bin/python', 'tools/train.py', '--eval', '--config', '/root/.paddlex/tmpmv_9mva1/detmodel_PP-YOLOE_plus-S.yml', '--use_vdl', 'True', '--vdl_log_dir', '/data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train'][0m
+[32m
+Log path: /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/train.log 
+[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 06:32:56.619380 953904 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 06:32:56.619439 953904 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 06:32:56.619633 953904 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 06:32:56.620623 953904 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 06:32:56.621897 953904 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 06:33:00.233115 953904 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 06:33:00.233156 953904 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 06:33:01.528635 953904 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 06:33:26.374840 953904 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 06:33:26.374898 953904 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 06:33:26.408805 953904 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 06:33:26.409264 953904 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 06:33:26.409304 953904 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+Warning: Unable to use JDE/FairMOT/ByteTrack, please install lap, for example: `pip install lap`, see https://github.com/gatagat/lap
+[11/20 06:33:32] ppdet.utils.checkpoint INFO: Skipping import of the encryption module.
+Warning: Unable to use MOT metric, please install motmetrics, for example: `pip install motmetrics`, see https://github.com/longcw/py-motmetrics
+Warning: Unable to use MCMOT metric, please install motmetrics, for example: `pip install motmetrics`, see https://github.com/longcw/py-motmetrics
+======================= Modified FLAGS detected =======================
+FLAGS(name='FLAGS_enable_pir_in_executor', current_value=True, default_value=False)
+=======================================================================
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:33:33] ppdet.data.source.coco INFO: Load [701 samples valid, 0 samples invalid] in file /data/paddlex_train/datasets/det_coco_examples/annotations/instance_train.json.
+[11/20 06:33:33] ppdet.utils.checkpoint INFO: The shape paddle.Size([365]) in pretrained weight yolo_head.pred_cls.0.bias is unmatched with the shape [4] in model yolo_head.pred_cls.0.bias. And the weight yolo_head.pred_cls.0.bias will not be loaded
+[11/20 06:33:33] ppdet.utils.checkpoint INFO: The shape paddle.Size([365, 384, 3, 3]) in pretrained weight yolo_head.pred_cls.0.weight is unmatched with the shape [4, 384, 3, 3] in model yolo_head.pred_cls.0.weight. And the weight yolo_head.pred_cls.0.weight will not be loaded
+[11/20 06:33:33] ppdet.utils.checkpoint INFO: The shape paddle.Size([365]) in pretrained weight yolo_head.pred_cls.1.bias is unmatched with the shape [4] in model yolo_head.pred_cls.1.bias. And the weight yolo_head.pred_cls.1.bias will not be loaded
+[11/20 06:33:33] ppdet.utils.checkpoint INFO: The shape paddle.Size([365, 192, 3, 3]) in pretrained weight yolo_head.pred_cls.1.weight is unmatched with the shape [4, 192, 3, 3] in model yolo_head.pred_cls.1.weight. And the weight yolo_head.pred_cls.1.weight will not be loaded
+[11/20 06:33:33] ppdet.utils.checkpoint INFO: The shape paddle.Size([365]) in pretrained weight yolo_head.pred_cls.2.bias is unmatched with the shape [4] in model yolo_head.pred_cls.2.bias. And the weight yolo_head.pred_cls.2.bias will not be loaded
+[11/20 06:33:33] ppdet.utils.checkpoint INFO: The shape paddle.Size([365, 96, 3, 3]) in pretrained weight yolo_head.pred_cls.2.weight is unmatched with the shape [4, 96, 3, 3] in model yolo_head.pred_cls.2.weight. And the weight yolo_head.pred_cls.2.weight will not be loaded
+[11/20 06:33:33] ppdet.utils.checkpoint INFO: Finish loading model weights: /root/.cache/paddle/weights/PP-YOLOE_plus-S_obj365_pretrained.pdparams
+W1120 06:33:54.005111 953904 dygraph_functions.cc:126786] Got different data type, run type promotion automatically, this may cause data type been changed.
+[11/20 06:33:54] ppdet.engine.callbacks INFO: Epoch: [0] [  0/175] learning_rate: 0.000000 loss: 4.787686 loss_cls: 4.199851 loss_iou: 0.089817 loss_dfl: 0.726587 loss_l1: 0.211333 eta: 2:58:43 batch_cost: 20.4261 data_cost: 0.6661 ips: 0.1958 images/s
+[11/20 06:33:59] ppdet.engine.callbacks INFO: Epoch: [0] [ 10/175] learning_rate: 0.000010 loss: 4.650868 loss_cls: 3.622315 loss_iou: 0.204532 loss_dfl: 0.778285 loss_l1: 0.341691 eta: 0:19:24 batch_cost: 0.4454 data_cost: 0.0003 ips: 8.9803 images/s
+[11/20 06:34:06] ppdet.engine.callbacks INFO: Epoch: [0] [ 20/175] learning_rate: 0.000020 loss: 4.324312 loss_cls: 3.470279 loss_iou: 0.153018 loss_dfl: 0.714079 loss_l1: 0.275851 eta: 0:12:14 batch_cost: 0.5678 data_cost: 0.0003 ips: 7.0450 images/s
+[11/20 06:34:12] ppdet.engine.callbacks INFO: Epoch: [0] [ 30/175] learning_rate: 0.000030 loss: 3.205061 loss_cls: 2.513370 loss_iou: 0.130378 loss_dfl: 0.759292 loss_l1: 0.241104 eta: 0:09:20 batch_cost: 0.4536 data_cost: 0.0002 ips: 8.8190 images/s
+[11/20 06:34:15] ppdet.engine.callbacks INFO: Epoch: [0] [ 40/175] learning_rate: 0.000040 loss: 2.547237 loss_cls: 1.793684 loss_iou: 0.175999 loss_dfl: 0.783506 loss_l1: 0.276201 eta: 0:07:27 batch_cost: 0.2756 data_cost: 0.0002 ips: 14.5130 images/s
+[11/20 06:34:17] ppdet.engine.callbacks INFO: Epoch: [0] [ 50/175] learning_rate: 0.000050 loss: 2.288740 loss_cls: 1.640480 loss_iou: 0.157204 loss_dfl: 0.762441 loss_l1: 0.230399 eta: 0:06:09 batch_cost: 0.1801 data_cost: 0.0002 ips: 22.2157 images/s
+[11/20 06:34:22] ppdet.engine.callbacks INFO: Epoch: [0] [ 60/175] learning_rate: 0.000060 loss: 2.797606 loss_cls: 1.864241 loss_iou: 0.159830 loss_dfl: 0.758630 loss_l1: 0.254052 eta: 0:05:29 batch_cost: 0.3619 data_cost: 0.0002 ips: 11.0517 images/s
+[11/20 06:34:26] ppdet.engine.callbacks INFO: Epoch: [0] [ 70/175] learning_rate: 0.000070 loss: 2.195743 loss_cls: 1.406816 loss_iou: 0.188326 loss_dfl: 0.781827 loss_l1: 0.282540 eta: 0:05:02 batch_cost: 0.3902 data_cost: 0.0002 ips: 10.2505 images/s
+[11/20 06:34:31] ppdet.engine.callbacks INFO: Epoch: [0] [ 80/175] learning_rate: 0.000080 loss: 2.530422 loss_cls: 1.650143 loss_iou: 0.164122 loss_dfl: 0.780092 loss_l1: 0.273715 eta: 0:04:40 batch_cost: 0.3946 data_cost: 0.0006 ips: 10.1362 images/s
+[11/20 06:34:34] ppdet.engine.callbacks INFO: Epoch: [0] [ 90/175] learning_rate: 0.000090 loss: 2.193969 loss_cls: 1.387727 loss_iou: 0.152038 loss_dfl: 0.757566 loss_l1: 0.232037 eta: 0:04:13 batch_cost: 0.1863 data_cost: 0.0002 ips: 21.4673 images/s
+[11/20 06:34:35] ppdet.engine.callbacks INFO: Epoch: [0] [100/175] learning_rate: 0.000100 loss: 2.286254 loss_cls: 1.527660 loss_iou: 0.174678 loss_dfl: 0.787175 loss_l1: 0.284188 eta: 0:03:47 batch_cost: 0.1156 data_cost: 0.0002 ips: 34.5999 images/s
+[11/20 06:34:37] ppdet.engine.callbacks INFO: Epoch: [0] [110/175] learning_rate: 0.000100 loss: 2.148671 loss_cls: 1.305113 loss_iou: 0.201648 loss_dfl: 0.830679 loss_l1: 0.327937 eta: 0:03:27 batch_cost: 0.1261 data_cost: 0.0002 ips: 31.7131 images/s
+[11/20 06:34:38] ppdet.engine.callbacks INFO: Epoch: [0] [120/175] learning_rate: 0.000100 loss: 2.008526 loss_cls: 1.196981 loss_iou: 0.144052 loss_dfl: 0.732673 loss_l1: 0.238016 eta: 0:03:09 batch_cost: 0.1124 data_cost: 0.0002 ips: 35.5869 images/s
+[11/20 06:34:40] ppdet.engine.callbacks INFO: Epoch: [0] [130/175] learning_rate: 0.000100 loss: 2.124347 loss_cls: 1.327722 loss_iou: 0.160998 loss_dfl: 0.790984 loss_l1: 0.308040 eta: 0:02:53 batch_cost: 0.1171 data_cost: 0.0002 ips: 34.1659 images/s
+[11/20 06:34:41] ppdet.engine.callbacks INFO: Epoch: [0] [140/175] learning_rate: 0.000100 loss: 2.118273 loss_cls: 1.319494 loss_iou: 0.112457 loss_dfl: 0.734527 loss_l1: 0.244856 eta: 0:02:40 batch_cost: 0.1106 data_cost: 0.0002 ips: 36.1692 images/s
+[11/20 06:34:42] ppdet.engine.callbacks INFO: Epoch: [0] [150/175] learning_rate: 0.000100 loss: 2.172983 loss_cls: 1.325893 loss_iou: 0.144529 loss_dfl: 0.697802 loss_l1: 0.203066 eta: 0:02:28 batch_cost: 0.1067 data_cost: 0.0002 ips: 37.4785 images/s
+[11/20 06:34:44] ppdet.engine.callbacks INFO: Epoch: [0] [160/175] learning_rate: 0.000100 loss: 2.177750 loss_cls: 1.413467 loss_iou: 0.156465 loss_dfl: 0.720112 loss_l1: 0.211967 eta: 0:02:18 batch_cost: 0.1188 data_cost: 0.0002 ips: 33.6806 images/s
+[11/20 06:34:45] ppdet.engine.callbacks INFO: Epoch: [0] [170/175] learning_rate: 0.000100 loss: 2.256675 loss_cls: 1.553537 loss_iou: 0.164270 loss_dfl: 0.708062 loss_l1: 0.230920 eta: 0:02:09 batch_cost: 0.1093 data_cost: 0.0002 ips: 36.6033 images/s
+[11/20 06:34:47] ppdet.utils.checkpoint INFO: Save checkpoint: /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/0
+W1120 06:34:48.433558 953904 eager_utils.cc:3618] Paddle static graph(PIR) not support input out tensor for now!!!!!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:34:50] ppdet.engine INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/0/inference/inference.yml
+[11/20 06:34:50] ppdet.engine INFO: Skipping import of the encryption module.
+[11/20 06:34:50] ppdet.engine INFO: Export model and saved in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/0/inference
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:34:50] ppdet.data.source.coco INFO: Load [176 samples valid, 0 samples invalid] in file /data/paddlex_train/datasets/det_coco_examples/annotations/instance_val.json.
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:34:52] ppdet.engine.callbacks INFO: Eval iter: 0
+[11/20 06:34:57] ppdet.metrics.metrics INFO: The bbox result is saved to bbox.json.
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:34:57] ppdet.metrics.coco_utils INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=0.37s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.71s).
+Accumulating evaluation results...
+DONE (t=0.37s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.454
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.585
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.537
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.303
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.487
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.470
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.529
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.761
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.775
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.634
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.826
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.821
+[11/20 06:34:59] ppdet.engine.callbacks INFO: Total sample number: 176, average FPS: 27.574718850473246
+[11/20 06:34:59] ppdet.utils.checkpoint INFO: Already save model info in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/0
+[11/20 06:34:59] ppdet.utils.checkpoint INFO: Already save model info in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model
+[11/20 06:34:59] ppdet.engine INFO: Best test bbox ap is 0.454.
+[11/20 06:34:59] ppdet.utils.checkpoint INFO: Save checkpoint: /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:35:02] ppdet.engine INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model/inference/inference.yml
+[11/20 06:35:02] ppdet.engine INFO: Skipping import of the encryption module.
+[11/20 06:35:02] ppdet.engine INFO: Export model and saved in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model/inference
+[11/20 06:35:03] ppdet.engine.callbacks INFO: Epoch: [1] [  0/175] learning_rate: 0.000100 loss: 2.042320 loss_cls: 1.415090 loss_iou: 0.148478 loss_dfl: 0.696977 loss_l1: 0.210115 eta: 0:02:07 batch_cost: 0.2280 data_cost: 0.1123 ips: 17.5436 images/s
+[11/20 06:35:05] ppdet.engine.callbacks INFO: Epoch: [1] [ 10/175] learning_rate: 0.000100 loss: 2.377377 loss_cls: 1.450454 loss_iou: 0.151603 loss_dfl: 0.827648 loss_l1: 0.308003 eta: 0:01:58 batch_cost: 0.1168 data_cost: 0.0002 ips: 34.2426 images/s
+[11/20 06:35:06] ppdet.engine.callbacks INFO: Epoch: [1] [ 20/175] learning_rate: 0.000100 loss: 2.090322 loss_cls: 1.179320 loss_iou: 0.144100 loss_dfl: 0.734012 loss_l1: 0.275464 eta: 0:01:51 batch_cost: 0.1102 data_cost: 0.0002 ips: 36.3100 images/s
+[11/20 06:35:08] ppdet.engine.callbacks INFO: Epoch: [1] [ 30/175] learning_rate: 0.000100 loss: 1.968934 loss_cls: 1.279756 loss_iou: 0.143520 loss_dfl: 0.669024 loss_l1: 0.179259 eta: 0:01:44 batch_cost: 0.1026 data_cost: 0.0002 ips: 38.9781 images/s
+[11/20 06:35:09] ppdet.engine.callbacks INFO: Epoch: [1] [ 40/175] learning_rate: 0.000100 loss: 2.015446 loss_cls: 1.205150 loss_iou: 0.142350 loss_dfl: 0.657352 loss_l1: 0.192917 eta: 0:01:37 batch_cost: 0.1057 data_cost: 0.0002 ips: 37.8459 images/s
+[11/20 06:35:11] ppdet.engine.callbacks INFO: Epoch: [1] [ 50/175] learning_rate: 0.000100 loss: 1.666793 loss_cls: 1.023387 loss_iou: 0.113353 loss_dfl: 0.647299 loss_l1: 0.184906 eta: 0:01:32 batch_cost: 0.1138 data_cost: 0.0002 ips: 35.1402 images/s
+[11/20 06:35:12] ppdet.engine.callbacks INFO: Epoch: [1] [ 60/175] learning_rate: 0.000100 loss: 1.657787 loss_cls: 1.019210 loss_iou: 0.129039 loss_dfl: 0.663212 loss_l1: 0.192649 eta: 0:01:26 batch_cost: 0.1157 data_cost: 0.0002 ips: 34.5868 images/s
+[11/20 06:35:14] ppdet.engine.callbacks INFO: Epoch: [1] [ 70/175] learning_rate: 0.000100 loss: 1.994310 loss_cls: 1.153739 loss_iou: 0.139828 loss_dfl: 0.658436 loss_l1: 0.179110 eta: 0:01:22 batch_cost: 0.1682 data_cost: 0.0002 ips: 23.7765 images/s
+[11/20 06:35:16] ppdet.engine.callbacks INFO: Epoch: [1] [ 80/175] learning_rate: 0.000100 loss: 1.653058 loss_cls: 0.990357 loss_iou: 0.117922 loss_dfl: 0.681857 loss_l1: 0.165806 eta: 0:01:17 batch_cost: 0.1557 data_cost: 0.0002 ips: 25.6900 images/s
+[11/20 06:35:18] ppdet.engine.callbacks INFO: Epoch: [1] [ 90/175] learning_rate: 0.000100 loss: 1.698391 loss_cls: 1.037612 loss_iou: 0.118009 loss_dfl: 0.685840 loss_l1: 0.167131 eta: 0:01:13 batch_cost: 0.1328 data_cost: 0.0002 ips: 30.1284 images/s
+[11/20 06:35:20] ppdet.engine.callbacks INFO: Epoch: [1] [100/175] learning_rate: 0.000100 loss: 1.783241 loss_cls: 1.099550 loss_iou: 0.136877 loss_dfl: 0.665441 loss_l1: 0.166247 eta: 0:01:09 batch_cost: 0.1181 data_cost: 0.0002 ips: 33.8566 images/s
+[11/20 06:35:22] ppdet.engine.callbacks INFO: Epoch: [1] [110/175] learning_rate: 0.000100 loss: 1.693744 loss_cls: 1.025584 loss_iou: 0.127239 loss_dfl: 0.727614 loss_l1: 0.195222 eta: 0:01:05 batch_cost: 0.1769 data_cost: 0.0002 ips: 22.6111 images/s
+[11/20 06:35:23] ppdet.engine.callbacks INFO: Epoch: [1] [120/175] learning_rate: 0.000100 loss: 1.660102 loss_cls: 1.010963 loss_iou: 0.125631 loss_dfl: 0.689866 loss_l1: 0.184257 eta: 0:01:01 batch_cost: 0.1148 data_cost: 0.0002 ips: 34.8534 images/s
+[11/20 06:35:25] ppdet.engine.callbacks INFO: Epoch: [1] [130/175] learning_rate: 0.000100 loss: 1.581597 loss_cls: 0.878103 loss_iou: 0.122028 loss_dfl: 0.687828 loss_l1: 0.198110 eta: 0:00:57 batch_cost: 0.1113 data_cost: 0.0002 ips: 35.9313 images/s
+[11/20 06:35:26] ppdet.engine.callbacks INFO: Epoch: [1] [140/175] learning_rate: 0.000100 loss: 1.396383 loss_cls: 0.849979 loss_iou: 0.106158 loss_dfl: 0.657485 loss_l1: 0.147575 eta: 0:00:54 batch_cost: 0.1137 data_cost: 0.0002 ips: 35.1861 images/s
+[11/20 06:35:28] ppdet.engine.callbacks INFO: Epoch: [1] [150/175] learning_rate: 0.000100 loss: 1.484646 loss_cls: 0.812726 loss_iou: 0.137688 loss_dfl: 0.639417 loss_l1: 0.194534 eta: 0:00:50 batch_cost: 0.1073 data_cost: 0.0002 ips: 37.2638 images/s
+[11/20 06:35:29] ppdet.engine.callbacks INFO: Epoch: [1] [160/175] learning_rate: 0.000100 loss: 1.650910 loss_cls: 0.944395 loss_iou: 0.134139 loss_dfl: 0.643085 loss_l1: 0.174940 eta: 0:00:47 batch_cost: 0.1111 data_cost: 0.0002 ips: 35.9890 images/s
+[11/20 06:35:31] ppdet.engine.callbacks INFO: Epoch: [1] [170/175] learning_rate: 0.000100 loss: 1.752251 loss_cls: 1.103726 loss_iou: 0.129804 loss_dfl: 0.726924 loss_l1: 0.202929 eta: 0:00:44 batch_cost: 0.1325 data_cost: 0.0002 ips: 30.1871 images/s
+[11/20 06:35:34] ppdet.utils.checkpoint INFO: Save checkpoint: /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/1
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:35:40] ppdet.engine INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/1/inference/inference.yml
+[11/20 06:35:40] ppdet.engine INFO: Skipping import of the encryption module.
+[11/20 06:35:40] ppdet.engine INFO: Export model and saved in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/1/inference
+[11/20 06:35:42] ppdet.engine.callbacks INFO: Eval iter: 0
+[11/20 06:35:52] ppdet.metrics.metrics INFO: The bbox result is saved to bbox.json.
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:35:52] ppdet.metrics.coco_utils INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=0.39s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.76s).
+Accumulating evaluation results...
+DONE (t=0.34s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.603
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.764
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.698
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.420
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.692
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.780
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.630
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.768
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.784
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.729
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.822
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.840
+[11/20 06:35:53] ppdet.engine.callbacks INFO: Total sample number: 176, average FPS: 18.743114865366497
+[11/20 06:35:53] ppdet.utils.checkpoint INFO: Already save model info in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/1
+[11/20 06:35:53] ppdet.utils.checkpoint INFO: Already save model info in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model
+[11/20 06:35:53] ppdet.engine INFO: Best test bbox ap is 0.603.
+[11/20 06:35:54] ppdet.utils.checkpoint INFO: Save checkpoint: /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:35:57] ppdet.engine INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model/inference/inference.yml
+[11/20 06:35:57] ppdet.engine INFO: Skipping import of the encryption module.
+[11/20 06:35:57] ppdet.engine INFO: Export model and saved in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model/inference
+[11/20 06:35:59] ppdet.engine.callbacks INFO: Epoch: [2] [  0/175] learning_rate: 0.000100 loss: 1.620692 loss_cls: 1.043468 loss_iou: 0.110128 loss_dfl: 0.649813 loss_l1: 0.161568 eta: 0:00:43 batch_cost: 0.3737 data_cost: 0.1531 ips: 10.7027 images/s
+[11/20 06:36:02] ppdet.engine.callbacks INFO: Epoch: [2] [ 10/175] learning_rate: 0.000100 loss: 1.668855 loss_cls: 1.078080 loss_iou: 0.106826 loss_dfl: 0.629677 loss_l1: 0.152288 eta: 0:00:41 batch_cost: 0.2340 data_cost: 0.0002 ips: 17.0925 images/s
+[11/20 06:36:05] ppdet.engine.callbacks INFO: Epoch: [2] [ 20/175] learning_rate: 0.000100 loss: 1.630955 loss_cls: 0.933245 loss_iou: 0.129638 loss_dfl: 0.660052 loss_l1: 0.163447 eta: 0:00:38 batch_cost: 0.2195 data_cost: 0.0002 ips: 18.2198 images/s
+[11/20 06:36:06] ppdet.engine.callbacks INFO: Epoch: [2] [ 30/175] learning_rate: 0.000100 loss: 1.492472 loss_cls: 0.826719 loss_iou: 0.125899 loss_dfl: 0.676234 loss_l1: 0.188806 eta: 0:00:35 batch_cost: 0.1321 data_cost: 0.0002 ips: 30.2873 images/s
+[11/20 06:36:09] ppdet.engine.callbacks INFO: Epoch: [2] [ 40/175] learning_rate: 0.000100 loss: 1.711136 loss_cls: 0.980594 loss_iou: 0.146841 loss_dfl: 0.704611 loss_l1: 0.251991 eta: 0:00:33 batch_cost: 0.2265 data_cost: 0.0002 ips: 17.6636 images/s
+[11/20 06:36:12] ppdet.engine.callbacks INFO: Epoch: [2] [ 50/175] learning_rate: 0.000100 loss: 1.474211 loss_cls: 0.902788 loss_iou: 0.113627 loss_dfl: 0.665569 loss_l1: 0.160876 eta: 0:00:30 batch_cost: 0.2163 data_cost: 0.0002 ips: 18.4943 images/s
+[11/20 06:36:14] ppdet.engine.callbacks INFO: Epoch: [2] [ 60/175] learning_rate: 0.000100 loss: 1.523617 loss_cls: 0.867311 loss_iou: 0.134032 loss_dfl: 0.671909 loss_l1: 0.229300 eta: 0:00:28 batch_cost: 0.1993 data_cost: 0.0002 ips: 20.0693 images/s
+[11/20 06:36:16] ppdet.engine.callbacks INFO: Epoch: [2] [ 70/175] learning_rate: 0.000100 loss: 1.610508 loss_cls: 0.845901 loss_iou: 0.150566 loss_dfl: 0.641208 loss_l1: 0.187975 eta: 0:00:25 batch_cost: 0.1014 data_cost: 0.0002 ips: 39.4300 images/s
+[11/20 06:36:17] ppdet.engine.callbacks INFO: Epoch: [2] [ 80/175] learning_rate: 0.000100 loss: 1.692681 loss_cls: 1.044943 loss_iou: 0.132589 loss_dfl: 0.655031 loss_l1: 0.177566 eta: 0:00:22 batch_cost: 0.1207 data_cost: 0.0002 ips: 33.1280 images/s
+[11/20 06:36:19] ppdet.engine.callbacks INFO: Epoch: [2] [ 90/175] learning_rate: 0.000100 loss: 1.541677 loss_cls: 0.895270 loss_iou: 0.123822 loss_dfl: 0.662263 loss_l1: 0.173961 eta: 0:00:20 batch_cost: 0.1558 data_cost: 0.0002 ips: 25.6776 images/s
+[11/20 06:36:21] ppdet.engine.callbacks INFO: Epoch: [2] [100/175] learning_rate: 0.000100 loss: 1.595313 loss_cls: 0.896224 loss_iou: 0.149218 loss_dfl: 0.695994 loss_l1: 0.222208 eta: 0:00:17 batch_cost: 0.1615 data_cost: 0.0002 ips: 24.7602 images/s
+[11/20 06:36:23] ppdet.engine.callbacks INFO: Epoch: [2] [110/175] learning_rate: 0.000100 loss: 1.445295 loss_cls: 0.821396 loss_iou: 0.116180 loss_dfl: 0.646946 loss_l1: 0.179512 eta: 0:00:15 batch_cost: 0.1417 data_cost: 0.0002 ips: 28.2213 images/s
+[11/20 06:36:25] ppdet.engine.callbacks INFO: Epoch: [2] [120/175] learning_rate: 0.000100 loss: 1.470465 loss_cls: 0.916364 loss_iou: 0.106557 loss_dfl: 0.604547 loss_l1: 0.152881 eta: 0:00:12 batch_cost: 0.1212 data_cost: 0.0002 ips: 33.0082 images/s
+[11/20 06:36:26] ppdet.engine.callbacks INFO: Epoch: [2] [130/175] learning_rate: 0.000100 loss: 1.731341 loss_cls: 1.047200 loss_iou: 0.161680 loss_dfl: 0.707388 loss_l1: 0.217841 eta: 0:00:10 batch_cost: 0.1128 data_cost: 0.0002 ips: 35.4492 images/s
+[11/20 06:36:28] ppdet.engine.callbacks INFO: Epoch: [2] [140/175] learning_rate: 0.000100 loss: 1.458170 loss_cls: 0.770214 loss_iou: 0.151212 loss_dfl: 0.691534 loss_l1: 0.247518 eta: 0:00:07 batch_cost: 0.1327 data_cost: 0.0002 ips: 30.1399 images/s
+[11/20 06:36:30] ppdet.engine.callbacks INFO: Epoch: [2] [150/175] learning_rate: 0.000100 loss: 1.513346 loss_cls: 0.815711 loss_iou: 0.142228 loss_dfl: 0.686088 loss_l1: 0.240259 eta: 0:00:05 batch_cost: 0.1493 data_cost: 0.0002 ips: 26.7923 images/s
+[11/20 06:36:32] ppdet.engine.callbacks INFO: Epoch: [2] [160/175] learning_rate: 0.000100 loss: 1.479105 loss_cls: 0.852710 loss_iou: 0.120808 loss_dfl: 0.656548 loss_l1: 0.202860 eta: 0:00:03 batch_cost: 0.1606 data_cost: 0.0002 ips: 24.9135 images/s
+[11/20 06:36:34] ppdet.engine.callbacks INFO: Epoch: [2] [170/175] learning_rate: 0.000100 loss: 1.444990 loss_cls: 0.832375 loss_iou: 0.108054 loss_dfl: 0.623538 loss_l1: 0.152680 eta: 0:00:01 batch_cost: 0.1182 data_cost: 0.0002 ips: 33.8498 images/s
+[11/20 06:36:35] ppdet.utils.checkpoint INFO: Save checkpoint: /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/model_final
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:36:38] ppdet.engine INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/model_final/inference/inference.yml
+[11/20 06:36:38] ppdet.engine INFO: Skipping import of the encryption module.
+[11/20 06:36:38] ppdet.engine INFO: Export model and saved in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/model_final/inference
+[11/20 06:36:39] ppdet.engine.callbacks INFO: Eval iter: 0
+[11/20 06:36:46] ppdet.metrics.metrics INFO: The bbox result is saved to bbox.json.
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:36:46] ppdet.metrics.coco_utils INFO: Start evaluate...
+Loading and preparing results...
+DONE (t=0.39s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.73s).
+Accumulating evaluation results...
+DONE (t=0.35s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.674
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.864
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.797
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.567
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.742
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.759
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.663
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.765
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.786
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.707
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.816
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.858
+[11/20 06:36:47] ppdet.engine.callbacks INFO: Total sample number: 176, average FPS: 25.380020994457357
+[11/20 06:36:47] ppdet.utils.checkpoint INFO: Already save model info in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/model_final
+[11/20 06:36:47] ppdet.utils.checkpoint INFO: Already save model info in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model
+[11/20 06:36:47] ppdet.engine INFO: Best test bbox ap is 0.674.
+[11/20 06:36:48] ppdet.utils.checkpoint INFO: Save checkpoint: /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[11/20 06:36:50] ppdet.engine INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model/inference/inference.yml
+[11/20 06:36:50] ppdet.engine INFO: Skipping import of the encryption module.
+[11/20 06:36:51] ppdet.engine INFO: Export model and saved in /data/Baidu_HIT_CiNN/ppyoloe_plus_s/results/dynamic-train/best_model/inference

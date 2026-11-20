@@ -1,0 +1,16 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 03:41:05.137290 3327510 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 03:41:05.137326 3327510 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 03:41:05.137408 3327510 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 03:41:05.137727 3327510 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 03:41:05.138154 3327510 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 03:41:05.418176 3327510 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 03:41:05.418190 3327510 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 03:41:05.563861 3327510 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 03:41:11.864931 3327510 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 03:41:11.865061 3327510 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 03:41:11.905642 3327510 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 03:41:11.907423 3327510 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 03:41:11.907475 3327510 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+{"case": "xpinn", "mode": "dynamic", "task": "train", "model": "XPINN 2D Poisson with 3 subdomains", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev116+g4b908bd49.d20261119", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "learning_rate": 0.0008, "dropout_layers_disabled": 0, "warmup": 5, "iters": 500, "total_steps": 505, "init_weights_sha256": "e9591efd42c5b33e50aa3d81eaeb09cfc59c8dc8de4f75dcb51c44982f94272d", "final_weights_sha256": "54ae6432c3e7d401482ab127f118a8f46939d40d5f60cb616fe244d07af88121", "batch_sha256": "1e5b71872ea599a5496da1217e727d9a390bb73b0d7aa00a956342dc2805e4fc", "first_step_ms": 1360.3954762220383, "steady_step_ms": 120.5549771822989, "steady_median_ms": 120.31855410896242}

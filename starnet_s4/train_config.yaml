@@ -1,0 +1,171 @@
+Arch:
+  class_num: 102
+  drop_path_rate: 0.02
+  drop_rate: 0
+  name: StarNet_S4
+DataLoader:
+  Eval:
+    dataset:
+      cls_label_path: /data/paddlex_train/datasets/cls_flowers_examples/val.txt
+      image_root: /data/paddlex_train/datasets/cls_flowers_examples
+      name: ClsDataset
+      transform_ops:
+      - DecodeImage:
+          backend: pil
+          channel_first: false
+      - ResizeImage:
+          backend: pil
+          interpolation: bicubic
+          resize_short: 256
+      - CropImage:
+          size: 224
+      - NormalizeImage:
+          mean:
+          - 0.485
+          - 0.456
+          - 0.406
+          order: hwc
+          scale: 1.0/255.0
+          std:
+          - 0.229
+          - 0.224
+          - 0.225
+    loader:
+      num_workers: 4
+      use_shared_memory: false
+    sampler:
+      batch_size: 4
+      drop_last: false
+      name: DistributedBatchSampler
+      shuffle: false
+  Train:
+    dataset:
+      batch_transform_ops:
+      - OpSampler:
+          CutmixOperator:
+            alpha: 0.2
+            prob: 0.5
+          MixupOperator:
+            alpha: 0.8
+            prob: 0.5
+      cls_label_path: /data/paddlex_train/datasets/cls_flowers_examples/train.txt
+      image_root: /data/paddlex_train/datasets/cls_flowers_examples
+      name: ClsDataset
+      transform_ops:
+      - DecodeImage:
+          channel_first: false
+          to_rgb: true
+      - RandCropImage:
+          size: 224
+      - RandFlipImage:
+          flip_code: 1
+      - TimmAutoAugment:
+          config_str: rand-m1-mstd0.5-inc1
+          img_size: 224
+          interpolation: random
+      - NormalizeImage:
+          mean:
+          - 0.485
+          - 0.456
+          - 0.406
+          order: ''
+          scale: 1.0/255.0
+          std:
+          - 0.229
+          - 0.224
+          - 0.225
+      - RandomErasing:
+          EPSILON: 0.25
+          mode: pixel
+    loader:
+      num_workers: 4
+      use_shared_memory: false
+    sampler:
+      batch_size: 64
+      drop_last: false
+      name: DistributedBatchSampler
+      shuffle: true
+Global:
+  checkpoints: null
+  device: metax_gpu
+  epochs: 32
+  eval_during_train: true
+  eval_interval: 32
+  export_with_pir: true
+  image_shape:
+  - 3
+  - 224
+  - 224
+  output_dir: /data/paddlex_train/starnet_s4/output
+  pdx_model_name: StarNet-S4
+  pretrained_model: https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/StarNet-S4_pretrained.pdparams
+  print_batch_step: 1
+  save_inference_dir: ./inference
+  save_interval: 32
+  to_static: false
+  uniform_output_enabled: true
+  use_visualdl: true
+Infer:
+  PostProcess:
+    class_id_map_file: /data/paddlex_train/datasets/cls_flowers_examples/label.txt
+    name: Topk
+    topk: 5
+  batch_size: 10
+  infer_imgs: docs/images/inference_deployment/whl_demo.jpg
+  transforms:
+  - DecodeImage:
+      channel_first: false
+      to_rgb: true
+  - ResizeImage:
+      backend: pil
+      interpolation: bicubic
+      resize_short: 256
+  - CropImage:
+      size: 224
+  - NormalizeImage:
+      mean:
+      - 0.485
+      - 0.456
+      - 0.406
+      order: ''
+      scale: 1.0/255.0
+      std:
+      - 0.229
+      - 0.224
+      - 0.225
+  - ToCHWImage: null
+Loss:
+  Eval:
+  - CELoss:
+      weight: 1.0
+  Train:
+  - CELoss:
+      epsilon: 0.1
+      weight: 1.0
+Metric:
+  Eval:
+  - TopkAcc:
+      topk:
+      - 1
+      - 5
+  Train:
+  - TopkAcc:
+      topk:
+      - 1
+      - 5
+Optimizer:
+  beta1: 0.9
+  beta2: 0.999
+  clip_grad: null
+  epsilon: 1.0e-08
+  lr:
+    eta_min: 1.0e-05
+    learning_rate: 0.003
+    name: Cosine
+    warmup_epoch: 5
+    warmup_start_lr: 1.0e-06
+  name: AdamW
+  no_weight_decay_name: null
+  one_dim_param_no_weight_decay: true
+  weight_decay: 0.05
+profiler_options: null

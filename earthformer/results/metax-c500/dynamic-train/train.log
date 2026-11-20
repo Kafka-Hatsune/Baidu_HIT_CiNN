@@ -1,0 +1,16 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 03:45:51.232956 3484641 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 03:45:51.232986 3484641 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 03:45:51.233067 3484641 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 03:45:51.233397 3484641 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 03:45:51.233821 3484641 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 03:45:51.514775 3484641 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 03:45:51.514791 3484641 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 03:45:51.661542 3484641 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 03:45:57.853011 3484641 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 03:45:57.853056 3484641 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 03:45:57.869776 3484641 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 03:45:57.870206 3484641 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 03:45:57.870244 3484641 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+{"case": "earthformer", "mode": "dynamic", "task": "train", "model": "EarthFormer CuboidTransformer (ENSO)", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "ppsci_version": "1.4.0.post1.dev116+g4b908bd49.d20261119", "ppsci_commit": "348192149ae9604e580c8b065cba21139f297453", "seed": 20261119, "learning_rate": 0.0001, "dropout_layers_disabled": 44, "warmup": 5, "iters": 500, "total_steps": 505, "init_weights_sha256": "36d9e42d2e1259ff0981a2f51dd816f82df90e9a8ddb035796b02f6d18f65cbe", "final_weights_sha256": "d0b55f8b69abe63766657da1379e0c5a4fcad91a5edf825e4fdd735ca2c67980", "batch_sha256": "2dada13903dab34b771d073a22d2212e6ee656c1059e4880e9c7079a9dbd9c20", "first_step_ms": 6332.667144015431, "steady_step_ms": 399.68242854531854, "steady_median_ms": 399.6884354855865}

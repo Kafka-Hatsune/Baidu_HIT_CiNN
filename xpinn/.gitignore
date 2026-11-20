@@ -1,3 +1,5 @@
 results/*
 !results/a100/
 !results/a100/**
+!results/metax-c500/
+!results/metax-c500/**

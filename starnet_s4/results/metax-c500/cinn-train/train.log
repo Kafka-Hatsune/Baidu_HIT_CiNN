@@ -1,0 +1,1242 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 05:33:59.072484 3919297 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 05:33:59.072522 3919297 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 05:33:59.072600 3919297 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 05:33:59.072898 3919297 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 05:33:59.073302 3919297 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 05:33:59.687254 3919297 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 05:33:59.687270 3919297 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 05:33:59.834887 3919297 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 05:34:06.069212 3919297 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 05:34:06.069265 3919297 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 05:34:06.086046 3919297 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 05:34:06.086467 3919297 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 05:34:06.086503 3919297 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+A new field (use_cinn) detected!
+A new field (seed) detected!
+[2026/11/20 05:34:10] ppcls INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2026/11/20 05:34:10] ppcls INFO: Arch : 
+[2026/11/20 05:34:10] ppcls INFO:     class_num : 102
+[2026/11/20 05:34:10] ppcls INFO:     drop_path_rate : 0.02
+[2026/11/20 05:34:10] ppcls INFO:     drop_rate : 0
+[2026/11/20 05:34:10] ppcls INFO:     name : StarNet_S4
+[2026/11/20 05:34:10] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:34:10] ppcls INFO: DataLoader : 
+[2026/11/20 05:34:10] ppcls INFO:     Eval : 
+[2026/11/20 05:34:10] ppcls INFO:         dataset : 
+[2026/11/20 05:34:10] ppcls INFO:             cls_label_path : /data/paddlex_train/datasets/cls_flowers_examples/val.txt
+[2026/11/20 05:34:10] ppcls INFO:             image_root : /data/paddlex_train/datasets/cls_flowers_examples
+[2026/11/20 05:34:10] ppcls INFO:             name : ClsDataset
+[2026/11/20 05:34:10] ppcls INFO:             transform_ops : 
+[2026/11/20 05:34:10] ppcls INFO:                 DecodeImage : 
+[2026/11/20 05:34:10] ppcls INFO:                     backend : pil
+[2026/11/20 05:34:10] ppcls INFO:                     channel_first : False
+[2026/11/20 05:34:10] ppcls INFO:                 ResizeImage : 
+[2026/11/20 05:34:10] ppcls INFO:                     backend : pil
+[2026/11/20 05:34:10] ppcls INFO:                     interpolation : bicubic
+[2026/11/20 05:34:10] ppcls INFO:                     resize_short : 256
+[2026/11/20 05:34:10] ppcls INFO:                 CropImage : 
+[2026/11/20 05:34:10] ppcls INFO:                     size : 224
+[2026/11/20 05:34:10] ppcls INFO:                 NormalizeImage : 
+[2026/11/20 05:34:10] ppcls INFO:                     mean : [0.485, 0.456, 0.406]
+[2026/11/20 05:34:10] ppcls INFO:                     order : hwc
+[2026/11/20 05:34:10] ppcls INFO:                     scale : 1.0/255.0
+[2026/11/20 05:34:10] ppcls INFO:                     std : [0.229, 0.224, 0.225]
+[2026/11/20 05:34:10] ppcls INFO:         loader : 
+[2026/11/20 05:34:10] ppcls INFO:             num_workers : 4
+[2026/11/20 05:34:10] ppcls INFO:             use_shared_memory : False
+[2026/11/20 05:34:10] ppcls INFO:         sampler : 
+[2026/11/20 05:34:10] ppcls INFO:             batch_size : 4
+[2026/11/20 05:34:10] ppcls INFO:             drop_last : False
+[2026/11/20 05:34:10] ppcls INFO:             name : DistributedBatchSampler
+[2026/11/20 05:34:10] ppcls INFO:             shuffle : False
+[2026/11/20 05:34:10] ppcls INFO:     Train : 
+[2026/11/20 05:34:10] ppcls INFO:         dataset : 
+[2026/11/20 05:34:10] ppcls INFO:             batch_transform_ops : 
+[2026/11/20 05:34:10] ppcls INFO:                 OpSampler : 
+[2026/11/20 05:34:10] ppcls INFO:                     CutmixOperator : 
+[2026/11/20 05:34:10] ppcls INFO:                         alpha : 0.2
+[2026/11/20 05:34:10] ppcls INFO:                         prob : 0.5
+[2026/11/20 05:34:10] ppcls INFO:                     MixupOperator : 
+[2026/11/20 05:34:10] ppcls INFO:                         alpha : 0.8
+[2026/11/20 05:34:10] ppcls INFO:                         prob : 0.5
+[2026/11/20 05:34:10] ppcls INFO:             cls_label_path : /data/paddlex_train/datasets/cls_flowers_examples/train.txt
+[2026/11/20 05:34:10] ppcls INFO:             image_root : /data/paddlex_train/datasets/cls_flowers_examples
+[2026/11/20 05:34:10] ppcls INFO:             name : ClsDataset
+[2026/11/20 05:34:10] ppcls INFO:             transform_ops : 
+[2026/11/20 05:34:10] ppcls INFO:                 DecodeImage : 
+[2026/11/20 05:34:10] ppcls INFO:                     channel_first : False
+[2026/11/20 05:34:10] ppcls INFO:                     to_rgb : True
+[2026/11/20 05:34:10] ppcls INFO:                 RandCropImage : 
+[2026/11/20 05:34:10] ppcls INFO:                     size : 224
+[2026/11/20 05:34:10] ppcls INFO:                 RandFlipImage : 
+[2026/11/20 05:34:10] ppcls INFO:                     flip_code : 1
+[2026/11/20 05:34:10] ppcls INFO:                 TimmAutoAugment : 
+[2026/11/20 05:34:10] ppcls INFO:                     config_str : rand-m1-mstd0.5-inc1
+[2026/11/20 05:34:10] ppcls INFO:                     img_size : 224
+[2026/11/20 05:34:10] ppcls INFO:                     interpolation : random
+[2026/11/20 05:34:10] ppcls INFO:                 NormalizeImage : 
+[2026/11/20 05:34:10] ppcls INFO:                     mean : [0.485, 0.456, 0.406]
+[2026/11/20 05:34:10] ppcls INFO:                     order : 
+[2026/11/20 05:34:10] ppcls INFO:                     scale : 1.0/255.0
+[2026/11/20 05:34:10] ppcls INFO:                     std : [0.229, 0.224, 0.225]
+[2026/11/20 05:34:10] ppcls INFO:                 RandomErasing : 
+[2026/11/20 05:34:10] ppcls INFO:                     EPSILON : 0.25
+[2026/11/20 05:34:10] ppcls INFO:                     mode : pixel
+[2026/11/20 05:34:10] ppcls INFO:         loader : 
+[2026/11/20 05:34:10] ppcls INFO:             num_workers : 4
+[2026/11/20 05:34:10] ppcls INFO:             use_shared_memory : False
+[2026/11/20 05:34:10] ppcls INFO:         sampler : 
+[2026/11/20 05:34:10] ppcls INFO:             batch_size : 64
+[2026/11/20 05:34:10] ppcls INFO:             drop_last : False
+[2026/11/20 05:34:10] ppcls INFO:             name : DistributedBatchSampler
+[2026/11/20 05:34:10] ppcls INFO:             shuffle : True
+[2026/11/20 05:34:10] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:34:10] ppcls INFO: Global : 
+[2026/11/20 05:34:10] ppcls INFO:     checkpoints : None
+[2026/11/20 05:34:10] ppcls INFO:     device : metax_gpu
+[2026/11/20 05:34:10] ppcls INFO:     epochs : 32
+[2026/11/20 05:34:10] ppcls INFO:     eval_during_train : False
+[2026/11/20 05:34:10] ppcls INFO:     eval_interval : 32
+[2026/11/20 05:34:10] ppcls INFO:     export_with_pir : True
+[2026/11/20 05:34:10] ppcls INFO:     image_shape : [3, 224, 224]
+[2026/11/20 05:34:10] ppcls INFO:     output_dir : /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train
+[2026/11/20 05:34:10] ppcls INFO:     pdx_model_name : StarNet-S4
+[2026/11/20 05:34:10] ppcls INFO:     pretrained_model : https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/StarNet-S4_pretrained.pdparams
+[2026/11/20 05:34:10] ppcls INFO:     print_batch_step : 1
+[2026/11/20 05:34:10] ppcls INFO:     save_inference_dir : ./inference
+[2026/11/20 05:34:10] ppcls INFO:     save_interval : 100000
+[2026/11/20 05:34:10] ppcls INFO:     to_static : False
+[2026/11/20 05:34:10] ppcls INFO:     uniform_output_enabled : True
+[2026/11/20 05:34:10] ppcls INFO:     use_visualdl : True
+[2026/11/20 05:34:10] ppcls INFO:     use_cinn : True
+[2026/11/20 05:34:10] ppcls INFO:     seed : 42
+[2026/11/20 05:34:10] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:34:10] ppcls INFO: Infer : 
+[2026/11/20 05:34:10] ppcls INFO:     PostProcess : 
+[2026/11/20 05:34:10] ppcls INFO:         class_id_map_file : /data/paddlex_train/datasets/cls_flowers_examples/label.txt
+[2026/11/20 05:34:10] ppcls INFO:         name : Topk
+[2026/11/20 05:34:10] ppcls INFO:         topk : 5
+[2026/11/20 05:34:10] ppcls INFO:     batch_size : 10
+[2026/11/20 05:34:10] ppcls INFO:     infer_imgs : docs/images/inference_deployment/whl_demo.jpg
+[2026/11/20 05:34:10] ppcls INFO:     transforms : 
+[2026/11/20 05:34:10] ppcls INFO:         DecodeImage : 
+[2026/11/20 05:34:10] ppcls INFO:             channel_first : False
+[2026/11/20 05:34:10] ppcls INFO:             to_rgb : True
+[2026/11/20 05:34:10] ppcls INFO:         ResizeImage : 
+[2026/11/20 05:34:10] ppcls INFO:             backend : pil
+[2026/11/20 05:34:10] ppcls INFO:             interpolation : bicubic
+[2026/11/20 05:34:10] ppcls INFO:             resize_short : 256
+[2026/11/20 05:34:10] ppcls INFO:         CropImage : 
+[2026/11/20 05:34:10] ppcls INFO:             size : 224
+[2026/11/20 05:34:10] ppcls INFO:         NormalizeImage : 
+[2026/11/20 05:34:10] ppcls INFO:             mean : [0.485, 0.456, 0.406]
+[2026/11/20 05:34:10] ppcls INFO:             order : 
+[2026/11/20 05:34:10] ppcls INFO:             scale : 1.0/255.0
+[2026/11/20 05:34:10] ppcls INFO:             std : [0.229, 0.224, 0.225]
+[2026/11/20 05:34:10] ppcls INFO:         ToCHWImage : None
+[2026/11/20 05:34:10] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:34:10] ppcls INFO: Loss : 
+[2026/11/20 05:34:10] ppcls INFO:     Eval : 
+[2026/11/20 05:34:10] ppcls INFO:         CELoss : 
+[2026/11/20 05:34:10] ppcls INFO:             weight : 1.0
+[2026/11/20 05:34:10] ppcls INFO:     Train : 
+[2026/11/20 05:34:10] ppcls INFO:         CELoss : 
+[2026/11/20 05:34:10] ppcls INFO:             epsilon : 0.1
+[2026/11/20 05:34:10] ppcls INFO:             weight : 1.0
+[2026/11/20 05:34:10] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:34:10] ppcls INFO: Metric : 
+[2026/11/20 05:34:10] ppcls INFO:     Eval : 
+[2026/11/20 05:34:10] ppcls INFO:         TopkAcc : 
+[2026/11/20 05:34:10] ppcls INFO:             topk : [1, 5]
+[2026/11/20 05:34:10] ppcls INFO:     Train : 
+[2026/11/20 05:34:10] ppcls INFO:         TopkAcc : 
+[2026/11/20 05:34:10] ppcls INFO:             topk : [1, 5]
+[2026/11/20 05:34:10] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:34:10] ppcls INFO: Optimizer : 
+[2026/11/20 05:34:10] ppcls INFO:     beta1 : 0.9
+[2026/11/20 05:34:10] ppcls INFO:     beta2 : 0.999
+[2026/11/20 05:34:10] ppcls INFO:     clip_grad : None
+[2026/11/20 05:34:10] ppcls INFO:     epsilon : 1e-08
+[2026/11/20 05:34:10] ppcls INFO:     lr : 
+[2026/11/20 05:34:10] ppcls INFO:         eta_min : 1e-05
+[2026/11/20 05:34:10] ppcls INFO:         learning_rate : 0.003
+[2026/11/20 05:34:10] ppcls INFO:         name : Cosine
+[2026/11/20 05:34:10] ppcls INFO:         warmup_epoch : 5
+[2026/11/20 05:34:10] ppcls INFO:         warmup_start_lr : 1e-06
+[2026/11/20 05:34:10] ppcls INFO:     name : AdamW
+[2026/11/20 05:34:10] ppcls INFO:     no_weight_decay_name : None
+[2026/11/20 05:34:10] ppcls INFO:     one_dim_param_no_weight_decay : True
+[2026/11/20 05:34:10] ppcls INFO:     weight_decay : 0.05
+[2026/11/20 05:34:10] ppcls INFO: ------------------------------------------------------------
+[2026/11/20 05:34:10] ppcls INFO: profiler_options : None
+[2026/11/20 05:34:10] ppcls INFO: train with paddle 3.5.0.dev20260516 and device Place(metax_gpu:0)
+[2026/11/20 05:34:10] ppcls WARNING: Unable to calculate accuracy when using "batch_transform_ops". The metric "{'TopkAcc': {'topk': [1, 5]}}" has been removed.
+[2026/11/20 05:34:10] ppcls INFO: Found /root/.paddleclas/weights/StarNet-S4_pretrained.pdparams
+[2026/11/20 05:34:10] ppcls INFO: Finish load pretrained model from /root/.paddleclas/weights/StarNet-S4_pretrained.pdparams
+[2026/11/20 05:34:10] ppcls INFO: Successfully to apply @to_static with specs: [InputSpec(shape=(-1, 3, 224, 224), dtype=paddle.float32, name=None, stop_gradient=True)], backend: CINN
+[2026/11/20 05:34:10] ppcls WARNING: The training strategy provided by PaddleClas is based on 8 gpus. But the number of gpu is 1 in current training. Please modify the stategy (learning rate, batch size and so on) if use this config to train.
+W1120 05:34:12.769379 3919297 eager_utils.cc:3618] Paddle static graph(PIR) not support input out tensor for now!!!!!
+W1120 05:34:26.827540 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 05:34:27.011695 3919297 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_0.co /tmp/cinn_metax_3919297_0.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_1.co /tmp/cinn_metax_3919297_1.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_2.co /tmp/cinn_metax_3919297_2.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_3.co /tmp/cinn_metax_3919297_3.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_4.co /tmp/cinn_metax_3919297_4.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_5.co /tmp/cinn_metax_3919297_5.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_6.co /tmp/cinn_metax_3919297_6.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_7.co /tmp/cinn_metax_3919297_7.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_8.co /tmp/cinn_metax_3919297_8.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_9.co /tmp/cinn_metax_3919297_9.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_10.co /tmp/cinn_metax_3919297_10.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_11.co /tmp/cinn_metax_3919297_11.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_12.co /tmp/cinn_metax_3919297_12.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_13.co /tmp/cinn_metax_3919297_13.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_14.co /tmp/cinn_metax_3919297_14.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_15.co /tmp/cinn_metax_3919297_15.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_16.co /tmp/cinn_metax_3919297_16.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_17.co /tmp/cinn_metax_3919297_17.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_18.co /tmp/cinn_metax_3919297_18.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_19.co /tmp/cinn_metax_3919297_19.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_20.co /tmp/cinn_metax_3919297_20.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_21.co /tmp/cinn_metax_3919297_21.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_22.co /tmp/cinn_metax_3919297_22.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_23.co /tmp/cinn_metax_3919297_23.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_24.co /tmp/cinn_metax_3919297_24.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_25.co /tmp/cinn_metax_3919297_25.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_26.co /tmp/cinn_metax_3919297_26.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_27.co /tmp/cinn_metax_3919297_27.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_28.co /tmp/cinn_metax_3919297_28.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_29.co /tmp/cinn_metax_3919297_29.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_30.co /tmp/cinn_metax_3919297_30.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_31.co /tmp/cinn_metax_3919297_31.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_32.co /tmp/cinn_metax_3919297_32.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_33.co /tmp/cinn_metax_3919297_33.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_34.co /tmp/cinn_metax_3919297_34.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_35.co /tmp/cinn_metax_3919297_35.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_36.co /tmp/cinn_metax_3919297_36.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_37.co /tmp/cinn_metax_3919297_37.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_38.co /tmp/cinn_metax_3919297_38.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_39.co /tmp/cinn_metax_3919297_39.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_40.co /tmp/cinn_metax_3919297_40.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_41.co /tmp/cinn_metax_3919297_41.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_42.co /tmp/cinn_metax_3919297_42.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_43.co /tmp/cinn_metax_3919297_43.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_44.co /tmp/cinn_metax_3919297_44.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_45.co /tmp/cinn_metax_3919297_45.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_46.co /tmp/cinn_metax_3919297_46.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_43.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_34.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_2.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_5.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_25.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_15.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_18.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_21.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_22.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_6.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_10.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_17.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_33.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_24.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_20.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_4.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_3.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_1.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_19.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_11.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_26.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_38.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_0.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_12.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_41.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_28.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_31.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_29.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_39.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_40.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_35.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_36.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_27.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_37.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_9.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_8.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_16.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_32.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_13.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_30.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_14.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_23.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_7.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_46.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_45.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_42.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_44.co
+W1120 05:34:59.775468 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_47.co /tmp/cinn_metax_3919297_47.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_48.co /tmp/cinn_metax_3919297_48.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_49.co /tmp/cinn_metax_3919297_49.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_50.co /tmp/cinn_metax_3919297_50.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_51.co /tmp/cinn_metax_3919297_51.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_52.co /tmp/cinn_metax_3919297_52.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_53.co /tmp/cinn_metax_3919297_53.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_54.co /tmp/cinn_metax_3919297_54.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_55.co /tmp/cinn_metax_3919297_55.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_56.co /tmp/cinn_metax_3919297_56.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_57.co /tmp/cinn_metax_3919297_57.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_58.co /tmp/cinn_metax_3919297_58.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_59.co /tmp/cinn_metax_3919297_59.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_60.co /tmp/cinn_metax_3919297_60.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_61.co /tmp/cinn_metax_3919297_61.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_62.co /tmp/cinn_metax_3919297_62.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_63.co /tmp/cinn_metax_3919297_63.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_64.co /tmp/cinn_metax_3919297_64.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_65.co /tmp/cinn_metax_3919297_65.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_66.co /tmp/cinn_metax_3919297_66.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_67.co /tmp/cinn_metax_3919297_67.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_68.co /tmp/cinn_metax_3919297_68.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_69.co /tmp/cinn_metax_3919297_69.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_70.co /tmp/cinn_metax_3919297_70.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_71.co /tmp/cinn_metax_3919297_71.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_72.co /tmp/cinn_metax_3919297_72.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_73.co /tmp/cinn_metax_3919297_73.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_74.co /tmp/cinn_metax_3919297_74.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_75.co /tmp/cinn_metax_3919297_75.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_76.co /tmp/cinn_metax_3919297_76.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_78.co /tmp/cinn_metax_3919297_78.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_77.co /tmp/cinn_metax_3919297_77.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_79.co /tmp/cinn_metax_3919297_79.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_80.co /tmp/cinn_metax_3919297_80.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_81.co /tmp/cinn_metax_3919297_81.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_83.co /tmp/cinn_metax_3919297_83.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_82.co /tmp/cinn_metax_3919297_82.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_84.co /tmp/cinn_metax_3919297_84.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_85.co /tmp/cinn_metax_3919297_85.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_86.co /tmp/cinn_metax_3919297_86.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_87.co /tmp/cinn_metax_3919297_87.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_88.co /tmp/cinn_metax_3919297_88.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_89.co /tmp/cinn_metax_3919297_89.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_90.co /tmp/cinn_metax_3919297_90.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_91.co /tmp/cinn_metax_3919297_91.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_92.co /tmp/cinn_metax_3919297_92.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_93.co /tmp/cinn_metax_3919297_93.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_94.co /tmp/cinn_metax_3919297_94.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_95.co /tmp/cinn_metax_3919297_95.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_96.co /tmp/cinn_metax_3919297_96.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_97.co /tmp/cinn_metax_3919297_97.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_98.co /tmp/cinn_metax_3919297_98.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_99.co /tmp/cinn_metax_3919297_99.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_100.co /tmp/cinn_metax_3919297_100.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_101.co /tmp/cinn_metax_3919297_101.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_102.co /tmp/cinn_metax_3919297_102.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_103.co /tmp/cinn_metax_3919297_103.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_104.co /tmp/cinn_metax_3919297_104.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_52.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_50.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_59.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_54.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_49.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_69.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_87.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_56.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_79.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_90.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_91.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_66.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_48.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_47.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_74.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_71.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_89.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_67.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_62.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_76.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_58.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_94.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_78.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_81.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_93.co[MetaX Success] Compiled: /tmp/cinn_metax_3919297_51.co
+
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_84.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_60.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_68.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_77.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_75.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_53.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_92.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_55.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_102.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_65.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_57.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_85.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_72.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_86.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_64.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_73.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_70.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_61.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_96.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_80.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_88.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_99.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_100.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_63.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_82.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_95.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_101.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_98.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_83.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_103.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_104.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_97.co
+I1120 05:35:43.427325 3919297 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 05:35:43.482613 3919297 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+[2026/11/20 05:35:48] ppcls INFO: [Train][Epoch 1/32][Iter: 0/16]lr(LinearWarmup): 0.00003849, CELoss: 5.03664, loss: 5.03664, batch_cost: 98.18409s, reader_cost: 1.23140, ips: 0.65184 samples/s, eta: 13:57:50
+[2026/11/20 05:35:48] ppcls INFO: [Train][Epoch 1/32][Iter: 1/16]lr(LinearWarmup): 0.00007597, CELoss: 5.11123, loss: 5.11123, batch_cost: 0.13276s, reader_cost: 0.00053, ips: 482.07447 samples/s, eta: 0:01:07
+[2026/11/20 05:35:49] ppcls INFO: [Train][Epoch 1/32][Iter: 2/16]lr(LinearWarmup): 0.00011346, CELoss: 5.13910, loss: 5.13910, batch_cost: 0.13434s, reader_cost: 0.00034, ips: 476.41990 samples/s, eta: 0:01:08
+[2026/11/20 05:35:49] ppcls INFO: [Train][Epoch 1/32][Iter: 3/16]lr(LinearWarmup): 0.00015095, CELoss: 5.10524, loss: 5.10524, batch_cost: 0.13280s, reader_cost: 0.00032, ips: 481.93945 samples/s, eta: 0:01:07
+[2026/11/20 05:35:49] ppcls INFO: [Train][Epoch 1/32][Iter: 4/16]lr(LinearWarmup): 0.00018844, CELoss: 5.06312, loss: 5.06312, batch_cost: 0.13460s, reader_cost: 0.00033, ips: 475.48571 samples/s, eta: 0:01:08
+[2026/11/20 05:35:49] ppcls INFO: [Train][Epoch 1/32][Iter: 5/16]lr(LinearWarmup): 0.00022593, CELoss: 5.03530, loss: 5.03530, batch_cost: 0.13379s, reader_cost: 0.00031, ips: 478.34621 samples/s, eta: 0:01:07
+[2026/11/20 05:35:49] ppcls INFO: [Train][Epoch 1/32][Iter: 6/16]lr(LinearWarmup): 0.00026341, CELoss: 5.00550, loss: 5.00550, batch_cost: 0.26782s, reader_cost: 0.00034, ips: 238.96700 samples/s, eta: 0:02:15
+[2026/11/20 05:35:49] ppcls INFO: [Train][Epoch 1/32][Iter: 7/16]lr(LinearWarmup): 0.00030090, CELoss: 4.99867, loss: 4.99867, batch_cost: 0.23905s, reader_cost: 0.00679, ips: 267.72331 samples/s, eta: 0:02:00
+[2026/11/20 05:35:50] ppcls INFO: [Train][Epoch 1/32][Iter: 8/16]lr(LinearWarmup): 0.00033839, CELoss: 4.98995, loss: 4.98995, batch_cost: 0.28454s, reader_cost: 0.00046, ips: 224.92411 samples/s, eta: 0:02:23
+[2026/11/20 05:35:50] ppcls INFO: [Train][Epoch 1/32][Iter: 9/16]lr(LinearWarmup): 0.00037588, CELoss: 4.96766, loss: 4.96766, batch_cost: 0.28358s, reader_cost: 0.00713, ips: 225.68905 samples/s, eta: 0:02:22
+[2026/11/20 05:35:50] ppcls INFO: [Train][Epoch 1/32][Iter: 10/16]lr(LinearWarmup): 0.00041336, CELoss: 4.94108, loss: 4.94108, batch_cost: 0.21396s, reader_cost: 0.00727, ips: 299.12343 samples/s, eta: 0:01:47
+[2026/11/20 05:35:50] ppcls INFO: [Train][Epoch 1/32][Iter: 11/16]lr(LinearWarmup): 0.00045085, CELoss: 4.92377, loss: 4.92377, batch_cost: 0.13224s, reader_cost: 0.00022, ips: 483.96572 samples/s, eta: 0:01:06
+[2026/11/20 05:35:51] ppcls INFO: [Train][Epoch 1/32][Iter: 12/16]lr(LinearWarmup): 0.00048834, CELoss: 4.89774, loss: 4.89774, batch_cost: 0.13161s, reader_cost: 0.00021, ips: 486.29083 samples/s, eta: 0:01:05
+[2026/11/20 05:35:51] ppcls INFO: [Train][Epoch 1/32][Iter: 13/16]lr(LinearWarmup): 0.00052582, CELoss: 4.87922, loss: 4.87922, batch_cost: 0.12905s, reader_cost: 0.00022, ips: 495.93083 samples/s, eta: 0:01:04
+[2026/11/20 05:35:51] ppcls INFO: [Train][Epoch 1/32][Iter: 14/16]lr(LinearWarmup): 0.00056331, CELoss: 4.85244, loss: 4.85244, batch_cost: 0.11829s, reader_cost: 0.00032, ips: 541.03253 samples/s, eta: 0:00:58
+W1120 05:35:52.718391 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_105.co /tmp/cinn_metax_3919297_105.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_106.co /tmp/cinn_metax_3919297_106.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_107.co /tmp/cinn_metax_3919297_107.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_108.co /tmp/cinn_metax_3919297_108.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_109.co /tmp/cinn_metax_3919297_109.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_110.co /tmp/cinn_metax_3919297_110.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_105.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_106.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_107.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_108.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_110.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_109.co
+W1120 05:35:57.315887 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_111.co /tmp/cinn_metax_3919297_111.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_112.co /tmp/cinn_metax_3919297_112.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_113.co /tmp/cinn_metax_3919297_113.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_114.co /tmp/cinn_metax_3919297_114.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_115.co /tmp/cinn_metax_3919297_115.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_116.co /tmp/cinn_metax_3919297_116.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_117.co /tmp/cinn_metax_3919297_117.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_111.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_112.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_113.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_114.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_115.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_116.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_117.co
+W1120 05:36:03.392601 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_118.co /tmp/cinn_metax_3919297_118.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_119.co /tmp/cinn_metax_3919297_119.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_120.co /tmp/cinn_metax_3919297_120.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_121.co /tmp/cinn_metax_3919297_121.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_122.co /tmp/cinn_metax_3919297_122.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_123.co /tmp/cinn_metax_3919297_123.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_118.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_119.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_120.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_122.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_121.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_123.co
+W1120 05:36:07.379113 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_124.co /tmp/cinn_metax_3919297_124.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_125.co /tmp/cinn_metax_3919297_125.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_126.co /tmp/cinn_metax_3919297_126.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_127.co /tmp/cinn_metax_3919297_127.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_128.co /tmp/cinn_metax_3919297_128.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_129.co /tmp/cinn_metax_3919297_129.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_130.co /tmp/cinn_metax_3919297_130.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_124.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_126.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_125.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_127.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_128.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_129.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_130.co
+W1120 05:36:16.363265 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_131.co /tmp/cinn_metax_3919297_131.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_132.co /tmp/cinn_metax_3919297_132.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_133.co /tmp/cinn_metax_3919297_133.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_134.co /tmp/cinn_metax_3919297_134.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_135.co /tmp/cinn_metax_3919297_135.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_136.co /tmp/cinn_metax_3919297_136.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_137.co /tmp/cinn_metax_3919297_137.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_138.co /tmp/cinn_metax_3919297_138.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_139.co /tmp/cinn_metax_3919297_139.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_141.co /tmp/cinn_metax_3919297_141.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_140.co /tmp/cinn_metax_3919297_140.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_142.co /tmp/cinn_metax_3919297_142.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_143.co /tmp/cinn_metax_3919297_143.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_144.co /tmp/cinn_metax_3919297_144.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_145.co /tmp/cinn_metax_3919297_145.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_136.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_131.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_134.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_140.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_133.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_135.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_132.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_141.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_139.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_138.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_137.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_142.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_144.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_143.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_145.co
+W1120 05:36:27.111204 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_146.co /tmp/cinn_metax_3919297_146.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_147.co /tmp/cinn_metax_3919297_147.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_148.co /tmp/cinn_metax_3919297_148.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_149.co /tmp/cinn_metax_3919297_149.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_150.co /tmp/cinn_metax_3919297_150.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_151.co /tmp/cinn_metax_3919297_151.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_152.co /tmp/cinn_metax_3919297_152.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_153.co /tmp/cinn_metax_3919297_153.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_154.co /tmp/cinn_metax_3919297_154.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_155.co /tmp/cinn_metax_3919297_155.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_156.co /tmp/cinn_metax_3919297_156.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_157.co /tmp/cinn_metax_3919297_157.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_158.co /tmp/cinn_metax_3919297_158.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_159.co /tmp/cinn_metax_3919297_159.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_160.co /tmp/cinn_metax_3919297_160.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_161.co /tmp/cinn_metax_3919297_161.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_146.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_147.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_149.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_152.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_156.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_155.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_150.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_157.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_148.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_153.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_151.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_154.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_158.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_159.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_160.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_161.co
+W1120 05:36:39.286206 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_162.co /tmp/cinn_metax_3919297_162.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_163.co /tmp/cinn_metax_3919297_163.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_164.co /tmp/cinn_metax_3919297_164.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_165.co /tmp/cinn_metax_3919297_165.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_163.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_162.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_164.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_165.co
+W1120 05:36:42.276346 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_166.co /tmp/cinn_metax_3919297_166.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_167.co /tmp/cinn_metax_3919297_167.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_168.co /tmp/cinn_metax_3919297_168.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_169.co /tmp/cinn_metax_3919297_169.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_170.co /tmp/cinn_metax_3919297_170.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_166.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_167.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_168.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_169.co
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_170.co
+W1120 05:36:45.707181 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_171.co /tmp/cinn_metax_3919297_171.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_171.co
+W1120 05:36:47.980997 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_172.co /tmp/cinn_metax_3919297_172.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_172.co
+W1120 05:36:50.795724 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_173.co /tmp/cinn_metax_3919297_173.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_173.co
+W1120 05:36:53.351722 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_174.co /tmp/cinn_metax_3919297_174.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_174.co
+W1120 05:36:56.228332 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_175.co /tmp/cinn_metax_3919297_175.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_175.co
+W1120 05:36:58.661353 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_176.co /tmp/cinn_metax_3919297_176.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_176.co
+W1120 05:37:01.552801 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_177.co /tmp/cinn_metax_3919297_177.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_177.co
+W1120 05:37:03.923810 3919297 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_3919297_178.co /tmp/cinn_metax_3919297_178.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_3919297_178.co
+[2026/11/20 05:37:06] ppcls INFO: [Train][Epoch 1/32][Iter: 15/16]lr(LinearWarmup): 0.00060080, CELoss: 4.83248, loss: 4.83248, batch_cost: 75.14944s, reader_cost: 0.00023, ips: 0.79841 samples/s, eta: 10:22:29
+[2026/11/20 05:37:06] ppcls INFO: [Train][Epoch 1/32][Avg]CELoss: 4.83248, loss: 4.83248
+[2026/11/20 05:37:06] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:37:07] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:37:10] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:37:10] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:37:12] ppcls INFO: [Train][Epoch 2/32][Iter: 0/16]lr(LinearWarmup): 0.00063829, CELoss: 4.37540, loss: 4.37540, batch_cost: 2.03465s, reader_cost: 1.88688, ips: 31.45511 samples/s, eta: 0:16:49
+[2026/11/20 05:37:12] ppcls INFO: [Train][Epoch 2/32][Iter: 1/16]lr(LinearWarmup): 0.00067578, CELoss: 4.27545, loss: 4.27545, batch_cost: 0.13312s, reader_cost: 0.00060, ips: 480.76988 samples/s, eta: 0:01:05
+[2026/11/20 05:37:12] ppcls INFO: [Train][Epoch 2/32][Iter: 2/16]lr(LinearWarmup): 0.00071326, CELoss: 4.30420, loss: 4.30420, batch_cost: 0.20974s, reader_cost: 0.00074, ips: 305.14466 samples/s, eta: 0:01:43
+[2026/11/20 05:37:12] ppcls INFO: [Train][Epoch 2/32][Iter: 3/16]lr(LinearWarmup): 0.00075075, CELoss: 4.35225, loss: 4.35225, batch_cost: 0.33431s, reader_cost: 0.00041, ips: 191.43646 samples/s, eta: 0:02:44
+[2026/11/20 05:37:13] ppcls INFO: [Train][Epoch 2/32][Iter: 4/16]lr(LinearWarmup): 0.00078824, CELoss: 4.34769, loss: 4.34769, batch_cost: 0.25686s, reader_cost: 0.00047, ips: 249.16642 samples/s, eta: 0:02:06
+[2026/11/20 05:37:13] ppcls INFO: [Train][Epoch 2/32][Iter: 5/16]lr(LinearWarmup): 0.00082572, CELoss: 4.22074, loss: 4.22074, batch_cost: 0.28848s, reader_cost: 0.00823, ips: 221.85537 samples/s, eta: 0:02:21
+[2026/11/20 05:37:13] ppcls INFO: [Train][Epoch 2/32][Iter: 6/16]lr(LinearWarmup): 0.00086321, CELoss: 4.20847, loss: 4.20847, batch_cost: 0.18287s, reader_cost: 0.00794, ips: 349.96689 samples/s, eta: 0:01:29
+[2026/11/20 05:37:13] ppcls INFO: [Train][Epoch 2/32][Iter: 7/16]lr(LinearWarmup): 0.00090070, CELoss: 4.21862, loss: 4.21862, batch_cost: 0.13505s, reader_cost: 0.00049, ips: 473.90337 samples/s, eta: 0:01:06
+[2026/11/20 05:37:14] ppcls INFO: [Train][Epoch 2/32][Iter: 8/16]lr(LinearWarmup): 0.00093819, CELoss: 4.14777, loss: 4.14777, batch_cost: 0.25445s, reader_cost: 0.00070, ips: 251.52210 samples/s, eta: 0:02:04
+[2026/11/20 05:37:14] ppcls INFO: [Train][Epoch 2/32][Iter: 9/16]lr(LinearWarmup): 0.00097568, CELoss: 4.09310, loss: 4.09310, batch_cost: 0.25048s, reader_cost: 0.00873, ips: 255.50632 samples/s, eta: 0:02:01
+[2026/11/20 05:37:14] ppcls INFO: [Train][Epoch 2/32][Iter: 10/16]lr(LinearWarmup): 0.00101316, CELoss: 4.06647, loss: 4.06647, batch_cost: 0.29767s, reader_cost: 0.00758, ips: 215.00207 samples/s, eta: 0:02:24
+[2026/11/20 05:37:14] ppcls INFO: [Train][Epoch 2/32][Iter: 11/16]lr(LinearWarmup): 0.00105065, CELoss: 4.05732, loss: 4.05732, batch_cost: 0.13452s, reader_cost: 0.00043, ips: 475.77561 samples/s, eta: 0:01:05
+[2026/11/20 05:37:14] ppcls INFO: [Train][Epoch 2/32][Iter: 12/16]lr(LinearWarmup): 0.00108814, CELoss: 4.05094, loss: 4.05094, batch_cost: 0.13442s, reader_cost: 0.00048, ips: 476.11232 samples/s, eta: 0:01:05
+[2026/11/20 05:37:15] ppcls INFO: [Train][Epoch 2/32][Iter: 13/16]lr(LinearWarmup): 0.00112562, CELoss: 4.04261, loss: 4.04261, batch_cost: 0.13210s, reader_cost: 0.00033, ips: 484.48894 samples/s, eta: 0:01:03
+[2026/11/20 05:37:15] ppcls INFO: [Train][Epoch 2/32][Iter: 14/16]lr(LinearWarmup): 0.00116311, CELoss: 4.02009, loss: 4.02009, batch_cost: 0.11817s, reader_cost: 0.00043, ips: 541.61546 samples/s, eta: 0:00:56
+[2026/11/20 05:37:15] ppcls INFO: [Train][Epoch 2/32][Iter: 15/16]lr(LinearWarmup): 0.00120060, CELoss: 4.01709, loss: 4.01709, batch_cost: 0.12959s, reader_cost: 0.00036, ips: 463.00623 samples/s, eta: 0:01:02
+[2026/11/20 05:37:15] ppcls INFO: [Train][Epoch 2/32][Avg]CELoss: 4.01709, loss: 4.01709
+[2026/11/20 05:37:15] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:37:16] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:37:19] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:37:19] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:37:21] ppcls INFO: [Train][Epoch 3/32][Iter: 0/16]lr(LinearWarmup): 0.00123809, CELoss: 2.66281, loss: 2.66281, batch_cost: 2.04431s, reader_cost: 1.73406, ips: 31.30634 samples/s, eta: 0:16:21
+[2026/11/20 05:37:21] ppcls INFO: [Train][Epoch 3/32][Iter: 1/16]lr(LinearWarmup): 0.00127557, CELoss: 3.33349, loss: 3.33349, batch_cost: 0.21626s, reader_cost: 0.00060, ips: 295.93328 samples/s, eta: 0:01:43
+[2026/11/20 05:37:22] ppcls INFO: [Train][Epoch 3/32][Iter: 2/16]lr(LinearWarmup): 0.00131306, CELoss: 3.27446, loss: 3.27446, batch_cost: 0.29099s, reader_cost: 0.00038, ips: 219.93550 samples/s, eta: 0:02:19
+[2026/11/20 05:37:22] ppcls INFO: [Train][Epoch 3/32][Iter: 3/16]lr(LinearWarmup): 0.00135055, CELoss: 3.37014, loss: 3.37014, batch_cost: 0.25571s, reader_cost: 0.00041, ips: 250.28247 samples/s, eta: 0:02:01
+[2026/11/20 05:37:22] ppcls INFO: [Train][Epoch 3/32][Iter: 4/16]lr(LinearWarmup): 0.00138804, CELoss: 3.47367, loss: 3.47367, batch_cost: 0.25129s, reader_cost: 0.00030, ips: 254.68622 samples/s, eta: 0:01:59
+[2026/11/20 05:37:22] ppcls INFO: [Train][Epoch 3/32][Iter: 5/16]lr(LinearWarmup): 0.00142552, CELoss: 3.34163, loss: 3.34163, batch_cost: 0.22099s, reader_cost: 0.00041, ips: 289.60407 samples/s, eta: 0:01:44
+[2026/11/20 05:37:22] ppcls INFO: [Train][Epoch 3/32][Iter: 6/16]lr(LinearWarmup): 0.00146301, CELoss: 3.38734, loss: 3.38734, batch_cost: 0.18509s, reader_cost: 0.00711, ips: 345.77538 samples/s, eta: 0:01:27
+[2026/11/20 05:37:23] ppcls INFO: [Train][Epoch 3/32][Iter: 7/16]lr(LinearWarmup): 0.00150050, CELoss: 3.31736, loss: 3.31736, batch_cost: 0.24886s, reader_cost: 0.00026, ips: 257.17012 samples/s, eta: 0:01:57
+[2026/11/20 05:37:23] ppcls INFO: [Train][Epoch 3/32][Iter: 8/16]lr(LinearWarmup): 0.00153799, CELoss: 3.34206, loss: 3.34206, batch_cost: 0.20095s, reader_cost: 0.00037, ips: 318.48242 samples/s, eta: 0:01:34
+[2026/11/20 05:37:23] ppcls INFO: [Train][Epoch 3/32][Iter: 9/16]lr(LinearWarmup): 0.00157547, CELoss: 3.25818, loss: 3.25818, batch_cost: 0.27103s, reader_cost: 0.00030, ips: 236.13440 samples/s, eta: 0:02:07
+[2026/11/20 05:37:23] ppcls INFO: [Train][Epoch 3/32][Iter: 10/16]lr(LinearWarmup): 0.00161296, CELoss: 3.17658, loss: 3.17658, batch_cost: 0.14478s, reader_cost: 0.00034, ips: 442.05535 samples/s, eta: 0:01:08
+[2026/11/20 05:37:23] ppcls INFO: [Train][Epoch 3/32][Iter: 11/16]lr(LinearWarmup): 0.00165045, CELoss: 3.15568, loss: 3.15568, batch_cost: 0.12868s, reader_cost: 0.00023, ips: 497.34584 samples/s, eta: 0:01:00
+[2026/11/20 05:37:24] ppcls INFO: [Train][Epoch 3/32][Iter: 12/16]lr(LinearWarmup): 0.00168794, CELoss: 3.08369, loss: 3.08369, batch_cost: 0.12763s, reader_cost: 0.00024, ips: 501.44109 samples/s, eta: 0:00:59
+[2026/11/20 05:37:24] ppcls INFO: [Train][Epoch 3/32][Iter: 13/16]lr(LinearWarmup): 0.00172542, CELoss: 3.11217, loss: 3.11217, batch_cost: 0.13230s, reader_cost: 0.00029, ips: 483.75901 samples/s, eta: 0:01:01
+[2026/11/20 05:37:24] ppcls INFO: [Train][Epoch 3/32][Iter: 14/16]lr(LinearWarmup): 0.00176291, CELoss: 3.12078, loss: 3.12078, batch_cost: 0.11890s, reader_cost: 0.00024, ips: 538.26178 samples/s, eta: 0:00:55
+[2026/11/20 05:37:24] ppcls INFO: [Train][Epoch 3/32][Iter: 15/16]lr(LinearWarmup): 0.00180040, CELoss: 3.13927, loss: 3.13927, batch_cost: 0.12778s, reader_cost: 0.00023, ips: 469.57209 samples/s, eta: 0:00:59
+[2026/11/20 05:37:24] ppcls INFO: [Train][Epoch 3/32][Avg]CELoss: 3.13927, loss: 3.13927
+[2026/11/20 05:37:25] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:37:25] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:37:28] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:37:28] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:37:30] ppcls INFO: [Train][Epoch 4/32][Iter: 0/16]lr(LinearWarmup): 0.00183789, CELoss: 1.88999, loss: 1.88999, batch_cost: 2.19988s, reader_cost: 2.04805, ips: 29.09249 samples/s, eta: 0:17:00
+[2026/11/20 05:37:30] ppcls INFO: [Train][Epoch 4/32][Iter: 1/16]lr(LinearWarmup): 0.00187537, CELoss: 1.91604, loss: 1.91604, batch_cost: 0.19998s, reader_cost: 0.00050, ips: 320.03693 samples/s, eta: 0:01:32
+[2026/11/20 05:37:31] ppcls INFO: [Train][Epoch 4/32][Iter: 2/16]lr(LinearWarmup): 0.00191286, CELoss: 1.99349, loss: 1.99349, batch_cost: 0.21371s, reader_cost: 0.00039, ips: 299.46914 samples/s, eta: 0:01:38
+[2026/11/20 05:37:31] ppcls INFO: [Train][Epoch 4/32][Iter: 3/16]lr(LinearWarmup): 0.00195035, CELoss: 2.09721, loss: 2.09721, batch_cost: 0.31761s, reader_cost: 0.00045, ips: 201.50361 samples/s, eta: 0:02:26
+[2026/11/20 05:37:31] ppcls INFO: [Train][Epoch 4/32][Iter: 4/16]lr(LinearWarmup): 0.00198784, CELoss: 2.34024, loss: 2.34024, batch_cost: 0.19058s, reader_cost: 0.00034, ips: 335.82137 samples/s, eta: 0:01:27
+[2026/11/20 05:37:31] ppcls INFO: [Train][Epoch 4/32][Iter: 5/16]lr(LinearWarmup): 0.00202533, CELoss: 2.47121, loss: 2.47121, batch_cost: 0.33774s, reader_cost: 0.00039, ips: 189.49611 samples/s, eta: 0:02:35
+[2026/11/20 05:37:32] ppcls INFO: [Train][Epoch 4/32][Iter: 6/16]lr(LinearWarmup): 0.00206281, CELoss: 2.65806, loss: 2.65806, batch_cost: 0.19139s, reader_cost: 0.00833, ips: 334.40317 samples/s, eta: 0:01:27
+[2026/11/20 05:37:32] ppcls INFO: [Train][Epoch 4/32][Iter: 7/16]lr(LinearWarmup): 0.00210030, CELoss: 2.59850, loss: 2.59850, batch_cost: 0.30748s, reader_cost: 0.00035, ips: 208.14630 samples/s, eta: 0:02:20
+[2026/11/20 05:37:32] ppcls INFO: [Train][Epoch 4/32][Iter: 8/16]lr(LinearWarmup): 0.00213779, CELoss: 2.55102, loss: 2.55102, batch_cost: 0.21936s, reader_cost: 0.00047, ips: 291.75135 samples/s, eta: 0:01:40
+[2026/11/20 05:37:32] ppcls INFO: [Train][Epoch 4/32][Iter: 9/16]lr(LinearWarmup): 0.00217527, CELoss: 2.59658, loss: 2.59658, batch_cost: 0.32838s, reader_cost: 0.00026, ips: 194.89510 samples/s, eta: 0:02:29
+[2026/11/20 05:37:33] ppcls INFO: [Train][Epoch 4/32][Iter: 10/16]lr(LinearWarmup): 0.00221276, CELoss: 2.62475, loss: 2.62475, batch_cost: 0.20150s, reader_cost: 0.00069, ips: 317.61871 samples/s, eta: 0:01:31
+[2026/11/20 05:37:33] ppcls INFO: [Train][Epoch 4/32][Iter: 11/16]lr(LinearWarmup): 0.00225025, CELoss: 2.65894, loss: 2.65894, batch_cost: 0.13061s, reader_cost: 0.00043, ips: 489.99505 samples/s, eta: 0:00:59
+[2026/11/20 05:37:33] ppcls INFO: [Train][Epoch 4/32][Iter: 12/16]lr(LinearWarmup): 0.00228774, CELoss: 2.74461, loss: 2.74461, batch_cost: 0.13049s, reader_cost: 0.00025, ips: 490.45969 samples/s, eta: 0:00:58
+[2026/11/20 05:37:33] ppcls INFO: [Train][Epoch 4/32][Iter: 13/16]lr(LinearWarmup): 0.00232523, CELoss: 2.77268, loss: 2.77268, batch_cost: 0.13022s, reader_cost: 0.00030, ips: 491.47980 samples/s, eta: 0:00:58
+[2026/11/20 05:37:33] ppcls INFO: [Train][Epoch 4/32][Iter: 14/16]lr(LinearWarmup): 0.00236271, CELoss: 2.74456, loss: 2.74456, batch_cost: 0.11957s, reader_cost: 0.00025, ips: 535.26298 samples/s, eta: 0:00:53
+[2026/11/20 05:37:33] ppcls INFO: [Train][Epoch 4/32][Iter: 15/16]lr(LinearWarmup): 0.00240020, CELoss: 2.73914, loss: 2.73914, batch_cost: 0.12456s, reader_cost: 0.00032, ips: 481.71448 samples/s, eta: 0:00:55
+[2026/11/20 05:37:33] ppcls INFO: [Train][Epoch 4/32][Avg]CELoss: 2.73914, loss: 2.73914
+[2026/11/20 05:37:34] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:37:34] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:37:37] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:37:37] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:37:40] ppcls INFO: [Train][Epoch 5/32][Iter: 0/16]lr(LinearWarmup): 0.00243769, CELoss: 3.66109, loss: 3.66109, batch_cost: 2.31593s, reader_cost: 1.96280, ips: 27.63470 samples/s, eta: 0:17:17
+[2026/11/20 05:37:40] ppcls INFO: [Train][Epoch 5/32][Iter: 1/16]lr(LinearWarmup): 0.00247518, CELoss: 2.82103, loss: 2.82103, batch_cost: 0.23692s, reader_cost: 0.00063, ips: 270.13243 samples/s, eta: 0:01:45
+[2026/11/20 05:37:40] ppcls INFO: [Train][Epoch 5/32][Iter: 2/16]lr(LinearWarmup): 0.00251266, CELoss: 3.04083, loss: 3.04083, batch_cost: 0.26223s, reader_cost: 0.00050, ips: 244.05664 samples/s, eta: 0:01:56
+[2026/11/20 05:37:40] ppcls INFO: [Train][Epoch 5/32][Iter: 3/16]lr(LinearWarmup): 0.00255015, CELoss: 2.85286, loss: 2.85286, batch_cost: 0.16899s, reader_cost: 0.00791, ips: 378.72461 samples/s, eta: 0:01:15
+[2026/11/20 05:37:41] ppcls INFO: [Train][Epoch 5/32][Iter: 4/16]lr(LinearWarmup): 0.00258764, CELoss: 3.03302, loss: 3.03302, batch_cost: 0.24494s, reader_cost: 0.00035, ips: 261.28360 samples/s, eta: 0:01:48
+[2026/11/20 05:37:41] ppcls INFO: [Train][Epoch 5/32][Iter: 5/16]lr(LinearWarmup): 0.00262513, CELoss: 2.96686, loss: 2.96686, batch_cost: 0.21719s, reader_cost: 0.00042, ips: 294.67154 samples/s, eta: 0:01:36
+[2026/11/20 05:37:41] ppcls INFO: [Train][Epoch 5/32][Iter: 6/16]lr(LinearWarmup): 0.00266261, CELoss: 3.07491, loss: 3.07491, batch_cost: 0.20485s, reader_cost: 0.00020, ips: 312.41979 samples/s, eta: 0:01:30
+[2026/11/20 05:37:41] ppcls INFO: [Train][Epoch 5/32][Iter: 7/16]lr(LinearWarmup): 0.00270010, CELoss: 3.15269, loss: 3.15269, batch_cost: 0.13975s, reader_cost: 0.00016, ips: 457.95673 samples/s, eta: 0:01:01
+[2026/11/20 05:37:41] ppcls INFO: [Train][Epoch 5/32][Iter: 8/16]lr(LinearWarmup): 0.00273759, CELoss: 3.05393, loss: 3.05393, batch_cost: 0.22227s, reader_cost: 0.00036, ips: 287.93684 samples/s, eta: 0:01:37
+[2026/11/20 05:37:42] ppcls INFO: [Train][Epoch 5/32][Iter: 9/16]lr(LinearWarmup): 0.00277508, CELoss: 2.95679, loss: 2.95679, batch_cost: 0.20765s, reader_cost: 0.00860, ips: 308.21632 samples/s, eta: 0:01:31
+[2026/11/20 05:37:42] ppcls INFO: [Train][Epoch 5/32][Iter: 10/16]lr(LinearWarmup): 0.00281256, CELoss: 2.94281, loss: 2.94281, batch_cost: 0.23774s, reader_cost: 0.00032, ips: 269.20592 samples/s, eta: 0:01:44
+[2026/11/20 05:37:42] ppcls INFO: [Train][Epoch 5/32][Iter: 11/16]lr(LinearWarmup): 0.00285005, CELoss: 2.89116, loss: 2.89116, batch_cost: 0.13188s, reader_cost: 0.00027, ips: 485.28686 samples/s, eta: 0:00:57
+[2026/11/20 05:37:42] ppcls INFO: [Train][Epoch 5/32][Iter: 12/16]lr(LinearWarmup): 0.00288754, CELoss: 2.89611, loss: 2.89611, batch_cost: 0.13035s, reader_cost: 0.00022, ips: 490.97191 samples/s, eta: 0:00:56
+[2026/11/20 05:37:42] ppcls INFO: [Train][Epoch 5/32][Iter: 13/16]lr(LinearWarmup): 0.00292502, CELoss: 2.84102, loss: 2.84102, batch_cost: 0.13070s, reader_cost: 0.00026, ips: 489.65808 samples/s, eta: 0:00:56
+[2026/11/20 05:37:42] ppcls INFO: [Train][Epoch 5/32][Iter: 14/16]lr(LinearWarmup): 0.00296251, CELoss: 2.89328, loss: 2.89328, batch_cost: 0.11872s, reader_cost: 0.00025, ips: 539.09738 samples/s, eta: 0:00:51
+[2026/11/20 05:37:42] ppcls INFO: [Train][Epoch 5/32][Iter: 15/16]lr(LinearWarmup): 0.00300000, CELoss: 2.86710, loss: 2.86710, batch_cost: 0.13007s, reader_cost: 0.00023, ips: 461.28595 samples/s, eta: 0:00:56
+[2026/11/20 05:37:42] ppcls INFO: [Train][Epoch 5/32][Avg]CELoss: 2.86710, loss: 2.86710
+[2026/11/20 05:37:43] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:37:43] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:37:46] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:37:47] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:37:49] ppcls INFO: [Train][Epoch 6/32][Iter: 0/16]lr(LinearWarmup): 0.00299996, CELoss: 3.38998, loss: 3.38998, batch_cost: 2.37548s, reader_cost: 2.22031, ips: 26.94195 samples/s, eta: 0:17:06
+[2026/11/20 05:37:49] ppcls INFO: [Train][Epoch 6/32][Iter: 1/16]lr(LinearWarmup): 0.00299984, CELoss: 3.27222, loss: 3.27222, batch_cost: 0.15461s, reader_cost: 0.00052, ips: 413.93285 samples/s, eta: 0:01:06
+[2026/11/20 05:37:49] ppcls INFO: [Train][Epoch 6/32][Iter: 2/16]lr(LinearWarmup): 0.00299964, CELoss: 3.22272, loss: 3.22272, batch_cost: 0.20437s, reader_cost: 0.00045, ips: 313.16186 samples/s, eta: 0:01:27
+[2026/11/20 05:37:50] ppcls INFO: [Train][Epoch 6/32][Iter: 3/16]lr(LinearWarmup): 0.00299937, CELoss: 2.99341, loss: 2.99341, batch_cost: 0.34041s, reader_cost: 0.00033, ips: 188.00990 samples/s, eta: 0:02:26
+[2026/11/20 05:37:50] ppcls INFO: [Train][Epoch 6/32][Iter: 4/16]lr(LinearWarmup): 0.00299901, CELoss: 3.11511, loss: 3.11511, batch_cost: 0.23528s, reader_cost: 0.00037, ips: 272.02069 samples/s, eta: 0:01:40
+[2026/11/20 05:37:50] ppcls INFO: [Train][Epoch 6/32][Iter: 5/16]lr(LinearWarmup): 0.00299858, CELoss: 3.00108, loss: 3.00108, batch_cost: 0.31327s, reader_cost: 0.00039, ips: 204.29966 samples/s, eta: 0:02:13
+[2026/11/20 05:37:50] ppcls INFO: [Train][Epoch 6/32][Iter: 6/16]lr(LinearWarmup): 0.00299806, CELoss: 3.01818, loss: 3.01818, batch_cost: 0.19589s, reader_cost: 0.00828, ips: 326.70809 samples/s, eta: 0:01:23
+[2026/11/20 05:37:51] ppcls INFO: [Train][Epoch 6/32][Iter: 7/16]lr(LinearWarmup): 0.00299747, CELoss: 2.91357, loss: 2.91357, batch_cost: 0.21009s, reader_cost: 0.00034, ips: 304.62697 samples/s, eta: 0:01:29
+[2026/11/20 05:37:51] ppcls INFO: [Train][Epoch 6/32][Iter: 8/16]lr(LinearWarmup): 0.00299680, CELoss: 2.99100, loss: 2.99100, batch_cost: 0.23377s, reader_cost: 0.00830, ips: 273.77489 samples/s, eta: 0:01:39
+[2026/11/20 05:37:51] ppcls INFO: [Train][Epoch 6/32][Iter: 9/16]lr(LinearWarmup): 0.00299605, CELoss: 3.03877, loss: 3.03877, batch_cost: 0.17869s, reader_cost: 0.00028, ips: 358.15892 samples/s, eta: 0:01:15
+[2026/11/20 05:37:51] ppcls INFO: [Train][Epoch 6/32][Iter: 10/16]lr(LinearWarmup): 0.00299522, CELoss: 3.04800, loss: 3.04800, batch_cost: 0.30104s, reader_cost: 0.00031, ips: 212.59958 samples/s, eta: 0:02:07
+[2026/11/20 05:37:52] ppcls INFO: [Train][Epoch 6/32][Iter: 11/16]lr(LinearWarmup): 0.00299431, CELoss: 3.07116, loss: 3.07116, batch_cost: 0.17917s, reader_cost: 0.00028, ips: 357.20097 samples/s, eta: 0:01:15
+[2026/11/20 05:37:52] ppcls INFO: [Train][Epoch 6/32][Iter: 12/16]lr(LinearWarmup): 0.00299332, CELoss: 2.99169, loss: 2.99169, batch_cost: 0.13061s, reader_cost: 0.00027, ips: 490.00131 samples/s, eta: 0:00:54
+[2026/11/20 05:37:52] ppcls INFO: [Train][Epoch 6/32][Iter: 13/16]lr(LinearWarmup): 0.00299226, CELoss: 3.01628, loss: 3.01628, batch_cost: 0.13106s, reader_cost: 0.00033, ips: 488.32639 samples/s, eta: 0:00:54
+[2026/11/20 05:37:52] ppcls INFO: [Train][Epoch 6/32][Iter: 14/16]lr(LinearWarmup): 0.00299111, CELoss: 3.01896, loss: 3.01896, batch_cost: 0.11848s, reader_cost: 0.00027, ips: 540.18875 samples/s, eta: 0:00:49
+[2026/11/20 05:37:52] ppcls INFO: [Train][Epoch 6/32][Iter: 15/16]lr(LinearWarmup): 0.00298989, CELoss: 3.02173, loss: 3.02173, batch_cost: 0.12814s, reader_cost: 0.00023, ips: 468.23274 samples/s, eta: 0:00:53
+[2026/11/20 05:37:52] ppcls INFO: [Train][Epoch 6/32][Avg]CELoss: 3.02173, loss: 3.02173
+[2026/11/20 05:37:53] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:37:53] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:37:56] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:37:56] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:37:59] ppcls INFO: [Train][Epoch 7/32][Iter: 0/16]lr(LinearWarmup): 0.00298859, CELoss: 2.57082, loss: 2.57082, batch_cost: 2.51166s, reader_cost: 2.19063, ips: 25.48111 samples/s, eta: 0:17:24
+[2026/11/20 05:37:59] ppcls INFO: [Train][Epoch 7/32][Iter: 1/16]lr(LinearWarmup): 0.00298721, CELoss: 2.37289, loss: 2.37289, batch_cost: 0.24516s, reader_cost: 0.00054, ips: 261.05847 samples/s, eta: 0:01:41
+[2026/11/20 05:37:59] ppcls INFO: [Train][Epoch 7/32][Iter: 2/16]lr(LinearWarmup): 0.00298575, CELoss: 2.45654, loss: 2.45654, batch_cost: 0.26508s, reader_cost: 0.00032, ips: 241.43918 samples/s, eta: 0:01:49
+[2026/11/20 05:37:59] ppcls INFO: [Train][Epoch 7/32][Iter: 3/16]lr(LinearWarmup): 0.00298422, CELoss: 2.37804, loss: 2.37804, batch_cost: 0.25047s, reader_cost: 0.00038, ips: 255.52286 samples/s, eta: 0:01:43
+[2026/11/20 05:38:00] ppcls INFO: [Train][Epoch 7/32][Iter: 4/16]lr(LinearWarmup): 0.00298260, CELoss: 2.55711, loss: 2.55711, batch_cost: 0.26350s, reader_cost: 0.00032, ips: 242.88252 samples/s, eta: 0:01:48
+[2026/11/20 05:38:00] ppcls INFO: [Train][Epoch 7/32][Iter: 5/16]lr(LinearWarmup): 0.00298091, CELoss: 2.70691, loss: 2.70691, batch_cost: 0.30456s, reader_cost: 0.00800, ips: 210.14254 samples/s, eta: 0:02:05
+[2026/11/20 05:38:00] ppcls INFO: [Train][Epoch 7/32][Iter: 6/16]lr(LinearWarmup): 0.00297914, CELoss: 2.68605, loss: 2.68605, batch_cost: 0.17692s, reader_cost: 0.00828, ips: 361.74458 samples/s, eta: 0:01:12
+[2026/11/20 05:38:00] ppcls INFO: [Train][Epoch 7/32][Iter: 7/16]lr(LinearWarmup): 0.00297729, CELoss: 2.65851, loss: 2.65851, batch_cost: 0.26732s, reader_cost: 0.00835, ips: 239.41565 samples/s, eta: 0:01:49
+[2026/11/20 05:38:01] ppcls INFO: [Train][Epoch 7/32][Iter: 8/16]lr(LinearWarmup): 0.00297536, CELoss: 2.60309, loss: 2.60309, batch_cost: 0.19536s, reader_cost: 0.00038, ips: 327.60362 samples/s, eta: 0:01:19
+[2026/11/20 05:38:01] ppcls INFO: [Train][Epoch 7/32][Iter: 9/16]lr(LinearWarmup): 0.00297336, CELoss: 2.52323, loss: 2.52323, batch_cost: 0.27918s, reader_cost: 0.00027, ips: 229.24333 samples/s, eta: 0:01:53
+[2026/11/20 05:38:01] ppcls INFO: [Train][Epoch 7/32][Iter: 10/16]lr(LinearWarmup): 0.00297127, CELoss: 2.51839, loss: 2.51839, batch_cost: 0.19106s, reader_cost: 0.00817, ips: 334.97110 samples/s, eta: 0:01:17
+[2026/11/20 05:38:01] ppcls INFO: [Train][Epoch 7/32][Iter: 11/16]lr(LinearWarmup): 0.00296911, CELoss: 2.47722, loss: 2.47722, batch_cost: 0.13230s, reader_cost: 0.00023, ips: 483.74506 samples/s, eta: 0:00:53
+[2026/11/20 05:38:01] ppcls INFO: [Train][Epoch 7/32][Iter: 12/16]lr(LinearWarmup): 0.00296688, CELoss: 2.50987, loss: 2.50987, batch_cost: 0.13135s, reader_cost: 0.00024, ips: 487.26004 samples/s, eta: 0:00:53
+[2026/11/20 05:38:01] ppcls INFO: [Train][Epoch 7/32][Iter: 13/16]lr(LinearWarmup): 0.00296456, CELoss: 2.55645, loss: 2.55645, batch_cost: 0.13130s, reader_cost: 0.00023, ips: 487.41664 samples/s, eta: 0:00:52
+[2026/11/20 05:38:02] ppcls INFO: [Train][Epoch 7/32][Iter: 14/16]lr(LinearWarmup): 0.00296217, CELoss: 2.58951, loss: 2.58951, batch_cost: 0.11933s, reader_cost: 0.00021, ips: 536.34422 samples/s, eta: 0:00:47
+[2026/11/20 05:38:02] ppcls INFO: [Train][Epoch 7/32][Iter: 15/16]lr(LinearWarmup): 0.00295970, CELoss: 2.58753, loss: 2.58753, batch_cost: 0.12695s, reader_cost: 0.00023, ips: 472.63136 samples/s, eta: 0:00:50
+[2026/11/20 05:38:02] ppcls INFO: [Train][Epoch 7/32][Avg]CELoss: 2.58753, loss: 2.58753
+[2026/11/20 05:38:02] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:38:02] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:38:05] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:38:06] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:38:08] ppcls INFO: [Train][Epoch 8/32][Iter: 0/16]lr(LinearWarmup): 0.00295716, CELoss: 3.04795, loss: 3.04795, batch_cost: 2.05783s, reader_cost: 1.86991, ips: 31.10067 samples/s, eta: 0:13:43
+[2026/11/20 05:38:08] ppcls INFO: [Train][Epoch 8/32][Iter: 1/16]lr(LinearWarmup): 0.00295453, CELoss: 2.75581, loss: 2.75581, batch_cost: 0.32652s, reader_cost: 0.20097, ips: 196.00768 samples/s, eta: 0:02:10
+[2026/11/20 05:38:08] ppcls INFO: [Train][Epoch 8/32][Iter: 2/16]lr(LinearWarmup): 0.00295183, CELoss: 2.49514, loss: 2.49514, batch_cost: 0.18525s, reader_cost: 0.00035, ips: 345.48745 samples/s, eta: 0:01:13
+[2026/11/20 05:38:09] ppcls INFO: [Train][Epoch 8/32][Iter: 3/16]lr(LinearWarmup): 0.00294906, CELoss: 2.76785, loss: 2.76785, batch_cost: 0.19830s, reader_cost: 0.00028, ips: 322.75049 samples/s, eta: 0:01:18
+[2026/11/20 05:38:09] ppcls INFO: [Train][Epoch 8/32][Iter: 4/16]lr(LinearWarmup): 0.00294621, CELoss: 2.65198, loss: 2.65198, batch_cost: 0.20619s, reader_cost: 0.00042, ips: 310.39532 samples/s, eta: 0:01:21
+[2026/11/20 05:38:09] ppcls INFO: [Train][Epoch 8/32][Iter: 5/16]lr(LinearWarmup): 0.00294328, CELoss: 2.76408, loss: 2.76408, batch_cost: 0.12533s, reader_cost: 0.00027, ips: 510.65102 samples/s, eta: 0:00:49
+[2026/11/20 05:38:09] ppcls INFO: [Train][Epoch 8/32][Iter: 6/16]lr(LinearWarmup): 0.00294027, CELoss: 2.79528, loss: 2.79528, batch_cost: 0.18712s, reader_cost: 0.00023, ips: 342.02832 samples/s, eta: 0:01:13
+[2026/11/20 05:38:09] ppcls INFO: [Train][Epoch 8/32][Iter: 7/16]lr(LinearWarmup): 0.00293719, CELoss: 2.85298, loss: 2.85298, batch_cost: 0.18700s, reader_cost: 0.00032, ips: 342.24767 samples/s, eta: 0:01:13
+[2026/11/20 05:38:10] ppcls INFO: [Train][Epoch 8/32][Iter: 8/16]lr(LinearWarmup): 0.00293404, CELoss: 2.88693, loss: 2.88693, batch_cost: 0.19440s, reader_cost: 0.00037, ips: 329.21112 samples/s, eta: 0:01:16
+[2026/11/20 05:38:10] ppcls INFO: [Train][Epoch 8/32][Iter: 9/16]lr(LinearWarmup): 0.00293081, CELoss: 2.74983, loss: 2.74983, batch_cost: 0.25678s, reader_cost: 0.00029, ips: 249.24300 samples/s, eta: 0:01:40
+[2026/11/20 05:38:10] ppcls INFO: [Train][Epoch 8/32][Iter: 10/16]lr(LinearWarmup): 0.00292750, CELoss: 2.80778, loss: 2.80778, batch_cost: 0.28295s, reader_cost: 0.00032, ips: 226.18462 samples/s, eta: 0:01:50
+[2026/11/20 05:38:10] ppcls INFO: [Train][Epoch 8/32][Iter: 11/16]lr(LinearWarmup): 0.00292412, CELoss: 2.71970, loss: 2.71970, batch_cost: 0.17276s, reader_cost: 0.00801, ips: 370.45252 samples/s, eta: 0:01:07
+[2026/11/20 05:38:10] ppcls INFO: [Train][Epoch 8/32][Iter: 12/16]lr(LinearWarmup): 0.00292066, CELoss: 2.63588, loss: 2.63588, batch_cost: 0.13442s, reader_cost: 0.00029, ips: 476.12076 samples/s, eta: 0:00:52
+[2026/11/20 05:38:10] ppcls INFO: [Train][Epoch 8/32][Iter: 13/16]lr(LinearWarmup): 0.00291713, CELoss: 2.57061, loss: 2.57061, batch_cost: 0.13113s, reader_cost: 0.00022, ips: 488.07689 samples/s, eta: 0:00:50
+[2026/11/20 05:38:11] ppcls INFO: [Train][Epoch 8/32][Iter: 14/16]lr(LinearWarmup): 0.00291352, CELoss: 2.61243, loss: 2.61243, batch_cost: 0.11919s, reader_cost: 0.00027, ips: 536.94716 samples/s, eta: 0:00:46
+[2026/11/20 05:38:11] ppcls INFO: [Train][Epoch 8/32][Iter: 15/16]lr(LinearWarmup): 0.00290984, CELoss: 2.64787, loss: 2.64787, batch_cost: 0.12730s, reader_cost: 0.00023, ips: 471.34337 samples/s, eta: 0:00:49
+[2026/11/20 05:38:11] ppcls INFO: [Train][Epoch 8/32][Avg]CELoss: 2.64787, loss: 2.64787
+[2026/11/20 05:38:11] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:38:11] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:38:14] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:38:15] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:38:17] ppcls INFO: [Train][Epoch 9/32][Iter: 0/16]lr(LinearWarmup): 0.00290608, CELoss: 1.63881, loss: 1.63881, batch_cost: 2.22109s, reader_cost: 2.07385, ips: 28.81465 samples/s, eta: 0:14:12
+[2026/11/20 05:38:17] ppcls INFO: [Train][Epoch 9/32][Iter: 1/16]lr(LinearWarmup): 0.00290226, CELoss: 2.30840, loss: 2.30840, batch_cost: 0.13572s, reader_cost: 0.00044, ips: 471.56567 samples/s, eta: 0:00:51
+[2026/11/20 05:38:17] ppcls INFO: [Train][Epoch 9/32][Iter: 2/16]lr(LinearWarmup): 0.00289835, CELoss: 2.04520, loss: 2.04520, batch_cost: 0.19883s, reader_cost: 0.00053, ips: 321.87586 samples/s, eta: 0:01:15
+[2026/11/20 05:38:18] ppcls INFO: [Train][Epoch 9/32][Iter: 3/16]lr(LinearWarmup): 0.00289437, CELoss: 1.96111, loss: 1.96111, batch_cost: 0.21585s, reader_cost: 0.00044, ips: 296.49877 samples/s, eta: 0:01:22
+[2026/11/20 05:38:18] ppcls INFO: [Train][Epoch 9/32][Iter: 4/16]lr(LinearWarmup): 0.00289032, CELoss: 2.25536, loss: 2.25536, batch_cost: 0.34821s, reader_cost: 0.13323, ips: 183.79469 samples/s, eta: 0:02:12
+[2026/11/20 05:38:18] ppcls INFO: [Train][Epoch 9/32][Iter: 5/16]lr(LinearWarmup): 0.00288620, CELoss: 2.19146, loss: 2.19146, batch_cost: 0.29661s, reader_cost: 0.00054, ips: 215.77233 samples/s, eta: 0:01:52
+[2026/11/20 05:38:18] ppcls INFO: [Train][Epoch 9/32][Iter: 6/16]lr(LinearWarmup): 0.00288200, CELoss: 2.28859, loss: 2.28859, batch_cost: 0.15547s, reader_cost: 0.00843, ips: 411.64516 samples/s, eta: 0:00:58
+[2026/11/20 05:38:18] ppcls INFO: [Train][Epoch 9/32][Iter: 7/16]lr(LinearWarmup): 0.00287773, CELoss: 2.43185, loss: 2.43185, batch_cost: 0.13392s, reader_cost: 0.00040, ips: 477.90763 samples/s, eta: 0:00:50
+[2026/11/20 05:38:19] ppcls INFO: [Train][Epoch 9/32][Iter: 8/16]lr(LinearWarmup): 0.00287339, CELoss: 2.50916, loss: 2.50916, batch_cost: 0.25976s, reader_cost: 0.00055, ips: 246.37978 samples/s, eta: 0:01:37
+[2026/11/20 05:38:19] ppcls INFO: [Train][Epoch 9/32][Iter: 9/16]lr(LinearWarmup): 0.00286898, CELoss: 2.54313, loss: 2.54313, batch_cost: 0.19418s, reader_cost: 0.00811, ips: 329.58623 samples/s, eta: 0:01:12
+[2026/11/20 05:38:19] ppcls INFO: [Train][Epoch 9/32][Iter: 10/16]lr(LinearWarmup): 0.00286449, CELoss: 2.59830, loss: 2.59830, batch_cost: 0.26951s, reader_cost: 0.00814, ips: 237.46713 samples/s, eta: 0:01:40
+[2026/11/20 05:38:19] ppcls INFO: [Train][Epoch 9/32][Iter: 11/16]lr(LinearWarmup): 0.00285993, CELoss: 2.61279, loss: 2.61279, batch_cost: 0.12632s, reader_cost: 0.00029, ips: 506.64833 samples/s, eta: 0:00:47
+[2026/11/20 05:38:19] ppcls INFO: [Train][Epoch 9/32][Iter: 12/16]lr(LinearWarmup): 0.00285530, CELoss: 2.65537, loss: 2.65537, batch_cost: 0.13273s, reader_cost: 0.00025, ips: 482.18011 samples/s, eta: 0:00:49
+[2026/11/20 05:38:20] ppcls INFO: [Train][Epoch 9/32][Iter: 13/16]lr(LinearWarmup): 0.00285060, CELoss: 2.67789, loss: 2.67789, batch_cost: 0.13229s, reader_cost: 0.00024, ips: 483.77209 samples/s, eta: 0:00:49
+[2026/11/20 05:38:20] ppcls INFO: [Train][Epoch 9/32][Iter: 14/16]lr(LinearWarmup): 0.00284582, CELoss: 2.71682, loss: 2.71682, batch_cost: 0.12312s, reader_cost: 0.00032, ips: 519.83589 samples/s, eta: 0:00:45
+[2026/11/20 05:38:20] ppcls INFO: [Train][Epoch 9/32][Iter: 15/16]lr(LinearWarmup): 0.00284098, CELoss: 2.71997, loss: 2.71997, batch_cost: 0.12468s, reader_cost: 0.00023, ips: 481.21707 samples/s, eta: 0:00:46
+[2026/11/20 05:38:20] ppcls INFO: [Train][Epoch 9/32][Avg]CELoss: 2.71997, loss: 2.71997
+[2026/11/20 05:38:20] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:38:21] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:38:24] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:38:24] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:38:26] ppcls INFO: [Train][Epoch 10/32][Iter: 0/16]lr(LinearWarmup): 0.00283607, CELoss: 2.84470, loss: 2.84470, batch_cost: 2.25063s, reader_cost: 2.09851, ips: 28.43644 samples/s, eta: 0:13:48
+[2026/11/20 05:38:26] ppcls INFO: [Train][Epoch 10/32][Iter: 1/16]lr(LinearWarmup): 0.00283108, CELoss: 2.09863, loss: 2.09863, batch_cost: 0.13115s, reader_cost: 0.00019, ips: 487.97397 samples/s, eta: 0:00:48
+[2026/11/20 05:38:27] ppcls INFO: [Train][Epoch 10/32][Iter: 2/16]lr(LinearWarmup): 0.00282603, CELoss: 2.13706, loss: 2.13706, batch_cost: 0.22707s, reader_cost: 0.00040, ips: 281.85426 samples/s, eta: 0:01:23
+[2026/11/20 05:38:27] ppcls INFO: [Train][Epoch 10/32][Iter: 3/16]lr(LinearWarmup): 0.00282090, CELoss: 2.34758, loss: 2.34758, batch_cost: 0.28051s, reader_cost: 0.00045, ips: 228.15357 samples/s, eta: 0:01:42
+[2026/11/20 05:38:27] ppcls INFO: [Train][Epoch 10/32][Iter: 4/16]lr(LinearWarmup): 0.00281571, CELoss: 2.32090, loss: 2.32090, batch_cost: 0.13449s, reader_cost: 0.00035, ips: 475.86670 samples/s, eta: 0:00:48
+[2026/11/20 05:38:27] ppcls INFO: [Train][Epoch 10/32][Iter: 5/16]lr(LinearWarmup): 0.00281044, CELoss: 2.49555, loss: 2.49555, batch_cost: 0.21764s, reader_cost: 0.00039, ips: 294.05951 samples/s, eta: 0:01:19
+[2026/11/20 05:38:28] ppcls INFO: [Train][Epoch 10/32][Iter: 6/16]lr(LinearWarmup): 0.00280511, CELoss: 2.52085, loss: 2.52085, batch_cost: 0.21250s, reader_cost: 0.00033, ips: 301.18073 samples/s, eta: 0:01:16
+[2026/11/20 05:38:28] ppcls INFO: [Train][Epoch 10/32][Iter: 7/16]lr(LinearWarmup): 0.00279971, CELoss: 2.53687, loss: 2.53687, batch_cost: 0.30766s, reader_cost: 0.00040, ips: 208.01887 samples/s, eta: 0:01:51
+[2026/11/20 05:38:28] ppcls INFO: [Train][Epoch 10/32][Iter: 8/16]lr(LinearWarmup): 0.00279424, CELoss: 2.62327, loss: 2.62327, batch_cost: 0.15043s, reader_cost: 0.00950, ips: 425.45862 samples/s, eta: 0:00:54
+[2026/11/20 05:38:28] ppcls INFO: [Train][Epoch 10/32][Iter: 9/16]lr(LinearWarmup): 0.00278870, CELoss: 2.57539, loss: 2.57539, batch_cost: 0.23378s, reader_cost: 0.00029, ips: 273.76316 samples/s, eta: 0:01:23
+[2026/11/20 05:38:29] ppcls INFO: [Train][Epoch 10/32][Iter: 10/16]lr(LinearWarmup): 0.00278309, CELoss: 2.61605, loss: 2.61605, batch_cost: 0.31071s, reader_cost: 0.00039, ips: 205.97909 samples/s, eta: 0:01:51
+[2026/11/20 05:38:29] ppcls INFO: [Train][Epoch 10/32][Iter: 11/16]lr(LinearWarmup): 0.00277742, CELoss: 2.55049, loss: 2.55049, batch_cost: 0.12618s, reader_cost: 0.00025, ips: 507.19494 samples/s, eta: 0:00:45
+[2026/11/20 05:38:29] ppcls INFO: [Train][Epoch 10/32][Iter: 12/16]lr(LinearWarmup): 0.00277168, CELoss: 2.52965, loss: 2.52965, batch_cost: 0.13094s, reader_cost: 0.00022, ips: 488.77541 samples/s, eta: 0:00:46
+[2026/11/20 05:38:29] ppcls INFO: [Train][Epoch 10/32][Iter: 13/16]lr(LinearWarmup): 0.00276587, CELoss: 2.54355, loss: 2.54355, batch_cost: 0.13164s, reader_cost: 0.00025, ips: 486.17897 samples/s, eta: 0:00:46
+[2026/11/20 05:38:29] ppcls INFO: [Train][Epoch 10/32][Iter: 14/16]lr(LinearWarmup): 0.00276000, CELoss: 2.59417, loss: 2.59417, batch_cost: 0.11907s, reader_cost: 0.00021, ips: 537.48257 samples/s, eta: 0:00:42
+[2026/11/20 05:38:29] ppcls INFO: [Train][Epoch 10/32][Iter: 15/16]lr(LinearWarmup): 0.00275405, CELoss: 2.62468, loss: 2.62468, batch_cost: 0.12661s, reader_cost: 0.00022, ips: 473.88893 samples/s, eta: 0:00:44
+[2026/11/20 05:38:29] ppcls INFO: [Train][Epoch 10/32][Avg]CELoss: 2.62468, loss: 2.62468
+[2026/11/20 05:38:30] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:38:30] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:38:33] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:38:33] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:38:36] ppcls INFO: [Train][Epoch 11/32][Iter: 0/16]lr(LinearWarmup): 0.00274805, CELoss: 1.37991, loss: 1.37991, batch_cost: 2.30931s, reader_cost: 1.91736, ips: 27.71394 samples/s, eta: 0:13:32
+[2026/11/20 05:38:36] ppcls INFO: [Train][Epoch 11/32][Iter: 1/16]lr(LinearWarmup): 0.00274197, CELoss: 2.19364, loss: 2.19364, batch_cost: 0.23843s, reader_cost: 0.00063, ips: 268.42284 samples/s, eta: 0:01:23
+[2026/11/20 05:38:36] ppcls INFO: [Train][Epoch 11/32][Iter: 2/16]lr(LinearWarmup): 0.00273584, CELoss: 2.21702, loss: 2.21702, batch_cost: 0.30750s, reader_cost: 0.00035, ips: 208.12838 samples/s, eta: 0:01:47
+[2026/11/20 05:38:36] ppcls INFO: [Train][Epoch 11/32][Iter: 3/16]lr(LinearWarmup): 0.00272963, CELoss: 2.44494, loss: 2.44494, batch_cost: 0.31171s, reader_cost: 0.00838, ips: 205.31693 samples/s, eta: 0:01:48
+[2026/11/20 05:38:37] ppcls INFO: [Train][Epoch 11/32][Iter: 4/16]lr(LinearWarmup): 0.00272336, CELoss: 2.36656, loss: 2.36656, batch_cost: 0.30830s, reader_cost: 0.00827, ips: 207.59176 samples/s, eta: 0:01:47
+[2026/11/20 05:38:37] ppcls INFO: [Train][Epoch 11/32][Iter: 5/16]lr(LinearWarmup): 0.00271703, CELoss: 2.28779, loss: 2.28779, batch_cost: 0.27041s, reader_cost: 0.00038, ips: 236.67884 samples/s, eta: 0:01:33
+[2026/11/20 05:38:37] ppcls INFO: [Train][Epoch 11/32][Iter: 6/16]lr(LinearWarmup): 0.00271063, CELoss: 2.44609, loss: 2.44609, batch_cost: 0.18383s, reader_cost: 0.00039, ips: 348.14499 samples/s, eta: 0:01:03
+[2026/11/20 05:38:37] ppcls INFO: [Train][Epoch 11/32][Iter: 7/16]lr(LinearWarmup): 0.00270417, CELoss: 2.54511, loss: 2.54511, batch_cost: 0.22524s, reader_cost: 0.00052, ips: 284.14588 samples/s, eta: 0:01:17
+[2026/11/20 05:38:38] ppcls INFO: [Train][Epoch 11/32][Iter: 8/16]lr(LinearWarmup): 0.00269765, CELoss: 2.42948, loss: 2.42948, batch_cost: 0.23083s, reader_cost: 0.00037, ips: 277.25551 samples/s, eta: 0:01:19
+[2026/11/20 05:38:38] ppcls INFO: [Train][Epoch 11/32][Iter: 9/16]lr(LinearWarmup): 0.00269106, CELoss: 2.33609, loss: 2.33609, batch_cost: 0.21517s, reader_cost: 0.00026, ips: 297.43640 samples/s, eta: 0:01:13
+[2026/11/20 05:38:38] ppcls INFO: [Train][Epoch 11/32][Iter: 10/16]lr(LinearWarmup): 0.00268441, CELoss: 2.25891, loss: 2.25891, batch_cost: 0.25190s, reader_cost: 0.00843, ips: 254.06792 samples/s, eta: 0:01:26
+[2026/11/20 05:38:38] ppcls INFO: [Train][Epoch 11/32][Iter: 11/16]lr(LinearWarmup): 0.00267770, CELoss: 2.31453, loss: 2.31453, batch_cost: 0.13198s, reader_cost: 0.00028, ips: 484.92129 samples/s, eta: 0:00:45
+[2026/11/20 05:38:38] ppcls INFO: [Train][Epoch 11/32][Iter: 12/16]lr(LinearWarmup): 0.00267093, CELoss: 2.35336, loss: 2.35336, batch_cost: 0.13181s, reader_cost: 0.00027, ips: 485.54669 samples/s, eta: 0:00:44
+[2026/11/20 05:38:39] ppcls INFO: [Train][Epoch 11/32][Iter: 13/16]lr(LinearWarmup): 0.00266409, CELoss: 2.40007, loss: 2.40007, batch_cost: 0.13137s, reader_cost: 0.00027, ips: 487.16189 samples/s, eta: 0:00:44
+[2026/11/20 05:38:39] ppcls INFO: [Train][Epoch 11/32][Iter: 14/16]lr(LinearWarmup): 0.00265719, CELoss: 2.40530, loss: 2.40530, batch_cost: 0.11867s, reader_cost: 0.00025, ips: 539.30100 samples/s, eta: 0:00:40
+[2026/11/20 05:38:39] ppcls INFO: [Train][Epoch 11/32][Iter: 15/16]lr(LinearWarmup): 0.00265024, CELoss: 2.34599, loss: 2.34599, batch_cost: 0.12739s, reader_cost: 0.00025, ips: 470.97994 samples/s, eta: 0:00:42
+[2026/11/20 05:38:39] ppcls INFO: [Train][Epoch 11/32][Avg]CELoss: 2.34599, loss: 2.34599
+[2026/11/20 05:38:39] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:38:40] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:38:43] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:38:43] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:38:45] ppcls INFO: [Train][Epoch 12/32][Iter: 0/16]lr(LinearWarmup): 0.00264322, CELoss: 3.28871, loss: 3.28871, batch_cost: 2.22504s, reader_cost: 1.98002, ips: 28.76358 samples/s, eta: 0:12:27
+[2026/11/20 05:38:45] ppcls INFO: [Train][Epoch 12/32][Iter: 1/16]lr(LinearWarmup): 0.00263614, CELoss: 2.81618, loss: 2.81618, batch_cost: 0.13134s, reader_cost: 0.00016, ips: 487.27862 samples/s, eta: 0:00:43
+[2026/11/20 05:38:46] ppcls INFO: [Train][Epoch 12/32][Iter: 2/16]lr(LinearWarmup): 0.00262900, CELoss: 3.02733, loss: 3.02733, batch_cost: 0.20989s, reader_cost: 0.00030, ips: 304.91659 samples/s, eta: 0:01:10
+[2026/11/20 05:38:46] ppcls INFO: [Train][Epoch 12/32][Iter: 3/16]lr(LinearWarmup): 0.00262180, CELoss: 2.70278, loss: 2.70278, batch_cost: 0.17144s, reader_cost: 0.00059, ips: 373.29987 samples/s, eta: 0:00:57
+[2026/11/20 05:38:46] ppcls INFO: [Train][Epoch 12/32][Iter: 4/16]lr(LinearWarmup): 0.00261455, CELoss: 2.82115, loss: 2.82115, batch_cost: 0.34252s, reader_cost: 0.14305, ips: 186.85053 samples/s, eta: 0:01:53
+[2026/11/20 05:38:46] ppcls INFO: [Train][Epoch 12/32][Iter: 5/16]lr(LinearWarmup): 0.00260723, CELoss: 2.76999, loss: 2.76999, batch_cost: 0.20300s, reader_cost: 0.00033, ips: 315.27342 samples/s, eta: 0:01:07
+[2026/11/20 05:38:46] ppcls INFO: [Train][Epoch 12/32][Iter: 6/16]lr(LinearWarmup): 0.00259986, CELoss: 2.77948, loss: 2.77948, batch_cost: 0.21743s, reader_cost: 0.00039, ips: 294.34196 samples/s, eta: 0:01:11
+[2026/11/20 05:38:47] ppcls INFO: [Train][Epoch 12/32][Iter: 7/16]lr(LinearWarmup): 0.00259242, CELoss: 2.73410, loss: 2.73410, batch_cost: 0.39788s, reader_cost: 0.00043, ips: 160.85422 samples/s, eta: 0:02:10
+[2026/11/20 05:38:47] ppcls INFO: [Train][Epoch 12/32][Iter: 8/16]lr(LinearWarmup): 0.00258493, CELoss: 2.75723, loss: 2.75723, batch_cost: 0.17694s, reader_cost: 0.00045, ips: 361.71045 samples/s, eta: 0:00:58
+[2026/11/20 05:38:47] ppcls INFO: [Train][Epoch 12/32][Iter: 9/16]lr(LinearWarmup): 0.00257739, CELoss: 2.79099, loss: 2.79099, batch_cost: 0.32933s, reader_cost: 0.00033, ips: 194.33453 samples/s, eta: 0:01:47
+[2026/11/20 05:38:48] ppcls INFO: [Train][Epoch 12/32][Iter: 10/16]lr(LinearWarmup): 0.00256978, CELoss: 2.78650, loss: 2.78650, batch_cost: 0.20877s, reader_cost: 0.00027, ips: 306.55670 samples/s, eta: 0:01:08
+[2026/11/20 05:38:48] ppcls INFO: [Train][Epoch 12/32][Iter: 11/16]lr(LinearWarmup): 0.00256212, CELoss: 2.69334, loss: 2.69334, batch_cost: 0.13322s, reader_cost: 0.00025, ips: 480.39474 samples/s, eta: 0:00:43
+[2026/11/20 05:38:48] ppcls INFO: [Train][Epoch 12/32][Iter: 12/16]lr(LinearWarmup): 0.00255441, CELoss: 2.66271, loss: 2.66271, batch_cost: 0.13306s, reader_cost: 0.00026, ips: 480.99472 samples/s, eta: 0:00:43
+[2026/11/20 05:38:48] ppcls INFO: [Train][Epoch 12/32][Iter: 13/16]lr(LinearWarmup): 0.00254664, CELoss: 2.69723, loss: 2.69723, batch_cost: 0.13203s, reader_cost: 0.00030, ips: 484.73653 samples/s, eta: 0:00:42
+[2026/11/20 05:38:48] ppcls INFO: [Train][Epoch 12/32][Iter: 14/16]lr(LinearWarmup): 0.00253881, CELoss: 2.63568, loss: 2.63568, batch_cost: 0.11894s, reader_cost: 0.00024, ips: 538.09670 samples/s, eta: 0:00:38
+[2026/11/20 05:38:48] ppcls INFO: [Train][Epoch 12/32][Iter: 15/16]lr(LinearWarmup): 0.00253093, CELoss: 2.56240, loss: 2.56240, batch_cost: 0.12349s, reader_cost: 0.00026, ips: 485.88394 samples/s, eta: 0:00:39
+[2026/11/20 05:38:48] ppcls INFO: [Train][Epoch 12/32][Avg]CELoss: 2.56240, loss: 2.56240
+[2026/11/20 05:38:49] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:38:49] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:38:52] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:38:52] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:38:55] ppcls INFO: [Train][Epoch 13/32][Iter: 0/16]lr(LinearWarmup): 0.00252300, CELoss: 1.74597, loss: 1.74597, batch_cost: 2.32742s, reader_cost: 2.17344, ips: 27.49824 samples/s, eta: 0:12:24
+[2026/11/20 05:38:55] ppcls INFO: [Train][Epoch 13/32][Iter: 1/16]lr(LinearWarmup): 0.00251501, CELoss: 1.46090, loss: 1.46090, batch_cost: 0.24773s, reader_cost: 0.00050, ips: 258.34452 samples/s, eta: 0:01:19
+[2026/11/20 05:38:55] ppcls INFO: [Train][Epoch 13/32][Iter: 2/16]lr(LinearWarmup): 0.00250697, CELoss: 1.87921, loss: 1.87921, batch_cost: 0.22685s, reader_cost: 0.00048, ips: 282.12115 samples/s, eta: 0:01:12
+[2026/11/20 05:38:55] ppcls INFO: [Train][Epoch 13/32][Iter: 3/16]lr(LinearWarmup): 0.00249887, CELoss: 1.86104, loss: 1.86104, batch_cost: 0.22467s, reader_cost: 0.00047, ips: 284.86112 samples/s, eta: 0:01:11
+[2026/11/20 05:38:56] ppcls INFO: [Train][Epoch 13/32][Iter: 4/16]lr(LinearWarmup): 0.00249072, CELoss: 1.76648, loss: 1.76648, batch_cost: 0.19613s, reader_cost: 0.00035, ips: 326.31491 samples/s, eta: 0:01:01
+[2026/11/20 05:38:56] ppcls INFO: [Train][Epoch 13/32][Iter: 5/16]lr(LinearWarmup): 0.00248252, CELoss: 1.78084, loss: 1.78084, batch_cost: 0.27310s, reader_cost: 0.00038, ips: 234.34382 samples/s, eta: 0:01:26
+[2026/11/20 05:38:56] ppcls INFO: [Train][Epoch 13/32][Iter: 6/16]lr(LinearWarmup): 0.00247427, CELoss: 1.91932, loss: 1.91932, batch_cost: 0.34216s, reader_cost: 0.00036, ips: 187.04674 samples/s, eta: 0:01:47
+[2026/11/20 05:38:57] ppcls INFO: [Train][Epoch 13/32][Iter: 7/16]lr(LinearWarmup): 0.00246597, CELoss: 2.01662, loss: 2.01662, batch_cost: 0.35032s, reader_cost: 0.00032, ips: 182.68919 samples/s, eta: 0:01:49
+[2026/11/20 05:38:57] ppcls INFO: [Train][Epoch 13/32][Iter: 8/16]lr(LinearWarmup): 0.00245761, CELoss: 1.92359, loss: 1.92359, batch_cost: 0.19239s, reader_cost: 0.01104, ips: 332.66469 samples/s, eta: 0:01:00
+[2026/11/20 05:38:57] ppcls INFO: [Train][Epoch 13/32][Iter: 9/16]lr(LinearWarmup): 0.00244921, CELoss: 1.97184, loss: 1.97184, batch_cost: 0.19926s, reader_cost: 0.00025, ips: 321.18917 samples/s, eta: 0:01:01
+[2026/11/20 05:38:57] ppcls INFO: [Train][Epoch 13/32][Iter: 10/16]lr(LinearWarmup): 0.00244076, CELoss: 2.06486, loss: 2.06486, batch_cost: 0.13226s, reader_cost: 0.00025, ips: 483.87760 samples/s, eta: 0:00:41
+[2026/11/20 05:38:57] ppcls INFO: [Train][Epoch 13/32][Iter: 11/16]lr(LinearWarmup): 0.00243225, CELoss: 1.99193, loss: 1.99193, batch_cost: 0.13142s, reader_cost: 0.00022, ips: 486.99396 samples/s, eta: 0:00:40
+[2026/11/20 05:38:57] ppcls INFO: [Train][Epoch 13/32][Iter: 12/16]lr(LinearWarmup): 0.00242370, CELoss: 1.94848, loss: 1.94848, batch_cost: 0.13118s, reader_cost: 0.00024, ips: 487.87375 samples/s, eta: 0:00:40
+[2026/11/20 05:38:57] ppcls INFO: [Train][Epoch 13/32][Iter: 13/16]lr(LinearWarmup): 0.00241510, CELoss: 1.97629, loss: 1.97629, batch_cost: 0.13059s, reader_cost: 0.00026, ips: 490.08898 samples/s, eta: 0:00:40
+[2026/11/20 05:38:58] ppcls INFO: [Train][Epoch 13/32][Iter: 14/16]lr(LinearWarmup): 0.00240645, CELoss: 1.93544, loss: 1.93544, batch_cost: 0.11888s, reader_cost: 0.00022, ips: 538.35894 samples/s, eta: 0:00:36
+[2026/11/20 05:38:58] ppcls INFO: [Train][Epoch 13/32][Iter: 15/16]lr(LinearWarmup): 0.00239775, CELoss: 1.97695, loss: 1.97695, batch_cost: 0.12541s, reader_cost: 0.00027, ips: 478.41225 samples/s, eta: 0:00:38
+[2026/11/20 05:38:58] ppcls INFO: [Train][Epoch 13/32][Avg]CELoss: 1.97695, loss: 1.97695
+[2026/11/20 05:38:58] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:38:58] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:39:01] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:39:02] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:39:04] ppcls INFO: [Train][Epoch 14/32][Iter: 0/16]lr(LinearWarmup): 0.00238901, CELoss: 2.35693, loss: 2.35693, batch_cost: 2.31110s, reader_cost: 1.98340, ips: 27.69242 samples/s, eta: 0:11:42
+[2026/11/20 05:39:04] ppcls INFO: [Train][Epoch 14/32][Iter: 1/16]lr(LinearWarmup): 0.00238022, CELoss: 2.28207, loss: 2.28207, batch_cost: 0.24111s, reader_cost: 0.00066, ips: 265.44390 samples/s, eta: 0:01:13
+[2026/11/20 05:39:05] ppcls INFO: [Train][Epoch 14/32][Iter: 2/16]lr(LinearWarmup): 0.00237138, CELoss: 1.98805, loss: 1.98805, batch_cost: 0.28623s, reader_cost: 0.00036, ips: 223.59578 samples/s, eta: 0:01:26
+[2026/11/20 05:39:05] ppcls INFO: [Train][Epoch 14/32][Iter: 3/16]lr(LinearWarmup): 0.00236250, CELoss: 2.29027, loss: 2.29027, batch_cost: 0.27487s, reader_cost: 0.00041, ips: 232.83377 samples/s, eta: 0:01:22
+[2026/11/20 05:39:05] ppcls INFO: [Train][Epoch 14/32][Iter: 4/16]lr(LinearWarmup): 0.00235357, CELoss: 2.31923, loss: 2.31923, batch_cost: 0.24818s, reader_cost: 0.00033, ips: 257.87967 samples/s, eta: 0:01:14
+[2026/11/20 05:39:05] ppcls INFO: [Train][Epoch 14/32][Iter: 5/16]lr(LinearWarmup): 0.00234460, CELoss: 2.46703, loss: 2.46703, batch_cost: 0.22777s, reader_cost: 0.00028, ips: 280.98127 samples/s, eta: 0:01:08
+[2026/11/20 05:39:06] ppcls INFO: [Train][Epoch 14/32][Iter: 6/16]lr(LinearWarmup): 0.00233558, CELoss: 2.29274, loss: 2.29274, batch_cost: 0.20377s, reader_cost: 0.01615, ips: 314.07274 samples/s, eta: 0:01:00
+[2026/11/20 05:39:06] ppcls INFO: [Train][Epoch 14/32][Iter: 7/16]lr(LinearWarmup): 0.00232652, CELoss: 2.16631, loss: 2.16631, batch_cost: 0.25500s, reader_cost: 0.00031, ips: 250.98239 samples/s, eta: 0:01:15
+[2026/11/20 05:39:06] ppcls INFO: [Train][Epoch 14/32][Iter: 8/16]lr(LinearWarmup): 0.00231741, CELoss: 2.09913, loss: 2.09913, batch_cost: 0.20266s, reader_cost: 0.00036, ips: 315.79899 samples/s, eta: 0:00:59
+[2026/11/20 05:39:06] ppcls INFO: [Train][Epoch 14/32][Iter: 9/16]lr(LinearWarmup): 0.00230826, CELoss: 2.15471, loss: 2.15471, batch_cost: 0.20040s, reader_cost: 0.00025, ips: 319.36642 samples/s, eta: 0:00:59
+[2026/11/20 05:39:07] ppcls INFO: [Train][Epoch 14/32][Iter: 10/16]lr(LinearWarmup): 0.00229907, CELoss: 2.17848, loss: 2.17848, batch_cost: 0.19172s, reader_cost: 0.00021, ips: 333.81225 samples/s, eta: 0:00:56
+[2026/11/20 05:39:07] ppcls INFO: [Train][Epoch 14/32][Iter: 11/16]lr(LinearWarmup): 0.00228984, CELoss: 2.22632, loss: 2.22632, batch_cost: 0.13183s, reader_cost: 0.00025, ips: 485.45975 samples/s, eta: 0:00:38
+[2026/11/20 05:39:07] ppcls INFO: [Train][Epoch 14/32][Iter: 12/16]lr(LinearWarmup): 0.00228057, CELoss: 2.18769, loss: 2.18769, batch_cost: 0.13136s, reader_cost: 0.00024, ips: 487.21494 samples/s, eta: 0:00:38
+[2026/11/20 05:39:07] ppcls INFO: [Train][Epoch 14/32][Iter: 13/16]lr(LinearWarmup): 0.00227125, CELoss: 2.13611, loss: 2.13611, batch_cost: 0.13099s, reader_cost: 0.00029, ips: 488.58325 samples/s, eta: 0:00:38
+[2026/11/20 05:39:07] ppcls INFO: [Train][Epoch 14/32][Iter: 14/16]lr(LinearWarmup): 0.00226190, CELoss: 2.07045, loss: 2.07045, batch_cost: 0.11859s, reader_cost: 0.00024, ips: 539.68049 samples/s, eta: 0:00:34
+[2026/11/20 05:39:07] ppcls INFO: [Train][Epoch 14/32][Iter: 15/16]lr(LinearWarmup): 0.00225250, CELoss: 2.09685, loss: 2.09685, batch_cost: 0.12540s, reader_cost: 0.00025, ips: 478.48684 samples/s, eta: 0:00:36
+[2026/11/20 05:39:07] ppcls INFO: [Train][Epoch 14/32][Avg]CELoss: 2.09685, loss: 2.09685
+[2026/11/20 05:39:08] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:39:08] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:39:11] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:39:11] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:39:14] ppcls INFO: [Train][Epoch 15/32][Iter: 0/16]lr(LinearWarmup): 0.00224306, CELoss: 2.71128, loss: 2.71128, batch_cost: 2.39498s, reader_cost: 2.00108, ips: 26.72252 samples/s, eta: 0:11:29
+[2026/11/20 05:39:14] ppcls INFO: [Train][Epoch 15/32][Iter: 1/16]lr(LinearWarmup): 0.00223359, CELoss: 2.01294, loss: 2.01294, batch_cost: 0.26302s, reader_cost: 0.00874, ips: 243.32879 samples/s, eta: 0:01:15
+[2026/11/20 05:39:14] ppcls INFO: [Train][Epoch 15/32][Iter: 2/16]lr(LinearWarmup): 0.00222408, CELoss: 1.84410, loss: 1.84410, batch_cost: 0.31426s, reader_cost: 0.00856, ips: 203.65240 samples/s, eta: 0:01:29
+[2026/11/20 05:39:14] ppcls INFO: [Train][Epoch 15/32][Iter: 3/16]lr(LinearWarmup): 0.00221453, CELoss: 1.69458, loss: 1.69458, batch_cost: 0.13100s, reader_cost: 0.00033, ips: 488.54857 samples/s, eta: 0:00:37
+[2026/11/20 05:39:15] ppcls INFO: [Train][Epoch 15/32][Iter: 4/16]lr(LinearWarmup): 0.00220494, CELoss: 1.89728, loss: 1.89728, batch_cost: 0.22065s, reader_cost: 0.00033, ips: 290.05468 samples/s, eta: 0:01:02
+[2026/11/20 05:39:15] ppcls INFO: [Train][Epoch 15/32][Iter: 5/16]lr(LinearWarmup): 0.00219531, CELoss: 1.84554, loss: 1.84554, batch_cost: 0.18825s, reader_cost: 0.00854, ips: 339.98064 samples/s, eta: 0:00:53
+[2026/11/20 05:39:15] ppcls INFO: [Train][Epoch 15/32][Iter: 6/16]lr(LinearWarmup): 0.00218565, CELoss: 1.93780, loss: 1.93780, batch_cost: 0.19388s, reader_cost: 0.00037, ips: 330.10745 samples/s, eta: 0:00:54
+[2026/11/20 05:39:15] ppcls INFO: [Train][Epoch 15/32][Iter: 7/16]lr(LinearWarmup): 0.00217595, CELoss: 2.03368, loss: 2.03368, batch_cost: 0.20124s, reader_cost: 0.00844, ips: 318.02285 samples/s, eta: 0:00:56
+[2026/11/20 05:39:16] ppcls INFO: [Train][Epoch 15/32][Iter: 8/16]lr(LinearWarmup): 0.00216622, CELoss: 2.15476, loss: 2.15476, batch_cost: 0.26626s, reader_cost: 0.00061, ips: 240.36298 samples/s, eta: 0:01:14
+[2026/11/20 05:39:16] ppcls INFO: [Train][Epoch 15/32][Iter: 9/16]lr(LinearWarmup): 0.00215645, CELoss: 2.19383, loss: 2.19383, batch_cost: 0.25083s, reader_cost: 0.00024, ips: 255.15344 samples/s, eta: 0:01:09
+[2026/11/20 05:39:16] ppcls INFO: [Train][Epoch 15/32][Iter: 10/16]lr(LinearWarmup): 0.00214665, CELoss: 2.14231, loss: 2.14231, batch_cost: 0.14741s, reader_cost: 0.00042, ips: 434.17049 samples/s, eta: 0:00:40
+[2026/11/20 05:39:16] ppcls INFO: [Train][Epoch 15/32][Iter: 11/16]lr(LinearWarmup): 0.00213681, CELoss: 2.18610, loss: 2.18610, batch_cost: 0.13193s, reader_cost: 0.00025, ips: 485.09568 samples/s, eta: 0:00:36
+[2026/11/20 05:39:16] ppcls INFO: [Train][Epoch 15/32][Iter: 12/16]lr(LinearWarmup): 0.00212694, CELoss: 2.19272, loss: 2.19272, batch_cost: 0.13172s, reader_cost: 0.00028, ips: 485.88153 samples/s, eta: 0:00:36
+[2026/11/20 05:39:16] ppcls INFO: [Train][Epoch 15/32][Iter: 13/16]lr(LinearWarmup): 0.00211704, CELoss: 2.23158, loss: 2.23158, batch_cost: 0.13099s, reader_cost: 0.00030, ips: 488.60282 samples/s, eta: 0:00:36
+[2026/11/20 05:39:16] ppcls INFO: [Train][Epoch 15/32][Iter: 14/16]lr(LinearWarmup): 0.00210711, CELoss: 2.25976, loss: 2.25976, batch_cost: 0.11878s, reader_cost: 0.00024, ips: 538.82361 samples/s, eta: 0:00:32
+[2026/11/20 05:39:17] ppcls INFO: [Train][Epoch 15/32][Iter: 15/16]lr(LinearWarmup): 0.00209714, CELoss: 2.30677, loss: 2.30677, batch_cost: 0.12765s, reader_cost: 0.00028, ips: 470.03429 samples/s, eta: 0:00:34
+[2026/11/20 05:39:17] ppcls INFO: [Train][Epoch 15/32][Avg]CELoss: 2.30677, loss: 2.30677
+[2026/11/20 05:39:17] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:39:17] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:39:20] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:39:21] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:39:23] ppcls INFO: [Train][Epoch 16/32][Iter: 0/16]lr(LinearWarmup): 0.00208714, CELoss: 1.20791, loss: 1.20791, batch_cost: 2.60234s, reader_cost: 2.19036, ips: 24.59323 samples/s, eta: 0:11:47
+[2026/11/20 05:39:24] ppcls INFO: [Train][Epoch 16/32][Iter: 1/16]lr(LinearWarmup): 0.00207711, CELoss: 1.76180, loss: 1.76180, batch_cost: 0.21343s, reader_cost: 0.00959, ips: 299.86724 samples/s, eta: 0:00:57
+[2026/11/20 05:39:24] ppcls INFO: [Train][Epoch 16/32][Iter: 2/16]lr(LinearWarmup): 0.00206705, CELoss: 2.02983, loss: 2.02983, batch_cost: 0.28893s, reader_cost: 0.00033, ips: 221.50370 samples/s, eta: 0:01:18
+[2026/11/20 05:39:24] ppcls INFO: [Train][Epoch 16/32][Iter: 3/16]lr(LinearWarmup): 0.00205696, CELoss: 1.91622, loss: 1.91622, batch_cost: 0.32300s, reader_cost: 0.00033, ips: 198.14508 samples/s, eta: 0:01:26
+[2026/11/20 05:39:25] ppcls INFO: [Train][Epoch 16/32][Iter: 4/16]lr(LinearWarmup): 0.00204684, CELoss: 1.93613, loss: 1.93613, batch_cost: 0.33224s, reader_cost: 0.00993, ips: 192.63385 samples/s, eta: 0:01:29
+[2026/11/20 05:39:25] ppcls INFO: [Train][Epoch 16/32][Iter: 5/16]lr(LinearWarmup): 0.00203670, CELoss: 2.09246, loss: 2.09246, batch_cost: 0.21251s, reader_cost: 0.00035, ips: 301.16620 samples/s, eta: 0:00:56
+[2026/11/20 05:39:25] ppcls INFO: [Train][Epoch 16/32][Iter: 6/16]lr(LinearWarmup): 0.00202652, CELoss: 1.99194, loss: 1.99194, batch_cost: 0.13136s, reader_cost: 0.00018, ips: 487.21494 samples/s, eta: 0:00:34
+[2026/11/20 05:39:25] ppcls INFO: [Train][Epoch 16/32][Iter: 7/16]lr(LinearWarmup): 0.00201632, CELoss: 2.10073, loss: 2.10073, batch_cost: 0.17297s, reader_cost: 0.00019, ips: 369.99910 samples/s, eta: 0:00:45
+[2026/11/20 05:39:25] ppcls INFO: [Train][Epoch 16/32][Iter: 8/16]lr(LinearWarmup): 0.00200609, CELoss: 2.15251, loss: 2.15251, batch_cost: 0.17093s, reader_cost: 0.00031, ips: 374.41778 samples/s, eta: 0:00:45
+[2026/11/20 05:39:25] ppcls INFO: [Train][Epoch 16/32][Iter: 9/16]lr(LinearWarmup): 0.00199583, CELoss: 2.12548, loss: 2.12548, batch_cost: 0.19320s, reader_cost: 0.00016, ips: 331.26561 samples/s, eta: 0:00:50
+[2026/11/20 05:39:26] ppcls INFO: [Train][Epoch 16/32][Iter: 10/16]lr(LinearWarmup): 0.00198555, CELoss: 2.05344, loss: 2.05344, batch_cost: 0.30827s, reader_cost: 0.00026, ips: 207.61264 samples/s, eta: 0:01:20
+[2026/11/20 05:39:26] ppcls INFO: [Train][Epoch 16/32][Iter: 11/16]lr(LinearWarmup): 0.00197524, CELoss: 2.00379, loss: 2.00379, batch_cost: 0.18111s, reader_cost: 0.00039, ips: 353.37193 samples/s, eta: 0:00:47
+[2026/11/20 05:39:26] ppcls INFO: [Train][Epoch 16/32][Iter: 12/16]lr(LinearWarmup): 0.00196491, CELoss: 1.95317, loss: 1.95317, batch_cost: 0.13151s, reader_cost: 0.00025, ips: 486.65846 samples/s, eta: 0:00:34
+[2026/11/20 05:39:26] ppcls INFO: [Train][Epoch 16/32][Iter: 13/16]lr(LinearWarmup): 0.00195456, CELoss: 2.00590, loss: 2.00590, batch_cost: 0.13130s, reader_cost: 0.00028, ips: 487.44939 samples/s, eta: 0:00:34
+[2026/11/20 05:39:26] ppcls INFO: [Train][Epoch 16/32][Iter: 14/16]lr(LinearWarmup): 0.00194417, CELoss: 1.94648, loss: 1.94648, batch_cost: 0.11905s, reader_cost: 0.00024, ips: 537.59451 samples/s, eta: 0:00:30
+[2026/11/20 05:39:26] ppcls INFO: [Train][Epoch 16/32][Iter: 15/16]lr(LinearWarmup): 0.00193377, CELoss: 2.00262, loss: 2.00262, batch_cost: 0.12382s, reader_cost: 0.00024, ips: 484.55639 samples/s, eta: 0:00:31
+[2026/11/20 05:39:26] ppcls INFO: [Train][Epoch 16/32][Avg]CELoss: 2.00262, loss: 2.00262
+[2026/11/20 05:39:27] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:39:27] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:39:30] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:39:31] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:39:33] ppcls INFO: [Train][Epoch 17/32][Iter: 0/16]lr(LinearWarmup): 0.00192334, CELoss: 2.25968, loss: 2.25968, batch_cost: 2.54348s, reader_cost: 2.25125, ips: 25.16242 samples/s, eta: 0:10:51
+[2026/11/20 05:39:33] ppcls INFO: [Train][Epoch 17/32][Iter: 1/16]lr(LinearWarmup): 0.00191290, CELoss: 2.03902, loss: 2.03902, batch_cost: 0.16268s, reader_cost: 0.00050, ips: 393.40194 samples/s, eta: 0:00:41
+[2026/11/20 05:39:34] ppcls INFO: [Train][Epoch 17/32][Iter: 2/16]lr(LinearWarmup): 0.00190243, CELoss: 1.78981, loss: 1.78981, batch_cost: 0.28061s, reader_cost: 0.00037, ips: 228.07506 samples/s, eta: 0:01:11
+[2026/11/20 05:39:34] ppcls INFO: [Train][Epoch 17/32][Iter: 3/16]lr(LinearWarmup): 0.00189193, CELoss: 1.97507, loss: 1.97507, batch_cost: 0.18712s, reader_cost: 0.00792, ips: 342.03486 samples/s, eta: 0:00:47
+[2026/11/20 05:39:34] ppcls INFO: [Train][Epoch 17/32][Iter: 4/16]lr(LinearWarmup): 0.00188142, CELoss: 1.99521, loss: 1.99521, batch_cost: 0.14816s, reader_cost: 0.00031, ips: 431.96341 samples/s, eta: 0:00:37
+[2026/11/20 05:39:34] ppcls INFO: [Train][Epoch 17/32][Iter: 5/16]lr(LinearWarmup): 0.00187089, CELoss: 1.83652, loss: 1.83652, batch_cost: 0.32466s, reader_cost: 0.00741, ips: 197.12753 samples/s, eta: 0:01:21
+[2026/11/20 05:39:34] ppcls INFO: [Train][Epoch 17/32][Iter: 6/16]lr(LinearWarmup): 0.00186034, CELoss: 1.78242, loss: 1.78242, batch_cost: 0.20860s, reader_cost: 0.00040, ips: 306.81143 samples/s, eta: 0:00:52
+[2026/11/20 05:39:35] ppcls INFO: [Train][Epoch 17/32][Iter: 7/16]lr(LinearWarmup): 0.00184977, CELoss: 1.71042, loss: 1.71042, batch_cost: 0.13512s, reader_cost: 0.00028, ips: 473.63663 samples/s, eta: 0:00:33
+[2026/11/20 05:39:35] ppcls INFO: [Train][Epoch 17/32][Iter: 8/16]lr(LinearWarmup): 0.00183918, CELoss: 1.69934, loss: 1.69934, batch_cost: 0.28964s, reader_cost: 0.00828, ips: 220.96472 samples/s, eta: 0:01:11
+[2026/11/20 05:39:35] ppcls INFO: [Train][Epoch 17/32][Iter: 9/16]lr(LinearWarmup): 0.00182858, CELoss: 1.75369, loss: 1.75369, batch_cost: 0.23052s, reader_cost: 0.00029, ips: 277.63575 samples/s, eta: 0:00:56
+[2026/11/20 05:39:35] ppcls INFO: [Train][Epoch 17/32][Iter: 10/16]lr(LinearWarmup): 0.00181795, CELoss: 1.82792, loss: 1.82792, batch_cost: 0.17677s, reader_cost: 0.00388, ips: 362.05049 samples/s, eta: 0:00:43
+[2026/11/20 05:39:35] ppcls INFO: [Train][Epoch 17/32][Iter: 11/16]lr(LinearWarmup): 0.00180732, CELoss: 1.87996, loss: 1.87996, batch_cost: 0.12857s, reader_cost: 0.00024, ips: 497.80146 samples/s, eta: 0:00:31
+[2026/11/20 05:39:36] ppcls INFO: [Train][Epoch 17/32][Iter: 12/16]lr(LinearWarmup): 0.00179666, CELoss: 1.93268, loss: 1.93268, batch_cost: 0.12717s, reader_cost: 0.00025, ips: 503.25452 samples/s, eta: 0:00:31
+[2026/11/20 05:39:36] ppcls INFO: [Train][Epoch 17/32][Iter: 13/16]lr(LinearWarmup): 0.00178599, CELoss: 1.88781, loss: 1.88781, batch_cost: 0.12739s, reader_cost: 0.00026, ips: 502.38518 samples/s, eta: 0:00:30
+[2026/11/20 05:39:36] ppcls INFO: [Train][Epoch 17/32][Iter: 14/16]lr(LinearWarmup): 0.00177530, CELoss: 1.93810, loss: 1.93810, batch_cost: 0.11875s, reader_cost: 0.00024, ips: 538.95126 samples/s, eta: 0:00:28
+[2026/11/20 05:39:36] ppcls INFO: [Train][Epoch 17/32][Iter: 15/16]lr(LinearWarmup): 0.00176460, CELoss: 1.93440, loss: 1.93440, batch_cost: 0.12490s, reader_cost: 0.00023, ips: 480.39950 samples/s, eta: 0:00:30
+[2026/11/20 05:39:36] ppcls INFO: [Train][Epoch 17/32][Avg]CELoss: 1.93440, loss: 1.93440
+[2026/11/20 05:39:36] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:39:37] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:39:40] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:39:40] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:39:42] ppcls INFO: [Train][Epoch 18/32][Iter: 0/16]lr(LinearWarmup): 0.00175389, CELoss: 2.32085, loss: 2.32085, batch_cost: 2.33016s, reader_cost: 2.02995, ips: 27.46597 samples/s, eta: 0:09:19
+[2026/11/20 05:39:43] ppcls INFO: [Train][Epoch 18/32][Iter: 1/16]lr(LinearWarmup): 0.00174316, CELoss: 2.36450, loss: 2.36450, batch_cost: 0.21902s, reader_cost: 0.00053, ips: 292.21663 samples/s, eta: 0:00:52
+[2026/11/20 05:39:43] ppcls INFO: [Train][Epoch 18/32][Iter: 2/16]lr(LinearWarmup): 0.00173242, CELoss: 1.94345, loss: 1.94345, batch_cost: 0.26458s, reader_cost: 0.00044, ips: 241.89345 samples/s, eta: 0:01:02
+[2026/11/20 05:39:43] ppcls INFO: [Train][Epoch 18/32][Iter: 3/16]lr(LinearWarmup): 0.00172167, CELoss: 2.09743, loss: 2.09743, batch_cost: 0.30456s, reader_cost: 0.00810, ips: 210.14189 samples/s, eta: 0:01:12
+[2026/11/20 05:39:44] ppcls INFO: [Train][Epoch 18/32][Iter: 4/16]lr(LinearWarmup): 0.00171091, CELoss: 2.18939, loss: 2.18939, batch_cost: 0.27552s, reader_cost: 0.00031, ips: 232.29098 samples/s, eta: 0:01:05
+[2026/11/20 05:39:44] ppcls INFO: [Train][Epoch 18/32][Iter: 5/16]lr(LinearWarmup): 0.00170014, CELoss: 2.03206, loss: 2.03206, batch_cost: 0.13838s, reader_cost: 0.00031, ips: 462.51115 samples/s, eta: 0:00:32
+[2026/11/20 05:39:44] ppcls INFO: [Train][Epoch 18/32][Iter: 6/16]lr(LinearWarmup): 0.00168935, CELoss: 1.92880, loss: 1.92880, batch_cost: 0.18095s, reader_cost: 0.00828, ips: 353.69087 samples/s, eta: 0:00:42
+[2026/11/20 05:39:44] ppcls INFO: [Train][Epoch 18/32][Iter: 7/16]lr(LinearWarmup): 0.00167856, CELoss: 1.99167, loss: 1.99167, batch_cost: 0.23769s, reader_cost: 0.00032, ips: 269.25669 samples/s, eta: 0:00:55
+[2026/11/20 05:39:44] ppcls INFO: [Train][Epoch 18/32][Iter: 8/16]lr(LinearWarmup): 0.00166776, CELoss: 1.89685, loss: 1.89685, batch_cost: 0.13156s, reader_cost: 0.00033, ips: 486.45915 samples/s, eta: 0:00:30
+[2026/11/20 05:39:44] ppcls INFO: [Train][Epoch 18/32][Iter: 9/16]lr(LinearWarmup): 0.00165694, CELoss: 1.81337, loss: 1.81337, batch_cost: 0.18988s, reader_cost: 0.00817, ips: 337.04924 samples/s, eta: 0:00:43
+[2026/11/20 05:39:45] ppcls INFO: [Train][Epoch 18/32][Iter: 10/16]lr(LinearWarmup): 0.00164612, CELoss: 1.76220, loss: 1.76220, batch_cost: 0.25942s, reader_cost: 0.00036, ips: 246.70064 samples/s, eta: 0:00:59
+[2026/11/20 05:39:45] ppcls INFO: [Train][Epoch 18/32][Iter: 11/16]lr(LinearWarmup): 0.00163530, CELoss: 1.74981, loss: 1.74981, batch_cost: 0.13311s, reader_cost: 0.00027, ips: 480.81465 samples/s, eta: 0:00:30
+[2026/11/20 05:39:45] ppcls INFO: [Train][Epoch 18/32][Iter: 12/16]lr(LinearWarmup): 0.00162446, CELoss: 1.78363, loss: 1.78363, batch_cost: 0.13321s, reader_cost: 0.00031, ips: 480.42742 samples/s, eta: 0:00:30
+[2026/11/20 05:39:45] ppcls INFO: [Train][Epoch 18/32][Iter: 13/16]lr(LinearWarmup): 0.00161362, CELoss: 1.77342, loss: 1.77342, batch_cost: 0.12697s, reader_cost: 0.00042, ips: 504.07196 samples/s, eta: 0:00:28
+[2026/11/20 05:39:45] ppcls INFO: [Train][Epoch 18/32][Iter: 14/16]lr(LinearWarmup): 0.00160278, CELoss: 1.82218, loss: 1.82218, batch_cost: 0.11897s, reader_cost: 0.00024, ips: 537.94142 samples/s, eta: 0:00:26
+[2026/11/20 05:39:45] ppcls INFO: [Train][Epoch 18/32][Iter: 15/16]lr(LinearWarmup): 0.00159193, CELoss: 1.89209, loss: 1.89209, batch_cost: 0.12379s, reader_cost: 0.00022, ips: 484.68238 samples/s, eta: 0:00:27
+[2026/11/20 05:39:45] ppcls INFO: [Train][Epoch 18/32][Avg]CELoss: 1.89209, loss: 1.89209
+[2026/11/20 05:39:46] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:39:46] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:39:49] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:39:50] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:39:52] ppcls INFO: [Train][Epoch 19/32][Iter: 0/16]lr(LinearWarmup): 0.00158107, CELoss: 1.99128, loss: 1.99128, batch_cost: 2.42388s, reader_cost: 2.26994, ips: 26.40390 samples/s, eta: 0:09:02
+[2026/11/20 05:39:52] ppcls INFO: [Train][Epoch 19/32][Iter: 1/16]lr(LinearWarmup): 0.00157021, CELoss: 1.49619, loss: 1.49619, batch_cost: 0.23037s, reader_cost: 0.00036, ips: 277.81419 samples/s, eta: 0:00:51
+[2026/11/20 05:39:53] ppcls INFO: [Train][Epoch 19/32][Iter: 2/16]lr(LinearWarmup): 0.00155935, CELoss: 1.50474, loss: 1.50474, batch_cost: 0.28781s, reader_cost: 0.00044, ips: 222.36996 samples/s, eta: 0:01:03
+[2026/11/20 05:39:53] ppcls INFO: [Train][Epoch 19/32][Iter: 3/16]lr(LinearWarmup): 0.00154848, CELoss: 1.42626, loss: 1.42626, batch_cost: 0.24928s, reader_cost: 0.00764, ips: 256.74312 samples/s, eta: 0:00:55
+[2026/11/20 05:39:53] ppcls INFO: [Train][Epoch 19/32][Iter: 4/16]lr(LinearWarmup): 0.00153761, CELoss: 1.36779, loss: 1.36779, batch_cost: 0.30759s, reader_cost: 0.00036, ips: 208.06773 samples/s, eta: 0:01:07
+[2026/11/20 05:39:53] ppcls INFO: [Train][Epoch 19/32][Iter: 5/16]lr(LinearWarmup): 0.00152674, CELoss: 1.57439, loss: 1.57439, batch_cost: 0.31547s, reader_cost: 0.00808, ips: 202.87360 samples/s, eta: 0:01:09
+[2026/11/20 05:39:54] ppcls INFO: [Train][Epoch 19/32][Iter: 6/16]lr(LinearWarmup): 0.00151587, CELoss: 1.62094, loss: 1.62094, batch_cost: 0.24105s, reader_cost: 0.00033, ips: 265.51033 samples/s, eta: 0:00:52
+[2026/11/20 05:39:54] ppcls INFO: [Train][Epoch 19/32][Iter: 7/16]lr(LinearWarmup): 0.00150500, CELoss: 1.75633, loss: 1.75633, batch_cost: 0.13440s, reader_cost: 0.00038, ips: 476.19509 samples/s, eta: 0:00:29
+[2026/11/20 05:39:54] ppcls INFO: [Train][Epoch 19/32][Iter: 8/16]lr(LinearWarmup): 0.00149413, CELoss: 1.90372, loss: 1.90372, batch_cost: 0.24943s, reader_cost: 0.00041, ips: 256.58066 samples/s, eta: 0:00:53
+[2026/11/20 05:39:54] ppcls INFO: [Train][Epoch 19/32][Iter: 9/16]lr(LinearWarmup): 0.00148326, CELoss: 1.82864, loss: 1.82864, batch_cost: 0.24943s, reader_cost: 0.00029, ips: 256.58164 samples/s, eta: 0:00:53
+[2026/11/20 05:39:55] ppcls INFO: [Train][Epoch 19/32][Iter: 10/16]lr(LinearWarmup): 0.00147239, CELoss: 1.78831, loss: 1.78831, batch_cost: 0.25972s, reader_cost: 0.00028, ips: 246.41846 samples/s, eta: 0:00:55
+[2026/11/20 05:39:55] ppcls INFO: [Train][Epoch 19/32][Iter: 11/16]lr(LinearWarmup): 0.00146152, CELoss: 1.81366, loss: 1.81366, batch_cost: 0.13184s, reader_cost: 0.00027, ips: 485.45097 samples/s, eta: 0:00:28
+[2026/11/20 05:39:55] ppcls INFO: [Train][Epoch 19/32][Iter: 12/16]lr(LinearWarmup): 0.00145065, CELoss: 1.87237, loss: 1.87237, batch_cost: 0.13152s, reader_cost: 0.00024, ips: 486.60024 samples/s, eta: 0:00:27
+[2026/11/20 05:39:55] ppcls INFO: [Train][Epoch 19/32][Iter: 13/16]lr(LinearWarmup): 0.00143979, CELoss: 1.91822, loss: 1.91822, batch_cost: 0.13148s, reader_cost: 0.00026, ips: 486.75024 samples/s, eta: 0:00:27
+[2026/11/20 05:39:55] ppcls INFO: [Train][Epoch 19/32][Iter: 14/16]lr(LinearWarmup): 0.00142893, CELoss: 1.87145, loss: 1.87145, batch_cost: 0.11998s, reader_cost: 0.00028, ips: 533.41015 samples/s, eta: 0:00:25
+[2026/11/20 05:39:55] ppcls INFO: [Train][Epoch 19/32][Iter: 15/16]lr(LinearWarmup): 0.00141807, CELoss: 1.83245, loss: 1.83245, batch_cost: 0.12561s, reader_cost: 0.00030, ips: 477.65676 samples/s, eta: 0:00:26
+[2026/11/20 05:39:55] ppcls INFO: [Train][Epoch 19/32][Avg]CELoss: 1.83245, loss: 1.83245
+[2026/11/20 05:39:56] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:39:56] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:39:59] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:39:59] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:40:02] ppcls INFO: [Train][Epoch 20/32][Iter: 0/16]lr(LinearWarmup): 0.00140722, CELoss: 2.86963, loss: 2.86963, batch_cost: 2.33924s, reader_cost: 2.01350, ips: 27.35929 samples/s, eta: 0:08:06
+[2026/11/20 05:40:02] ppcls INFO: [Train][Epoch 20/32][Iter: 1/16]lr(LinearWarmup): 0.00139638, CELoss: 2.74743, loss: 2.74743, batch_cost: 0.13519s, reader_cost: 0.00043, ips: 473.41194 samples/s, eta: 0:00:27
+[2026/11/20 05:40:02] ppcls INFO: [Train][Epoch 20/32][Iter: 2/16]lr(LinearWarmup): 0.00138554, CELoss: 2.16287, loss: 2.16287, batch_cost: 0.20592s, reader_cost: 0.00057, ips: 310.80178 samples/s, eta: 0:00:42
+[2026/11/20 05:40:02] ppcls INFO: [Train][Epoch 20/32][Iter: 3/16]lr(LinearWarmup): 0.00137470, CELoss: 2.23449, loss: 2.23449, batch_cost: 0.28723s, reader_cost: 0.00037, ips: 222.81849 samples/s, eta: 0:00:58
+[2026/11/20 05:40:03] ppcls INFO: [Train][Epoch 20/32][Iter: 4/16]lr(LinearWarmup): 0.00136388, CELoss: 2.34442, loss: 2.34442, batch_cost: 0.18325s, reader_cost: 0.00762, ips: 349.25839 samples/s, eta: 0:00:37
+[2026/11/20 05:40:03] ppcls INFO: [Train][Epoch 20/32][Iter: 5/16]lr(LinearWarmup): 0.00135306, CELoss: 2.13121, loss: 2.13121, batch_cost: 0.18353s, reader_cost: 0.00033, ips: 348.71031 samples/s, eta: 0:00:37
+[2026/11/20 05:40:03] ppcls INFO: [Train][Epoch 20/32][Iter: 6/16]lr(LinearWarmup): 0.00134224, CELoss: 2.18319, loss: 2.18319, batch_cost: 0.18240s, reader_cost: 0.00030, ips: 350.87263 samples/s, eta: 0:00:36
+[2026/11/20 05:40:03] ppcls INFO: [Train][Epoch 20/32][Iter: 7/16]lr(LinearWarmup): 0.00133144, CELoss: 2.18856, loss: 2.18856, batch_cost: 0.29871s, reader_cost: 0.00022, ips: 214.25301 samples/s, eta: 0:01:00
+[2026/11/20 05:40:03] ppcls INFO: [Train][Epoch 20/32][Iter: 8/16]lr(LinearWarmup): 0.00132065, CELoss: 2.20422, loss: 2.20422, batch_cost: 0.18435s, reader_cost: 0.00084, ips: 347.16390 samples/s, eta: 0:00:36
+[2026/11/20 05:40:04] ppcls INFO: [Train][Epoch 20/32][Iter: 9/16]lr(LinearWarmup): 0.00130986, CELoss: 2.24490, loss: 2.24490, batch_cost: 0.31913s, reader_cost: 0.00047, ips: 200.54212 samples/s, eta: 0:01:03
+[2026/11/20 05:40:04] ppcls INFO: [Train][Epoch 20/32][Iter: 10/16]lr(LinearWarmup): 0.00129909, CELoss: 2.24990, loss: 2.24990, batch_cost: 0.19298s, reader_cost: 0.00048, ips: 331.64255 samples/s, eta: 0:00:38
+[2026/11/20 05:40:04] ppcls INFO: [Train][Epoch 20/32][Iter: 11/16]lr(LinearWarmup): 0.00128833, CELoss: 2.23557, loss: 2.23557, batch_cost: 0.13342s, reader_cost: 0.00026, ips: 479.68738 samples/s, eta: 0:00:26
+[2026/11/20 05:40:04] ppcls INFO: [Train][Epoch 20/32][Iter: 12/16]lr(LinearWarmup): 0.00127758, CELoss: 2.25321, loss: 2.25321, batch_cost: 0.13172s, reader_cost: 0.00022, ips: 485.87626 samples/s, eta: 0:00:25
+[2026/11/20 05:40:04] ppcls INFO: [Train][Epoch 20/32][Iter: 13/16]lr(LinearWarmup): 0.00126684, CELoss: 2.28055, loss: 2.28055, batch_cost: 0.13172s, reader_cost: 0.00026, ips: 485.87274 samples/s, eta: 0:00:25
+[2026/11/20 05:40:04] ppcls INFO: [Train][Epoch 20/32][Iter: 14/16]lr(LinearWarmup): 0.00125611, CELoss: 2.21172, loss: 2.21172, batch_cost: 0.11895s, reader_cost: 0.00025, ips: 538.05463 samples/s, eta: 0:00:23
+[2026/11/20 05:40:05] ppcls INFO: [Train][Epoch 20/32][Iter: 15/16]lr(LinearWarmup): 0.00124540, CELoss: 2.24442, loss: 2.24442, batch_cost: 0.12724s, reader_cost: 0.00024, ips: 471.54032 samples/s, eta: 0:00:24
+[2026/11/20 05:40:05] ppcls INFO: [Train][Epoch 20/32][Avg]CELoss: 2.24442, loss: 2.24442
+[2026/11/20 05:40:05] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:40:05] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:40:08] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:40:09] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:40:11] ppcls INFO: [Train][Epoch 21/32][Iter: 0/16]lr(LinearWarmup): 0.00123470, CELoss: 1.87541, loss: 1.87541, batch_cost: 2.50209s, reader_cost: 2.07318, ips: 25.57862 samples/s, eta: 0:08:00
+[2026/11/20 05:40:12] ppcls INFO: [Train][Epoch 21/32][Iter: 1/16]lr(LinearWarmup): 0.00122401, CELoss: 2.14629, loss: 2.14629, batch_cost: 0.24469s, reader_cost: 0.00848, ips: 261.55397 samples/s, eta: 0:00:46
+[2026/11/20 05:40:12] ppcls INFO: [Train][Epoch 21/32][Iter: 2/16]lr(LinearWarmup): 0.00121334, CELoss: 2.15570, loss: 2.15570, batch_cost: 0.34606s, reader_cost: 0.00045, ips: 184.94003 samples/s, eta: 0:01:05
+[2026/11/20 05:40:12] ppcls INFO: [Train][Epoch 21/32][Iter: 3/16]lr(LinearWarmup): 0.00120268, CELoss: 1.89213, loss: 1.89213, batch_cost: 0.13551s, reader_cost: 0.00037, ips: 472.28499 samples/s, eta: 0:00:25
+[2026/11/20 05:40:12] ppcls INFO: [Train][Epoch 21/32][Iter: 4/16]lr(LinearWarmup): 0.00119205, CELoss: 2.08703, loss: 2.08703, batch_cost: 0.29945s, reader_cost: 0.00045, ips: 213.72488 samples/s, eta: 0:00:56
+[2026/11/20 05:40:13] ppcls INFO: [Train][Epoch 21/32][Iter: 5/16]lr(LinearWarmup): 0.00118142, CELoss: 2.14732, loss: 2.14732, batch_cost: 0.19321s, reader_cost: 0.00840, ips: 331.23781 samples/s, eta: 0:00:36
+[2026/11/20 05:40:13] ppcls INFO: [Train][Epoch 21/32][Iter: 6/16]lr(LinearWarmup): 0.00117082, CELoss: 2.17195, loss: 2.17195, batch_cost: 0.26314s, reader_cost: 0.00032, ips: 243.22032 samples/s, eta: 0:00:48
+[2026/11/20 05:40:13] ppcls INFO: [Train][Epoch 21/32][Iter: 7/16]lr(LinearWarmup): 0.00116023, CELoss: 2.23994, loss: 2.23994, batch_cost: 0.22734s, reader_cost: 0.00888, ips: 281.51522 samples/s, eta: 0:00:42
+[2026/11/20 05:40:13] ppcls INFO: [Train][Epoch 21/32][Iter: 8/16]lr(LinearWarmup): 0.00114966, CELoss: 2.30342, loss: 2.30342, batch_cost: 0.32972s, reader_cost: 0.00075, ips: 194.10618 samples/s, eta: 0:01:00
+[2026/11/20 05:40:14] ppcls INFO: [Train][Epoch 21/32][Iter: 9/16]lr(LinearWarmup): 0.00113911, CELoss: 2.17983, loss: 2.17983, batch_cost: 0.24937s, reader_cost: 0.00030, ips: 256.64567 samples/s, eta: 0:00:45
+[2026/11/20 05:40:14] ppcls INFO: [Train][Epoch 21/32][Iter: 10/16]lr(LinearWarmup): 0.00112858, CELoss: 2.19588, loss: 2.19588, batch_cost: 0.13364s, reader_cost: 0.00026, ips: 478.88383 samples/s, eta: 0:00:24
+[2026/11/20 05:40:14] ppcls INFO: [Train][Epoch 21/32][Iter: 11/16]lr(LinearWarmup): 0.00111807, CELoss: 2.09415, loss: 2.09415, batch_cost: 0.12887s, reader_cost: 0.00024, ips: 496.61620 samples/s, eta: 0:00:23
+[2026/11/20 05:40:14] ppcls INFO: [Train][Epoch 21/32][Iter: 12/16]lr(LinearWarmup): 0.00110757, CELoss: 2.10771, loss: 2.10771, batch_cost: 0.13158s, reader_cost: 0.00026, ips: 486.40714 samples/s, eta: 0:00:23
+[2026/11/20 05:40:14] ppcls INFO: [Train][Epoch 21/32][Iter: 13/16]lr(LinearWarmup): 0.00109710, CELoss: 2.13151, loss: 2.13151, batch_cost: 0.13131s, reader_cost: 0.00023, ips: 487.40337 samples/s, eta: 0:00:23
+[2026/11/20 05:40:14] ppcls INFO: [Train][Epoch 21/32][Iter: 14/16]lr(LinearWarmup): 0.00108666, CELoss: 2.12634, loss: 2.12634, batch_cost: 0.11896s, reader_cost: 0.00025, ips: 537.98670 samples/s, eta: 0:00:21
+[2026/11/20 05:40:14] ppcls INFO: [Train][Epoch 21/32][Iter: 15/16]lr(LinearWarmup): 0.00107623, CELoss: 2.06353, loss: 2.06353, batch_cost: 0.12838s, reader_cost: 0.00023, ips: 467.35796 samples/s, eta: 0:00:22
+[2026/11/20 05:40:14] ppcls INFO: [Train][Epoch 21/32][Avg]CELoss: 2.06353, loss: 2.06353
+[2026/11/20 05:40:15] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:40:15] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:40:18] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:40:19] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:40:21] ppcls INFO: [Train][Epoch 22/32][Iter: 0/16]lr(LinearWarmup): 0.00106583, CELoss: 1.17444, loss: 1.17444, batch_cost: 2.43601s, reader_cost: 2.03301, ips: 26.27249 samples/s, eta: 0:07:08
+[2026/11/20 05:40:21] ppcls INFO: [Train][Epoch 22/32][Iter: 1/16]lr(LinearWarmup): 0.00105544, CELoss: 1.11610, loss: 1.11610, batch_cost: 0.29764s, reader_cost: 0.00055, ips: 215.02497 samples/s, eta: 0:00:52
+[2026/11/20 05:40:22] ppcls INFO: [Train][Epoch 22/32][Iter: 2/16]lr(LinearWarmup): 0.00104509, CELoss: 1.67469, loss: 1.67469, batch_cost: 0.29483s, reader_cost: 0.00036, ips: 217.07296 samples/s, eta: 0:00:51
+[2026/11/20 05:40:22] ppcls INFO: [Train][Epoch 22/32][Iter: 3/16]lr(LinearWarmup): 0.00103476, CELoss: 1.64171, loss: 1.64171, batch_cost: 0.23531s, reader_cost: 0.00035, ips: 271.98238 samples/s, eta: 0:00:40
+[2026/11/20 05:40:22] ppcls INFO: [Train][Epoch 22/32][Iter: 4/16]lr(LinearWarmup): 0.00102445, CELoss: 1.68756, loss: 1.68756, batch_cost: 0.22095s, reader_cost: 0.00024, ips: 289.65563 samples/s, eta: 0:00:38
+[2026/11/20 05:40:22] ppcls INFO: [Train][Epoch 22/32][Iter: 5/16]lr(LinearWarmup): 0.00101417, CELoss: 1.77544, loss: 1.77544, batch_cost: 0.21593s, reader_cost: 0.00035, ips: 296.39630 samples/s, eta: 0:00:36
+[2026/11/20 05:40:23] ppcls INFO: [Train][Epoch 22/32][Iter: 6/16]lr(LinearWarmup): 0.00100391, CELoss: 1.76874, loss: 1.76874, batch_cost: 0.20613s, reader_cost: 0.00048, ips: 310.48794 samples/s, eta: 0:00:35
+[2026/11/20 05:40:23] ppcls INFO: [Train][Epoch 22/32][Iter: 7/16]lr(LinearWarmup): 0.00099368, CELoss: 1.80057, loss: 1.80057, batch_cost: 0.23611s, reader_cost: 0.00031, ips: 271.05794 samples/s, eta: 0:00:39
+[2026/11/20 05:40:23] ppcls INFO: [Train][Epoch 22/32][Iter: 8/16]lr(LinearWarmup): 0.00098348, CELoss: 1.90739, loss: 1.90739, batch_cost: 0.23394s, reader_cost: 0.00042, ips: 273.57539 samples/s, eta: 0:00:39
+[2026/11/20 05:40:23] ppcls INFO: [Train][Epoch 22/32][Iter: 9/16]lr(LinearWarmup): 0.00097330, CELoss: 1.83783, loss: 1.83783, batch_cost: 0.25359s, reader_cost: 0.00029, ips: 252.38076 samples/s, eta: 0:00:42
+[2026/11/20 05:40:23] ppcls INFO: [Train][Epoch 22/32][Iter: 10/16]lr(LinearWarmup): 0.00096316, CELoss: 1.88920, loss: 1.88920, batch_cost: 0.15283s, reader_cost: 0.00031, ips: 418.75385 samples/s, eta: 0:00:25
+[2026/11/20 05:40:24] ppcls INFO: [Train][Epoch 22/32][Iter: 11/16]lr(LinearWarmup): 0.00095304, CELoss: 1.80726, loss: 1.80726, batch_cost: 0.13291s, reader_cost: 0.00033, ips: 481.52535 samples/s, eta: 0:00:21
+[2026/11/20 05:40:24] ppcls INFO: [Train][Epoch 22/32][Iter: 12/16]lr(LinearWarmup): 0.00094295, CELoss: 1.79521, loss: 1.79521, batch_cost: 0.13033s, reader_cost: 0.00026, ips: 491.06891 samples/s, eta: 0:00:21
+[2026/11/20 05:40:24] ppcls INFO: [Train][Epoch 22/32][Iter: 13/16]lr(LinearWarmup): 0.00093289, CELoss: 1.73502, loss: 1.73502, batch_cost: 0.13164s, reader_cost: 0.00025, ips: 486.19042 samples/s, eta: 0:00:21
+[2026/11/20 05:40:24] ppcls INFO: [Train][Epoch 22/32][Iter: 14/16]lr(LinearWarmup): 0.00092286, CELoss: 1.71401, loss: 1.71401, batch_cost: 0.11893s, reader_cost: 0.00026, ips: 538.15171 samples/s, eta: 0:00:19
+[2026/11/20 05:40:24] ppcls INFO: [Train][Epoch 22/32][Iter: 15/16]lr(LinearWarmup): 0.00091286, CELoss: 1.74667, loss: 1.74667, batch_cost: 0.13097s, reader_cost: 0.00029, ips: 458.13102 samples/s, eta: 0:00:21
+[2026/11/20 05:40:24] ppcls INFO: [Train][Epoch 22/32][Avg]CELoss: 1.74667, loss: 1.74667
+[2026/11/20 05:40:25] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:40:25] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:40:28] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:40:29] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:40:31] ppcls INFO: [Train][Epoch 23/32][Iter: 0/16]lr(LinearWarmup): 0.00090289, CELoss: 1.05795, loss: 1.05795, batch_cost: 2.50219s, reader_cost: 2.14017, ips: 25.57755 samples/s, eta: 0:06:40
+[2026/11/20 05:40:31] ppcls INFO: [Train][Epoch 23/32][Iter: 1/16]lr(LinearWarmup): 0.00089296, CELoss: 1.71764, loss: 1.71764, batch_cost: 0.28048s, reader_cost: 0.00048, ips: 228.18383 samples/s, eta: 0:00:44
+[2026/11/20 05:40:32] ppcls INFO: [Train][Epoch 23/32][Iter: 2/16]lr(LinearWarmup): 0.00088306, CELoss: 1.73834, loss: 1.73834, batch_cost: 0.32462s, reader_cost: 0.00813, ips: 197.15113 samples/s, eta: 0:00:51
+[2026/11/20 05:40:32] ppcls INFO: [Train][Epoch 23/32][Iter: 3/16]lr(LinearWarmup): 0.00087319, CELoss: 1.85690, loss: 1.85690, batch_cost: 0.13633s, reader_cost: 0.00036, ips: 469.45197 samples/s, eta: 0:00:21
+[2026/11/20 05:40:32] ppcls INFO: [Train][Epoch 23/32][Iter: 4/16]lr(LinearWarmup): 0.00086335, CELoss: 1.91860, loss: 1.91860, batch_cost: 0.13459s, reader_cost: 0.00033, ips: 475.51182 samples/s, eta: 0:00:20
+[2026/11/20 05:40:32] ppcls INFO: [Train][Epoch 23/32][Iter: 5/16]lr(LinearWarmup): 0.00085355, CELoss: 1.81294, loss: 1.81294, batch_cost: 0.29928s, reader_cost: 0.00041, ips: 213.84883 samples/s, eta: 0:00:46
+[2026/11/20 05:40:33] ppcls INFO: [Train][Epoch 23/32][Iter: 6/16]lr(LinearWarmup): 0.00084378, CELoss: 1.82217, loss: 1.82217, batch_cost: 0.28850s, reader_cost: 0.00037, ips: 221.83758 samples/s, eta: 0:00:44
+[2026/11/20 05:40:33] ppcls INFO: [Train][Epoch 23/32][Iter: 7/16]lr(LinearWarmup): 0.00083405, CELoss: 1.89183, loss: 1.89183, batch_cost: 0.22818s, reader_cost: 0.00032, ips: 280.47660 samples/s, eta: 0:00:34
+[2026/11/20 05:40:33] ppcls INFO: [Train][Epoch 23/32][Iter: 8/16]lr(LinearWarmup): 0.00082435, CELoss: 1.92991, loss: 1.92991, batch_cost: 0.21747s, reader_cost: 0.00042, ips: 294.29743 samples/s, eta: 0:00:33
+[2026/11/20 05:40:33] ppcls INFO: [Train][Epoch 23/32][Iter: 9/16]lr(LinearWarmup): 0.00081469, CELoss: 1.97559, loss: 1.97559, batch_cost: 0.21690s, reader_cost: 0.00031, ips: 295.06476 samples/s, eta: 0:00:32
+[2026/11/20 05:40:33] ppcls INFO: [Train][Epoch 23/32][Iter: 10/16]lr(LinearWarmup): 0.00080506, CELoss: 1.97527, loss: 1.97527, batch_cost: 0.16425s, reader_cost: 0.00824, ips: 389.64960 samples/s, eta: 0:00:24
+[2026/11/20 05:40:34] ppcls INFO: [Train][Epoch 23/32][Iter: 11/16]lr(LinearWarmup): 0.00079547, CELoss: 1.95594, loss: 1.95594, batch_cost: 0.13227s, reader_cost: 0.00024, ips: 483.85842 samples/s, eta: 0:00:19
+[2026/11/20 05:40:34] ppcls INFO: [Train][Epoch 23/32][Iter: 12/16]lr(LinearWarmup): 0.00078592, CELoss: 1.90629, loss: 1.90629, batch_cost: 0.13086s, reader_cost: 0.00025, ips: 489.06393 samples/s, eta: 0:00:19
+[2026/11/20 05:40:34] ppcls INFO: [Train][Epoch 23/32][Iter: 13/16]lr(LinearWarmup): 0.00077641, CELoss: 1.93592, loss: 1.93592, batch_cost: 0.13095s, reader_cost: 0.00023, ips: 488.75316 samples/s, eta: 0:00:19
+[2026/11/20 05:40:34] ppcls INFO: [Train][Epoch 23/32][Iter: 14/16]lr(LinearWarmup): 0.00076694, CELoss: 1.97190, loss: 1.97190, batch_cost: 0.11928s, reader_cost: 0.00025, ips: 536.55220 samples/s, eta: 0:00:17
+[2026/11/20 05:40:34] ppcls INFO: [Train][Epoch 23/32][Iter: 15/16]lr(LinearWarmup): 0.00075750, CELoss: 1.98372, loss: 1.98372, batch_cost: 0.12552s, reader_cost: 0.00022, ips: 478.00152 samples/s, eta: 0:00:18
+[2026/11/20 05:40:34] ppcls INFO: [Train][Epoch 23/32][Avg]CELoss: 1.98372, loss: 1.98372
+[2026/11/20 05:40:35] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:40:35] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:40:38] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:40:38] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:40:41] ppcls INFO: [Train][Epoch 24/32][Iter: 0/16]lr(LinearWarmup): 0.00074810, CELoss: 1.99312, loss: 1.99312, batch_cost: 2.31977s, reader_cost: 1.96055, ips: 27.58889 samples/s, eta: 0:05:34
+[2026/11/20 05:40:41] ppcls INFO: [Train][Epoch 24/32][Iter: 1/16]lr(LinearWarmup): 0.00073875, CELoss: 1.86895, loss: 1.86895, batch_cost: 0.19517s, reader_cost: 0.00062, ips: 327.92378 samples/s, eta: 0:00:27
+[2026/11/20 05:40:41] ppcls INFO: [Train][Epoch 24/32][Iter: 2/16]lr(LinearWarmup): 0.00072943, CELoss: 1.96757, loss: 1.96757, batch_cost: 0.33122s, reader_cost: 0.00036, ips: 193.22705 samples/s, eta: 0:00:47
+[2026/11/20 05:40:42] ppcls INFO: [Train][Epoch 24/32][Iter: 3/16]lr(LinearWarmup): 0.00072016, CELoss: 1.77250, loss: 1.77250, batch_cost: 0.16390s, reader_cost: 0.00787, ips: 390.49133 samples/s, eta: 0:00:23
+[2026/11/20 05:40:42] ppcls INFO: [Train][Epoch 24/32][Iter: 4/16]lr(LinearWarmup): 0.00071093, CELoss: 1.64711, loss: 1.64711, batch_cost: 0.23420s, reader_cost: 0.00034, ips: 273.27460 samples/s, eta: 0:00:32
+[2026/11/20 05:40:42] ppcls INFO: [Train][Epoch 24/32][Iter: 5/16]lr(LinearWarmup): 0.00070174, CELoss: 1.63543, loss: 1.63543, batch_cost: 0.28513s, reader_cost: 0.00038, ips: 224.45787 samples/s, eta: 0:00:39
+[2026/11/20 05:40:42] ppcls INFO: [Train][Epoch 24/32][Iter: 6/16]lr(LinearWarmup): 0.00069259, CELoss: 1.58613, loss: 1.58613, batch_cost: 0.18484s, reader_cost: 0.00032, ips: 346.25395 samples/s, eta: 0:00:25
+[2026/11/20 05:40:42] ppcls INFO: [Train][Epoch 24/32][Iter: 7/16]lr(LinearWarmup): 0.00068348, CELoss: 1.57259, loss: 1.57259, batch_cost: 0.26306s, reader_cost: 0.00033, ips: 243.29108 samples/s, eta: 0:00:36
+[2026/11/20 05:40:43] ppcls INFO: [Train][Epoch 24/32][Iter: 8/16]lr(LinearWarmup): 0.00067442, CELoss: 1.50503, loss: 1.50503, batch_cost: 0.19455s, reader_cost: 0.00048, ips: 328.95696 samples/s, eta: 0:00:26
+[2026/11/20 05:40:43] ppcls INFO: [Train][Epoch 24/32][Iter: 9/16]lr(LinearWarmup): 0.00066540, CELoss: 1.48094, loss: 1.48094, batch_cost: 0.26165s, reader_cost: 0.00025, ips: 244.59837 samples/s, eta: 0:00:35
+[2026/11/20 05:40:43] ppcls INFO: [Train][Epoch 24/32][Iter: 10/16]lr(LinearWarmup): 0.00065643, CELoss: 1.43207, loss: 1.43207, batch_cost: 0.22794s, reader_cost: 0.00034, ips: 280.78024 samples/s, eta: 0:00:30
+[2026/11/20 05:40:43] ppcls INFO: [Train][Epoch 24/32][Iter: 11/16]lr(LinearWarmup): 0.00064750, CELoss: 1.40815, loss: 1.40815, batch_cost: 0.13203s, reader_cost: 0.00025, ips: 484.72252 samples/s, eta: 0:00:17
+[2026/11/20 05:40:43] ppcls INFO: [Train][Epoch 24/32][Iter: 12/16]lr(LinearWarmup): 0.00063862, CELoss: 1.44468, loss: 1.44468, batch_cost: 0.13172s, reader_cost: 0.00024, ips: 485.87801 samples/s, eta: 0:00:17
+[2026/11/20 05:40:44] ppcls INFO: [Train][Epoch 24/32][Iter: 13/16]lr(LinearWarmup): 0.00062978, CELoss: 1.41325, loss: 1.41325, batch_cost: 0.13878s, reader_cost: 0.00026, ips: 461.17542 samples/s, eta: 0:00:18
+[2026/11/20 05:40:44] ppcls INFO: [Train][Epoch 24/32][Iter: 14/16]lr(LinearWarmup): 0.00062099, CELoss: 1.48761, loss: 1.48761, batch_cost: 0.11869s, reader_cost: 0.00022, ips: 539.21001 samples/s, eta: 0:00:15
+[2026/11/20 05:40:44] ppcls INFO: [Train][Epoch 24/32][Iter: 15/16]lr(LinearWarmup): 0.00061225, CELoss: 1.47375, loss: 1.47375, batch_cost: 0.12669s, reader_cost: 0.00027, ips: 473.58037 samples/s, eta: 0:00:16
+[2026/11/20 05:40:44] ppcls INFO: [Train][Epoch 24/32][Avg]CELoss: 1.47375, loss: 1.47375
+[2026/11/20 05:40:44] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:40:45] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:40:48] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:40:48] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:40:51] ppcls INFO: [Train][Epoch 25/32][Iter: 0/16]lr(LinearWarmup): 0.00060355, CELoss: 2.78528, loss: 2.78528, batch_cost: 2.34277s, reader_cost: 2.18429, ips: 27.31810 samples/s, eta: 0:04:59
+[2026/11/20 05:40:51] ppcls INFO: [Train][Epoch 25/32][Iter: 1/16]lr(LinearWarmup): 0.00059490, CELoss: 1.85519, loss: 1.85519, batch_cost: 0.12975s, reader_cost: 0.00048, ips: 493.25259 samples/s, eta: 0:00:16
+[2026/11/20 05:40:51] ppcls INFO: [Train][Epoch 25/32][Iter: 2/16]lr(LinearWarmup): 0.00058630, CELoss: 1.99806, loss: 1.99806, batch_cost: 0.22617s, reader_cost: 0.00033, ips: 282.97291 samples/s, eta: 0:00:28
+[2026/11/20 05:40:51] ppcls INFO: [Train][Epoch 25/32][Iter: 3/16]lr(LinearWarmup): 0.00057775, CELoss: 1.76171, loss: 1.76171, batch_cost: 0.33951s, reader_cost: 0.00033, ips: 188.50937 samples/s, eta: 0:00:42
+[2026/11/20 05:40:51] ppcls INFO: [Train][Epoch 25/32][Iter: 4/16]lr(LinearWarmup): 0.00056924, CELoss: 1.65309, loss: 1.65309, batch_cost: 0.20605s, reader_cost: 0.00041, ips: 310.59823 samples/s, eta: 0:00:25
+[2026/11/20 05:40:52] ppcls INFO: [Train][Epoch 25/32][Iter: 5/16]lr(LinearWarmup): 0.00056079, CELoss: 1.59858, loss: 1.59858, batch_cost: 0.31147s, reader_cost: 0.00041, ips: 205.47818 samples/s, eta: 0:00:38
+[2026/11/20 05:40:52] ppcls INFO: [Train][Epoch 25/32][Iter: 6/16]lr(LinearWarmup): 0.00055239, CELoss: 1.68537, loss: 1.68537, batch_cost: 0.21794s, reader_cost: 0.00041, ips: 293.65932 samples/s, eta: 0:00:26
+[2026/11/20 05:40:52] ppcls INFO: [Train][Epoch 25/32][Iter: 7/16]lr(LinearWarmup): 0.00054403, CELoss: 1.64816, loss: 1.64816, batch_cost: 0.23398s, reader_cost: 0.00025, ips: 273.52354 samples/s, eta: 0:00:28
+[2026/11/20 05:40:52] ppcls INFO: [Train][Epoch 25/32][Iter: 8/16]lr(LinearWarmup): 0.00053573, CELoss: 1.72038, loss: 1.72038, batch_cost: 0.19671s, reader_cost: 0.00845, ips: 325.35580 samples/s, eta: 0:00:23
+[2026/11/20 05:40:53] ppcls INFO: [Train][Epoch 25/32][Iter: 9/16]lr(LinearWarmup): 0.00052748, CELoss: 1.73822, loss: 1.73822, batch_cost: 0.13394s, reader_cost: 0.00026, ips: 477.81405 samples/s, eta: 0:00:15
+[2026/11/20 05:40:53] ppcls INFO: [Train][Epoch 25/32][Iter: 10/16]lr(LinearWarmup): 0.00051928, CELoss: 1.76749, loss: 1.76749, batch_cost: 0.25583s, reader_cost: 0.00029, ips: 250.16654 samples/s, eta: 0:00:30
+[2026/11/20 05:40:53] ppcls INFO: [Train][Epoch 25/32][Iter: 11/16]lr(LinearWarmup): 0.00051113, CELoss: 1.79121, loss: 1.79121, batch_cost: 0.13223s, reader_cost: 0.00029, ips: 484.02069 samples/s, eta: 0:00:15
+[2026/11/20 05:40:53] ppcls INFO: [Train][Epoch 25/32][Iter: 12/16]lr(LinearWarmup): 0.00050303, CELoss: 1.84388, loss: 1.84388, batch_cost: 0.13143s, reader_cost: 0.00028, ips: 486.94449 samples/s, eta: 0:00:15
+[2026/11/20 05:40:53] ppcls INFO: [Train][Epoch 25/32][Iter: 13/16]lr(LinearWarmup): 0.00049499, CELoss: 1.80031, loss: 1.80031, batch_cost: 0.13127s, reader_cost: 0.00028, ips: 487.54147 samples/s, eta: 0:00:15
+[2026/11/20 05:40:53] ppcls INFO: [Train][Epoch 25/32][Iter: 14/16]lr(LinearWarmup): 0.00048700, CELoss: 1.81532, loss: 1.81532, batch_cost: 0.11906s, reader_cost: 0.00027, ips: 537.54715 samples/s, eta: 0:00:13
+[2026/11/20 05:40:53] ppcls INFO: [Train][Epoch 25/32][Iter: 15/16]lr(LinearWarmup): 0.00047907, CELoss: 1.83672, loss: 1.83672, batch_cost: 0.12381s, reader_cost: 0.00026, ips: 484.62731 samples/s, eta: 0:00:13
+[2026/11/20 05:40:53] ppcls INFO: [Train][Epoch 25/32][Avg]CELoss: 1.83672, loss: 1.83672
+[2026/11/20 05:40:54] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:40:54] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:40:57] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:40:58] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:41:00] ppcls INFO: [Train][Epoch 26/32][Iter: 0/16]lr(LinearWarmup): 0.00047119, CELoss: 1.99890, loss: 1.99890, batch_cost: 2.34097s, reader_cost: 2.13856, ips: 27.33904 samples/s, eta: 0:04:22
+[2026/11/20 05:41:00] ppcls INFO: [Train][Epoch 26/32][Iter: 1/16]lr(LinearWarmup): 0.00046336, CELoss: 1.89950, loss: 1.89950, batch_cost: 0.17558s, reader_cost: 0.00066, ips: 364.51655 samples/s, eta: 0:00:19
+[2026/11/20 05:41:01] ppcls INFO: [Train][Epoch 26/32][Iter: 2/16]lr(LinearWarmup): 0.00045559, CELoss: 1.74009, loss: 1.74009, batch_cost: 0.20170s, reader_cost: 0.00052, ips: 317.29509 samples/s, eta: 0:00:22
+[2026/11/20 05:41:01] ppcls INFO: [Train][Epoch 26/32][Iter: 3/16]lr(LinearWarmup): 0.00044788, CELoss: 1.69716, loss: 1.69716, batch_cost: 0.38907s, reader_cost: 0.00040, ips: 164.49581 samples/s, eta: 0:00:42
+[2026/11/20 05:41:01] ppcls INFO: [Train][Epoch 26/32][Iter: 4/16]lr(LinearWarmup): 0.00044022, CELoss: 1.93297, loss: 1.93297, batch_cost: 0.31071s, reader_cost: 0.00028, ips: 205.97783 samples/s, eta: 0:00:33
+[2026/11/20 05:41:01] ppcls INFO: [Train][Epoch 26/32][Iter: 5/16]lr(LinearWarmup): 0.00043261, CELoss: 1.77119, loss: 1.77119, batch_cost: 0.22384s, reader_cost: 0.00034, ips: 285.92065 samples/s, eta: 0:00:23
+[2026/11/20 05:41:02] ppcls INFO: [Train][Epoch 26/32][Iter: 6/16]lr(LinearWarmup): 0.00042507, CELoss: 1.92033, loss: 1.92033, batch_cost: 0.13382s, reader_cost: 0.00043, ips: 478.24480 samples/s, eta: 0:00:14
+[2026/11/20 05:41:02] ppcls INFO: [Train][Epoch 26/32][Iter: 7/16]lr(LinearWarmup): 0.00041758, CELoss: 1.90344, loss: 1.90344, batch_cost: 0.16998s, reader_cost: 0.00029, ips: 376.50949 samples/s, eta: 0:00:17
+[2026/11/20 05:41:02] ppcls INFO: [Train][Epoch 26/32][Iter: 8/16]lr(LinearWarmup): 0.00041014, CELoss: 1.80839, loss: 1.80839, batch_cost: 0.19554s, reader_cost: 0.00039, ips: 327.29246 samples/s, eta: 0:00:20
+[2026/11/20 05:41:02] ppcls INFO: [Train][Epoch 26/32][Iter: 9/16]lr(LinearWarmup): 0.00040277, CELoss: 1.88035, loss: 1.88035, batch_cost: 0.27420s, reader_cost: 0.00810, ips: 233.40712 samples/s, eta: 0:00:28
+[2026/11/20 05:41:03] ppcls INFO: [Train][Epoch 26/32][Iter: 10/16]lr(LinearWarmup): 0.00039545, CELoss: 1.91508, loss: 1.91508, batch_cost: 0.26046s, reader_cost: 0.00030, ips: 245.71966 samples/s, eta: 0:00:26
+[2026/11/20 05:41:03] ppcls INFO: [Train][Epoch 26/32][Iter: 11/16]lr(LinearWarmup): 0.00038820, CELoss: 1.93827, loss: 1.93827, batch_cost: 0.13216s, reader_cost: 0.00025, ips: 484.27829 samples/s, eta: 0:00:13
+[2026/11/20 05:41:03] ppcls INFO: [Train][Epoch 26/32][Iter: 12/16]lr(LinearWarmup): 0.00038100, CELoss: 1.98825, loss: 1.98825, batch_cost: 0.13161s, reader_cost: 0.00025, ips: 486.30052 samples/s, eta: 0:00:13
+[2026/11/20 05:41:03] ppcls INFO: [Train][Epoch 26/32][Iter: 13/16]lr(LinearWarmup): 0.00037386, CELoss: 2.01358, loss: 2.01358, batch_cost: 0.13164s, reader_cost: 0.00021, ips: 486.17545 samples/s, eta: 0:00:13
+[2026/11/20 05:41:03] ppcls INFO: [Train][Epoch 26/32][Iter: 14/16]lr(LinearWarmup): 0.00036678, CELoss: 2.02104, loss: 2.02104, batch_cost: 0.11918s, reader_cost: 0.00023, ips: 537.02235 samples/s, eta: 0:00:11
+[2026/11/20 05:41:03] ppcls INFO: [Train][Epoch 26/32][Iter: 15/16]lr(LinearWarmup): 0.00035976, CELoss: 2.02689, loss: 2.02689, batch_cost: 0.12549s, reader_cost: 0.00030, ips: 478.12775 samples/s, eta: 0:00:12
+[2026/11/20 05:41:03] ppcls INFO: [Train][Epoch 26/32][Avg]CELoss: 2.02689, loss: 2.02689
+[2026/11/20 05:41:04] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:41:04] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:41:07] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:41:08] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:41:10] ppcls INFO: [Train][Epoch 27/32][Iter: 0/16]lr(LinearWarmup): 0.00035281, CELoss: 1.25789, loss: 1.25789, batch_cost: 2.34468s, reader_cost: 1.88891, ips: 27.29579 samples/s, eta: 0:03:45
+[2026/11/20 05:41:10] ppcls INFO: [Train][Epoch 27/32][Iter: 1/16]lr(LinearWarmup): 0.00034591, CELoss: 1.63269, loss: 1.63269, batch_cost: 0.23276s, reader_cost: 0.00074, ips: 274.95885 samples/s, eta: 0:00:22
+[2026/11/20 05:41:10] ppcls INFO: [Train][Epoch 27/32][Iter: 2/16]lr(LinearWarmup): 0.00033907, CELoss: 1.42176, loss: 1.42176, batch_cost: 0.17075s, reader_cost: 0.00036, ips: 374.81929 samples/s, eta: 0:00:16
+[2026/11/20 05:41:11] ppcls INFO: [Train][Epoch 27/32][Iter: 3/16]lr(LinearWarmup): 0.00033230, CELoss: 1.58041, loss: 1.58041, batch_cost: 0.32979s, reader_cost: 0.00033, ips: 194.06044 samples/s, eta: 0:00:30
+[2026/11/20 05:41:11] ppcls INFO: [Train][Epoch 27/32][Iter: 4/16]lr(LinearWarmup): 0.00032559, CELoss: 1.50069, loss: 1.50069, batch_cost: 0.22305s, reader_cost: 0.00031, ips: 286.93011 samples/s, eta: 0:00:20
+[2026/11/20 05:41:11] ppcls INFO: [Train][Epoch 27/32][Iter: 5/16]lr(LinearWarmup): 0.00031894, CELoss: 1.60965, loss: 1.60965, batch_cost: 0.32159s, reader_cost: 0.00811, ips: 199.01016 samples/s, eta: 0:00:29
+[2026/11/20 05:41:11] ppcls INFO: [Train][Epoch 27/32][Iter: 6/16]lr(LinearWarmup): 0.00031235, CELoss: 1.76664, loss: 1.76664, batch_cost: 0.22006s, reader_cost: 0.00039, ips: 290.82742 samples/s, eta: 0:00:19
+[2026/11/20 05:41:12] ppcls INFO: [Train][Epoch 27/32][Iter: 7/16]lr(LinearWarmup): 0.00030583, CELoss: 1.69307, loss: 1.69307, batch_cost: 0.35525s, reader_cost: 0.00049, ips: 180.15706 samples/s, eta: 0:00:31
+[2026/11/20 05:41:12] ppcls INFO: [Train][Epoch 27/32][Iter: 8/16]lr(LinearWarmup): 0.00029937, CELoss: 1.72568, loss: 1.72568, batch_cost: 0.18301s, reader_cost: 0.00038, ips: 349.71021 samples/s, eta: 0:00:16
+[2026/11/20 05:41:12] ppcls INFO: [Train][Epoch 27/32][Iter: 9/16]lr(LinearWarmup): 0.00029297, CELoss: 1.68505, loss: 1.68505, batch_cost: 0.31157s, reader_cost: 0.00042, ips: 205.40868 samples/s, eta: 0:00:27
+[2026/11/20 05:41:12] ppcls INFO: [Train][Epoch 27/32][Iter: 10/16]lr(LinearWarmup): 0.00028664, CELoss: 1.72980, loss: 1.72980, batch_cost: 0.13323s, reader_cost: 0.00027, ips: 480.37669 samples/s, eta: 0:00:11
+[2026/11/20 05:41:13] ppcls INFO: [Train][Epoch 27/32][Iter: 11/16]lr(LinearWarmup): 0.00028037, CELoss: 1.77111, loss: 1.77111, batch_cost: 0.13040s, reader_cost: 0.00023, ips: 490.79328 samples/s, eta: 0:00:11
+[2026/11/20 05:41:13] ppcls INFO: [Train][Epoch 27/32][Iter: 12/16]lr(LinearWarmup): 0.00027416, CELoss: 1.79618, loss: 1.79618, batch_cost: 0.13944s, reader_cost: 0.00022, ips: 458.97151 samples/s, eta: 0:00:11
+[2026/11/20 05:41:13] ppcls INFO: [Train][Epoch 27/32][Iter: 13/16]lr(LinearWarmup): 0.00026803, CELoss: 1.84343, loss: 1.84343, batch_cost: 0.13152s, reader_cost: 0.00025, ips: 486.61612 samples/s, eta: 0:00:10
+[2026/11/20 05:41:13] ppcls INFO: [Train][Epoch 27/32][Iter: 14/16]lr(LinearWarmup): 0.00026195, CELoss: 1.86071, loss: 1.86071, batch_cost: 0.11942s, reader_cost: 0.00023, ips: 535.90200 samples/s, eta: 0:00:09
+[2026/11/20 05:41:13] ppcls INFO: [Train][Epoch 27/32][Iter: 15/16]lr(LinearWarmup): 0.00025595, CELoss: 1.87664, loss: 1.87664, batch_cost: 0.11645s, reader_cost: 0.00025, ips: 515.24122 samples/s, eta: 0:00:09
+[2026/11/20 05:41:13] ppcls INFO: [Train][Epoch 27/32][Avg]CELoss: 1.87664, loss: 1.87664
+[2026/11/20 05:41:14] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:41:14] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:41:17] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:41:17] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:41:20] ppcls INFO: [Train][Epoch 28/32][Iter: 0/16]lr(LinearWarmup): 0.00025000, CELoss: 1.91336, loss: 1.91336, batch_cost: 2.44370s, reader_cost: 2.09041, ips: 26.18974 samples/s, eta: 0:03:15
+[2026/11/20 05:41:20] ppcls INFO: [Train][Epoch 28/32][Iter: 1/16]lr(LinearWarmup): 0.00024413, CELoss: 1.87955, loss: 1.87955, batch_cost: 0.15993s, reader_cost: 0.00077, ips: 400.16257 samples/s, eta: 0:00:12
+[2026/11/20 05:41:20] ppcls INFO: [Train][Epoch 28/32][Iter: 2/16]lr(LinearWarmup): 0.00023832, CELoss: 2.12475, loss: 2.12475, batch_cost: 0.30642s, reader_cost: 0.00044, ips: 208.86197 samples/s, eta: 0:00:23
+[2026/11/20 05:41:20] ppcls INFO: [Train][Epoch 28/32][Iter: 3/16]lr(LinearWarmup): 0.00023258, CELoss: 2.21709, loss: 2.21709, batch_cost: 0.19190s, reader_cost: 0.00794, ips: 333.49914 samples/s, eta: 0:00:14
+[2026/11/20 05:41:20] ppcls INFO: [Train][Epoch 28/32][Iter: 4/16]lr(LinearWarmup): 0.00022691, CELoss: 2.19026, loss: 2.19026, batch_cost: 0.15507s, reader_cost: 0.00034, ips: 412.71349 samples/s, eta: 0:00:11
+[2026/11/20 05:41:21] ppcls INFO: [Train][Epoch 28/32][Iter: 5/16]lr(LinearWarmup): 0.00022130, CELoss: 2.00772, loss: 2.00772, batch_cost: 0.16717s, reader_cost: 0.00035, ips: 382.85244 samples/s, eta: 0:00:12
+[2026/11/20 05:41:21] ppcls INFO: [Train][Epoch 28/32][Iter: 6/16]lr(LinearWarmup): 0.00021576, CELoss: 2.02596, loss: 2.02596, batch_cost: 0.34569s, reader_cost: 0.00038, ips: 185.13582 samples/s, eta: 0:00:25
+[2026/11/20 05:41:21] ppcls INFO: [Train][Epoch 28/32][Iter: 7/16]lr(LinearWarmup): 0.00021029, CELoss: 2.04340, loss: 2.04340, batch_cost: 0.16569s, reader_cost: 0.00698, ips: 386.25696 samples/s, eta: 0:00:12
+[2026/11/20 05:41:21] ppcls INFO: [Train][Epoch 28/32][Iter: 8/16]lr(LinearWarmup): 0.00020489, CELoss: 2.06748, loss: 2.06748, batch_cost: 0.30424s, reader_cost: 0.00031, ips: 210.35992 samples/s, eta: 0:00:21
+[2026/11/20 05:41:22] ppcls INFO: [Train][Epoch 28/32][Iter: 9/16]lr(LinearWarmup): 0.00019956, CELoss: 1.96790, loss: 1.96790, batch_cost: 0.17780s, reader_cost: 0.00823, ips: 359.95802 samples/s, eta: 0:00:12
+[2026/11/20 05:41:22] ppcls INFO: [Train][Epoch 28/32][Iter: 10/16]lr(LinearWarmup): 0.00019429, CELoss: 1.92857, loss: 1.92857, batch_cost: 0.17870s, reader_cost: 0.00025, ips: 358.14268 samples/s, eta: 0:00:12
+[2026/11/20 05:41:22] ppcls INFO: [Train][Epoch 28/32][Iter: 11/16]lr(LinearWarmup): 0.00018910, CELoss: 1.94041, loss: 1.94041, batch_cost: 0.13074s, reader_cost: 0.00024, ips: 489.51878 samples/s, eta: 0:00:09
+[2026/11/20 05:41:22] ppcls INFO: [Train][Epoch 28/32][Iter: 12/16]lr(LinearWarmup): 0.00018397, CELoss: 1.86804, loss: 1.86804, batch_cost: 0.13170s, reader_cost: 0.00028, ips: 485.96686 samples/s, eta: 0:00:08
+[2026/11/20 05:41:22] ppcls INFO: [Train][Epoch 28/32][Iter: 13/16]lr(LinearWarmup): 0.00017892, CELoss: 1.89132, loss: 1.89132, batch_cost: 0.13156s, reader_cost: 0.00022, ips: 486.48119 samples/s, eta: 0:00:08
+[2026/11/20 05:41:22] ppcls INFO: [Train][Epoch 28/32][Iter: 14/16]lr(LinearWarmup): 0.00017393, CELoss: 1.89216, loss: 1.89216, batch_cost: 0.11906s, reader_cost: 0.00023, ips: 537.52669 samples/s, eta: 0:00:07
+[2026/11/20 05:41:22] ppcls INFO: [Train][Epoch 28/32][Iter: 15/16]lr(LinearWarmup): 0.00016902, CELoss: 1.92097, loss: 1.92097, batch_cost: 0.12717s, reader_cost: 0.00027, ips: 471.79226 samples/s, eta: 0:00:08
+[2026/11/20 05:41:22] ppcls INFO: [Train][Epoch 28/32][Avg]CELoss: 1.92097, loss: 1.92097
+[2026/11/20 05:41:23] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:41:23] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:41:26] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:41:27] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:41:29] ppcls INFO: [Train][Epoch 29/32][Iter: 0/16]lr(LinearWarmup): 0.00016418, CELoss: 2.05902, loss: 2.05902, batch_cost: 2.42169s, reader_cost: 2.13043, ips: 26.42781 samples/s, eta: 0:02:34
+[2026/11/20 05:41:30] ppcls INFO: [Train][Epoch 29/32][Iter: 1/16]lr(LinearWarmup): 0.00015940, CELoss: 2.10996, loss: 2.10996, batch_cost: 0.20321s, reader_cost: 0.00056, ips: 314.95271 samples/s, eta: 0:00:12
+[2026/11/20 05:41:30] ppcls INFO: [Train][Epoch 29/32][Iter: 2/16]lr(LinearWarmup): 0.00015470, CELoss: 1.90250, loss: 1.90250, batch_cost: 0.15490s, reader_cost: 0.00043, ips: 413.17595 samples/s, eta: 0:00:09
+[2026/11/20 05:41:30] ppcls INFO: [Train][Epoch 29/32][Iter: 3/16]lr(LinearWarmup): 0.00015007, CELoss: 1.67407, loss: 1.67407, batch_cost: 0.24461s, reader_cost: 0.00034, ips: 261.64065 samples/s, eta: 0:00:14
+[2026/11/20 05:41:30] ppcls INFO: [Train][Epoch 29/32][Iter: 4/16]lr(LinearWarmup): 0.00014551, CELoss: 1.74667, loss: 1.74667, batch_cost: 0.25212s, reader_cost: 0.00053, ips: 253.84592 samples/s, eta: 0:00:15
+[2026/11/20 05:41:31] ppcls INFO: [Train][Epoch 29/32][Iter: 5/16]lr(LinearWarmup): 0.00014102, CELoss: 1.72951, loss: 1.72951, batch_cost: 0.30168s, reader_cost: 0.00047, ips: 212.14777 samples/s, eta: 0:00:17
+[2026/11/20 05:41:31] ppcls INFO: [Train][Epoch 29/32][Iter: 6/16]lr(LinearWarmup): 0.00013661, CELoss: 1.75224, loss: 1.75224, batch_cost: 0.28720s, reader_cost: 0.00047, ips: 222.84106 samples/s, eta: 0:00:16
+[2026/11/20 05:41:31] ppcls INFO: [Train][Epoch 29/32][Iter: 7/16]lr(LinearWarmup): 0.00013227, CELoss: 1.67566, loss: 1.67566, batch_cost: 0.22919s, reader_cost: 0.00276, ips: 279.24300 samples/s, eta: 0:00:13
+[2026/11/20 05:41:31] ppcls INFO: [Train][Epoch 29/32][Iter: 8/16]lr(LinearWarmup): 0.00012800, CELoss: 1.67853, loss: 1.67853, batch_cost: 0.21036s, reader_cost: 0.00058, ips: 304.24373 samples/s, eta: 0:00:11
+[2026/11/20 05:41:32] ppcls INFO: [Train][Epoch 29/32][Iter: 9/16]lr(LinearWarmup): 0.00012380, CELoss: 1.64048, loss: 1.64048, batch_cost: 0.21438s, reader_cost: 0.00034, ips: 298.52897 samples/s, eta: 0:00:11
+[2026/11/20 05:41:32] ppcls INFO: [Train][Epoch 29/32][Iter: 10/16]lr(LinearWarmup): 0.00011968, CELoss: 1.66506, loss: 1.66506, batch_cost: 0.17467s, reader_cost: 0.00036, ips: 366.40626 samples/s, eta: 0:00:09
+[2026/11/20 05:41:32] ppcls INFO: [Train][Epoch 29/32][Iter: 11/16]lr(LinearWarmup): 0.00011563, CELoss: 1.74840, loss: 1.74840, batch_cost: 0.13266s, reader_cost: 0.00025, ips: 482.44096 samples/s, eta: 0:00:07
+[2026/11/20 05:41:32] ppcls INFO: [Train][Epoch 29/32][Iter: 12/16]lr(LinearWarmup): 0.00011165, CELoss: 1.82070, loss: 1.82070, batch_cost: 0.13163s, reader_cost: 0.00026, ips: 486.20892 samples/s, eta: 0:00:06
+[2026/11/20 05:41:32] ppcls INFO: [Train][Epoch 29/32][Iter: 13/16]lr(LinearWarmup): 0.00010774, CELoss: 1.84265, loss: 1.84265, batch_cost: 0.13199s, reader_cost: 0.00023, ips: 484.89852 samples/s, eta: 0:00:06
+[2026/11/20 05:41:32] ppcls INFO: [Train][Epoch 29/32][Iter: 14/16]lr(LinearWarmup): 0.00010392, CELoss: 1.87611, loss: 1.87611, batch_cost: 0.11967s, reader_cost: 0.00026, ips: 534.82148 samples/s, eta: 0:00:05
+[2026/11/20 05:41:32] ppcls INFO: [Train][Epoch 29/32][Iter: 15/16]lr(LinearWarmup): 0.00010016, CELoss: 1.89357, loss: 1.89357, batch_cost: 0.12973s, reader_cost: 0.00023, ips: 462.49229 samples/s, eta: 0:00:06
+[2026/11/20 05:41:32] ppcls INFO: [Train][Epoch 29/32][Avg]CELoss: 1.89357, loss: 1.89357
+[2026/11/20 05:41:33] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:41:33] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:41:36] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:41:37] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:41:39] ppcls INFO: [Train][Epoch 30/32][Iter: 0/16]lr(LinearWarmup): 0.00009648, CELoss: 1.85443, loss: 1.85443, batch_cost: 2.48371s, reader_cost: 2.09506, ips: 25.76789 samples/s, eta: 0:01:59
+[2026/11/20 05:41:40] ppcls INFO: [Train][Epoch 30/32][Iter: 1/16]lr(LinearWarmup): 0.00009287, CELoss: 1.59453, loss: 1.59453, batch_cost: 0.23541s, reader_cost: 0.00064, ips: 271.87109 samples/s, eta: 0:00:11
+[2026/11/20 05:41:40] ppcls INFO: [Train][Epoch 30/32][Iter: 2/16]lr(LinearWarmup): 0.00008934, CELoss: 1.77118, loss: 1.77118, batch_cost: 0.31364s, reader_cost: 0.00034, ips: 204.05398 samples/s, eta: 0:00:14
+[2026/11/20 05:41:40] ppcls INFO: [Train][Epoch 30/32][Iter: 3/16]lr(LinearWarmup): 0.00008588, CELoss: 1.95389, loss: 1.95389, batch_cost: 0.21233s, reader_cost: 0.00046, ips: 301.42186 samples/s, eta: 0:00:09
+[2026/11/20 05:41:41] ppcls INFO: [Train][Epoch 30/32][Iter: 4/16]lr(LinearWarmup): 0.00008250, CELoss: 1.78668, loss: 1.78668, batch_cost: 0.32458s, reader_cost: 0.00036, ips: 197.17502 samples/s, eta: 0:00:14
+[2026/11/20 05:41:41] ppcls INFO: [Train][Epoch 30/32][Iter: 5/16]lr(LinearWarmup): 0.00007919, CELoss: 1.85705, loss: 1.85705, batch_cost: 0.28345s, reader_cost: 0.01387, ips: 225.79232 samples/s, eta: 0:00:12
+[2026/11/20 05:41:41] ppcls INFO: [Train][Epoch 30/32][Iter: 6/16]lr(LinearWarmup): 0.00007596, CELoss: 1.88005, loss: 1.88005, batch_cost: 0.13315s, reader_cost: 0.00039, ips: 480.66829 samples/s, eta: 0:00:05
+[2026/11/20 05:41:41] ppcls INFO: [Train][Epoch 30/32][Iter: 7/16]lr(LinearWarmup): 0.00007281, CELoss: 1.82352, loss: 1.82352, batch_cost: 0.21053s, reader_cost: 0.00041, ips: 303.99427 samples/s, eta: 0:00:08
+[2026/11/20 05:41:41] ppcls INFO: [Train][Epoch 30/32][Iter: 8/16]lr(LinearWarmup): 0.00006973, CELoss: 1.90255, loss: 1.90255, batch_cost: 0.13226s, reader_cost: 0.00055, ips: 483.89418 samples/s, eta: 0:00:05
+[2026/11/20 05:41:42] ppcls INFO: [Train][Epoch 30/32][Iter: 9/16]lr(LinearWarmup): 0.00006672, CELoss: 1.99461, loss: 1.99461, batch_cost: 0.29336s, reader_cost: 0.00828, ips: 218.15862 samples/s, eta: 0:00:11
+[2026/11/20 05:41:42] ppcls INFO: [Train][Epoch 30/32][Iter: 10/16]lr(LinearWarmup): 0.00006379, CELoss: 1.97772, loss: 1.97772, batch_cost: 0.29668s, reader_cost: 0.00046, ips: 215.71702 samples/s, eta: 0:00:11
+[2026/11/20 05:41:42] ppcls INFO: [Train][Epoch 30/32][Iter: 11/16]lr(LinearWarmup): 0.00006094, CELoss: 1.95025, loss: 1.95025, batch_cost: 0.13248s, reader_cost: 0.00029, ips: 483.10256 samples/s, eta: 0:00:04
+[2026/11/20 05:41:42] ppcls INFO: [Train][Epoch 30/32][Iter: 12/16]lr(LinearWarmup): 0.00005817, CELoss: 1.98490, loss: 1.98490, batch_cost: 0.13276s, reader_cost: 0.00027, ips: 482.08746 samples/s, eta: 0:00:04
+[2026/11/20 05:41:42] ppcls INFO: [Train][Epoch 30/32][Iter: 13/16]lr(LinearWarmup): 0.00005547, CELoss: 1.98418, loss: 1.98418, batch_cost: 0.13112s, reader_cost: 0.00026, ips: 488.10174 samples/s, eta: 0:00:04
+[2026/11/20 05:41:42] ppcls INFO: [Train][Epoch 30/32][Iter: 14/16]lr(LinearWarmup): 0.00005284, CELoss: 2.01238, loss: 2.01238, batch_cost: 0.11916s, reader_cost: 0.00021, ips: 537.09864 samples/s, eta: 0:00:04
+[2026/11/20 05:41:43] ppcls INFO: [Train][Epoch 30/32][Iter: 15/16]lr(LinearWarmup): 0.00005030, CELoss: 2.04483, loss: 2.04483, batch_cost: 0.12764s, reader_cost: 0.00026, ips: 470.06414 samples/s, eta: 0:00:04
+[2026/11/20 05:41:43] ppcls INFO: [Train][Epoch 30/32][Avg]CELoss: 2.04483, loss: 2.04483
+[2026/11/20 05:41:43] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:41:43] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:41:46] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:41:47] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:41:49] ppcls INFO: [Train][Epoch 31/32][Iter: 0/16]lr(LinearWarmup): 0.00004783, CELoss: 0.93330, loss: 0.93330, batch_cost: 2.21124s, reader_cost: 1.88555, ips: 28.94301 samples/s, eta: 0:01:10
+[2026/11/20 05:41:49] ppcls INFO: [Train][Epoch 31/32][Iter: 1/16]lr(LinearWarmup): 0.00004544, CELoss: 0.94269, loss: 0.94269, batch_cost: 0.39149s, reader_cost: 0.15995, ips: 163.47800 samples/s, eta: 0:00:12
+[2026/11/20 05:41:50] ppcls INFO: [Train][Epoch 31/32][Iter: 2/16]lr(LinearWarmup): 0.00004312, CELoss: 1.54381, loss: 1.54381, batch_cost: 0.28271s, reader_cost: 0.00805, ips: 226.37995 samples/s, eta: 0:00:08
+[2026/11/20 05:41:50] ppcls INFO: [Train][Epoch 31/32][Iter: 3/16]lr(LinearWarmup): 0.00004089, CELoss: 1.41152, loss: 1.41152, batch_cost: 0.13498s, reader_cost: 0.00037, ips: 474.13356 samples/s, eta: 0:00:03
+[2026/11/20 05:41:50] ppcls INFO: [Train][Epoch 31/32][Iter: 4/16]lr(LinearWarmup): 0.00003873, CELoss: 1.36865, loss: 1.36865, batch_cost: 0.27713s, reader_cost: 0.00033, ips: 230.93526 samples/s, eta: 0:00:07
+[2026/11/20 05:41:50] ppcls INFO: [Train][Epoch 31/32][Iter: 5/16]lr(LinearWarmup): 0.00003664, CELoss: 1.47542, loss: 1.47542, batch_cost: 0.20092s, reader_cost: 0.00051, ips: 318.53835 samples/s, eta: 0:00:05
+[2026/11/20 05:41:51] ppcls INFO: [Train][Epoch 31/32][Iter: 6/16]lr(LinearWarmup): 0.00003464, CELoss: 1.55512, loss: 1.55512, batch_cost: 0.23517s, reader_cost: 0.00038, ips: 272.14838 samples/s, eta: 0:00:06
+[2026/11/20 05:41:51] ppcls INFO: [Train][Epoch 31/32][Iter: 7/16]lr(LinearWarmup): 0.00003271, CELoss: 1.48653, loss: 1.48653, batch_cost: 0.20567s, reader_cost: 0.00806, ips: 311.17684 samples/s, eta: 0:00:05
+[2026/11/20 05:41:51] ppcls INFO: [Train][Epoch 31/32][Iter: 8/16]lr(LinearWarmup): 0.00003086, CELoss: 1.52738, loss: 1.52738, batch_cost: 0.25474s, reader_cost: 0.00035, ips: 251.23209 samples/s, eta: 0:00:06
+[2026/11/20 05:41:51] ppcls INFO: [Train][Epoch 31/32][Iter: 9/16]lr(LinearWarmup): 0.00002909, CELoss: 1.47565, loss: 1.47565, batch_cost: 0.23622s, reader_cost: 0.01060, ips: 270.93948 samples/s, eta: 0:00:05
+[2026/11/20 05:41:51] ppcls INFO: [Train][Epoch 31/32][Iter: 10/16]lr(LinearWarmup): 0.00002740, CELoss: 1.45671, loss: 1.45671, batch_cost: 0.15191s, reader_cost: 0.00036, ips: 421.30058 samples/s, eta: 0:00:03
+[2026/11/20 05:41:52] ppcls INFO: [Train][Epoch 31/32][Iter: 11/16]lr(LinearWarmup): 0.00002578, CELoss: 1.49805, loss: 1.49805, batch_cost: 0.13245s, reader_cost: 0.00026, ips: 483.21127 samples/s, eta: 0:00:02
+[2026/11/20 05:41:52] ppcls INFO: [Train][Epoch 31/32][Iter: 12/16]lr(LinearWarmup): 0.00002425, CELoss: 1.52659, loss: 1.52659, batch_cost: 0.13350s, reader_cost: 0.00025, ips: 479.40724 samples/s, eta: 0:00:02
+[2026/11/20 05:41:52] ppcls INFO: [Train][Epoch 31/32][Iter: 13/16]lr(LinearWarmup): 0.00002279, CELoss: 1.56309, loss: 1.56309, batch_cost: 0.13171s, reader_cost: 0.00023, ips: 485.93079 samples/s, eta: 0:00:02
+[2026/11/20 05:41:52] ppcls INFO: [Train][Epoch 31/32][Iter: 14/16]lr(LinearWarmup): 0.00002141, CELoss: 1.59259, loss: 1.59259, batch_cost: 0.11956s, reader_cost: 0.00023, ips: 535.30248 samples/s, eta: 0:00:02
+[2026/11/20 05:41:52] ppcls INFO: [Train][Epoch 31/32][Iter: 15/16]lr(LinearWarmup): 0.00002011, CELoss: 1.64462, loss: 1.64462, batch_cost: 0.12676s, reader_cost: 0.00025, ips: 473.35233 samples/s, eta: 0:00:02
+[2026/11/20 05:41:52] ppcls INFO: [Train][Epoch 31/32][Avg]CELoss: 1.64462, loss: 1.64462
+[2026/11/20 05:41:53] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:41:53] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:41:56] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:41:57] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+[2026/11/20 05:41:59] ppcls INFO: [Train][Epoch 32/32][Iter: 0/16]lr(LinearWarmup): 0.00001889, CELoss: 2.61950, loss: 2.61950, batch_cost: 2.31457s, reader_cost: 1.98242, ips: 27.65091 samples/s, eta: 0:00:37
+[2026/11/20 05:41:59] ppcls INFO: [Train][Epoch 32/32][Iter: 1/16]lr(LinearWarmup): 0.00001774, CELoss: 2.49004, loss: 2.49004, batch_cost: 0.24956s, reader_cost: 0.00059, ips: 256.45050 samples/s, eta: 0:00:03
+[2026/11/20 05:41:59] ppcls INFO: [Train][Epoch 32/32][Iter: 2/16]lr(LinearWarmup): 0.00001668, CELoss: 2.16566, loss: 2.16566, batch_cost: 0.26440s, reader_cost: 0.00054, ips: 242.06076 samples/s, eta: 0:00:03
+[2026/11/20 05:42:00] ppcls INFO: [Train][Epoch 32/32][Iter: 3/16]lr(LinearWarmup): 0.00001569, CELoss: 1.97871, loss: 1.97871, batch_cost: 0.30895s, reader_cost: 0.00039, ips: 207.15617 samples/s, eta: 0:00:04
+[2026/11/20 05:42:00] ppcls INFO: [Train][Epoch 32/32][Iter: 4/16]lr(LinearWarmup): 0.00001478, CELoss: 2.03890, loss: 2.03890, batch_cost: 0.32937s, reader_cost: 0.00801, ips: 194.31132 samples/s, eta: 0:00:03
+[2026/11/20 05:42:00] ppcls INFO: [Train][Epoch 32/32][Iter: 5/16]lr(LinearWarmup): 0.00001395, CELoss: 2.05098, loss: 2.05098, batch_cost: 0.22314s, reader_cost: 0.00030, ips: 286.80993 samples/s, eta: 0:00:02
+[2026/11/20 05:42:00] ppcls INFO: [Train][Epoch 32/32][Iter: 6/16]lr(LinearWarmup): 0.00001320, CELoss: 2.10579, loss: 2.10579, batch_cost: 0.13351s, reader_cost: 0.00036, ips: 479.35502 samples/s, eta: 0:00:01
+[2026/11/20 05:42:01] ppcls INFO: [Train][Epoch 32/32][Iter: 7/16]lr(LinearWarmup): 0.00001253, CELoss: 2.04873, loss: 2.04873, batch_cost: 0.20091s, reader_cost: 0.00038, ips: 318.54402 samples/s, eta: 0:00:01
+[2026/11/20 05:42:01] ppcls INFO: [Train][Epoch 32/32][Iter: 8/16]lr(LinearWarmup): 0.00001194, CELoss: 2.08455, loss: 2.08455, batch_cost: 0.13269s, reader_cost: 0.00034, ips: 482.31700 samples/s, eta: 0:00:01
+[2026/11/20 05:42:01] ppcls INFO: [Train][Epoch 32/32][Iter: 9/16]lr(LinearWarmup): 0.00001142, CELoss: 1.99787, loss: 1.99787, batch_cost: 0.21401s, reader_cost: 0.00804, ips: 299.04811 samples/s, eta: 0:00:01
+[2026/11/20 05:42:01] ppcls INFO: [Train][Epoch 32/32][Iter: 10/16]lr(LinearWarmup): 0.00001099, CELoss: 1.93167, loss: 1.93167, batch_cost: 0.26910s, reader_cost: 0.00030, ips: 237.82605 samples/s, eta: 0:00:01
+[2026/11/20 05:42:01] ppcls INFO: [Train][Epoch 32/32][Iter: 11/16]lr(LinearWarmup): 0.00001063, CELoss: 1.93208, loss: 1.93208, batch_cost: 0.13283s, reader_cost: 0.00026, ips: 481.82786 samples/s, eta: 0:00:00
+[2026/11/20 05:42:01] ppcls INFO: [Train][Epoch 32/32][Iter: 12/16]lr(LinearWarmup): 0.00001036, CELoss: 1.85978, loss: 1.85978, batch_cost: 0.13195s, reader_cost: 0.00026, ips: 485.03169 samples/s, eta: 0:00:00
+[2026/11/20 05:42:02] ppcls INFO: [Train][Epoch 32/32][Iter: 13/16]lr(LinearWarmup): 0.00001016, CELoss: 1.91606, loss: 1.91606, batch_cost: 0.13157s, reader_cost: 0.00026, ips: 486.43006 samples/s, eta: 0:00:00
+[2026/11/20 05:42:02] ppcls INFO: [Train][Epoch 32/32][Iter: 14/16]lr(LinearWarmup): 0.00001004, CELoss: 1.92721, loss: 1.92721, batch_cost: 0.11928s, reader_cost: 0.00025, ips: 536.56614 samples/s, eta: 0:00:00
+[2026/11/20 05:42:02] ppcls INFO: [Train][Epoch 32/32][Iter: 15/16]lr(LinearWarmup): 0.00001000, CELoss: 1.93139, loss: 1.93139, batch_cost: 0.13245s, reader_cost: 0.00025, ips: 453.00975 samples/s, eta: 0:00:00
+[2026/11/20 05:42:02] ppcls INFO: [Train][Epoch 32/32][Avg]CELoss: 1.93139, loss: 1.93139
+[2026/11/20 05:42:02] ppcls INFO: Already save model in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/latest
+[2026/11/20 05:42:03] ppcls INFO: Export inference config file to /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference.yml
+[2026/11/20 05:42:06] ppcls INFO: Export succeeded! The inference model exported has been saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:42:06] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest
+en saved in "/data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest/inference/inference".
+[2026/11/20 05:42:06] ppcls INFO: Already save model info in /data/Baidu_HIT_CiNN/starnet_s4/results/cinn-train/latest

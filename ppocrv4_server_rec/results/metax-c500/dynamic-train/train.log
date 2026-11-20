@@ -1,0 +1,240 @@
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[33mSkip checking if model is supported on device because the flag `PADDLE_PDX_DISABLE_DEV_MODEL_WL` has been set.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 07:44:11.495602 1332077 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 07:44:11.495631 1332077 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 07:44:11.495721 1332077 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 07:44:11.496053 1332077 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 07:44:11.496503 1332077 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 07:44:11.750530 1332077 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 07:44:11.750547 1332077 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 07:44:11.890354 1332077 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 07:44:17.898411 1332077 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 07:44:17.898437 1332077 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 07:44:17.907275 1332077 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 07:44:17.907682 1332077 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 07:44:17.907717 1332077 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+[32m['/opt/conda/envs/metax/bin/python', 'tools/train.py', '-c', '/root/.paddlex/tmp2xb3hifb/textrecmodel_PP-OCRv4_server_rec.yml'][0m
+[32m
+Log path: /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/train.log 
+[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 07:44:18.738706 1332284 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 07:44:18.738734 1332284 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 07:44:18.738814 1332284 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 07:44:18.739177 1332284 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 07:44:18.739758 1332284 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 07:44:19.129741 1332284 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 07:44:19.129755 1332284 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 07:44:19.263063 1332284 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 07:44:25.366901 1332284 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 07:44:25.366936 1332284 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 07:44:25.383037 1332284 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 07:44:25.383474 1332284 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 07:44:25.383514 1332284 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+Skipping import of the encryption module.
+[2026/11/20 07:44:29] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/11/20 07:44:29] ppocr INFO: Architecture : 
+[2026/11/20 07:44:29] ppocr INFO:     Backbone : 
+[2026/11/20 07:44:29] ppocr INFO:         name : PPHGNet_small
+[2026/11/20 07:44:29] ppocr INFO:     Head : 
+[2026/11/20 07:44:29] ppocr INFO:         head_list : 
+[2026/11/20 07:44:29] ppocr INFO:             CTCHead : 
+[2026/11/20 07:44:29] ppocr INFO:                 Head : 
+[2026/11/20 07:44:29] ppocr INFO:                     fc_decay : 1e-05
+[2026/11/20 07:44:29] ppocr INFO:                 Neck : 
+[2026/11/20 07:44:29] ppocr INFO:                     depth : 2
+[2026/11/20 07:44:29] ppocr INFO:                     dims : 120
+[2026/11/20 07:44:29] ppocr INFO:                     hidden_dims : 120
+[2026/11/20 07:44:29] ppocr INFO:                     kernel_size : [1, 3]
+[2026/11/20 07:44:29] ppocr INFO:                     name : svtr
+[2026/11/20 07:44:29] ppocr INFO:                     use_guide : True
+[2026/11/20 07:44:29] ppocr INFO:             NRTRHead : 
+[2026/11/20 07:44:29] ppocr INFO:                 max_text_length : 25
+[2026/11/20 07:44:29] ppocr INFO:                 nrtr_dim : 384
+[2026/11/20 07:44:29] ppocr INFO:         name : MultiHead
+[2026/11/20 07:44:29] ppocr INFO:     Transform : None
+[2026/11/20 07:44:29] ppocr INFO:     algorithm : SVTR_HGNet
+[2026/11/20 07:44:29] ppocr INFO:     model_type : rec
+[2026/11/20 07:44:29] ppocr INFO: Eval : 
+[2026/11/20 07:44:29] ppocr INFO:     dataset : 
+[2026/11/20 07:44:29] ppocr INFO:         data_dir : /data/paddlex_train/datasets/ocr_rec_dataset_examples
+[2026/11/20 07:44:29] ppocr INFO:         label_file_list : ['/data/paddlex_train/datasets/ocr_rec_dataset_examples/val.txt']
+[2026/11/20 07:44:29] ppocr INFO:         name : TextRecDataset
+[2026/11/20 07:44:29] ppocr INFO:         transforms : 
+[2026/11/20 07:44:29] ppocr INFO:             DecodeImage : 
+[2026/11/20 07:44:29] ppocr INFO:                 channel_first : False
+[2026/11/20 07:44:29] ppocr INFO:                 img_mode : BGR
+[2026/11/20 07:44:29] ppocr INFO:             MultiLabelEncode : 
+[2026/11/20 07:44:29] ppocr INFO:                 gtc_encode : NRTRLabelEncode
+[2026/11/20 07:44:29] ppocr INFO:             RecResizeImg : 
+[2026/11/20 07:44:29] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/11/20 07:44:29] ppocr INFO:             KeepKeys : 
+[2026/11/20 07:44:29] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_gtc', 'length', 'valid_ratio']
+[2026/11/20 07:44:29] ppocr INFO:     loader : 
+[2026/11/20 07:44:29] ppocr INFO:         batch_size_per_card : 8
+[2026/11/20 07:44:29] ppocr INFO:         drop_last : False
+[2026/11/20 07:44:29] ppocr INFO:         num_workers : 4
+[2026/11/20 07:44:29] ppocr INFO:         shuffle : False
+[2026/11/20 07:44:29] ppocr INFO: Global : 
+[2026/11/20 07:44:29] ppocr INFO:     amp_level : OFF
+[2026/11/20 07:44:29] ppocr INFO:     cal_metric_during_train : True
+[2026/11/20 07:44:29] ppocr INFO:     character_dict_path : /data/paddlex_train/datasets/ocr_rec_dataset_examples/dict.txt
+[2026/11/20 07:44:29] ppocr INFO:     checkpoints : 
+[2026/11/20 07:44:29] ppocr INFO:     d2s_train_image_shape : [3, 48, 320]
+[2026/11/20 07:44:29] ppocr INFO:     debug : False
+[2026/11/20 07:44:29] ppocr INFO:     distributed : False
+[2026/11/20 07:44:29] ppocr INFO:     epoch_num : 1
+[2026/11/20 07:44:29] ppocr INFO:     eval_batch_epoch : 1
+[2026/11/20 07:44:29] ppocr INFO:     eval_batch_step : [0, 2000]
+[2026/11/20 07:44:29] ppocr INFO:     export_with_pir : True
+[2026/11/20 07:44:29] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2026/11/20 07:44:29] ppocr INFO:     infer_mode : False
+[2026/11/20 07:44:29] ppocr INFO:     log_smooth_window : 20
+[2026/11/20 07:44:29] ppocr INFO:     max_text_length : 25
+[2026/11/20 07:44:29] ppocr INFO:     model_name : PP-OCRv4_server_rec
+[2026/11/20 07:44:29] ppocr INFO:     pretrained_model : https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv4_server_rec_pretrained.pdparams
+[2026/11/20 07:44:29] ppocr INFO:     print_batch_step : 20
+[2026/11/20 07:44:29] ppocr INFO:     save_epoch_step : 1
+[2026/11/20 07:44:29] ppocr INFO:     save_inference_dir : None
+[2026/11/20 07:44:29] ppocr INFO:     save_model_dir : /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train
+[2026/11/20 07:44:29] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3.txt
+[2026/11/20 07:44:29] ppocr INFO:     to_static : False
+[2026/11/20 07:44:29] ppocr INFO:     uniform_output_enabled : True
+[2026/11/20 07:44:29] ppocr INFO:     use_amp : False
+[2026/11/20 07:44:29] ppocr INFO:     use_gcu : False
+[2026/11/20 07:44:29] ppocr INFO:     use_gpu : False
+[2026/11/20 07:44:29] ppocr INFO:     use_iluvatar_gpu : False
+[2026/11/20 07:44:29] ppocr INFO:     use_metax_gpu : True
+[2026/11/20 07:44:29] ppocr INFO:     use_mlu : False
+[2026/11/20 07:44:29] ppocr INFO:     use_npu : False
+[2026/11/20 07:44:29] ppocr INFO:     use_space_char : True
+[2026/11/20 07:44:29] ppocr INFO:     use_visualdl : True
+[2026/11/20 07:44:29] ppocr INFO:     use_xpu : False
+[2026/11/20 07:44:29] ppocr INFO: Loss : 
+[2026/11/20 07:44:29] ppocr INFO:     loss_config_list : 
+[2026/11/20 07:44:29] ppocr INFO:         CTCLoss : None
+[2026/11/20 07:44:29] ppocr INFO:         NRTRLoss : None
+[2026/11/20 07:44:29] ppocr INFO:     name : MultiLoss
+[2026/11/20 07:44:29] ppocr INFO: Metric : 
+[2026/11/20 07:44:29] ppocr INFO:     main_indicator : acc
+[2026/11/20 07:44:29] ppocr INFO:     name : RecMetric
+[2026/11/20 07:44:29] ppocr INFO: Optimizer : 
+[2026/11/20 07:44:29] ppocr INFO:     beta1 : 0.9
+[2026/11/20 07:44:29] ppocr INFO:     beta2 : 0.999
+[2026/11/20 07:44:29] ppocr INFO:     lr : 
+[2026/11/20 07:44:29] ppocr INFO:         learning_rate : 0.001
+[2026/11/20 07:44:29] ppocr INFO:         name : Cosine
+[2026/11/20 07:44:29] ppocr INFO:         warmup_epoch : 5
+[2026/11/20 07:44:29] ppocr INFO:     name : Adam
+[2026/11/20 07:44:29] ppocr INFO:     regularizer : 
+[2026/11/20 07:44:29] ppocr INFO:         factor : 3e-05
+[2026/11/20 07:44:29] ppocr INFO:         name : L2
+[2026/11/20 07:44:29] ppocr INFO: PostProcess : 
+[2026/11/20 07:44:29] ppocr INFO:     name : CTCLabelDecode
+[2026/11/20 07:44:29] ppocr INFO: Train : 
+[2026/11/20 07:44:29] ppocr INFO:     dataset : 
+[2026/11/20 07:44:29] ppocr INFO:         data_dir : /data/paddlex_train/datasets/ocr_rec_dataset_examples
+[2026/11/20 07:44:29] ppocr INFO:         ds_width : False
+[2026/11/20 07:44:29] ppocr INFO:         ext_op_transform_idx : 1
+[2026/11/20 07:44:29] ppocr INFO:         label_file_list : ['/data/paddlex_train/datasets/ocr_rec_dataset_examples/train.txt']
+[2026/11/20 07:44:29] ppocr INFO:         name : MSTextRecDataset
+[2026/11/20 07:44:29] ppocr INFO:         transforms : 
+[2026/11/20 07:44:29] ppocr INFO:             DecodeImage : 
+[2026/11/20 07:44:29] ppocr INFO:                 channel_first : False
+[2026/11/20 07:44:29] ppocr INFO:                 img_mode : BGR
+[2026/11/20 07:44:29] ppocr INFO:             RecConAug : 
+[2026/11/20 07:44:29] ppocr INFO:                 ext_data_num : 2
+[2026/11/20 07:44:29] ppocr INFO:                 image_shape : [48, 320, 3]
+[2026/11/20 07:44:29] ppocr INFO:                 max_text_length : 25
+[2026/11/20 07:44:29] ppocr INFO:                 prob : 0.5
+[2026/11/20 07:44:29] ppocr INFO:             RecAug : None
+[2026/11/20 07:44:29] ppocr INFO:             MultiLabelEncode : 
+[2026/11/20 07:44:29] ppocr INFO:                 gtc_encode : NRTRLabelEncode
+[2026/11/20 07:44:29] ppocr INFO:             KeepKeys : 
+[2026/11/20 07:44:29] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_gtc', 'length', 'valid_ratio']
+[2026/11/20 07:44:29] ppocr INFO:     loader : 
+[2026/11/20 07:44:29] ppocr INFO:         batch_size_per_card : 8
+[2026/11/20 07:44:29] ppocr INFO:         drop_last : True
+[2026/11/20 07:44:29] ppocr INFO:         num_workers : 8
+[2026/11/20 07:44:29] ppocr INFO:         shuffle : True
+[2026/11/20 07:44:29] ppocr INFO:     sampler : 
+[2026/11/20 07:44:29] ppocr INFO:         divided_factor : [8, 16]
+[2026/11/20 07:44:29] ppocr INFO:         first_bs : 8
+[2026/11/20 07:44:29] ppocr INFO:         fix_bs : False
+[2026/11/20 07:44:29] ppocr INFO:         is_training : True
+[2026/11/20 07:44:29] ppocr INFO:         name : MultiScaleSampler
+[2026/11/20 07:44:29] ppocr INFO:         scales : [[320, 32], [320, 48], [320, 64]]
+[2026/11/20 07:44:29] ppocr INFO: profiler_options : None
+[2026/11/20 07:44:29] ppocr INFO: train with paddle 3.5.0.dev20260516 and device Place(metax_gpu:0)
+[2026/11/20 07:44:29] ppocr INFO: Initialize indexs of datasets:['/data/paddlex_train/datasets/ocr_rec_dataset_examples/train.txt']
+[2026/11/20 07:44:29] ppocr INFO: Initialize indexs of datasets:['/data/paddlex_train/datasets/ocr_rec_dataset_examples/val.txt']
+[2026-11-20 07:44:29,439] [    INFO] optimizer.py:254 - If regularizer of a Parameter has been set by 'paddle.ParamAttr' or 'static.WeightNormParamAttr' already. The weight_decay[3e-05] in Optimizer will not take effect, and it will only be applied to other Parameters!
+[2026/11/20 07:44:29] ppocr INFO: train dataloader has 789 iters
+[2026/11/20 07:44:29] ppocr INFO: valid dataloader has 260 iters
+download https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv4_server_rec_pretrained.pdparams to /root/.paddleocr/models/PP-OCRv4_server_rec_pretrained.pdparams
+  0%|          | 0/154266 [00:00<?, ?it/s]  0%|          | 80/154266 [00:00<03:20, 768.93it/s]  0%|          | 176/154266 [00:00<02:56, 874.99it/s]  0%|          | 320/154266 [00:00<02:33, 1001.01it/s]  0%|          | 512/154266 [00:00<01:55, 1332.43it/s]  1%|          | 777/154266 [00:00<01:26, 1782.17it/s]  1%|          | 1135/154266 [00:00<01:04, 2356.84it/s]  1%|          | 1647/154266 [00:00<00:47, 3227.40it/s]  2%|▏         | 2383/154266 [00:00<00:33, 4497.91it/s]  2%|▏         | 3407/154266 [00:00<00:24, 6252.92it/s]  3%|▎         | 4847/154266 [00:01<00:17, 8725.28it/s]  4%|▍         | 6805/154266 [00:01<00:12, 12014.45it/s]  6%|▌         | 9269/154266 [00:01<00:09, 15828.33it/s]  8%|▊         | 12609/154266 [00:01<00:06, 21124.62it/s] 11%|█         | 16850/154266 [00:01<00:04, 27531.34it/s] 14%|█▍        | 22147/154266 [00:01<00:03, 35179.79it/s] 18%|█▊        | 27831/154266 [00:01<00:03, 41686.43it/s] 21%|██        | 32006/154266 [00:01<00:03, 40342.86it/s] 23%|██▎       | 36054/154266 [00:01<00:03, 35305.32it/s] 26%|██▌       | 39702/154266 [00:02<00:03, 31004.57it/s] 28%|██▊       | 42959/154266 [00:02<00:03, 28604.41it/s] 30%|██▉       | 45942/154266 [00:02<00:03, 27102.61it/s] 32%|███▏      | 48734/154266 [00:02<00:04, 26083.34it/s] 33%|███▎      | 51393/154266 [00:02<00:04, 25339.92it/s] 35%|███▍      | 53956/154266 [00:02<00:04, 24827.46it/s] 37%|███▋      | 56455/154266 [00:02<00:04, 24440.55it/s] 38%|███▊      | 58907/154266 [00:02<00:04, 21933.84it/s] 40%|███▉      | 61140/154266 [00:03<00:04, 20459.91it/s] 41%|████      | 63219/154266 [00:03<00:04, 19684.67it/s] 42%|████▏     | 65207/154266 [00:03<00:04, 19219.61it/s] 44%|████▎     | 67139/154266 [00:03<00:04, 17690.91it/s] 45%|████▍     | 68927/154266 [00:03<00:05, 16610.95it/s] 46%|████▌     | 70603/154266 [00:03<00:05, 15648.73it/s] 47%|████▋     | 72179/154266 [00:03<00:05, 15177.30it/s] 48%|████▊     | 73701/154266 [00:03<00:05, 14505.07it/s] 49%|████▊     | 75154/154266 [00:04<00:06, 13117.35it/s] 50%|████▉     | 76481/154266 [00:04<00:06, 12219.54it/s] 50%|█████     | 77716/154266 [00:04<00:06, 11749.97it/s] 51%|█████     | 78897/154266 [00:04<00:06, 11454.68it/s] 52%|█████▏    | 80045/154266 [00:04<00:07, 10420.63it/s] 53%|█████▎    | 81098/154266 [00:04<00:07, 9649.37it/s]  53%|█████▎    | 82074/154266 [00:04<00:07, 9291.04it/s] 54%|█████▍    | 83008/154266 [00:04<00:07, 8948.56it/s] 54%|█████▍    | 83905/154266 [00:05<00:08, 8431.10it/s] 55%|█████▍    | 84750/154266 [00:05<00:08, 7855.12it/s] 55%|█████▌    | 85539/154266 [00:05<00:09, 7352.51it/s] 56%|█████▌    | 86278/154266 [00:05<00:09, 7023.36it/s] 56%|█████▋    | 86982/154266 [00:05<00:10, 6725.24it/s] 57%|█████▋    | 87655/154266 [00:05<00:10, 6199.38it/s] 57%|█████▋    | 88278/154266 [00:05<00:11, 5740.28it/s] 58%|█████▊    | 88856/154266 [00:05<00:11, 5541.68it/s] 58%|█████▊    | 89412/154266 [00:06<00:12, 5268.22it/s] 58%|█████▊    | 89940/154266 [00:06<00:12, 5035.11it/s] 59%|█████▊    | 90444/154266 [00:06<00:13, 4594.04it/s] 59%|█████▉    | 90907/154266 [00:06<00:14, 4385.10it/s] 59%|█████▉    | 91348/154266 [00:06<00:15, 4163.99it/s] 59%|█████▉    | 91766/154266 [00:06<00:15, 4064.24it/s] 60%|█████▉    | 92173/154266 [00:06<00:16, 3694.70it/s] 60%|█████▉    | 92546/154266 [00:06<00:17, 3510.97it/s] 60%|██████    | 92900/154266 [00:06<00:18, 3331.91it/s] 60%|██████    | 93235/154266 [00:07<00:18, 3223.29it/s] 61%|██████    | 93558/154266 [00:07<00:19, 3051.03it/s] 61%|██████    | 93864/154266 [00:07<00:21, 2805.87it/s] 61%|██████    | 94147/154266 [00:07<00:22, 2685.46it/s] 61%|██████    | 94417/154266 [00:07<00:23, 2552.98it/s] 61%|██████▏   | 94673/154266 [00:07<00:24, 2480.61it/s] 62%|██████▏   | 94921/154266 [00:07<00:25, 2348.23it/s] 62%|██████▏   | 95156/154266 [00:07<00:27, 2178.86it/s] 62%|██████▏   | 95375/154266 [00:08<00:27, 2104.46it/s] 62%|██████▏   | 95586/154266 [00:08<00:29, 2015.50it/s] 62%|██████▏   | 95788/154266 [00:08<00:29, 1973.61it/s] 62%|██████▏   | 95986/154266 [00:08<00:31, 1843.94it/s] 62%|██████▏   | 96171/154266 [00:08<00:32, 1789.45it/s] 62%|██████▏   | 96351/154266 [00:08<00:33, 1711.29it/s] 63%|██████▎   | 96523/154266 [00:08<00:34, 1692.24it/s] 63%|██████▎   | 96693/154266 [00:08<00:35, 1600.51it/s] 63%|██████▎   | 96854/154266 [00:08<00:37, 1544.43it/s] 63%|██████▎   | 97009/154266 [00:09<00:38, 1482.17it/s] 63%|██████▎   | 97158/154266 [00:09<00:38, 1465.45it/s] 63%|██████▎   | 97305/154266 [00:09<00:39, 1428.07it/s] 63%|██████▎   | 97448/154266 [00:09<00:41, 1370.65it/s] 63%|██████▎   | 97586/154266 [00:09<00:43, 1302.08it/s] 63%|██████▎   | 97717/154266 [00:09<00:43, 1288.80it/s] 63%|██████▎   | 97847/154266 [00:09<00:44, 1275.51it/s] 64%|██████▎   | 97975/154266 [00:10<01:06, 843.94it/s]  64%|██████▎   | 98078/154266 [00:10<01:11, 782.65it/s] 64%|██████▎   | 98271/154266 [00:10<00:55, 1008.68it/s] 64%|██████▍   | 98538/154266 [00:10<00:40, 1387.60it/s] 64%|██████▍   | 98893/154266 [00:10<00:28, 1919.06it/s] 64%|██████▍   | 99375/154266 [00:10<00:20, 2668.73it/s] 65%|██████▍   | 100063/154266 [00:10<00:14, 3793.61it/s] 65%|██████▌   | 101023/154266 [00:10<00:09, 5399.43it/s] 66%|██████▋   | 102367/154266 [00:10<00:06, 7676.28it/s] 68%|██████▊   | 104233/154266 [00:11<00:04, 10843.73it/s] 69%|██████▉   | 106836/154266 [00:11<00:03, 15274.39it/s] 72%|███████▏  | 110420/154266 [00:11<00:02, 21324.07it/s] 75%|███████▍  | 115478/154266 [00:11<00:01, 29980.72it/s] 79%|███████▉  | 121534/154266 [00:11<00:00, 39065.31it/s] 83%|████████▎ | 127449/154266 [00:11<00:00, 45049.83it/s] 86%|████████▌ | 131984/154266 [00:11<00:00, 36032.81it/s] 88%|████████▊ | 135896/154266 [00:11<00:00, 31469.09it/s] 90%|█████████ | 139337/154266 [00:12<00:00, 28951.91it/s] 92%|█████████▏| 142449/154266 [00:12<00:00, 27348.08it/s] 94%|█████████▍| 145329/154266 [00:12<00:00, 26247.43it/s] 96%|█████████▌| 148046/154266 [00:12<00:00, 25495.74it/s] 98%|█████████▊| 150652/154266 [00:12<00:00, 24931.97it/s] 99%|█████████▉| 153179/154266 [00:12<00:00, 24514.23it/s]100%|██████████| 154266/154266 [00:12<00:00, 12187.18it/s]
+[2026/11/20 07:44:42] ppocr INFO: load pretrain successful from /root/.paddleocr/models/PP-OCRv4_server_rec_pretrained
+[2026/11/20 07:44:42] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 789 iterations
+[2026/11/20 07:44:52] ppocr INFO: epoch: [1/1], global_step: 20, lr: 0.000002, acc: 0.250000, norm_edit_dis: 0.661604, CTCLoss: 18.982757, NRTRLoss: 2.140312, loss: 21.166089, avg_reader_cost: 0.02784 s, avg_batch_cost: 0.47717 s, avg_samples: 5.85, ips: 12.25975 samples/s, eta: 0:06:06
+[2026/11/20 07:44:54] ppocr INFO: epoch: [1/1], global_step: 40, lr: 0.000007, acc: 0.250000, norm_edit_dis: 0.619927, CTCLoss: 19.470512, NRTRLoss: 2.212473, loss: 21.687811, avg_reader_cost: 0.00252 s, avg_batch_cost: 0.12166 s, avg_samples: 5.95, ips: 48.90508 samples/s, eta: 0:03:44
+[2026/11/20 07:44:56] ppocr INFO: epoch: [1/1], global_step: 60, lr: 0.000013, acc: 0.324999, norm_edit_dis: 0.738573, CTCLoss: 17.411631, NRTRLoss: 2.034670, loss: 19.388864, avg_reader_cost: 0.00254 s, avg_batch_cost: 0.11112 s, avg_samples: 6.4, ips: 57.59688 samples/s, eta: 0:02:52
+[2026/11/20 07:44:59] ppocr INFO: epoch: [1/1], global_step: 80, lr: 0.000018, acc: 0.250000, norm_edit_dis: 0.696161, CTCLoss: 14.051933, NRTRLoss: 1.942189, loss: 16.052582, avg_reader_cost: 0.00245 s, avg_batch_cost: 0.11059 s, avg_samples: 5.45, ips: 49.28306 samples/s, eta: 0:02:25
+[2026/11/20 07:45:01] ppocr INFO: epoch: [1/1], global_step: 100, lr: 0.000023, acc: 0.375000, norm_edit_dis: 0.702530, CTCLoss: 12.414587, NRTRLoss: 1.931245, loss: 14.396254, avg_reader_cost: 0.00244 s, avg_batch_cost: 0.10584 s, avg_samples: 5.9, ips: 55.74373 samples/s, eta: 0:02:07
+[2026/11/20 07:45:03] ppocr INFO: epoch: [1/1], global_step: 120, lr: 0.000028, acc: 0.250000, norm_edit_dis: 0.767182, CTCLoss: 9.593447, NRTRLoss: 1.790407, loss: 11.531504, avg_reader_cost: 0.00241 s, avg_batch_cost: 0.10726 s, avg_samples: 6.1, ips: 56.86921 samples/s, eta: 0:01:55
+[2026/11/20 07:45:05] ppocr INFO: epoch: [1/1], global_step: 140, lr: 0.000033, acc: 0.499999, norm_edit_dis: 0.722657, CTCLoss: 8.614850, NRTRLoss: 1.768159, loss: 10.396559, avg_reader_cost: 0.00246 s, avg_batch_cost: 0.10634 s, avg_samples: 5.65, ips: 53.13294 samples/s, eta: 0:01:45
+[2026/11/20 07:45:07] ppocr INFO: epoch: [1/1], global_step: 160, lr: 0.000038, acc: 0.499999, norm_edit_dis: 0.834900, CTCLoss: 8.592125, NRTRLoss: 1.704188, loss: 10.430007, avg_reader_cost: 0.00223 s, avg_batch_cost: 0.10199 s, avg_samples: 6.05, ips: 59.32013 samples/s, eta: 0:01:37
+[2026/11/20 07:45:09] ppocr INFO: epoch: [1/1], global_step: 180, lr: 0.000043, acc: 0.399999, norm_edit_dis: 0.831443, CTCLoss: 7.995017, NRTRLoss: 1.713434, loss: 9.532269, avg_reader_cost: 0.00225 s, avg_batch_cost: 0.10226 s, avg_samples: 5.8, ips: 56.71697 samples/s, eta: 0:01:30
+[2026/11/20 07:45:11] ppocr INFO: epoch: [1/1], global_step: 200, lr: 0.000048, acc: 0.375000, norm_edit_dis: 0.763405, CTCLoss: 10.779044, NRTRLoss: 1.742903, loss: 12.496188, avg_reader_cost: 0.00230 s, avg_batch_cost: 0.10475 s, avg_samples: 5.6, ips: 53.46133 samples/s, eta: 0:01:25
+[2026/11/20 07:45:13] ppocr INFO: epoch: [1/1], global_step: 220, lr: 0.000053, acc: 0.499999, norm_edit_dis: 0.860000, CTCLoss: 6.842537, NRTRLoss: 1.606780, loss: 8.572523, avg_reader_cost: 0.00228 s, avg_batch_cost: 0.10602 s, avg_samples: 5.4, ips: 50.93327 samples/s, eta: 0:01:20
+[2026/11/20 07:45:16] ppocr INFO: epoch: [1/1], global_step: 240, lr: 0.000058, acc: 0.399999, norm_edit_dis: 0.799306, CTCLoss: 7.127468, NRTRLoss: 1.703513, loss: 8.899580, avg_reader_cost: 0.00244 s, avg_batch_cost: 0.10643 s, avg_samples: 5.25, ips: 49.32739 samples/s, eta: 0:01:16
+[2026/11/20 07:45:18] ppocr INFO: epoch: [1/1], global_step: 260, lr: 0.000063, acc: 0.449999, norm_edit_dis: 0.765049, CTCLoss: 9.939523, NRTRLoss: 1.773944, loss: 11.764694, avg_reader_cost: 0.00240 s, avg_batch_cost: 0.10658 s, avg_samples: 5.45, ips: 51.13478 samples/s, eta: 0:01:11
+[2026/11/20 07:45:20] ppocr INFO: epoch: [1/1], global_step: 280, lr: 0.000068, acc: 0.499999, norm_edit_dis: 0.838771, CTCLoss: 5.783397, NRTRLoss: 1.655630, loss: 7.422726, avg_reader_cost: 0.00247 s, avg_batch_cost: 0.10478 s, avg_samples: 5.6, ips: 53.44455 samples/s, eta: 0:01:08
+[2026/11/20 07:45:22] ppocr INFO: epoch: [1/1], global_step: 300, lr: 0.000073, acc: 0.499999, norm_edit_dis: 0.835417, CTCLoss: 5.212324, NRTRLoss: 1.603772, loss: 6.808501, avg_reader_cost: 0.00234 s, avg_batch_cost: 0.10554 s, avg_samples: 5.9, ips: 55.90120 samples/s, eta: 0:01:04
+[2026/11/20 07:45:24] ppocr INFO: epoch: [1/1], global_step: 320, lr: 0.000078, acc: 0.375000, norm_edit_dis: 0.780923, CTCLoss: 8.850631, NRTRLoss: 1.775305, loss: 10.625937, avg_reader_cost: 0.00243 s, avg_batch_cost: 0.10587 s, avg_samples: 5.5, ips: 51.94809 samples/s, eta: 0:01:01
+[2026/11/20 07:45:26] ppocr INFO: epoch: [1/1], global_step: 340, lr: 0.000084, acc: 0.499999, norm_edit_dis: 0.834391, CTCLoss: 5.858206, NRTRLoss: 1.675209, loss: 7.330297, avg_reader_cost: 0.00239 s, avg_batch_cost: 0.10502 s, avg_samples: 5.4, ips: 51.41836 samples/s, eta: 0:00:57
+[2026/11/20 07:45:28] ppocr INFO: epoch: [1/1], global_step: 360, lr: 0.000089, acc: 0.399999, norm_edit_dis: 0.850468, CTCLoss: 7.348767, NRTRLoss: 1.657117, loss: 8.991886, avg_reader_cost: 0.00241 s, avg_batch_cost: 0.10639 s, avg_samples: 5.1, ips: 47.93908 samples/s, eta: 0:00:54
+[2026/11/20 07:45:30] ppocr INFO: epoch: [1/1], global_step: 380, lr: 0.000094, acc: 0.499999, norm_edit_dis: 0.851050, CTCLoss: 6.429458, NRTRLoss: 1.642554, loss: 8.013954, avg_reader_cost: 0.00241 s, avg_batch_cost: 0.10643 s, avg_samples: 5.35, ips: 50.26558 samples/s, eta: 0:00:51
+[2026/11/20 07:45:33] ppocr INFO: epoch: [1/1], global_step: 400, lr: 0.000099, acc: 0.499999, norm_edit_dis: 0.870508, CTCLoss: 5.421155, NRTRLoss: 1.609029, loss: 7.068667, avg_reader_cost: 0.00252 s, avg_batch_cost: 0.10919 s, avg_samples: 5.45, ips: 49.91172 samples/s, eta: 0:00:48
+[2026/11/20 07:45:35] ppocr INFO: epoch: [1/1], global_step: 420, lr: 0.000104, acc: 0.449999, norm_edit_dis: 0.784373, CTCLoss: 8.519077, NRTRLoss: 1.714045, loss: 10.254001, avg_reader_cost: 0.00251 s, avg_batch_cost: 0.10696 s, avg_samples: 5.85, ips: 54.69293 samples/s, eta: 0:00:46
+[2026/11/20 07:45:37] ppocr INFO: epoch: [1/1], global_step: 440, lr: 0.000109, acc: 0.375000, norm_edit_dis: 0.809702, CTCLoss: 9.542095, NRTRLoss: 1.814842, loss: 11.378927, avg_reader_cost: 0.00248 s, avg_batch_cost: 0.10932 s, avg_samples: 5.75, ips: 52.59798 samples/s, eta: 0:00:43
+[2026/11/20 07:45:39] ppocr INFO: epoch: [1/1], global_step: 460, lr: 0.000114, acc: 0.499999, norm_edit_dis: 0.843942, CTCLoss: 6.056011, NRTRLoss: 1.683527, loss: 7.641189, avg_reader_cost: 0.00255 s, avg_batch_cost: 0.10825 s, avg_samples: 5.9, ips: 54.50451 samples/s, eta: 0:00:40
+[2026/11/20 07:45:41] ppocr INFO: epoch: [1/1], global_step: 480, lr: 0.000119, acc: 0.449999, norm_edit_dis: 0.825704, CTCLoss: 6.911018, NRTRLoss: 1.629535, loss: 8.581622, avg_reader_cost: 0.00237 s, avg_batch_cost: 0.10417 s, avg_samples: 5.65, ips: 54.23787 samples/s, eta: 0:00:37
+[2026/11/20 07:45:43] ppocr INFO: epoch: [1/1], global_step: 500, lr: 0.000124, acc: 0.499999, norm_edit_dis: 0.856805, CTCLoss: 5.240768, NRTRLoss: 1.624540, loss: 6.944496, avg_reader_cost: 0.00245 s, avg_batch_cost: 0.10283 s, avg_samples: 5.4, ips: 52.51227 samples/s, eta: 0:00:35
+[2026/11/20 07:45:45] ppocr INFO: epoch: [1/1], global_step: 520, lr: 0.000129, acc: 0.449999, norm_edit_dis: 0.835271, CTCLoss: 8.312907, NRTRLoss: 1.724666, loss: 10.566440, avg_reader_cost: 0.00246 s, avg_batch_cost: 0.10650 s, avg_samples: 5.55, ips: 52.11295 samples/s, eta: 0:00:32
+[2026/11/20 07:45:48] ppocr INFO: epoch: [1/1], global_step: 540, lr: 0.000134, acc: 0.399999, norm_edit_dis: 0.832166, CTCLoss: 6.941923, NRTRLoss: 1.745203, loss: 8.586481, avg_reader_cost: 0.00269 s, avg_batch_cost: 0.11119 s, avg_samples: 6.5, ips: 58.45650 samples/s, eta: 0:00:30
+[2026/11/20 07:45:50] ppocr INFO: epoch: [1/1], global_step: 560, lr: 0.000139, acc: 0.449999, norm_edit_dis: 0.775053, CTCLoss: 7.661921, NRTRLoss: 1.707628, loss: 9.305422, avg_reader_cost: 0.00257 s, avg_batch_cost: 0.10835 s, avg_samples: 6.1, ips: 56.30045 samples/s, eta: 0:00:27
+[2026/11/20 07:45:52] ppocr INFO: epoch: [1/1], global_step: 580, lr: 0.000144, acc: 0.499999, norm_edit_dis: 0.789024, CTCLoss: 8.710741, NRTRLoss: 1.749930, loss: 10.387039, avg_reader_cost: 0.00240 s, avg_batch_cost: 0.10235 s, avg_samples: 5.35, ips: 52.27019 samples/s, eta: 0:00:25
+[2026/11/20 07:45:54] ppocr INFO: epoch: [1/1], global_step: 600, lr: 0.000149, acc: 0.375000, norm_edit_dis: 0.810430, CTCLoss: 7.273575, NRTRLoss: 1.773832, loss: 9.221103, avg_reader_cost: 0.00249 s, avg_batch_cost: 0.10568 s, avg_samples: 5.55, ips: 52.51573 samples/s, eta: 0:00:22
+[2026/11/20 07:45:56] ppocr INFO: epoch: [1/1], global_step: 620, lr: 0.000154, acc: 0.399999, norm_edit_dis: 0.828078, CTCLoss: 6.212128, NRTRLoss: 1.702089, loss: 7.887417, avg_reader_cost: 0.00252 s, avg_batch_cost: 0.10770 s, avg_samples: 5.45, ips: 50.60336 samples/s, eta: 0:00:20
+[2026/11/20 07:45:58] ppocr INFO: epoch: [1/1], global_step: 640, lr: 0.000160, acc: 0.312500, norm_edit_dis: 0.811533, CTCLoss: 5.856150, NRTRLoss: 1.724134, loss: 7.603651, avg_reader_cost: 0.00246 s, avg_batch_cost: 0.10650 s, avg_samples: 5.5, ips: 51.64430 samples/s, eta: 0:00:17
+[2026/11/20 07:46:01] ppocr INFO: epoch: [1/1], global_step: 660, lr: 0.000165, acc: 0.387499, norm_edit_dis: 0.803703, CTCLoss: 8.555493, NRTRLoss: 1.820960, loss: 10.437289, avg_reader_cost: 0.00251 s, avg_batch_cost: 0.10828 s, avg_samples: 6.1, ips: 56.33423 samples/s, eta: 0:00:15
+[2026/11/20 07:46:03] ppocr INFO: epoch: [1/1], global_step: 680, lr: 0.000170, acc: 0.449999, norm_edit_dis: 0.785429, CTCLoss: 8.073957, NRTRLoss: 1.803663, loss: 10.178637, avg_reader_cost: 0.00243 s, avg_batch_cost: 0.10323 s, avg_samples: 5.65, ips: 54.73385 samples/s, eta: 0:00:12
+[2026/11/20 07:46:05] ppocr INFO: epoch: [1/1], global_step: 700, lr: 0.000175, acc: 0.499999, norm_edit_dis: 0.852775, CTCLoss: 5.853888, NRTRLoss: 1.599182, loss: 7.509253, avg_reader_cost: 0.00248 s, avg_batch_cost: 0.10714 s, avg_samples: 5.5, ips: 51.33547 samples/s, eta: 0:00:10
+[2026/11/20 07:46:07] ppocr INFO: epoch: [1/1], global_step: 720, lr: 0.000180, acc: 0.375000, norm_edit_dis: 0.828388, CTCLoss: 7.942678, NRTRLoss: 1.722949, loss: 9.746898, avg_reader_cost: 0.00232 s, avg_batch_cost: 0.10484 s, avg_samples: 5.3, ips: 50.55553 samples/s, eta: 0:00:08
+[2026/11/20 07:46:09] ppocr INFO: epoch: [1/1], global_step: 740, lr: 0.000185, acc: 0.499999, norm_edit_dis: 0.788583, CTCLoss: 8.020504, NRTRLoss: 1.836765, loss: 9.905378, avg_reader_cost: 0.00236 s, avg_batch_cost: 0.10423 s, avg_samples: 5.85, ips: 56.12820 samples/s, eta: 0:00:05
+[2026/11/20 07:46:11] ppocr INFO: epoch: [1/1], global_step: 760, lr: 0.000190, acc: 0.399999, norm_edit_dis: 0.821023, CTCLoss: 7.658213, NRTRLoss: 1.718692, loss: 9.316527, avg_reader_cost: 0.00228 s, avg_batch_cost: 0.10040 s, avg_samples: 5.55, ips: 55.27874 samples/s, eta: 0:00:03
+[2026/11/20 07:46:13] ppocr INFO: epoch: [1/1], global_step: 780, lr: 0.000195, acc: 0.399999, norm_edit_dis: 0.830303, CTCLoss: 7.437303, NRTRLoss: 1.785668, loss: 9.294085, avg_reader_cost: 0.00242 s, avg_batch_cost: 0.10518 s, avg_samples: 5.6, ips: 53.24282 samples/s, eta: 0:00:01
+[2026/11/20 07:46:14] ppocr INFO: epoch: [1/1], global_step: 789, lr: 0.000197, acc: 0.375000, norm_edit_dis: 0.808280, CTCLoss: 9.950373, NRTRLoss: 1.899537, loss: 11.707231, avg_reader_cost: 0.00099 s, avg_batch_cost: 0.04645 s, avg_samples: 2.3, ips: 49.52093 samples/s, eta: 0:00:00
+eval model::   0%|          | 0/260 [00:00<?, ?it/s]eval model::   0%|          | 1/260 [00:00<03:58,  1.09it/s]eval model::   2%|▏         | 5/260 [00:01<00:41,  6.21it/s]eval model::   3%|▎         | 9/260 [00:01<00:21, 11.44it/s]eval model::   5%|▌         | 13/260 [00:01<00:15, 16.26it/s]eval model::   7%|▋         | 17/260 [00:01<00:11, 20.82it/s]eval model::   8%|▊         | 21/260 [00:01<00:09, 24.99it/s]eval model::  10%|▉         | 25/260 [00:01<00:08, 28.52it/s]eval model::  11%|█         | 29/260 [00:01<00:07, 30.95it/s]eval model::  13%|█▎        | 33/260 [00:01<00:06, 32.99it/s]eval model::  15%|█▍        | 38/260 [00:01<00:06, 35.49it/s]eval model::  16%|█▌        | 42/260 [00:02<00:06, 36.25it/s]eval model::  18%|█▊        | 46/260 [00:02<00:05, 37.01it/s]eval model::  19%|█▉        | 50/260 [00:02<00:05, 37.77it/s]eval model::  21%|██        | 55/260 [00:02<00:05, 38.71it/s]eval model::  23%|██▎       | 59/260 [00:02<00:05, 39.05it/s]eval model::  25%|██▍       | 64/260 [00:02<00:04, 39.30it/s]eval model::  27%|██▋       | 69/260 [00:02<00:04, 39.59it/s]eval model::  28%|██▊       | 74/260 [00:02<00:04, 39.85it/s]eval model::  30%|███       | 79/260 [00:02<00:04, 39.68it/s]eval model::  32%|███▏      | 83/260 [00:03<00:04, 39.60it/s]eval model::  34%|███▍      | 88/260 [00:03<00:04, 39.98it/s]eval model::  36%|███▌      | 93/260 [00:03<00:04, 39.94it/s]eval model::  37%|███▋      | 97/260 [00:03<00:04, 39.47it/s]eval model::  39%|███▉      | 101/260 [00:03<00:04, 39.08it/s]eval model::  40%|████      | 105/260 [00:03<00:03, 38.97it/s]eval model::  42%|████▏     | 109/260 [00:03<00:03, 38.98it/s]eval model::  43%|████▎     | 113/260 [00:03<00:03, 38.81it/s]eval model::  45%|████▌     | 117/260 [00:03<00:03, 39.05it/s]eval model::  47%|████▋     | 121/260 [00:04<00:03, 38.99it/s]eval model::  48%|████▊     | 125/260 [00:04<00:03, 38.93it/s]eval model::  50%|████▉     | 129/260 [00:04<00:03, 38.58it/s]eval model::  51%|█████     | 133/260 [00:04<00:03, 38.57it/s]eval model::  53%|█████▎    | 137/260 [00:04<00:03, 38.78it/s]eval model::  54%|█████▍    | 141/260 [00:04<00:03, 38.95it/s]eval model::  56%|█████▌    | 145/260 [00:04<00:02, 39.17it/s]eval model::  57%|█████▋    | 149/260 [00:04<00:02, 39.05it/s]eval model::  59%|█████▉    | 153/260 [00:04<00:02, 38.80it/s]eval model::  61%|██████    | 158/260 [00:04<00:02, 39.46it/s]eval model::  63%|██████▎   | 163/260 [00:05<00:02, 39.52it/s]eval model::  64%|██████▍   | 167/260 [00:05<00:02, 39.42it/s]eval model::  66%|██████▌   | 171/260 [00:05<00:02, 39.15it/s]eval model::  67%|██████▋   | 175/260 [00:05<00:02, 39.14it/s]eval model::  69%|██████▉   | 179/260 [00:05<00:02, 39.16it/s]eval model::  70%|███████   | 183/260 [00:05<00:01, 39.14it/s]eval model::  72%|███████▏  | 187/260 [00:05<00:01, 39.05it/s]eval model::  74%|███████▍  | 192/260 [00:05<00:01, 39.38it/s]eval model::  75%|███████▌  | 196/260 [00:05<00:01, 39.22it/s]eval model::  77%|███████▋  | 200/260 [00:06<00:01, 39.31it/s]eval model::  78%|███████▊  | 204/260 [00:06<00:01, 39.50it/s]eval model::  80%|████████  | 208/260 [00:06<00:01, 39.43it/s]eval model::  82%|████████▏ | 212/260 [00:06<00:01, 39.33it/s]eval model::  83%|████████▎ | 216/260 [00:06<00:01, 38.91it/s]eval model::  85%|████████▍ | 220/260 [00:06<00:01, 37.91it/s]eval model::  86%|████████▌ | 224/260 [00:06<00:00, 38.38it/s]eval model::  88%|████████▊ | 228/260 [00:06<00:00, 38.70it/s]eval model::  89%|████████▉ | 232/260 [00:06<00:00, 38.75it/s]eval model::  91%|█████████ | 237/260 [00:06<00:00, 39.21it/s]eval model::  93%|█████████▎| 241/260 [00:07<00:00, 39.39it/s]eval model::  94%|█████████▍| 245/260 [00:07<00:00, 39.46it/s]eval model::  96%|█████████▌| 249/260 [00:07<00:00, 39.39it/s]eval model::  97%|█████████▋| 253/260 [00:07<00:00, 39.38it/s]eval model::  99%|█████████▉| 258/260 [00:07<00:00, 39.76it/s]eval model:: 100%|██████████| 260/260 [00:07<00:00, 33.34it/s]
+[2026/11/20 07:46:22] ppocr INFO: cur metric, acc: 0.6177178593273093, norm_edit_dis: 0.8345660210290686, fps: 354.32577659932696
+[2026/11/20 07:46:22] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+W1120 07:46:23.919435 1332284 eager_utils.cc:3618] Paddle static graph(PIR) not support input out tensor for now!!!!!
+[2026/11/20 07:46:25] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/best_accuracy/inference/inference
+[2026/11/20 07:46:29] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/best_accuracy
+[2026/11/20 07:46:29] ppocr INFO: save best model is to /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/best_accuracy/best_accuracy
+[2026/11/20 07:46:29] ppocr INFO: best metric, acc: 0.6177178593273093, is_float16: False, norm_edit_dis: 0.8345660210290686, fps: 354.32577659932696, best_epoch: 1
+[2026/11/20 07:46:29] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:46:31] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/latest/inference/inference
+[2026/11/20 07:46:33] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/latest
+[2026/11/20 07:46:33] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/latest/latest
+[2026/11/20 07:46:34] ppocr INFO: Export inference config file to /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/iter_epoch_1/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 07:46:35] ppocr INFO: inference model is saved to /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/iter_epoch_1/inference/inference
+[2026/11/20 07:46:37] ppocr INFO: Already save model info in /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/iter_epoch_1
+[2026/11/20 07:46:37] ppocr INFO: save model in /data/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/iter_epoch_1/iter_epoch_1
+[2026/11/20 07:46:37] ppocr INFO: best metric, acc: 0.6177178593273093, is_float16: False, norm_edit_dis: 0.8345660210290686, fps: 354.32577659932696, best_epoch: 1

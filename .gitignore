@@ -9,6 +9,8 @@ __pycache__/
 **/results/**/*.png
 **/logs/*.log
 **/logs/**/*.log
+!**/results/metax-c500/**
+!**/results/a100/**
 !**/results/.gitkeep
 !**/results/**/.gitkeep
 !**/logs/.gitkeep

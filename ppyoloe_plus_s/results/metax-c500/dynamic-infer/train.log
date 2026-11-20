@@ -1,0 +1,60 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 02:30:33.429039 2921223 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1120 02:30:33.429067 2921223 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1120 02:30:33.429154 2921223 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1120 02:30:33.429482 2921223 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1120 02:30:33.429910 2921223 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1120 02:30:33.713825 2921223 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1120 02:30:33.713840 2921223 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1120 02:30:33.860287 2921223 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1120 02:30:40.110211 2921223 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1120 02:30:40.110255 2921223 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1120 02:30:40.126794 2921223 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1120 02:30:40.127240 2921223 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1120 02:30:40.127279 2921223 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+I1120 02:30:40.490624 2921223 schema.cc:75] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+[1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
+I1120 02:30:40.522199 2921223 print_statistics.cc:50] --- detected [8] subgraphs!
+[1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
+[1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
+[1m[35m--- Running PIR pass [map_op_to_another_pass][0m
+[1m[35m--- Running PIR pass [identity_op_clean_pass][0m
+[1m[35m--- Running PIR pass [silu_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_bn_fuse_pass][0m
+I1120 02:30:40.527096 2921223 print_statistics.cc:50] --- detected [56] subgraphs!
+[1m[35m--- Running PIR pass [conv2d_add_act_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_add_fuse_pass][0m
+I1120 02:30:40.552158 2921223 print_statistics.cc:50] --- detected [83] subgraphs!
+[1m[35m--- Running PIR pass [embedding_eltwise_layernorm_fuse_pass][0m
+[1m[35m--- Running PIR pass [fused_rotary_position_embedding_pass][0m
+[1m[35m--- Running PIR pass [multihead_matmul_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_add_act_fuse_pass][0m
+[1m[35m--- Running PIR pass [fc_elementwise_layernorm_fuse_pass][0m
+[1m[35m--- Running PIR pass [group_norm_silu_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_scale_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_transpose_fuse_pass][0m
+[1m[35m--- Running PIR pass [transpose_flatten_concat_fuse_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_transpose_pass][0m
+[1m[35m--- Running PIR pass [horizontal_fuse_pass][0m
+[1m[35m--- Running PIR pass [transfer_layout_pass][0m
+[1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
+I1120 02:30:40.570703 2921223 print_statistics.cc:50] --- detected [185] subgraphs!
+[1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
+I1120 02:30:40.611764 2921223 print_statistics.cc:50] --- detected [345] subgraphs!
+[1m[35m--- Running PIR pass [constant_folding_pass][0m
+I1120 02:30:40.614760 2921223 pir_interpreter.cc:1605] New Executor is Running ...
+I1120 02:30:40.615216 2921223 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+I1120 02:30:41.941382 2921223 print_statistics.cc:44] --- detected [526, 1142] subgraphs!
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:30:41.945101 2921223 print_statistics.cc:50] --- detected [677] subgraphs!
+[1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
+I1120 02:30:41.946373 2921223 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
+I1120 02:30:41.968286 2921223 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [inplace_pass][0m
+I1120 02:30:42.022750 2921223 print_statistics.cc:50] --- detected [114] subgraphs!
+I1120 02:30:42.022984 2921223 analysis_predictor.cc:1213] ======= pir optimization completed =======
+I1120 02:30:42.121140 2921223 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{"model": "PP-YOLOE_plus-S", "mode": "dynamic", "weights": "/root/.paddlex/official_models/PP-YOLOE_plus-S", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "paddlex_version": "0.1.0.dev4387+gffb64904d.d20261119", "seed": 20261119, "inputs_sha256": "ebb843d40ae04062444afa4449cc337802c342b133a65510d822e228c5d21568", "feeds": {"image": [1, 3, 640, 640], "scale_factor": [1, 2]}, "outputs": {"fetch_name_0": [300, 6], "fetch_name_1": [1]}, "warmup": 5, "iters": 50, "first_call_ms": 4815.868504811078, "steady_batch_ms": 25.57945378124714, "batch_per_second": 39.09387622393728}
