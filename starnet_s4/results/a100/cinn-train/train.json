@@ -1,0 +1,14 @@
+{
+  "model": "starnet_s4",
+  "mode": "cinn",
+  "device": "gpu:0",
+  "status": "ok",
+  "steps_logged": 512,
+  "loss_first": 5.03647,
+  "loss_last": 1.91291,
+  "first_step_ms": 272077.16,
+  "steady_step_ms": 463.1715,
+  "losses_sha256": "545a4621df29ed7e0ae84b466f8c744cd2a27c667865dc91bd9b57946ed83108",
+  "log_sha256": "98f1013912530f149a7584bf8b435fbdaa4bb2453c13cd6cbd3cd83c6b0603b0",
+  "source_log": "results/cinn-train/train.log"
+}

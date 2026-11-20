@@ -1,0 +1,31 @@
+{
+  "model": "PP-OCRv4_server_rec",
+  "mode": "cinn",
+  "weights": "/root/.paddlex/official_models/PP-OCRv4_server_rec",
+  "device": "gpu:0",
+  "paddle_version": "3.5.0.dev20261116+10a99906f58",
+  "paddle_compiled_with_cinn": true,
+  "paddlex_version": "3.7.2",
+  "seed": 20261119,
+  "inputs_sha256": "97eadb39e2d6534ca8e8adc3c176ea7f517327d7e8d9c9964fca5f6f0e530048",
+  "feeds": {
+    "x": [
+      1,
+      3,
+      48,
+      320
+    ]
+  },
+  "outputs": {
+    "fetch_name_0": [
+      1,
+      40,
+      6625
+    ]
+  },
+  "warmup": 5,
+  "iters": 50,
+  "first_call_ms": 432.6023682951927,
+  "steady_batch_ms": 5.608385279774666,
+  "batch_per_second": 178.3044406036559
+}

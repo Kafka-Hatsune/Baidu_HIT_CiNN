@@ -1,0 +1,50 @@
+I1120 02:41:13.591943 18299 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+[1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
+[1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
+[1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
+[1m[35m--- Running PIR pass [map_op_to_another_pass][0m
+I1120 02:41:13.753361 18299 print_statistics.cc:50] --- detected [54] subgraphs!
+[1m[35m--- Running PIR pass [identity_op_clean_pass][0m
+[1m[35m--- Running PIR pass [silu_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_bn_fuse_pass][0m
+I1120 02:41:13.763432 18299 print_statistics.cc:50] --- detected [113] subgraphs!
+[1m[35m--- Running PIR pass [conv2d_add_act_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_add_fuse_pass][0m
+I1120 02:41:13.831888 18299 print_statistics.cc:50] --- detected [113] subgraphs!
+[1m[35m--- Running PIR pass [embedding_eltwise_layernorm_fuse_pass][0m
+[1m[35m--- Running PIR pass [fused_rotary_position_embedding_pass][0m
+[1m[35m--- Running PIR pass [fused_flash_attn_pass][0m
+[1m[35m--- Running PIR pass [multihead_matmul_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_add_act_fuse_pass][0m
+I1120 02:41:13.844657 18299 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [fc_elementwise_layernorm_fuse_pass][0m
+[1m[35m--- Running PIR pass [add_norm_fuse_pass][0m
+[1m[35m--- Running PIR pass [group_norm_silu_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_scale_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_transpose_fuse_pass][0m
+[1m[35m--- Running PIR pass [transpose_flatten_concat_fuse_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_transpose_pass][0m
+I1120 02:41:13.871269 18299 print_statistics.cc:50] --- detected [24] subgraphs!
+[1m[35m--- Running PIR pass [horizontal_fuse_pass][0m
+[1m[35m--- Running PIR pass [transfer_layout_pass][0m
+[1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
+I1120 02:41:13.901193 18299 print_statistics.cc:50] --- detected [449] subgraphs!
+[1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
+I1120 02:41:13.989362 18299 print_statistics.cc:50] --- detected [666] subgraphs!
+[1m[35m--- Running PIR pass [constant_folding_pass][0m
+I1120 02:41:13.995358 18299 pir_interpreter.cc:1605] New Executor is Running ...
+W1120 02:41:13.996917 18299 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+I1120 02:41:13.997525 18299 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+I1120 02:41:17.363031 18299 print_statistics.cc:44] --- detected [985, 2111] subgraphs!
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:41:17.372407 18299 print_statistics.cc:50] --- detected [1309] subgraphs!
+[1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
+I1120 02:41:17.374462 18299 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
+I1120 02:41:17.401983 18299 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [inplace_pass][0m
+I1120 02:41:17.453464 18299 print_statistics.cc:50] --- detected [117] subgraphs!
+I1120 02:41:17.453892 18299 analysis_predictor.cc:1214] ======= pir optimization completed =======
+I1120 02:41:17.575534 18299 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{"model": "MobileNetV4_hybrid_large", "mode": "dynamic", "weights": "/root/.paddlex/official_models/MobileNetV4_hybrid_large", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "6cdb10f60d9827152524f25df8d9c6738a3c36b76b2555ad17031b26383d015f", "feeds": {"x": [1, 3, 448, 448]}, "outputs": {"fetch_name_0": [1, 1000]}, "warmup": 5, "iters": 50, "first_call_ms": 460.21995693445206, "steady_batch_ms": 19.101445227861404, "batch_per_second": 52.35205965155967}

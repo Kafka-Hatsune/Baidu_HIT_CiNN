@@ -1,0 +1,14 @@
+{
+  "model": "ppyoloe_plus_s",
+  "mode": "cinn",
+  "device": "gpu:0",
+  "status": "ok",
+  "steps_logged": 54,
+  "loss_first": 4.751618,
+  "loss_last": 1.530385,
+  "first_step_ms": 683501.0,
+  "steady_step_ms": 1191.2698,
+  "losses_sha256": "4da42d3f997a52b0d5659300267d295b40b707ba393b357bec608d9cb2f58135",
+  "log_sha256": "2df7258fceaf6415b78a8defbfc74c7e5453e72e86e7ddd52ad5d096db15a069",
+  "source_log": "results/cinn-train/stdout.log"
+}

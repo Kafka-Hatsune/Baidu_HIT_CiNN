@@ -1,0 +1,211 @@
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[33mSkip checking if model is supported on device because the flag `PADDLE_PDX_DISABLE_DEV_MODEL_WL` has been set.[0m
+[32m['/work/.venv/bin/python', 'tools/train.py', '-c', '/root/.paddlex/tmpm9af_mav/textrecmodel_PP-OCRv4_server_rec.yml'][0m
+[32m
+Log path: /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/train.log 
+[0m
+Skipping import of the encryption module.
+[2026/11/20 10:02:39] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/11/20 10:02:39] ppocr INFO: Architecture : 
+[2026/11/20 10:02:39] ppocr INFO:     Backbone : 
+[2026/11/20 10:02:39] ppocr INFO:         name : PPHGNet_small
+[2026/11/20 10:02:39] ppocr INFO:     Head : 
+[2026/11/20 10:02:39] ppocr INFO:         head_list : 
+[2026/11/20 10:02:39] ppocr INFO:             CTCHead : 
+[2026/11/20 10:02:39] ppocr INFO:                 Head : 
+[2026/11/20 10:02:39] ppocr INFO:                     fc_decay : 1e-05
+[2026/11/20 10:02:39] ppocr INFO:                 Neck : 
+[2026/11/20 10:02:39] ppocr INFO:                     depth : 2
+[2026/11/20 10:02:39] ppocr INFO:                     dims : 120
+[2026/11/20 10:02:39] ppocr INFO:                     hidden_dims : 120
+[2026/11/20 10:02:39] ppocr INFO:                     kernel_size : [1, 3]
+[2026/11/20 10:02:39] ppocr INFO:                     name : svtr
+[2026/11/20 10:02:39] ppocr INFO:                     use_guide : True
+[2026/11/20 10:02:39] ppocr INFO:             NRTRHead : 
+[2026/11/20 10:02:39] ppocr INFO:                 max_text_length : 25
+[2026/11/20 10:02:39] ppocr INFO:                 nrtr_dim : 384
+[2026/11/20 10:02:39] ppocr INFO:         name : MultiHead
+[2026/11/20 10:02:39] ppocr INFO:     Transform : None
+[2026/11/20 10:02:39] ppocr INFO:     algorithm : SVTR_HGNet
+[2026/11/20 10:02:39] ppocr INFO:     model_type : rec
+[2026/11/20 10:02:39] ppocr INFO: Eval : 
+[2026/11/20 10:02:39] ppocr INFO:     dataset : 
+[2026/11/20 10:02:39] ppocr INFO:         data_dir : /data/paddlex_train/datasets/ocr_rec_dataset_examples
+[2026/11/20 10:02:39] ppocr INFO:         label_file_list : ['/data/paddlex_train/datasets/ocr_rec_dataset_examples/val.txt']
+[2026/11/20 10:02:39] ppocr INFO:         name : TextRecDataset
+[2026/11/20 10:02:39] ppocr INFO:         transforms : 
+[2026/11/20 10:02:39] ppocr INFO:             DecodeImage : 
+[2026/11/20 10:02:39] ppocr INFO:                 channel_first : False
+[2026/11/20 10:02:39] ppocr INFO:                 img_mode : BGR
+[2026/11/20 10:02:39] ppocr INFO:             MultiLabelEncode : 
+[2026/11/20 10:02:39] ppocr INFO:                 gtc_encode : NRTRLabelEncode
+[2026/11/20 10:02:39] ppocr INFO:             RecResizeImg : 
+[2026/11/20 10:02:39] ppocr INFO:                 image_shape : [3, 48, 320]
+[2026/11/20 10:02:39] ppocr INFO:             KeepKeys : 
+[2026/11/20 10:02:39] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_gtc', 'length', 'valid_ratio']
+[2026/11/20 10:02:39] ppocr INFO:     loader : 
+[2026/11/20 10:02:39] ppocr INFO:         batch_size_per_card : 8
+[2026/11/20 10:02:39] ppocr INFO:         drop_last : False
+[2026/11/20 10:02:39] ppocr INFO:         num_workers : 4
+[2026/11/20 10:02:39] ppocr INFO:         shuffle : False
+[2026/11/20 10:02:39] ppocr INFO: Global : 
+[2026/11/20 10:02:39] ppocr INFO:     amp_level : OFF
+[2026/11/20 10:02:39] ppocr INFO:     cal_metric_during_train : True
+[2026/11/20 10:02:39] ppocr INFO:     character_dict_path : /data/paddlex_train/datasets/ocr_rec_dataset_examples/dict.txt
+[2026/11/20 10:02:39] ppocr INFO:     checkpoints : 
+[2026/11/20 10:02:39] ppocr INFO:     d2s_train_image_shape : [3, 48, 320]
+[2026/11/20 10:02:39] ppocr INFO:     debug : False
+[2026/11/20 10:02:39] ppocr INFO:     distributed : False
+[2026/11/20 10:02:39] ppocr INFO:     epoch_num : 1
+[2026/11/20 10:02:39] ppocr INFO:     eval_batch_epoch : 1
+[2026/11/20 10:02:39] ppocr INFO:     eval_batch_step : [0, 2000]
+[2026/11/20 10:02:39] ppocr INFO:     export_with_pir : True
+[2026/11/20 10:02:39] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2026/11/20 10:02:39] ppocr INFO:     infer_mode : False
+[2026/11/20 10:02:39] ppocr INFO:     log_smooth_window : 20
+[2026/11/20 10:02:39] ppocr INFO:     max_text_length : 25
+[2026/11/20 10:02:39] ppocr INFO:     model_name : PP-OCRv4_server_rec
+[2026/11/20 10:02:39] ppocr INFO:     pretrained_model : https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv4_server_rec_pretrained.pdparams
+[2026/11/20 10:02:39] ppocr INFO:     print_batch_step : 20
+[2026/11/20 10:02:39] ppocr INFO:     save_epoch_step : 1
+[2026/11/20 10:02:39] ppocr INFO:     save_inference_dir : None
+[2026/11/20 10:02:39] ppocr INFO:     save_model_dir : /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train
+[2026/11/20 10:02:39] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3.txt
+[2026/11/20 10:02:39] ppocr INFO:     to_static : False
+[2026/11/20 10:02:39] ppocr INFO:     uniform_output_enabled : True
+[2026/11/20 10:02:39] ppocr INFO:     use_amp : False
+[2026/11/20 10:02:39] ppocr INFO:     use_gcu : False
+[2026/11/20 10:02:39] ppocr INFO:     use_gpu : True
+[2026/11/20 10:02:39] ppocr INFO:     use_iluvatar_gpu : False
+[2026/11/20 10:02:39] ppocr INFO:     use_metax_gpu : False
+[2026/11/20 10:02:39] ppocr INFO:     use_mlu : False
+[2026/11/20 10:02:39] ppocr INFO:     use_npu : False
+[2026/11/20 10:02:39] ppocr INFO:     use_space_char : True
+[2026/11/20 10:02:39] ppocr INFO:     use_visualdl : True
+[2026/11/20 10:02:39] ppocr INFO:     use_xpu : False
+[2026/11/20 10:02:39] ppocr INFO: Loss : 
+[2026/11/20 10:02:39] ppocr INFO:     loss_config_list : 
+[2026/11/20 10:02:39] ppocr INFO:         CTCLoss : None
+[2026/11/20 10:02:39] ppocr INFO:         NRTRLoss : None
+[2026/11/20 10:02:39] ppocr INFO:     name : MultiLoss
+[2026/11/20 10:02:39] ppocr INFO: Metric : 
+[2026/11/20 10:02:39] ppocr INFO:     main_indicator : acc
+[2026/11/20 10:02:39] ppocr INFO:     name : RecMetric
+[2026/11/20 10:02:39] ppocr INFO: Optimizer : 
+[2026/11/20 10:02:39] ppocr INFO:     beta1 : 0.9
+[2026/11/20 10:02:39] ppocr INFO:     beta2 : 0.999
+[2026/11/20 10:02:39] ppocr INFO:     lr : 
+[2026/11/20 10:02:39] ppocr INFO:         learning_rate : 0.001
+[2026/11/20 10:02:39] ppocr INFO:         name : Cosine
+[2026/11/20 10:02:39] ppocr INFO:         warmup_epoch : 5
+[2026/11/20 10:02:39] ppocr INFO:     name : Adam
+[2026/11/20 10:02:39] ppocr INFO:     regularizer : 
+[2026/11/20 10:02:39] ppocr INFO:         factor : 3e-05
+[2026/11/20 10:02:39] ppocr INFO:         name : L2
+[2026/11/20 10:02:39] ppocr INFO: PostProcess : 
+[2026/11/20 10:02:39] ppocr INFO:     name : CTCLabelDecode
+[2026/11/20 10:02:39] ppocr INFO: Train : 
+[2026/11/20 10:02:39] ppocr INFO:     dataset : 
+[2026/11/20 10:02:39] ppocr INFO:         data_dir : /data/paddlex_train/datasets/ocr_rec_dataset_examples
+[2026/11/20 10:02:39] ppocr INFO:         ds_width : False
+[2026/11/20 10:02:39] ppocr INFO:         ext_op_transform_idx : 1
+[2026/11/20 10:02:39] ppocr INFO:         label_file_list : ['/data/paddlex_train/datasets/ocr_rec_dataset_examples/train.txt']
+[2026/11/20 10:02:39] ppocr INFO:         name : MSTextRecDataset
+[2026/11/20 10:02:39] ppocr INFO:         transforms : 
+[2026/11/20 10:02:39] ppocr INFO:             DecodeImage : 
+[2026/11/20 10:02:39] ppocr INFO:                 channel_first : False
+[2026/11/20 10:02:39] ppocr INFO:                 img_mode : BGR
+[2026/11/20 10:02:39] ppocr INFO:             RecConAug : 
+[2026/11/20 10:02:39] ppocr INFO:                 ext_data_num : 2
+[2026/11/20 10:02:39] ppocr INFO:                 image_shape : [48, 320, 3]
+[2026/11/20 10:02:39] ppocr INFO:                 max_text_length : 25
+[2026/11/20 10:02:39] ppocr INFO:                 prob : 0.5
+[2026/11/20 10:02:39] ppocr INFO:             RecAug : None
+[2026/11/20 10:02:39] ppocr INFO:             MultiLabelEncode : 
+[2026/11/20 10:02:39] ppocr INFO:                 gtc_encode : NRTRLabelEncode
+[2026/11/20 10:02:39] ppocr INFO:             KeepKeys : 
+[2026/11/20 10:02:39] ppocr INFO:                 keep_keys : ['image', 'label_ctc', 'label_gtc', 'length', 'valid_ratio']
+[2026/11/20 10:02:39] ppocr INFO:     loader : 
+[2026/11/20 10:02:39] ppocr INFO:         batch_size_per_card : 8
+[2026/11/20 10:02:39] ppocr INFO:         drop_last : True
+[2026/11/20 10:02:39] ppocr INFO:         num_workers : 8
+[2026/11/20 10:02:39] ppocr INFO:         shuffle : True
+[2026/11/20 10:02:39] ppocr INFO:     sampler : 
+[2026/11/20 10:02:39] ppocr INFO:         divided_factor : [8, 16]
+[2026/11/20 10:02:39] ppocr INFO:         first_bs : 8
+[2026/11/20 10:02:39] ppocr INFO:         fix_bs : False
+[2026/11/20 10:02:39] ppocr INFO:         is_training : True
+[2026/11/20 10:02:39] ppocr INFO:         name : MultiScaleSampler
+[2026/11/20 10:02:39] ppocr INFO:         scales : [[320, 32], [320, 48], [320, 64]]
+[2026/11/20 10:02:39] ppocr INFO: profiler_options : None
+[2026/11/20 10:02:39] ppocr INFO: train with paddle 3.5.0.dev20261116+10a99906f58 and device Place(gpu:0)
+[2026/11/20 10:02:39] ppocr INFO: Initialize indexs of datasets:['/data/paddlex_train/datasets/ocr_rec_dataset_examples/train.txt']
+[2026/11/20 10:02:39] ppocr INFO: Initialize indexs of datasets:['/data/paddlex_train/datasets/ocr_rec_dataset_examples/val.txt']
+W1120 10:02:39.338075 111105 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+[2026-11-20 10:02:39,863] [    INFO] optimizer.py:259 - If regularizer of a Parameter has been set by 'paddle.ParamAttr' or 'static.WeightNormParamAttr' already. The weight_decay[3e-05] in Optimizer will not take effect, and it will only be applied to other Parameters!
+[2026/11/20 10:02:39] ppocr INFO: train dataloader has 789 iters
+[2026/11/20 10:02:39] ppocr INFO: valid dataloader has 260 iters
+download https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv4_server_rec_pretrained.pdparams to /root/.paddleocr/models/PP-OCRv4_server_rec_pretrained.pdparams
+  0%|          | 0/154266 [00:00<?, ?it/s]  5%|▍         | 7598/154266 [00:00<00:01, 75979.53it/s] 13%|█▎        | 20194/154266 [00:00<00:01, 105376.24it/s] 21%|██        | 32566/154266 [00:00<00:01, 113751.28it/s] 29%|██▉       | 45057/154266 [00:00<00:00, 115332.53it/s] 37%|███▋      | 56585/154266 [00:00<00:00, 104828.62it/s] 45%|████▍     | 69081/154266 [00:00<00:00, 111181.01it/s] 53%|█████▎    | 81317/154266 [00:00<00:00, 114654.25it/s] 61%|██████    | 93919/154266 [00:00<00:00, 118146.78it/s] 69%|██████▉   | 106471/154266 [00:00<00:00, 120395.62it/s] 77%|███████▋  | 119129/154266 [00:01<00:00, 122270.63it/s] 85%|████████▌ | 131405/154266 [00:01<00:00, 115760.38it/s] 93%|█████████▎| 143794/154266 [00:01<00:00, 118118.05it/s]100%|██████████| 154266/154266 [00:01<00:00, 114489.55it/s]
+[2026/11/20 10:02:41] ppocr INFO: load pretrain successful from /root/.paddleocr/models/PP-OCRv4_server_rec_pretrained
+[2026/11/20 10:02:41] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 789 iterations
+[2026/11/20 10:02:47] ppocr INFO: epoch: [1/1], global_step: 20, lr: 0.000002, acc: 0.249999, norm_edit_dis: 0.649737, CTCLoss: 15.091211, NRTRLoss: 2.065088, loss: 17.165478, avg_reader_cost: 0.10033 s, avg_batch_cost: 0.30160 s, avg_samples: 5.45, ips: 18.07025 samples/s, eta: 0:03:51, max_mem_reserved: 1198 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:02:49] ppocr INFO: epoch: [1/1], global_step: 40, lr: 0.000007, acc: 0.387499, norm_edit_dis: 0.693929, CTCLoss: 15.207388, NRTRLoss: 2.046802, loss: 16.992156, avg_reader_cost: 0.00183 s, avg_batch_cost: 0.08147 s, avg_samples: 5.6, ips: 68.73800 samples/s, eta: 0:02:23, max_mem_reserved: 1200 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:02:51] ppocr INFO: epoch: [1/1], global_step: 60, lr: 0.000013, acc: 0.200000, norm_edit_dis: 0.633247, CTCLoss: 29.339831, NRTRLoss: 2.314552, loss: 31.719831, avg_reader_cost: 0.00186 s, avg_batch_cost: 0.11372 s, avg_samples: 6.1, ips: 53.63841 samples/s, eta: 0:02:00, max_mem_reserved: 1200 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:02:53] ppocr INFO: epoch: [1/1], global_step: 80, lr: 0.000018, acc: 0.449999, norm_edit_dis: 0.773523, CTCLoss: 7.470315, NRTRLoss: 1.679146, loss: 9.329677, avg_reader_cost: 0.00180 s, avg_batch_cost: 0.11599 s, avg_samples: 6.0, ips: 51.72765 samples/s, eta: 0:01:48, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:02:56] ppocr INFO: epoch: [1/1], global_step: 100, lr: 0.000023, acc: 0.387499, norm_edit_dis: 0.714243, CTCLoss: 11.245791, NRTRLoss: 1.818560, loss: 13.060194, avg_reader_cost: 0.00182 s, avg_batch_cost: 0.12170 s, avg_samples: 4.95, ips: 40.67345 samples/s, eta: 0:01:41, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:02:58] ppocr INFO: epoch: [1/1], global_step: 120, lr: 0.000028, acc: 0.449999, norm_edit_dis: 0.757813, CTCLoss: 9.287027, NRTRLoss: 1.713591, loss: 10.970521, avg_reader_cost: 0.00192 s, avg_batch_cost: 0.12692 s, avg_samples: 6.4, ips: 50.42548 samples/s, eta: 0:01:36, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:01] ppocr INFO: epoch: [1/1], global_step: 140, lr: 0.000033, acc: 0.449999, norm_edit_dis: 0.831130, CTCLoss: 6.484475, NRTRLoss: 1.637727, loss: 8.150816, avg_reader_cost: 0.00197 s, avg_batch_cost: 0.12295 s, avg_samples: 5.95, ips: 48.39400 samples/s, eta: 0:01:31, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:03] ppocr INFO: epoch: [1/1], global_step: 160, lr: 0.000038, acc: 0.312500, norm_edit_dis: 0.766993, CTCLoss: 10.534553, NRTRLoss: 1.846119, loss: 12.489951, avg_reader_cost: 0.00183 s, avg_batch_cost: 0.12293 s, avg_samples: 5.5, ips: 44.74018 samples/s, eta: 0:01:27, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:05] ppocr INFO: epoch: [1/1], global_step: 180, lr: 0.000043, acc: 0.387499, norm_edit_dis: 0.811498, CTCLoss: 8.003392, NRTRLoss: 1.669761, loss: 9.583368, avg_reader_cost: 0.00181 s, avg_batch_cost: 0.11166 s, avg_samples: 5.9, ips: 52.83710 samples/s, eta: 0:01:22, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:08] ppocr INFO: epoch: [1/1], global_step: 200, lr: 0.000048, acc: 0.375000, norm_edit_dis: 0.818465, CTCLoss: 8.719426, NRTRLoss: 1.725146, loss: 10.321949, avg_reader_cost: 0.00181 s, avg_batch_cost: 0.10475 s, avg_samples: 5.85, ips: 55.84609 samples/s, eta: 0:01:17, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:09] ppocr INFO: epoch: [1/1], global_step: 220, lr: 0.000053, acc: 0.375000, norm_edit_dis: 0.800755, CTCLoss: 7.824695, NRTRLoss: 1.700579, loss: 9.592191, avg_reader_cost: 0.00180 s, avg_batch_cost: 0.08696 s, avg_samples: 5.55, ips: 63.81979 samples/s, eta: 0:01:12, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:11] ppocr INFO: epoch: [1/1], global_step: 240, lr: 0.000058, acc: 0.375000, norm_edit_dis: 0.782262, CTCLoss: 8.503911, NRTRLoss: 1.700618, loss: 10.264615, avg_reader_cost: 0.00177 s, avg_batch_cost: 0.08106 s, avg_samples: 5.95, ips: 73.39994 samples/s, eta: 0:01:08, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:13] ppocr INFO: epoch: [1/1], global_step: 260, lr: 0.000063, acc: 0.399999, norm_edit_dis: 0.800705, CTCLoss: 8.567921, NRTRLoss: 1.754484, loss: 10.394310, avg_reader_cost: 0.00185 s, avg_batch_cost: 0.08507 s, avg_samples: 5.55, ips: 65.24007 samples/s, eta: 0:01:04, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:14] ppocr INFO: epoch: [1/1], global_step: 280, lr: 0.000068, acc: 0.499999, norm_edit_dis: 0.829903, CTCLoss: 8.737442, NRTRLoss: 1.735393, loss: 10.501422, avg_reader_cost: 0.00169 s, avg_batch_cost: 0.07647 s, avg_samples: 5.7, ips: 74.53960 samples/s, eta: 0:01:00, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:16] ppocr INFO: epoch: [1/1], global_step: 300, lr: 0.000073, acc: 0.499999, norm_edit_dis: 0.800837, CTCLoss: 9.357100, NRTRLoss: 1.731376, loss: 11.288069, avg_reader_cost: 0.00165 s, avg_batch_cost: 0.07144 s, avg_samples: 6.0, ips: 83.99243 samples/s, eta: 0:00:56, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:17] ppocr INFO: epoch: [1/1], global_step: 320, lr: 0.000078, acc: 0.549999, norm_edit_dis: 0.888955, CTCLoss: 5.210330, NRTRLoss: 1.624428, loss: 6.790453, avg_reader_cost: 0.00166 s, avg_batch_cost: 0.06901 s, avg_samples: 5.1, ips: 73.90235 samples/s, eta: 0:00:52, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:19] ppocr INFO: epoch: [1/1], global_step: 340, lr: 0.000084, acc: 0.387499, norm_edit_dis: 0.834676, CTCLoss: 7.774183, NRTRLoss: 1.667159, loss: 9.460124, avg_reader_cost: 0.00205 s, avg_batch_cost: 0.09560 s, avg_samples: 6.2, ips: 64.85381 samples/s, eta: 0:00:49, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:21] ppocr INFO: epoch: [1/1], global_step: 360, lr: 0.000089, acc: 0.499999, norm_edit_dis: 0.844307, CTCLoss: 5.825484, NRTRLoss: 1.714670, loss: 7.459245, avg_reader_cost: 0.00178 s, avg_batch_cost: 0.11339 s, avg_samples: 5.4, ips: 47.62307 samples/s, eta: 0:00:47, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:23] ppocr INFO: epoch: [1/1], global_step: 380, lr: 0.000094, acc: 0.437499, norm_edit_dis: 0.827815, CTCLoss: 7.298507, NRTRLoss: 1.692017, loss: 8.770482, avg_reader_cost: 0.00178 s, avg_batch_cost: 0.10740 s, avg_samples: 5.4, ips: 50.27905 samples/s, eta: 0:00:45, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:25] ppocr INFO: epoch: [1/1], global_step: 400, lr: 0.000099, acc: 0.387499, norm_edit_dis: 0.808910, CTCLoss: 7.197267, NRTRLoss: 1.851958, loss: 9.027027, avg_reader_cost: 0.00174 s, avg_batch_cost: 0.10158 s, avg_samples: 5.45, ips: 53.65046 samples/s, eta: 0:00:43, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:27] ppocr INFO: epoch: [1/1], global_step: 420, lr: 0.000104, acc: 0.399999, norm_edit_dis: 0.856697, CTCLoss: 6.504345, NRTRLoss: 1.629785, loss: 8.186149, avg_reader_cost: 0.00175 s, avg_batch_cost: 0.10303 s, avg_samples: 5.4, ips: 52.41431 samples/s, eta: 0:00:40, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:30] ppocr INFO: epoch: [1/1], global_step: 440, lr: 0.000109, acc: 0.499999, norm_edit_dis: 0.858009, CTCLoss: 5.927495, NRTRLoss: 1.521588, loss: 7.349663, avg_reader_cost: 0.00175 s, avg_batch_cost: 0.10207 s, avg_samples: 5.65, ips: 55.35163 samples/s, eta: 0:00:38, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:32] ppocr INFO: epoch: [1/1], global_step: 460, lr: 0.000114, acc: 0.499999, norm_edit_dis: 0.824369, CTCLoss: 7.891620, NRTRLoss: 1.716635, loss: 9.722385, avg_reader_cost: 0.00170 s, avg_batch_cost: 0.11548 s, avg_samples: 5.6, ips: 48.49405 samples/s, eta: 0:00:36, max_mem_reserved: 1264 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:34] ppocr INFO: epoch: [1/1], global_step: 480, lr: 0.000119, acc: 0.499999, norm_edit_dis: 0.811900, CTCLoss: 7.720796, NRTRLoss: 1.767860, loss: 9.650365, avg_reader_cost: 0.00179 s, avg_batch_cost: 0.10046 s, avg_samples: 5.25, ips: 52.26017 samples/s, eta: 0:00:33, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:36] ppocr INFO: epoch: [1/1], global_step: 500, lr: 0.000124, acc: 0.324999, norm_edit_dis: 0.768892, CTCLoss: 9.669875, NRTRLoss: 1.821677, loss: 11.542102, avg_reader_cost: 0.00201 s, avg_batch_cost: 0.09716 s, avg_samples: 5.95, ips: 61.23824 samples/s, eta: 0:00:31, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:37] ppocr INFO: epoch: [1/1], global_step: 520, lr: 0.000129, acc: 0.449999, norm_edit_dis: 0.843101, CTCLoss: 5.862542, NRTRLoss: 1.636946, loss: 7.410096, avg_reader_cost: 0.00187 s, avg_batch_cost: 0.08248 s, avg_samples: 5.7, ips: 69.10630 samples/s, eta: 0:00:29, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:39] ppocr INFO: epoch: [1/1], global_step: 540, lr: 0.000134, acc: 0.499999, norm_edit_dis: 0.807157, CTCLoss: 6.973922, NRTRLoss: 1.772032, loss: 8.745954, avg_reader_cost: 0.00180 s, avg_batch_cost: 0.08251 s, avg_samples: 5.85, ips: 70.89777 samples/s, eta: 0:00:26, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:41] ppocr INFO: epoch: [1/1], global_step: 560, lr: 0.000139, acc: 0.387499, norm_edit_dis: 0.791988, CTCLoss: 8.672101, NRTRLoss: 1.806948, loss: 10.460735, avg_reader_cost: 0.00174 s, avg_batch_cost: 0.08013 s, avg_samples: 4.9, ips: 61.14872 samples/s, eta: 0:00:24, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:42] ppocr INFO: epoch: [1/1], global_step: 580, lr: 0.000144, acc: 0.399999, norm_edit_dis: 0.782018, CTCLoss: 9.949288, NRTRLoss: 1.829038, loss: 12.276195, avg_reader_cost: 0.00174 s, avg_batch_cost: 0.08201 s, avg_samples: 6.1, ips: 74.37754 samples/s, eta: 0:00:22, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:44] ppocr INFO: epoch: [1/1], global_step: 600, lr: 0.000149, acc: 0.499999, norm_edit_dis: 0.821538, CTCLoss: 5.783219, NRTRLoss: 1.639492, loss: 7.451871, avg_reader_cost: 0.00178 s, avg_batch_cost: 0.08042 s, avg_samples: 5.95, ips: 73.98719 samples/s, eta: 0:00:19, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:46] ppocr INFO: epoch: [1/1], global_step: 620, lr: 0.000154, acc: 0.387499, norm_edit_dis: 0.794985, CTCLoss: 6.757905, NRTRLoss: 1.680266, loss: 8.449575, avg_reader_cost: 0.00207 s, avg_batch_cost: 0.09453 s, avg_samples: 4.85, ips: 51.30445 samples/s, eta: 0:00:17, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:48] ppocr INFO: epoch: [1/1], global_step: 640, lr: 0.000160, acc: 0.250000, norm_edit_dis: 0.800406, CTCLoss: 9.290679, NRTRLoss: 1.870998, loss: 11.089207, avg_reader_cost: 0.00176 s, avg_batch_cost: 0.12307 s, avg_samples: 5.9, ips: 47.94119 samples/s, eta: 0:00:15, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:51] ppocr INFO: epoch: [1/1], global_step: 660, lr: 0.000165, acc: 0.375000, norm_edit_dis: 0.805385, CTCLoss: 9.732200, NRTRLoss: 1.875356, loss: 11.731308, avg_reader_cost: 0.00186 s, avg_batch_cost: 0.12500 s, avg_samples: 5.9, ips: 47.19942 samples/s, eta: 0:00:13, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:53] ppocr INFO: epoch: [1/1], global_step: 680, lr: 0.000170, acc: 0.250000, norm_edit_dis: 0.807367, CTCLoss: 6.144160, NRTRLoss: 1.631076, loss: 7.840284, avg_reader_cost: 0.00199 s, avg_batch_cost: 0.11401 s, avg_samples: 6.25, ips: 54.81838 samples/s, eta: 0:00:11, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:55] ppocr INFO: epoch: [1/1], global_step: 700, lr: 0.000175, acc: 0.449999, norm_edit_dis: 0.808088, CTCLoss: 6.820210, NRTRLoss: 1.808044, loss: 8.575974, avg_reader_cost: 0.00196 s, avg_batch_cost: 0.10507 s, avg_samples: 5.45, ips: 51.86810 samples/s, eta: 0:00:09, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:03:58] ppocr INFO: epoch: [1/1], global_step: 720, lr: 0.000180, acc: 0.387499, norm_edit_dis: 0.818184, CTCLoss: 8.816888, NRTRLoss: 1.745185, loss: 10.551499, avg_reader_cost: 0.00194 s, avg_batch_cost: 0.11596 s, avg_samples: 6.05, ips: 52.17299 samples/s, eta: 0:00:07, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:04:00] ppocr INFO: epoch: [1/1], global_step: 740, lr: 0.000185, acc: 0.387499, norm_edit_dis: 0.815477, CTCLoss: 6.439607, NRTRLoss: 1.631967, loss: 8.010693, avg_reader_cost: 0.00177 s, avg_batch_cost: 0.10631 s, avg_samples: 5.6, ips: 52.67847 samples/s, eta: 0:00:05, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:04:01] ppocr INFO: epoch: [1/1], global_step: 760, lr: 0.000190, acc: 0.449999, norm_edit_dis: 0.825893, CTCLoss: 6.234979, NRTRLoss: 1.605289, loss: 7.812721, avg_reader_cost: 0.00172 s, avg_batch_cost: 0.08582 s, avg_samples: 5.25, ips: 61.17319 samples/s, eta: 0:00:03, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:04:03] ppocr INFO: epoch: [1/1], global_step: 780, lr: 0.000195, acc: 0.399999, norm_edit_dis: 0.805556, CTCLoss: 7.929961, NRTRLoss: 1.634670, loss: 9.680588, avg_reader_cost: 0.00171 s, avg_batch_cost: 0.08111 s, avg_samples: 5.55, ips: 68.42513 samples/s, eta: 0:00:00, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+[2026/11/20 10:04:04] ppocr INFO: epoch: [1/1], global_step: 789, lr: 0.000197, acc: 0.399999, norm_edit_dis: 0.808383, CTCLoss: 7.024852, NRTRLoss: 1.726203, loss: 8.868674, avg_reader_cost: 0.00073 s, avg_batch_cost: 0.03064 s, avg_samples: 2.4, ips: 78.33265 samples/s, eta: 0:00:00, max_mem_reserved: 1266 MB, max_mem_allocated: 1130 MB
+eval model::   0%|          | 0/260 [00:00<?, ?it/s]eval model::   0%|          | 1/260 [00:00<01:11,  3.64it/s]eval model::   2%|▏         | 6/260 [00:00<00:13, 19.45it/s]eval model::   5%|▍         | 12/260 [00:00<00:07, 31.28it/s]eval model::   7%|▋         | 18/260 [00:00<00:06, 38.13it/s]eval model::   9%|▉         | 24/260 [00:00<00:05, 42.38it/s]eval model::  12%|█▏        | 30/260 [00:00<00:05, 45.43it/s]eval model::  14%|█▍        | 36/260 [00:00<00:04, 47.18it/s]eval model::  16%|█▌        | 42/260 [00:01<00:04, 48.01it/s]eval model::  18%|█▊        | 48/260 [00:01<00:04, 49.38it/s]eval model::  21%|██        | 54/260 [00:01<00:04, 49.74it/s]eval model::  23%|██▎       | 60/260 [00:01<00:04, 49.80it/s]eval model::  25%|██▌       | 66/260 [00:01<00:03, 49.63it/s]eval model::  28%|██▊       | 72/260 [00:01<00:03, 50.35it/s]eval model::  30%|███       | 78/260 [00:01<00:03, 49.98it/s]eval model::  32%|███▏      | 84/260 [00:01<00:03, 51.15it/s]eval model::  35%|███▍      | 90/260 [00:02<00:03, 51.26it/s]eval model::  37%|███▋      | 96/260 [00:02<00:03, 49.00it/s]eval model::  39%|███▉      | 102/260 [00:02<00:03, 49.67it/s]eval model::  42%|████▏     | 108/260 [00:02<00:03, 50.59it/s]eval model::  44%|████▍     | 114/260 [00:02<00:02, 49.65it/s]eval model::  46%|████▌     | 120/260 [00:02<00:02, 50.29it/s]eval model::  48%|████▊     | 126/260 [00:02<00:02, 50.31it/s]eval model::  51%|█████     | 132/260 [00:02<00:02, 49.64it/s]eval model::  53%|█████▎    | 138/260 [00:02<00:02, 50.57it/s]eval model::  55%|█████▌    | 144/260 [00:03<00:02, 48.82it/s]eval model::  57%|█████▋    | 149/260 [00:03<00:02, 46.59it/s]eval model::  59%|█████▉    | 154/260 [00:03<00:02, 47.16it/s]eval model::  61%|██████    | 159/260 [00:03<00:02, 47.35it/s]eval model::  63%|██████▎   | 164/260 [00:03<00:02, 46.38it/s]eval model::  65%|██████▌   | 170/260 [00:03<00:01, 48.16it/s]eval model::  68%|██████▊   | 176/260 [00:03<00:01, 49.33it/s]eval model::  70%|███████   | 182/260 [00:03<00:01, 50.27it/s]eval model::  72%|███████▏  | 188/260 [00:04<00:01, 50.95it/s]eval model::  75%|███████▍  | 194/260 [00:04<00:01, 51.32it/s]eval model::  77%|███████▋  | 200/260 [00:04<00:01, 51.52it/s]eval model::  79%|███████▉  | 206/260 [00:04<00:01, 50.83it/s]eval model::  82%|████████▏ | 212/260 [00:04<00:00, 51.04it/s]eval model::  84%|████████▍ | 218/260 [00:04<00:00, 51.12it/s]eval model::  86%|████████▌ | 224/260 [00:04<00:00, 51.01it/s]eval model::  88%|████████▊ | 230/260 [00:04<00:00, 50.94it/s]eval model::  91%|█████████ | 236/260 [00:04<00:00, 49.38it/s]eval model::  93%|█████████▎| 241/260 [00:05<00:00, 49.29it/s]eval model::  95%|█████████▌| 247/260 [00:05<00:00, 49.60it/s]eval model::  97%|█████████▋| 252/260 [00:05<00:00, 49.62it/s]eval model::  99%|█████████▉| 258/260 [00:05<00:00, 49.94it/s]eval model:: 100%|██████████| 260/260 [00:05<00:00, 46.70it/s]
+[2026/11/20 10:04:09] ppocr INFO: cur metric, acc: 0.6143476137970745, norm_edit_dis: 0.8347415899185675, fps: 531.7575680923829
+[2026/11/20 10:04:09] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+W1120 10:04:11.483004 111105 eager_utils.cc:3617] Paddle static graph(PIR) not support input out tensor for now!!!!!
+[2026/11/20 10:04:12] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/best_accuracy/inference/inference
+[2026/11/20 10:04:14] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/best_accuracy
+[2026/11/20 10:04:14] ppocr INFO: save best model is to /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/best_accuracy/best_accuracy
+[2026/11/20 10:04:14] ppocr INFO: best metric, acc: 0.6143476137970745, is_float16: False, norm_edit_dis: 0.8347415899185675, fps: 531.7575680923829, best_epoch: 1
+[2026/11/20 10:04:14] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:16] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:04:17] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/latest
+[2026/11/20 10:04:17] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/latest/latest
+[2026/11/20 10:04:17] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/iter_epoch_1/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:19] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/iter_epoch_1/inference/inference
+[2026/11/20 10:04:20] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/iter_epoch_1
+[2026/11/20 10:04:20] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_rec/results/dynamic-train/iter_epoch_1/iter_epoch_1
+[2026/11/20 10:04:20] ppocr INFO: best metric, acc: 0.6143476137970745, is_float16: False, norm_edit_dis: 0.8347415899185675, fps: 531.7575680923829, best_epoch: 1

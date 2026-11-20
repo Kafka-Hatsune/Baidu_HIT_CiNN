@@ -1,0 +1,370 @@
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[33mSkip checking if model is supported on device because the flag `PADDLE_PDX_DISABLE_DEV_MODEL_WL` has been set.[0m
+[32m['/work/.venv/bin/python', 'tools/train.py', '-c', '/root/.paddlex/tmpobpf7cf_/textdetmodel_PP-OCRv4_server_det.yml'][0m
+[32m
+Log path: /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/train.log 
+[0m
+Skipping import of the encryption module.
+[2026/11/20 10:02:43] ppocr WARNING: You are using VisualDL, the VisualDL is deprecated and removed in ppocr!
+[2026/11/20 10:02:43] ppocr INFO: Architecture : 
+[2026/11/20 10:02:43] ppocr INFO:     Backbone : 
+[2026/11/20 10:02:43] ppocr INFO:         det : True
+[2026/11/20 10:02:43] ppocr INFO:         name : PPHGNet_small
+[2026/11/20 10:02:43] ppocr INFO:     Head : 
+[2026/11/20 10:02:43] ppocr INFO:         fix_nan : True
+[2026/11/20 10:02:43] ppocr INFO:         k : 50
+[2026/11/20 10:02:43] ppocr INFO:         mode : large
+[2026/11/20 10:02:43] ppocr INFO:         name : PFHeadLocal
+[2026/11/20 10:02:43] ppocr INFO:     Neck : 
+[2026/11/20 10:02:43] ppocr INFO:         intracl : True
+[2026/11/20 10:02:43] ppocr INFO:         name : LKPAN
+[2026/11/20 10:02:43] ppocr INFO:         out_channels : 256
+[2026/11/20 10:02:43] ppocr INFO:     Transform : None
+[2026/11/20 10:02:43] ppocr INFO:     algorithm : DB
+[2026/11/20 10:02:43] ppocr INFO:     model_type : det
+[2026/11/20 10:02:43] ppocr INFO: Eval : 
+[2026/11/20 10:02:43] ppocr INFO:     dataset : 
+[2026/11/20 10:02:43] ppocr INFO:         data_dir : /data/paddlex_train/datasets/ocr_det_dataset_examples
+[2026/11/20 10:02:43] ppocr INFO:         label_file_list : ['/data/paddlex_train/datasets/ocr_det_dataset_examples/val.txt']
+[2026/11/20 10:02:43] ppocr INFO:         name : TextDetDataset
+[2026/11/20 10:02:43] ppocr INFO:         transforms : 
+[2026/11/20 10:02:43] ppocr INFO:             DecodeImage : 
+[2026/11/20 10:02:43] ppocr INFO:                 channel_first : False
+[2026/11/20 10:02:43] ppocr INFO:                 img_mode : BGR
+[2026/11/20 10:02:43] ppocr INFO:             DetLabelEncode : None
+[2026/11/20 10:02:43] ppocr INFO:             DetResizeForTest : 
+[2026/11/20 10:02:43] ppocr INFO:                 resize_long : 960
+[2026/11/20 10:02:43] ppocr INFO:             NormalizeImage : 
+[2026/11/20 10:02:43] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/11/20 10:02:43] ppocr INFO:                 order : hwc
+[2026/11/20 10:02:43] ppocr INFO:                 scale : 1./255.
+[2026/11/20 10:02:43] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/11/20 10:02:43] ppocr INFO:             ToCHWImage : None
+[2026/11/20 10:02:43] ppocr INFO:             KeepKeys : 
+[2026/11/20 10:02:43] ppocr INFO:                 keep_keys : ['image', 'shape', 'polys', 'ignore_tags']
+[2026/11/20 10:02:43] ppocr INFO:     loader : 
+[2026/11/20 10:02:43] ppocr INFO:         batch_size_per_card : 1
+[2026/11/20 10:02:43] ppocr INFO:         drop_last : False
+[2026/11/20 10:02:43] ppocr INFO:         num_workers : 0
+[2026/11/20 10:02:43] ppocr INFO:         shuffle : False
+[2026/11/20 10:02:43] ppocr INFO: Global : 
+[2026/11/20 10:02:43] ppocr INFO:     amp_level : OFF
+[2026/11/20 10:02:43] ppocr INFO:     cal_metric_during_train : False
+[2026/11/20 10:02:43] ppocr INFO:     checkpoints : 
+[2026/11/20 10:02:43] ppocr INFO:     d2s_train_image_shape : [3, 640, 640]
+[2026/11/20 10:02:43] ppocr INFO:     debug : False
+[2026/11/20 10:02:43] ppocr INFO:     distributed : False
+[2026/11/20 10:02:43] ppocr INFO:     epoch_num : 10
+[2026/11/20 10:02:43] ppocr INFO:     eval_batch_epoch : 1
+[2026/11/20 10:02:43] ppocr INFO:     eval_batch_step : [0, 100]
+[2026/11/20 10:02:43] ppocr INFO:     export_with_pir : True
+[2026/11/20 10:02:43] ppocr INFO:     log_smooth_window : 20
+[2026/11/20 10:02:43] ppocr INFO:     model_name : PP-OCRv4_server_det
+[2026/11/20 10:02:43] ppocr INFO:     pretrained_model : https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv4_server_det_pretrained.pdparams
+[2026/11/20 10:02:43] ppocr INFO:     print_batch_step : 10
+[2026/11/20 10:02:43] ppocr INFO:     save_epoch_step : 1
+[2026/11/20 10:02:43] ppocr INFO:     save_inference_dir : None
+[2026/11/20 10:02:43] ppocr INFO:     save_model_dir : /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train
+[2026/11/20 10:02:43] ppocr INFO:     to_static : False
+[2026/11/20 10:02:43] ppocr INFO:     uniform_output_enabled : True
+[2026/11/20 10:02:43] ppocr INFO:     use_amp : False
+[2026/11/20 10:02:43] ppocr INFO:     use_gcu : False
+[2026/11/20 10:02:43] ppocr INFO:     use_gpu : True
+[2026/11/20 10:02:43] ppocr INFO:     use_iluvatar_gpu : False
+[2026/11/20 10:02:43] ppocr INFO:     use_metax_gpu : False
+[2026/11/20 10:02:43] ppocr INFO:     use_mlu : False
+[2026/11/20 10:02:43] ppocr INFO:     use_npu : False
+[2026/11/20 10:02:43] ppocr INFO:     use_visualdl : True
+[2026/11/20 10:02:43] ppocr INFO:     use_xpu : False
+[2026/11/20 10:02:43] ppocr INFO: Loss : 
+[2026/11/20 10:02:43] ppocr INFO:     alpha : 5
+[2026/11/20 10:02:43] ppocr INFO:     balance_loss : True
+[2026/11/20 10:02:43] ppocr INFO:     beta : 10
+[2026/11/20 10:02:43] ppocr INFO:     main_loss_type : DiceLoss
+[2026/11/20 10:02:43] ppocr INFO:     name : DBLoss
+[2026/11/20 10:02:43] ppocr INFO:     ohem_ratio : 3
+[2026/11/20 10:02:43] ppocr INFO: Metric : 
+[2026/11/20 10:02:43] ppocr INFO:     main_indicator : hmean
+[2026/11/20 10:02:43] ppocr INFO:     name : DetMetric
+[2026/11/20 10:02:43] ppocr INFO: Optimizer : 
+[2026/11/20 10:02:43] ppocr INFO:     beta1 : 0.9
+[2026/11/20 10:02:43] ppocr INFO:     beta2 : 0.999
+[2026/11/20 10:02:43] ppocr INFO:     lr : 
+[2026/11/20 10:02:43] ppocr INFO:         learning_rate : 0.001
+[2026/11/20 10:02:43] ppocr INFO:         name : Cosine
+[2026/11/20 10:02:43] ppocr INFO:         warmup_epoch : 2
+[2026/11/20 10:02:43] ppocr INFO:     name : Adam
+[2026/11/20 10:02:43] ppocr INFO:     regularizer : 
+[2026/11/20 10:02:43] ppocr INFO:         factor : 1e-6
+[2026/11/20 10:02:43] ppocr INFO:         name : L2
+[2026/11/20 10:02:43] ppocr INFO: PostProcess : 
+[2026/11/20 10:02:43] ppocr INFO:     box_thresh : 0.6
+[2026/11/20 10:02:43] ppocr INFO:     max_candidates : 1000
+[2026/11/20 10:02:43] ppocr INFO:     name : DBPostProcess
+[2026/11/20 10:02:43] ppocr INFO:     thresh : 0.3
+[2026/11/20 10:02:43] ppocr INFO:     unclip_ratio : 1.5
+[2026/11/20 10:02:43] ppocr INFO: Train : 
+[2026/11/20 10:02:43] ppocr INFO:     dataset : 
+[2026/11/20 10:02:43] ppocr INFO:         data_dir : /data/paddlex_train/datasets/ocr_det_dataset_examples
+[2026/11/20 10:02:43] ppocr INFO:         label_file_list : ['/data/paddlex_train/datasets/ocr_det_dataset_examples/train.txt']
+[2026/11/20 10:02:43] ppocr INFO:         name : TextDetDataset
+[2026/11/20 10:02:43] ppocr INFO:         transforms : 
+[2026/11/20 10:02:43] ppocr INFO:             DecodeImage : 
+[2026/11/20 10:02:43] ppocr INFO:                 channel_first : False
+[2026/11/20 10:02:43] ppocr INFO:                 img_mode : BGR
+[2026/11/20 10:02:43] ppocr INFO:             DetLabelEncode : None
+[2026/11/20 10:02:43] ppocr INFO:             CopyPaste : None
+[2026/11/20 10:02:43] ppocr INFO:             IaaAugment : 
+[2026/11/20 10:02:43] ppocr INFO:                 augmenter_args : 
+[2026/11/20 10:02:43] ppocr INFO:                     args : 
+[2026/11/20 10:02:43] ppocr INFO:                         p : 0.5
+[2026/11/20 10:02:43] ppocr INFO:                     type : Fliplr
+[2026/11/20 10:02:43] ppocr INFO:                     args : 
+[2026/11/20 10:02:43] ppocr INFO:                         rotate : [-10, 10]
+[2026/11/20 10:02:43] ppocr INFO:                     type : Affine
+[2026/11/20 10:02:43] ppocr INFO:                     args : 
+[2026/11/20 10:02:43] ppocr INFO:                         size : [0.5, 3]
+[2026/11/20 10:02:43] ppocr INFO:                     type : Resize
+[2026/11/20 10:02:43] ppocr INFO:             EastRandomCropData : 
+[2026/11/20 10:02:43] ppocr INFO:                 keep_ratio : True
+[2026/11/20 10:02:43] ppocr INFO:                 max_tries : 50
+[2026/11/20 10:02:43] ppocr INFO:                 size : [640, 640]
+[2026/11/20 10:02:43] ppocr INFO:             MakeBorderMap : 
+[2026/11/20 10:02:43] ppocr INFO:                 shrink_ratio : 0.4
+[2026/11/20 10:02:43] ppocr INFO:                 thresh_max : 0.7
+[2026/11/20 10:02:43] ppocr INFO:                 thresh_min : 0.3
+[2026/11/20 10:02:43] ppocr INFO:                 total_epoch : 500
+[2026/11/20 10:02:43] ppocr INFO:             MakeShrinkMap : 
+[2026/11/20 10:02:43] ppocr INFO:                 min_text_size : 8
+[2026/11/20 10:02:43] ppocr INFO:                 shrink_ratio : 0.4
+[2026/11/20 10:02:43] ppocr INFO:                 total_epoch : 500
+[2026/11/20 10:02:43] ppocr INFO:             NormalizeImage : 
+[2026/11/20 10:02:43] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/11/20 10:02:43] ppocr INFO:                 order : hwc
+[2026/11/20 10:02:43] ppocr INFO:                 scale : 1./255.
+[2026/11/20 10:02:43] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/11/20 10:02:43] ppocr INFO:             ToCHWImage : None
+[2026/11/20 10:02:43] ppocr INFO:             KeepKeys : 
+[2026/11/20 10:02:43] ppocr INFO:                 keep_keys : ['image', 'threshold_map', 'threshold_mask', 'shrink_map', 'shrink_mask']
+[2026/11/20 10:02:43] ppocr INFO:     loader : 
+[2026/11/20 10:02:43] ppocr INFO:         batch_size_per_card : 4
+[2026/11/20 10:02:43] ppocr INFO:         drop_last : False
+[2026/11/20 10:02:43] ppocr INFO:         num_workers : 3
+[2026/11/20 10:02:43] ppocr INFO:         shuffle : True
+[2026/11/20 10:02:43] ppocr INFO: profiler_options : None
+[2026/11/20 10:02:43] ppocr INFO: train with paddle 3.5.0.dev20261116+10a99906f58 and device Place(gpu:0)
+[2026/11/20 10:02:43] ppocr INFO: Initialize indexs of datasets:['/data/paddlex_train/datasets/ocr_det_dataset_examples/train.txt']
+[2026/11/20 10:02:43] ppocr INFO: Initialize indexs of datasets:['/data/paddlex_train/datasets/ocr_det_dataset_examples/val.txt']
+W1120 10:02:43.770233 111408 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+[2026-11-20 10:02:43,919] [    INFO] optimizer.py:259 - If regularizer of a Parameter has been set by 'paddle.ParamAttr' or 'static.WeightNormParamAttr' already. The weight_decay[1e-06] in Optimizer will not take effect, and it will only be applied to other Parameters!
+[2026/11/20 10:02:43] ppocr INFO: train dataloader has 50 iters
+[2026/11/20 10:02:43] ppocr INFO: valid dataloader has 50 iters
+download https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv4_server_det_pretrained.pdparams to /root/.paddleocr/models/PP-OCRv4_server_det_pretrained.pdparams
+  0%|          | 0/127507 [00:00<?, ?it/s]  4%|▎         | 4713/127507 [00:00<00:02, 47129.71it/s] 12%|█▏        | 15155/127507 [00:00<00:01, 80828.25it/s] 22%|██▏       | 27874/127507 [00:00<00:00, 101995.57it/s] 32%|███▏      | 40936/127507 [00:00<00:00, 113295.03it/s] 42%|████▏     | 53079/127507 [00:00<00:00, 116226.95it/s] 51%|█████     | 64702/127507 [00:00<00:00, 109627.57it/s] 60%|██████    | 76898/127507 [00:00<00:00, 113500.76it/s] 70%|██████▉   | 89121/127507 [00:00<00:00, 116201.50it/s] 79%|███████▉  | 100790/127507 [00:00<00:00, 116319.58it/s] 88%|████████▊ | 112456/127507 [00:01<00:00, 116224.01it/s] 98%|█████████▊| 124775/127507 [00:01<00:00, 118331.10it/s]100%|██████████| 127507/127507 [00:01<00:00, 111773.01it/s]
+[2026/11/20 10:02:45] ppocr WARNING: The pretrained params backbone.last_conv.weight not in model
+[2026/11/20 10:02:45] ppocr WARNING: The pretrained params backbone.fc.weight not in model
+[2026/11/20 10:02:45] ppocr WARNING: The pretrained params backbone.fc.bias not in model
+[2026/11/20 10:02:45] ppocr INFO: load pretrain successful from /root/.paddleocr/models/PP-OCRv4_server_det_pretrained
+[2026/11/20 10:02:45] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 50 iterations
+[2026/11/20 10:02:52] ppocr INFO: epoch: [1/10], global_step: 10, lr: 0.000045, loss: 2.261508, loss_shrink_maps: 1.191384, loss_threshold_maps: 0.578362, loss_binary_maps: 0.237667, loss_cbn: 0.237667, avg_reader_cost: 0.17606 s, avg_batch_cost: 0.65744 s, avg_samples: 4.0, ips: 6.08416 samples/s, eta: 0:05:22, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:02:55] ppocr INFO: epoch: [1/10], global_step: 20, lr: 0.000095, loss: 2.080429, loss_shrink_maps: 1.072671, loss_threshold_maps: 0.436430, loss_binary_maps: 0.214698, loss_cbn: 0.214698, avg_reader_cost: 0.00182 s, avg_batch_cost: 0.30678 s, avg_samples: 4.0, ips: 13.03859 samples/s, eta: 0:03:51, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:02:58] ppocr INFO: epoch: [1/10], global_step: 30, lr: 0.000195, loss: 1.771205, loss_shrink_maps: 0.921970, loss_threshold_maps: 0.427762, loss_binary_maps: 0.185099, loss_cbn: 0.185099, avg_reader_cost: 0.00176 s, avg_batch_cost: 0.32831 s, avg_samples: 4.0, ips: 12.18367 samples/s, eta: 0:03:22, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:01] ppocr INFO: epoch: [1/10], global_step: 40, lr: 0.000295, loss: 1.791373, loss_shrink_maps: 0.875536, loss_threshold_maps: 0.504637, loss_binary_maps: 0.176062, loss_cbn: 0.176062, avg_reader_cost: 0.00163 s, avg_batch_cost: 0.31619 s, avg_samples: 4.0, ips: 12.65057 samples/s, eta: 0:03:05, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:05] ppocr INFO: epoch: [1/10], global_step: 50, lr: 0.000395, loss: 1.897316, loss_shrink_maps: 0.975944, loss_threshold_maps: 0.486597, loss_binary_maps: 0.195429, loss_cbn: 0.195429, avg_reader_cost: 0.00169 s, avg_batch_cost: 0.33719 s, avg_samples: 4.0, ips: 11.86290 samples/s, eta: 0:02:55, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:22,  2.15it/s]eval model::   6%|▌         | 3/50 [00:00<00:07,  6.20it/s]eval model::  10%|█         | 5/50 [00:00<00:04,  9.20it/s]eval model::  14%|█▍        | 7/50 [00:00<00:03, 11.42it/s]eval model::  18%|█▊        | 9/50 [00:00<00:03, 13.58it/s]eval model::  22%|██▏       | 11/50 [00:01<00:02, 13.86it/s]eval model::  26%|██▌       | 13/50 [00:01<00:02, 14.30it/s]eval model::  30%|███       | 15/50 [00:01<00:02, 14.60it/s]eval model::  36%|███▌      | 18/50 [00:01<00:01, 16.76it/s]eval model::  40%|████      | 20/50 [00:01<00:01, 16.23it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 17.34it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 17.57it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 17.02it/s]eval model::  58%|█████▊    | 29/50 [00:02<00:01, 16.97it/s]eval model::  62%|██████▏   | 31/50 [00:02<00:01, 16.61it/s]eval model::  66%|██████▌   | 33/50 [00:02<00:00, 17.26it/s]eval model::  70%|███████   | 35/50 [00:02<00:00, 16.04it/s]eval model::  74%|███████▍  | 37/50 [00:02<00:00, 16.46it/s]eval model::  78%|███████▊  | 39/50 [00:02<00:00, 15.71it/s]eval model::  84%|████████▍ | 42/50 [00:02<00:00, 15.74it/s]eval model::  90%|█████████ | 45/50 [00:03<00:00, 17.40it/s]eval model::  94%|█████████▍| 47/50 [00:03<00:00, 15.21it/s]eval model::  98%|█████████▊| 49/50 [00:03<00:00, 15.82it/s]eval model:: 100%|██████████| 50/50 [00:03<00:00, 14.60it/s]
+[2026/11/20 10:03:08] ppocr INFO: cur metric, precision: 0.45226130653266333, recall: 0.44776119402985076, hmean: 0.45, fps: 20.580252358216068
+[2026/11/20 10:03:08] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+W1120 10:03:10.073091 111408 eager_utils.cc:3617] Paddle static graph(PIR) not support input out tensor for now!!!!!
+[2026/11/20 10:03:11] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/inference/inference
+[2026/11/20 10:03:12] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy
+[2026/11/20 10:03:12] ppocr INFO: save best model is to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/best_accuracy
+[2026/11/20 10:03:12] ppocr INFO: best metric, hmean: 0.45, is_float16: False, precision: 0.45226130653266333, recall: 0.44776119402985076, fps: 20.580252358216068, best_epoch: 1
+[2026/11/20 10:03:12] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:03:14] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:03:15] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:03:15] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:03:15] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_1/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:03:17] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_1/inference/inference
+[2026/11/20 10:03:17] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_1
+[2026/11/20 10:03:17] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_1/iter_epoch_1
+[2026/11/20 10:03:21] ppocr INFO: epoch: [2/10], global_step: 60, lr: 0.000495, loss: 1.858168, loss_shrink_maps: 0.965055, loss_threshold_maps: 0.485381, loss_binary_maps: 0.192468, loss_cbn: 0.192468, avg_reader_cost: 0.08576 s, avg_batch_cost: 0.35554 s, avg_samples: 4.0, ips: 11.25052 samples/s, eta: 0:02:48, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:24] ppocr INFO: epoch: [2/10], global_step: 70, lr: 0.000595, loss: 1.930182, loss_shrink_maps: 1.023049, loss_threshold_maps: 0.492452, loss_binary_maps: 0.203882, loss_cbn: 0.203882, avg_reader_cost: 0.00181 s, avg_batch_cost: 0.29505 s, avg_samples: 4.0, ips: 13.55688 samples/s, eta: 0:02:39, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:26] ppocr INFO: epoch: [2/10], global_step: 80, lr: 0.000695, loss: 1.986567, loss_shrink_maps: 1.020526, loss_threshold_maps: 0.459212, loss_binary_maps: 0.205295, loss_cbn: 0.205295, avg_reader_cost: 0.00195 s, avg_batch_cost: 0.24958 s, avg_samples: 4.0, ips: 16.02713 samples/s, eta: 0:02:29, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:29] ppocr INFO: epoch: [2/10], global_step: 90, lr: 0.000795, loss: 1.825061, loss_shrink_maps: 0.894806, loss_threshold_maps: 0.502598, loss_binary_maps: 0.177992, loss_cbn: 0.177992, avg_reader_cost: 0.00171 s, avg_batch_cost: 0.24995 s, avg_samples: 4.0, ips: 16.00308 samples/s, eta: 0:02:21, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:32] ppocr INFO: epoch: [2/10], global_step: 100, lr: 0.000895, loss: 1.764747, loss_shrink_maps: 0.885837, loss_threshold_maps: 0.483665, loss_binary_maps: 0.177752, loss_cbn: 0.177752, avg_reader_cost: 0.00165 s, avg_batch_cost: 0.29120 s, avg_samples: 4.0, ips: 13.73632 samples/s, eta: 0:02:15, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:05,  9.09it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 12.40it/s]eval model::  10%|█         | 5/50 [00:00<00:03, 14.09it/s]eval model::  14%|█▍        | 7/50 [00:00<00:02, 15.84it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 16.44it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 15.74it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 16.80it/s]eval model::  30%|███       | 15/50 [00:00<00:02, 16.51it/s]eval model::  36%|███▌      | 18/50 [00:01<00:01, 18.35it/s]eval model::  40%|████      | 20/50 [00:01<00:01, 17.74it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 18.76it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 18.77it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 17.90it/s]eval model::  60%|██████    | 30/50 [00:01<00:01, 18.86it/s]eval model::  64%|██████▍   | 32/50 [00:01<00:01, 17.05it/s]eval model::  68%|██████▊   | 34/50 [00:01<00:00, 17.32it/s]eval model::  74%|███████▍  | 37/50 [00:02<00:00, 18.41it/s]eval model::  78%|███████▊  | 39/50 [00:02<00:00, 17.20it/s]eval model::  84%|████████▍ | 42/50 [00:02<00:00, 17.10it/s]eval model::  88%|████████▊ | 44/50 [00:02<00:00, 17.71it/s]eval model::  92%|█████████▏| 46/50 [00:02<00:00, 16.15it/s]eval model::  96%|█████████▌| 48/50 [00:02<00:00, 16.84it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 17.16it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 17.05it/s]
+[2026/11/20 10:03:35] ppocr INFO: cur metric, precision: 0.5935483870967742, recall: 0.4577114427860697, hmean: 0.5168539325842697, fps: 24.195290878540366
+[2026/11/20 10:03:35] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:03:37] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/inference/inference
+[2026/11/20 10:03:39] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy
+[2026/11/20 10:03:39] ppocr INFO: save best model is to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/best_accuracy
+[2026/11/20 10:03:39] ppocr INFO: best metric, hmean: 0.5168539325842697, is_float16: False, precision: 0.5935483870967742, recall: 0.4577114427860697, fps: 24.195290878540366, best_epoch: 2
+[2026/11/20 10:03:39] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:03:41] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:03:42] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:03:42] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:03:42] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_2/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:03:44] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_2/inference/inference
+[2026/11/20 10:03:44] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_2
+[2026/11/20 10:03:44] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_2/iter_epoch_2
+[2026/11/20 10:03:49] ppocr INFO: epoch: [3/10], global_step: 110, lr: 0.000995, loss: 1.864595, loss_shrink_maps: 0.935056, loss_threshold_maps: 0.487929, loss_binary_maps: 0.189383, loss_cbn: 0.189383, avg_reader_cost: 0.08574 s, avg_batch_cost: 0.41500 s, avg_samples: 4.0, ips: 9.63845 samples/s, eta: 0:02:14, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:52] ppocr INFO: epoch: [3/10], global_step: 120, lr: 0.000999, loss: 2.067200, loss_shrink_maps: 1.107743, loss_threshold_maps: 0.631877, loss_binary_maps: 0.219382, loss_cbn: 0.219382, avg_reader_cost: 0.00176 s, avg_batch_cost: 0.31944 s, avg_samples: 4.0, ips: 12.52194 samples/s, eta: 0:02:10, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:54] ppocr INFO: epoch: [3/10], global_step: 130, lr: 0.000996, loss: 2.054481, loss_shrink_maps: 1.111703, loss_threshold_maps: 0.559561, loss_binary_maps: 0.222909, loss_cbn: 0.222909, avg_reader_cost: 0.00196 s, avg_batch_cost: 0.24776 s, avg_samples: 4.0, ips: 16.14447 samples/s, eta: 0:02:04, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:03:57] ppocr INFO: epoch: [3/10], global_step: 140, lr: 0.000991, loss: 1.689728, loss_shrink_maps: 0.871540, loss_threshold_maps: 0.466863, loss_binary_maps: 0.175423, loss_cbn: 0.175423, avg_reader_cost: 0.00203 s, avg_batch_cost: 0.27475 s, avg_samples: 4.0, ips: 14.55885 samples/s, eta: 0:01:59, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:00] ppocr INFO: epoch: [3/10], global_step: 150, lr: 0.000985, loss: 1.410108, loss_shrink_maps: 0.679632, loss_threshold_maps: 0.444692, loss_binary_maps: 0.137305, loss_cbn: 0.137305, avg_reader_cost: 0.00172 s, avg_batch_cost: 0.29527 s, avg_samples: 4.0, ips: 13.54677 samples/s, eta: 0:01:55, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:04,  9.93it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 14.19it/s]eval model::  12%|█▏        | 6/50 [00:00<00:02, 17.50it/s]eval model::  16%|█▌        | 8/50 [00:00<00:02, 18.01it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.07it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 17.67it/s]eval model::  32%|███▏      | 16/50 [00:00<00:01, 19.12it/s]eval model::  38%|███▊      | 19/50 [00:01<00:01, 20.18it/s]eval model::  44%|████▍     | 22/50 [00:01<00:01, 20.53it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 21.29it/s]eval model::  56%|█████▌    | 28/50 [00:01<00:01, 21.75it/s]eval model::  62%|██████▏   | 31/50 [00:01<00:00, 21.29it/s]eval model::  68%|██████▊   | 34/50 [00:01<00:00, 20.44it/s]eval model::  74%|███████▍  | 37/50 [00:01<00:00, 21.18it/s]eval model::  80%|████████  | 40/50 [00:02<00:00, 19.37it/s]eval model::  84%|████████▍ | 42/50 [00:02<00:00, 18.83it/s]eval model::  90%|█████████ | 45/50 [00:02<00:00, 20.28it/s]eval model::  96%|█████████▌| 48/50 [00:02<00:00, 19.67it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 19.56it/s]
+[2026/11/20 10:04:03] ppocr INFO: cur metric, precision: 0.7407407407407407, recall: 0.4975124378109453, hmean: 0.5952380952380952, fps: 27.83915946434277
+[2026/11/20 10:04:03] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:05] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/inference/inference
+[2026/11/20 10:04:07] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy
+[2026/11/20 10:04:07] ppocr INFO: save best model is to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/best_accuracy
+[2026/11/20 10:04:07] ppocr INFO: best metric, hmean: 0.5952380952380952, is_float16: False, precision: 0.7407407407407407, recall: 0.4975124378109453, fps: 27.83915946434277, best_epoch: 3
+[2026/11/20 10:04:07] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:11] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:04:12] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:04:12] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:04:12] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_3/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:15] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_3/inference/inference
+[2026/11/20 10:04:17] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_3
+[2026/11/20 10:04:17] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_3/iter_epoch_3
+[2026/11/20 10:04:20] ppocr INFO: epoch: [4/10], global_step: 160, lr: 0.000976, loss: 1.665566, loss_shrink_maps: 0.800469, loss_threshold_maps: 0.543726, loss_binary_maps: 0.160686, loss_cbn: 0.160686, avg_reader_cost: 0.08493 s, avg_batch_cost: 0.34513 s, avg_samples: 4.0, ips: 11.58983 samples/s, eta: 0:01:52, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:23] ppocr INFO: epoch: [4/10], global_step: 170, lr: 0.000965, loss: 2.120442, loss_shrink_maps: 1.041184, loss_threshold_maps: 0.573189, loss_binary_maps: 0.207612, loss_cbn: 0.207612, avg_reader_cost: 0.00277 s, avg_batch_cost: 0.24271 s, avg_samples: 4.0, ips: 16.48059 samples/s, eta: 0:01:47, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:25] ppocr INFO: epoch: [4/10], global_step: 180, lr: 0.000953, loss: 1.513057, loss_shrink_maps: 0.745427, loss_threshold_maps: 0.479204, loss_binary_maps: 0.149758, loss_cbn: 0.149758, avg_reader_cost: 0.00268 s, avg_batch_cost: 0.25797 s, avg_samples: 4.0, ips: 15.50584 samples/s, eta: 0:01:42, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:28] ppocr INFO: epoch: [4/10], global_step: 190, lr: 0.000939, loss: 1.564480, loss_shrink_maps: 0.745427, loss_threshold_maps: 0.450583, loss_binary_maps: 0.149758, loss_cbn: 0.149758, avg_reader_cost: 0.00257 s, avg_batch_cost: 0.23600 s, avg_samples: 4.0, ips: 16.94943 samples/s, eta: 0:01:38, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:30] ppocr INFO: epoch: [4/10], global_step: 200, lr: 0.000923, loss: 1.563293, loss_shrink_maps: 0.834434, loss_threshold_maps: 0.471600, loss_binary_maps: 0.166835, loss_cbn: 0.166835, avg_reader_cost: 0.00194 s, avg_batch_cost: 0.16684 s, avg_samples: 4.0, ips: 23.97452 samples/s, eta: 0:01:32, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:05,  8.75it/s]eval model::   8%|▊         | 4/50 [00:00<00:02, 16.57it/s]eval model::  12%|█▏        | 6/50 [00:00<00:02, 17.30it/s]eval model::  16%|█▌        | 8/50 [00:00<00:02, 18.07it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.22it/s]eval model::  26%|██▌       | 13/50 [00:00<00:02, 17.67it/s]eval model::  30%|███       | 15/50 [00:00<00:01, 18.21it/s]eval model::  36%|███▌      | 18/50 [00:00<00:01, 20.54it/s]eval model::  42%|████▏     | 21/50 [00:01<00:01, 19.91it/s]eval model::  48%|████▊     | 24/50 [00:01<00:01, 20.14it/s]eval model::  54%|█████▍    | 27/50 [00:01<00:01, 19.82it/s]eval model::  60%|██████    | 30/50 [00:01<00:00, 20.77it/s]eval model::  66%|██████▌   | 33/50 [00:01<00:00, 19.55it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 18.98it/s]eval model::  76%|███████▌  | 38/50 [00:02<00:00, 18.78it/s]eval model::  80%|████████  | 40/50 [00:02<00:00, 18.08it/s]eval model::  84%|████████▍ | 42/50 [00:02<00:00, 17.73it/s]eval model::  90%|█████████ | 45/50 [00:02<00:00, 19.59it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 16.85it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 18.54it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 18.60it/s]
+[2026/11/20 10:04:32] ppocr INFO: cur metric, precision: 0.5698924731182796, recall: 0.527363184079602, hmean: 0.5478036175710594, fps: 29.815454716706178
+[2026/11/20 10:04:32] ppocr INFO: best metric, hmean: 0.5952380952380952, is_float16: False, precision: 0.7407407407407407, recall: 0.4975124378109453, fps: 27.83915946434277, best_epoch: 3
+[2026/11/20 10:04:32] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:34] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:04:35] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:04:35] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:04:35] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_4/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:37] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_4/inference/inference
+[2026/11/20 10:04:38] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_4
+[2026/11/20 10:04:38] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_4/iter_epoch_4
+[2026/11/20 10:04:41] ppocr INFO: epoch: [5/10], global_step: 210, lr: 0.000905, loss: 1.749317, loss_shrink_maps: 0.874712, loss_threshold_maps: 0.512315, loss_binary_maps: 0.177860, loss_cbn: 0.177860, avg_reader_cost: 0.08467 s, avg_batch_cost: 0.24680 s, avg_samples: 4.0, ips: 16.20777 samples/s, eta: 0:01:28, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:42] ppocr INFO: epoch: [5/10], global_step: 220, lr: 0.000886, loss: 1.664359, loss_shrink_maps: 0.874712, loss_threshold_maps: 0.468846, loss_binary_maps: 0.179168, loss_cbn: 0.179168, avg_reader_cost: 0.00185 s, avg_batch_cost: 0.16386 s, avg_samples: 4.0, ips: 24.41174 samples/s, eta: 0:01:23, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:44] ppocr INFO: epoch: [5/10], global_step: 230, lr: 0.000866, loss: 1.664359, loss_shrink_maps: 0.835359, loss_threshold_maps: 0.434279, loss_binary_maps: 0.166926, loss_cbn: 0.166926, avg_reader_cost: 0.00183 s, avg_batch_cost: 0.16162 s, avg_samples: 4.0, ips: 24.74898 samples/s, eta: 0:01:19, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:46] ppocr INFO: epoch: [5/10], global_step: 240, lr: 0.000843, loss: 2.006916, loss_shrink_maps: 1.080626, loss_threshold_maps: 0.514830, loss_binary_maps: 0.216224, loss_cbn: 0.216224, avg_reader_cost: 0.00169 s, avg_batch_cost: 0.16063 s, avg_samples: 4.0, ips: 24.90232 samples/s, eta: 0:01:14, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:04:47] ppocr INFO: epoch: [5/10], global_step: 250, lr: 0.000820, loss: 1.888905, loss_shrink_maps: 0.967097, loss_threshold_maps: 0.513635, loss_binary_maps: 0.192827, loss_cbn: 0.192827, avg_reader_cost: 0.00193 s, avg_batch_cost: 0.16650 s, avg_samples: 4.0, ips: 24.02412 samples/s, eta: 0:01:10, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   4%|▍         | 2/50 [00:00<00:04, 12.00it/s]eval model::   8%|▊         | 4/50 [00:00<00:03, 14.72it/s]eval model::  12%|█▏        | 6/50 [00:00<00:02, 15.84it/s]eval model::  16%|█▌        | 8/50 [00:00<00:02, 16.26it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 17.56it/s]eval model::  28%|██▊       | 14/50 [00:00<00:01, 19.14it/s]eval model::  34%|███▍      | 17/50 [00:00<00:01, 21.39it/s]eval model::  40%|████      | 20/50 [00:01<00:01, 20.98it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 21.94it/s]eval model::  52%|█████▏    | 26/50 [00:01<00:01, 22.66it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:00, 23.40it/s]eval model::  64%|██████▍   | 32/50 [00:01<00:00, 22.22it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 22.09it/s]eval model::  76%|███████▌  | 38/50 [00:01<00:00, 21.40it/s]eval model::  82%|████████▏ | 41/50 [00:02<00:00, 20.53it/s]eval model::  88%|████████▊ | 44/50 [00:02<00:00, 20.46it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 20.79it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 22.12it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 20.58it/s]
+[2026/11/20 10:04:50] ppocr INFO: cur metric, precision: 0.7185185185185186, recall: 0.48258706467661694, hmean: 0.5773809523809524, fps: 30.00814181933174
+[2026/11/20 10:04:50] ppocr INFO: best metric, hmean: 0.5952380952380952, is_float16: False, precision: 0.7407407407407407, recall: 0.4975124378109453, fps: 27.83915946434277, best_epoch: 3
+[2026/11/20 10:04:50] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:52] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:04:53] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:04:53] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:04:53] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_5/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:04:55] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_5/inference/inference
+[2026/11/20 10:04:55] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_5
+[2026/11/20 10:04:55] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_5/iter_epoch_5
+[2026/11/20 10:04:58] ppocr INFO: epoch: [6/10], global_step: 260, lr: 0.000795, loss: 1.811750, loss_shrink_maps: 0.929965, loss_threshold_maps: 0.504830, loss_binary_maps: 0.186966, loss_cbn: 0.186966, avg_reader_cost: 0.08340 s, avg_batch_cost: 0.24406 s, avg_samples: 4.0, ips: 16.38956 samples/s, eta: 0:01:07, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:00] ppocr INFO: epoch: [6/10], global_step: 270, lr: 0.000769, loss: 1.628560, loss_shrink_maps: 0.810144, loss_threshold_maps: 0.523990, loss_binary_maps: 0.161224, loss_cbn: 0.161224, avg_reader_cost: 0.00160 s, avg_batch_cost: 0.16044 s, avg_samples: 4.0, ips: 24.93100 samples/s, eta: 0:01:03, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:01] ppocr INFO: epoch: [6/10], global_step: 280, lr: 0.000742, loss: 1.501625, loss_shrink_maps: 0.711410, loss_threshold_maps: 0.471949, loss_binary_maps: 0.142874, loss_cbn: 0.142874, avg_reader_cost: 0.00177 s, avg_batch_cost: 0.16484 s, avg_samples: 4.0, ips: 24.26589 samples/s, eta: 0:01:00, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:03] ppocr INFO: epoch: [6/10], global_step: 290, lr: 0.000714, loss: 1.476600, loss_shrink_maps: 0.745969, loss_threshold_maps: 0.450676, loss_binary_maps: 0.150013, loss_cbn: 0.150013, avg_reader_cost: 0.00159 s, avg_batch_cost: 0.16044 s, avg_samples: 4.0, ips: 24.93102 samples/s, eta: 0:00:56, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:05] ppocr INFO: epoch: [6/10], global_step: 300, lr: 0.000686, loss: 2.046368, loss_shrink_maps: 1.015836, loss_threshold_maps: 0.497474, loss_binary_maps: 0.203586, loss_cbn: 0.203586, avg_reader_cost: 0.00201 s, avg_batch_cost: 0.16476 s, avg_samples: 4.0, ips: 24.27793 samples/s, eta: 0:00:53, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   4%|▍         | 2/50 [00:00<00:03, 13.40it/s]eval model::  10%|█         | 5/50 [00:00<00:02, 19.55it/s]eval model::  16%|█▌        | 8/50 [00:00<00:02, 19.63it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 18.53it/s]eval model::  28%|██▊       | 14/50 [00:00<00:01, 19.16it/s]eval model::  34%|███▍      | 17/50 [00:00<00:01, 21.30it/s]eval model::  40%|████      | 20/50 [00:01<00:01, 20.74it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 21.86it/s]eval model::  52%|█████▏    | 26/50 [00:01<00:01, 21.97it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:00, 21.96it/s]eval model::  64%|██████▍   | 32/50 [00:01<00:00, 21.78it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 21.97it/s]eval model::  76%|███████▌  | 38/50 [00:01<00:00, 21.77it/s]eval model::  82%|████████▏ | 41/50 [00:01<00:00, 21.17it/s]eval model::  88%|████████▊ | 44/50 [00:02<00:00, 20.51it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 20.17it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 21.43it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 20.85it/s]
+[2026/11/20 10:05:07] ppocr INFO: cur metric, precision: 0.7092198581560284, recall: 0.4975124378109453, hmean: 0.5847953216374269, fps: 31.943026422751533
+[2026/11/20 10:05:07] ppocr INFO: best metric, hmean: 0.5952380952380952, is_float16: False, precision: 0.7407407407407407, recall: 0.4975124378109453, fps: 27.83915946434277, best_epoch: 3
+[2026/11/20 10:05:07] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:05:09] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:05:10] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:05:10] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:05:10] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_6/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:05:12] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_6/inference/inference
+[2026/11/20 10:05:13] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_6
+[2026/11/20 10:05:13] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_6/iter_epoch_6
+[2026/11/20 10:05:15] ppocr INFO: epoch: [7/10], global_step: 310, lr: 0.000656, loss: 2.010988, loss_shrink_maps: 0.984847, loss_threshold_maps: 0.553106, loss_binary_maps: 0.197954, loss_cbn: 0.197954, avg_reader_cost: 0.08219 s, avg_batch_cost: 0.24800 s, avg_samples: 4.0, ips: 16.12935 samples/s, eta: 0:00:50, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:17] ppocr INFO: epoch: [7/10], global_step: 320, lr: 0.000626, loss: 1.697374, loss_shrink_maps: 0.832106, loss_threshold_maps: 0.560085, loss_binary_maps: 0.166693, loss_cbn: 0.166693, avg_reader_cost: 0.00201 s, avg_batch_cost: 0.18121 s, avg_samples: 4.0, ips: 22.07403 samples/s, eta: 0:00:47, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:19] ppocr INFO: epoch: [7/10], global_step: 330, lr: 0.000595, loss: 1.474209, loss_shrink_maps: 0.699238, loss_threshold_maps: 0.512643, loss_binary_maps: 0.138582, loss_cbn: 0.138582, avg_reader_cost: 0.00198 s, avg_batch_cost: 0.17461 s, avg_samples: 4.0, ips: 22.90790 samples/s, eta: 0:00:44, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:21] ppocr INFO: epoch: [7/10], global_step: 340, lr: 0.000564, loss: 1.347663, loss_shrink_maps: 0.618553, loss_threshold_maps: 0.508234, loss_binary_maps: 0.122779, loss_cbn: 0.122779, avg_reader_cost: 0.00182 s, avg_batch_cost: 0.17591 s, avg_samples: 4.0, ips: 22.73930 samples/s, eta: 0:00:41, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:23] ppocr INFO: epoch: [7/10], global_step: 350, lr: 0.000533, loss: 1.565658, loss_shrink_maps: 0.741709, loss_threshold_maps: 0.522001, loss_binary_maps: 0.148740, loss_cbn: 0.148740, avg_reader_cost: 0.00185 s, avg_batch_cost: 0.16454 s, avg_samples: 4.0, ips: 24.30968 samples/s, eta: 0:00:38, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:06,  7.34it/s]eval model::   6%|▌         | 3/50 [00:00<00:04, 10.70it/s]eval model::  12%|█▏        | 6/50 [00:00<00:03, 14.06it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 16.94it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 16.56it/s]eval model::  28%|██▊       | 14/50 [00:00<00:01, 18.33it/s]eval model::  34%|███▍      | 17/50 [00:00<00:01, 20.09it/s]eval model::  40%|████      | 20/50 [00:01<00:01, 20.69it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 21.87it/s]eval model::  52%|█████▏    | 26/50 [00:01<00:01, 21.78it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:00, 22.34it/s]eval model::  64%|██████▍   | 32/50 [00:01<00:00, 20.75it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 21.45it/s]eval model::  76%|███████▌  | 38/50 [00:01<00:00, 21.96it/s]eval model::  82%|████████▏ | 41/50 [00:02<00:00, 21.16it/s]eval model::  88%|████████▊ | 44/50 [00:02<00:00, 20.73it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 20.90it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 21.77it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 19.93it/s]
+[2026/11/20 10:05:25] ppocr INFO: cur metric, precision: 0.6811594202898551, recall: 0.46766169154228854, hmean: 0.5545722713864307, fps: 29.342090829925027
+[2026/11/20 10:05:25] ppocr INFO: best metric, hmean: 0.5952380952380952, is_float16: False, precision: 0.7407407407407407, recall: 0.4975124378109453, fps: 27.83915946434277, best_epoch: 3
+[2026/11/20 10:05:25] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:05:27] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:05:28] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:05:28] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:05:28] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_7/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:05:30] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_7/inference/inference
+[2026/11/20 10:05:31] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_7
+[2026/11/20 10:05:31] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_7/iter_epoch_7
+[2026/11/20 10:05:33] ppocr INFO: epoch: [8/10], global_step: 360, lr: 0.000502, loss: 1.565100, loss_shrink_maps: 0.761658, loss_threshold_maps: 0.439259, loss_binary_maps: 0.152417, loss_cbn: 0.152417, avg_reader_cost: 0.08377 s, avg_batch_cost: 0.24779 s, avg_samples: 4.0, ips: 16.14267 samples/s, eta: 0:00:35, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:35] ppocr INFO: epoch: [8/10], global_step: 370, lr: 0.000470, loss: 1.504853, loss_shrink_maps: 0.752734, loss_threshold_maps: 0.464713, loss_binary_maps: 0.150529, loss_cbn: 0.150529, avg_reader_cost: 0.00162 s, avg_batch_cost: 0.16091 s, avg_samples: 4.0, ips: 24.85839 samples/s, eta: 0:00:32, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:37] ppocr INFO: epoch: [8/10], global_step: 380, lr: 0.000439, loss: 1.529986, loss_shrink_maps: 0.738799, loss_threshold_maps: 0.489224, loss_binary_maps: 0.148399, loss_cbn: 0.148399, avg_reader_cost: 0.00189 s, avg_batch_cost: 0.16314 s, avg_samples: 4.0, ips: 24.51940 samples/s, eta: 0:00:29, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:38] ppocr INFO: epoch: [8/10], global_step: 390, lr: 0.000408, loss: 1.762205, loss_shrink_maps: 0.924279, loss_threshold_maps: 0.482411, loss_binary_maps: 0.184010, loss_cbn: 0.184010, avg_reader_cost: 0.00158 s, avg_batch_cost: 0.16084 s, avg_samples: 4.0, ips: 24.86964 samples/s, eta: 0:00:27, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:40] ppocr INFO: epoch: [8/10], global_step: 400, lr: 0.000377, loss: 1.838665, loss_shrink_maps: 0.981965, loss_threshold_maps: 0.483267, loss_binary_maps: 0.196787, loss_cbn: 0.196787, avg_reader_cost: 0.00158 s, avg_batch_cost: 0.16070 s, avg_samples: 4.0, ips: 24.89053 samples/s, eta: 0:00:24, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:05,  8.67it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 14.58it/s]eval model::  12%|█▏        | 6/50 [00:00<00:02, 16.91it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 19.28it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 19.21it/s]eval model::  28%|██▊       | 14/50 [00:00<00:01, 19.65it/s]eval model::  34%|███▍      | 17/50 [00:00<00:01, 21.21it/s]eval model::  40%|████      | 20/50 [00:01<00:01, 21.27it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 22.81it/s]eval model::  52%|█████▏    | 26/50 [00:01<00:01, 22.74it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:00, 23.58it/s]eval model::  64%|██████▍   | 32/50 [00:01<00:00, 22.52it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 22.72it/s]eval model::  76%|███████▌  | 38/50 [00:01<00:00, 22.24it/s]eval model::  82%|████████▏ | 41/50 [00:01<00:00, 21.03it/s]eval model::  88%|████████▊ | 44/50 [00:02<00:00, 20.11it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 20.25it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 21.51it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 20.89it/s]
+[2026/11/20 10:05:42] ppocr INFO: cur metric, precision: 0.6971830985915493, recall: 0.4925373134328358, hmean: 0.5772594752186588, fps: 31.301009709027678
+[2026/11/20 10:05:42] ppocr INFO: best metric, hmean: 0.5952380952380952, is_float16: False, precision: 0.7407407407407407, recall: 0.4975124378109453, fps: 27.83915946434277, best_epoch: 3
+[2026/11/20 10:05:42] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:05:44] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:05:45] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:05:45] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:05:46] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_8/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:05:47] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_8/inference/inference
+[2026/11/20 10:05:48] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_8
+[2026/11/20 10:05:48] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_8/iter_epoch_8
+[2026/11/20 10:05:51] ppocr INFO: epoch: [9/10], global_step: 410, lr: 0.000347, loss: 1.783805, loss_shrink_maps: 0.938034, loss_threshold_maps: 0.503945, loss_binary_maps: 0.187244, loss_cbn: 0.187244, avg_reader_cost: 0.08489 s, avg_batch_cost: 0.24808 s, avg_samples: 4.0, ips: 16.12410 samples/s, eta: 0:00:22, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:52] ppocr INFO: epoch: [9/10], global_step: 420, lr: 0.000317, loss: 1.579954, loss_shrink_maps: 0.780573, loss_threshold_maps: 0.486356, loss_binary_maps: 0.155531, loss_cbn: 0.155531, avg_reader_cost: 0.00177 s, avg_batch_cost: 0.16075 s, avg_samples: 4.0, ips: 24.88294 samples/s, eta: 0:00:19, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:54] ppocr INFO: epoch: [9/10], global_step: 430, lr: 0.000289, loss: 1.476370, loss_shrink_maps: 0.698806, loss_threshold_maps: 0.454433, loss_binary_maps: 0.141123, loss_cbn: 0.141123, avg_reader_cost: 0.00177 s, avg_batch_cost: 0.16230 s, avg_samples: 4.0, ips: 24.64548 samples/s, eta: 0:00:16, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:56] ppocr INFO: epoch: [9/10], global_step: 440, lr: 0.000261, loss: 1.720926, loss_shrink_maps: 0.840314, loss_threshold_maps: 0.480584, loss_binary_maps: 0.167355, loss_cbn: 0.167355, avg_reader_cost: 0.00159 s, avg_batch_cost: 0.16119 s, avg_samples: 4.0, ips: 24.81517 samples/s, eta: 0:00:14, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:05:58] ppocr INFO: epoch: [9/10], global_step: 450, lr: 0.000233, loss: 1.656840, loss_shrink_maps: 0.799346, loss_threshold_maps: 0.483935, loss_binary_maps: 0.159897, loss_cbn: 0.159897, avg_reader_cost: 0.00175 s, avg_batch_cost: 0.16367 s, avg_samples: 4.0, ips: 24.43922 samples/s, eta: 0:00:11, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   4%|▍         | 2/50 [00:00<00:03, 12.43it/s]eval model::  10%|█         | 5/50 [00:00<00:02, 18.50it/s]eval model::  16%|█▌        | 8/50 [00:00<00:02, 19.46it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 19.04it/s]eval model::  26%|██▌       | 13/50 [00:00<00:01, 19.15it/s]eval model::  32%|███▏      | 16/50 [00:00<00:01, 20.93it/s]eval model::  38%|███▊      | 19/50 [00:00<00:01, 22.04it/s]eval model::  44%|████▍     | 22/50 [00:01<00:01, 22.11it/s]eval model::  50%|█████     | 25/50 [00:01<00:01, 22.68it/s]eval model::  56%|█████▌    | 28/50 [00:01<00:00, 23.25it/s]eval model::  62%|██████▏   | 31/50 [00:01<00:00, 22.66it/s]eval model::  68%|██████▊   | 34/50 [00:01<00:00, 22.68it/s]eval model::  74%|███████▍  | 37/50 [00:01<00:00, 22.85it/s]eval model::  80%|████████  | 40/50 [00:01<00:00, 20.99it/s]eval model::  86%|████████▌ | 43/50 [00:02<00:00, 19.66it/s]eval model::  92%|█████████▏| 46/50 [00:02<00:00, 20.02it/s]eval model::  98%|█████████▊| 49/50 [00:02<00:00, 21.53it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 21.09it/s]
+[2026/11/20 10:06:00] ppocr INFO: cur metric, precision: 0.7443609022556391, recall: 0.4925373134328358, hmean: 0.592814371257485, fps: 30.88741491664169
+[2026/11/20 10:06:00] ppocr INFO: best metric, hmean: 0.5952380952380952, is_float16: False, precision: 0.7407407407407407, recall: 0.4975124378109453, fps: 27.83915946434277, best_epoch: 3
+[2026/11/20 10:06:00] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:06:02] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:06:03] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:06:03] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:06:03] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_9/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:06:05] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_9/inference/inference
+[2026/11/20 10:06:06] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_9
+[2026/11/20 10:06:06] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_9/iter_epoch_9
+[2026/11/20 10:06:08] ppocr INFO: epoch: [10/10], global_step: 460, lr: 0.000207, loss: 1.419027, loss_shrink_maps: 0.694696, loss_threshold_maps: 0.447065, loss_binary_maps: 0.139202, loss_cbn: 0.139202, avg_reader_cost: 0.08311 s, avg_batch_cost: 0.24560 s, avg_samples: 4.0, ips: 16.28670 samples/s, eta: 0:00:09, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:06:10] ppocr INFO: epoch: [10/10], global_step: 470, lr: 0.000183, loss: 1.577022, loss_shrink_maps: 0.766079, loss_threshold_maps: 0.526886, loss_binary_maps: 0.153451, loss_cbn: 0.153451, avg_reader_cost: 0.00160 s, avg_batch_cost: 0.16039 s, avg_samples: 4.0, ips: 24.93887 samples/s, eta: 0:00:07, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:06:11] ppocr INFO: epoch: [10/10], global_step: 480, lr: 0.000159, loss: 1.642168, loss_shrink_maps: 0.824400, loss_threshold_maps: 0.524301, loss_binary_maps: 0.166236, loss_cbn: 0.166236, avg_reader_cost: 0.00163 s, avg_batch_cost: 0.16019 s, avg_samples: 4.0, ips: 24.97065 samples/s, eta: 0:00:04, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:06:13] ppocr INFO: epoch: [10/10], global_step: 490, lr: 0.000137, loss: 1.392984, loss_shrink_maps: 0.729959, loss_threshold_maps: 0.404792, loss_binary_maps: 0.145628, loss_cbn: 0.145628, avg_reader_cost: 0.00163 s, avg_batch_cost: 0.16411 s, avg_samples: 4.0, ips: 24.37321 samples/s, eta: 0:00:02, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+[2026/11/20 10:06:15] ppocr INFO: epoch: [10/10], global_step: 500, lr: 0.000116, loss: 1.507515, loss_shrink_maps: 0.816129, loss_threshold_maps: 0.449348, loss_binary_maps: 0.165049, loss_cbn: 0.165049, avg_reader_cost: 0.00164 s, avg_batch_cost: 0.16020 s, avg_samples: 4.0, ips: 24.96911 samples/s, eta: 0:00:00, max_mem_reserved: 7182 MB, max_mem_allocated: 6805 MB
+eval model::   0%|          | 0/50 [00:00<?, ?it/s]eval model::   2%|▏         | 1/50 [00:00<00:05,  9.03it/s]eval model::   6%|▌         | 3/50 [00:00<00:03, 13.75it/s]eval model::  12%|█▏        | 6/50 [00:00<00:02, 17.47it/s]eval model::  18%|█▊        | 9/50 [00:00<00:02, 19.66it/s]eval model::  22%|██▏       | 11/50 [00:00<00:02, 18.14it/s]eval model::  28%|██▊       | 14/50 [00:00<00:01, 19.11it/s]eval model::  34%|███▍      | 17/50 [00:00<00:01, 20.46it/s]eval model::  40%|████      | 20/50 [00:01<00:01, 20.12it/s]eval model::  46%|████▌     | 23/50 [00:01<00:01, 21.64it/s]eval model::  52%|█████▏    | 26/50 [00:01<00:01, 22.15it/s]eval model::  58%|█████▊    | 29/50 [00:01<00:00, 22.82it/s]eval model::  64%|██████▍   | 32/50 [00:01<00:00, 22.05it/s]eval model::  70%|███████   | 35/50 [00:01<00:00, 21.70it/s]eval model::  76%|███████▌  | 38/50 [00:01<00:00, 21.84it/s]eval model::  82%|████████▏ | 41/50 [00:02<00:00, 21.15it/s]eval model::  88%|████████▊ | 44/50 [00:02<00:00, 20.84it/s]eval model::  94%|█████████▍| 47/50 [00:02<00:00, 20.69it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 21.61it/s]eval model:: 100%|██████████| 50/50 [00:02<00:00, 20.61it/s]
+[2026/11/20 10:06:17] ppocr INFO: cur metric, precision: 0.7465753424657534, recall: 0.5422885572139303, hmean: 0.6282420749279539, fps: 30.951865441610668
+[2026/11/20 10:06:17] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:06:19] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/inference/inference
+[2026/11/20 10:06:21] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy
+[2026/11/20 10:06:21] ppocr INFO: save best model is to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/best_accuracy/best_accuracy
+[2026/11/20 10:06:21] ppocr INFO: best metric, hmean: 0.6282420749279539, is_float16: False, precision: 0.7465753424657534, recall: 0.5422885572139303, fps: 30.951865441610668, best_epoch: 10
+[2026/11/20 10:06:21] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:06:23] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/inference/inference
+[2026/11/20 10:06:24] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest
+[2026/11/20 10:06:24] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/latest/latest
+[2026/11/20 10:06:24] ppocr INFO: Export inference config file to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_10/inference/inference.yml
+Skipping import of the encryption module
+[2026/11/20 10:06:26] ppocr INFO: inference model is saved to /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_10/inference/inference
+[2026/11/20 10:06:27] ppocr INFO: Already save model info in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_10
+[2026/11/20 10:06:27] ppocr INFO: save model in /work/Baidu_HIT_CiNN/ppocrv4_server_det/results/dynamic-train/iter_epoch_10/iter_epoch_10
+[2026/11/20 10:06:27] ppocr INFO: best metric, hmean: 0.6282420749279539, is_float16: False, precision: 0.7465753424657534, recall: 0.5422885572139303, fps: 30.951865441610668, best_epoch: 10

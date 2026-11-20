@@ -1,0 +1,14 @@
+{
+  "model": "ppocrv4_server_det",
+  "mode": "cinn",
+  "device": "gpu:0",
+  "status": "ok",
+  "steps_logged": 50,
+  "loss_first": 1.883168,
+  "loss_last": 1.48222,
+  "first_step_ms": 44454.02,
+  "steady_step_ms": 163.842,
+  "losses_sha256": "055e13f4f933de69699589c02797fa581cc06d20e0460591949a54c5e462a6b8",
+  "log_sha256": "1f3bc5568b778be32bbc7f8c7017553dd4d347bb9557f87b43d2391c67e60709",
+  "source_log": "results/cinn-train/stdout.log"
+}

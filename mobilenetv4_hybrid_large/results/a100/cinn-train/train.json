@@ -1,0 +1,14 @@
+{
+  "model": "mobilenetv4_hybrid_large",
+  "mode": "cinn",
+  "device": "gpu:0",
+  "status": "ok",
+  "steps_logged": 512,
+  "loss_first": 4.90264,
+  "loss_last": 4.62739,
+  "first_step_ms": 403068.81,
+  "steady_step_ms": 1210.7916,
+  "losses_sha256": "106558258f476503ea11a56c2dfb294a6fcee0aec3e11ca9388d128b40fc3d90",
+  "log_sha256": "15bafea7212192e0ca9803dba0291d8f6c8b7a1e5aeb0409e6c61984bdaaf758",
+  "source_log": "results/cinn-train/train.log"
+}

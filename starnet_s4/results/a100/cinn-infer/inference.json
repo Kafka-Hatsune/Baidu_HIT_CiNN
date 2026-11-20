@@ -1,0 +1,30 @@
+{
+  "model": "StarNet-S4",
+  "mode": "cinn",
+  "weights": "/root/.paddlex/official_models/StarNet-S4",
+  "device": "gpu:0",
+  "paddle_version": "3.5.0.dev20261116+10a99906f58",
+  "paddle_compiled_with_cinn": true,
+  "paddlex_version": "3.7.2",
+  "seed": 20261119,
+  "inputs_sha256": "eee8e2f1a676fc44871ab58856311de50fef28c3f8a7e0156397f451372971a1",
+  "feeds": {
+    "x": [
+      1,
+      3,
+      224,
+      224
+    ]
+  },
+  "outputs": {
+    "fetch_name_0": [
+      1,
+      1000
+    ]
+  },
+  "warmup": 5,
+  "iters": 50,
+  "first_call_ms": 304.9059323966503,
+  "steady_batch_ms": 17.753175497055054,
+  "batch_per_second": 56.32795102858544
+}

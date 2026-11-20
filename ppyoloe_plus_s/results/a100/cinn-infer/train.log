@@ -1,0 +1,569 @@
+I1120 02:43:23.369400 27931 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+I1120 02:43:23.451843 27931 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+[1m[35m--- Running PIR pass [reduce_as_to_sum_pass][0m
+W1120 02:43:23.459129 27931 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 02:43:23.459147 27931 print_statistics.cc:50] --- detected [180] subgraphs!
+[1m[35m--- Running PIR pass [replace_zero_scale_to_full_pass][0m
+[1m[35m--- Running PIR pass [fused_gemm_epilogue_pass][0m
+[1m[35m--- Running PIR pass [fuse_parallel_matmul_pass][0m
+[1m[35m--- Running PIR pass [remove_assign_out_pass][0m
+[1m[35m--- Running PIR pass [fold_full_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_output_data_derivable_ops_pass][0m
+[1m[35m--- Running PIR pass [conv2d_transpose_filter][0m
+[1m[35m--- Running PIR pass [convert_MEA_to_FA][0m
+[1m[35m--- Running PIR pass [convert_FA_to_QKVMHA][0m
+[1m[35m--- Running PIR pass [pd_to_cinn_pass][0m
+W1120 02:43:23.477180 27931 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 02:43:23.477191 27931 print_statistics.cc:50] --- detected [389] subgraphs!
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:43:23.478462 27931 print_statistics.cc:50] --- detected [214] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [pd_to_dyn_shape_cinn_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [build_cinn_pass][0m
+I1120 02:43:23.571231 27931 print_statistics.cc:50] --- detected [25] subgraphs!
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.575062 27931 print_statistics.cc:50] --- detected [7] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.575928 27931 print_statistics.cc:50] --- detected [4] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1120 02:43:23.576184 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1120 02:43:23.576327 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:43:23.576754 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.576857 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.577670 27931 print_statistics.cc:50] --- detected [4] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1120 02:43:23.577874 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1120 02:43:23.577968 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:43:23.578384 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.578480 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.579293 27931 print_statistics.cc:50] --- detected [5] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1120 02:43:23.579499 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1120 02:43:23.579597 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:43:23.580050 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.580366 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1120 02:43:23.580538 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1120 02:43:23.580619 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:43:23.581025 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.581125 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.581457 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.581813 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.582213 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.582556 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.582967 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.583310 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.583694 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.584070 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.584455 27931 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.584810 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1120 02:43:23.585121 27931 print_statistics.cc:50] --- detected [9] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1120 02:43:23.585417 27931 print_statistics.cc:50] --- detected [15] subgraphs!
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:43:23.586100 27931 print_statistics.cc:50] --- detected [27] subgraphs!
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1120 02:43:23.586237 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1120 02:43:23.586558 27931 print_statistics.cc:50] --- detected [9] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1120 02:43:23.586872 27931 print_statistics.cc:50] --- detected [15] subgraphs!
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:43:23.587541 27931 print_statistics.cc:50] --- detected [27] subgraphs!
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1120 02:43:23.588230 27931 print_statistics.cc:50] --- detected [10] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1120 02:43:23.588586 27931 print_statistics.cc:50] --- detected [17] subgraphs!
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+I1120 02:43:23.588977 27931 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:43:23.589473 27931 print_statistics.cc:50] --- detected [33] subgraphs!
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [cinn_group_cluster_pass][0m
+I1120 02:43:23.698889 27931 print_statistics.cc:50] --- detected [25] subgraphs!
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+I1120 02:43:23.700405 27931 print_statistics.cc:50] --- detected [31] subgraphs!
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
+[1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
+[1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
+[1m[35m--- Running PIR pass [lower_cinn_dynamic_shape_fusion_op][0m
+W1120 02:45:31.535795 27931 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1120 02:45:31.535823 27931 print_statistics.cc:50] --- detected [173] subgraphs!
+[1m[35m--- Running PIR pass [split_generate_shape_into_shape_ops_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_full_int_array_pass][0m
+I1120 02:45:31.537858 27931 print_statistics.cc:50] --- detected [25] subgraphs!
+[1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
+[1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
+[1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
+[1m[35m--- Running PIR pass [map_op_to_another_pass][0m
+[1m[35m--- Running PIR pass [identity_op_clean_pass][0m
+[1m[35m--- Running PIR pass [silu_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_bn_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_add_act_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_add_fuse_pass][0m
+[1m[35m--- Running PIR pass [embedding_eltwise_layernorm_fuse_pass][0m
+[1m[35m--- Running PIR pass [fused_rotary_position_embedding_pass][0m
+[1m[35m--- Running PIR pass [fused_flash_attn_pass][0m
+[1m[35m--- Running PIR pass [multihead_matmul_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_add_act_fuse_pass][0m
+[1m[35m--- Running PIR pass [fc_elementwise_layernorm_fuse_pass][0m
+[1m[35m--- Running PIR pass [add_norm_fuse_pass][0m
+[1m[35m--- Running PIR pass [group_norm_silu_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_scale_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_transpose_fuse_pass][0m
+[1m[35m--- Running PIR pass [transpose_flatten_concat_fuse_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_transpose_pass][0m
+[1m[35m--- Running PIR pass [horizontal_fuse_pass][0m
+[1m[35m--- Running PIR pass [transfer_layout_pass][0m
+[1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
+I1120 02:45:31.560370 27931 print_statistics.cc:50] --- detected [9] subgraphs!
+[1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
+I1120 02:45:31.606021 27931 print_statistics.cc:50] --- detected [337] subgraphs!
+[1m[35m--- Running PIR pass [constant_folding_pass][0m
+I1120 02:45:31.608462 27931 pir_interpreter.cc:1605] New Executor is Running ...
+W1120 02:45:31.610148 27931 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+I1120 02:45:31.610877 27931 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+I1120 02:45:31.863816 27931 print_statistics.cc:44] --- detected [80, 635] subgraphs!
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:45:31.867364 27931 print_statistics.cc:50] --- detected [308] subgraphs!
+[1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
+I1120 02:45:31.868899 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
+I1120 02:45:31.886462 27931 print_statistics.cc:50] --- detected [2] subgraphs!
+[1m[35m--- Running PIR pass [inplace_pass][0m
+I1120 02:45:31.909550 27931 print_statistics.cc:50] --- detected [74] subgraphs!
+I1120 02:45:31.909757 27931 analysis_predictor.cc:1214] ======= pir optimization completed =======
+I1120 02:45:31.973574 27931 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{"model": "PP-YOLOE_plus-S", "mode": "cinn", "weights": "/root/.paddlex/official_models/PP-YOLOE_plus-S", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "ebb843d40ae04062444afa4449cc337802c342b133a65510d822e228c5d21568", "feeds": {"image": [1, 3, 640, 640], "scale_factor": [1, 2]}, "outputs": {"fetch_name_0": [300, 6], "fetch_name_1": [1]}, "warmup": 5, "iters": 50, "first_call_ms": 479.7458052635193, "steady_batch_ms": 15.251569673418999, "batch_per_second": 65.56702171730147}

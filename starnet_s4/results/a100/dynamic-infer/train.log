@@ -1,0 +1,48 @@
+I1120 02:40:15.062784 16500 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+[1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
+[1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
+[1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
+[1m[35m--- Running PIR pass [map_op_to_another_pass][0m
+I1120 02:40:15.125782 16500 print_statistics.cc:50] --- detected [46] subgraphs!
+[1m[35m--- Running PIR pass [identity_op_clean_pass][0m
+[1m[35m--- Running PIR pass [silu_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_bn_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_add_act_fuse_pass][0m
+[1m[35m--- Running PIR pass [conv2d_add_fuse_pass][0m
+I1120 02:40:15.156606 16500 print_statistics.cc:50] --- detected [120] subgraphs!
+[1m[35m--- Running PIR pass [embedding_eltwise_layernorm_fuse_pass][0m
+[1m[35m--- Running PIR pass [fused_rotary_position_embedding_pass][0m
+[1m[35m--- Running PIR pass [fused_flash_attn_pass][0m
+[1m[35m--- Running PIR pass [multihead_matmul_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_add_act_fuse_pass][0m
+I1120 02:40:15.161369 16500 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [fc_elementwise_layernorm_fuse_pass][0m
+[1m[35m--- Running PIR pass [add_norm_fuse_pass][0m
+[1m[35m--- Running PIR pass [group_norm_silu_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_scale_fuse_pass][0m
+[1m[35m--- Running PIR pass [matmul_transpose_fuse_pass][0m
+[1m[35m--- Running PIR pass [transpose_flatten_concat_fuse_pass][0m
+[1m[35m--- Running PIR pass [remove_redundant_transpose_pass][0m
+[1m[35m--- Running PIR pass [horizontal_fuse_pass][0m
+[1m[35m--- Running PIR pass [transfer_layout_pass][0m
+[1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
+I1120 02:40:15.179325 16500 print_statistics.cc:50] --- detected [119] subgraphs!
+[1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
+I1120 02:40:15.225370 16500 print_statistics.cc:50] --- detected [450] subgraphs!
+[1m[35m--- Running PIR pass [constant_folding_pass][0m
+I1120 02:40:15.230868 16500 pir_interpreter.cc:1605] New Executor is Running ...
+W1120 02:40:15.232409 16500 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+I1120 02:40:15.233161 16500 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+I1120 02:40:15.564898 16500 print_statistics.cc:44] --- detected [122, 820] subgraphs!
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1120 02:40:15.568322 16500 print_statistics.cc:50] --- detected [121] subgraphs!
+[1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
+I1120 02:40:15.570377 16500 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
+I1120 02:40:15.596621 16500 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [inplace_pass][0m
+I1120 02:40:15.667385 16500 print_statistics.cc:50] --- detected [72] subgraphs!
+I1120 02:40:15.667833 16500 analysis_predictor.cc:1214] ======= pir optimization completed =======
+I1120 02:40:15.748304 16500 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{"model": "StarNet-S4", "mode": "dynamic", "weights": "/root/.paddlex/official_models/StarNet-S4", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "eee8e2f1a676fc44871ab58856311de50fef28c3f8a7e0156397f451372971a1", "feeds": {"x": [1, 3, 224, 224]}, "outputs": {"fetch_name_0": [1, 1000]}, "warmup": 5, "iters": 50, "first_call_ms": 379.0741190314293, "steady_batch_ms": 17.56672754883766, "batch_per_second": 56.925798912738706}

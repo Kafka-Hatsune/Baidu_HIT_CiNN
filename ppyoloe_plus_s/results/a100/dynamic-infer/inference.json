@@ -1,0 +1,37 @@
+{
+  "model": "PP-YOLOE_plus-S",
+  "mode": "dynamic",
+  "weights": "/root/.paddlex/official_models/PP-YOLOE_plus-S",
+  "device": "gpu:0",
+  "paddle_version": "3.5.0.dev20261116+10a99906f58",
+  "paddle_compiled_with_cinn": true,
+  "paddlex_version": "3.7.2",
+  "seed": 20261119,
+  "inputs_sha256": "ebb843d40ae04062444afa4449cc337802c342b133a65510d822e228c5d21568",
+  "feeds": {
+    "image": [
+      1,
+      3,
+      640,
+      640
+    ],
+    "scale_factor": [
+      1,
+      2
+    ]
+  },
+  "outputs": {
+    "fetch_name_0": [
+      300,
+      6
+    ],
+    "fetch_name_1": [
+      1
+    ]
+  },
+  "warmup": 5,
+  "iters": 50,
+  "first_call_ms": 440.7431036233902,
+  "steady_batch_ms": 15.602296367287636,
+  "batch_per_second": 64.09312939963363
+}

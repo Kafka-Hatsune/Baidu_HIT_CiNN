@@ -1,0 +1,1 @@
+{"model": "PP-OCRv4_server_rec", "kind": "tensor", "atol": 0.002, "outputs": {"fetch_name_0": {"shape": [1, 40, 6625], "max_abs_diff": 3.5762786865234375e-07, "ok": true}}, "ok": true}
