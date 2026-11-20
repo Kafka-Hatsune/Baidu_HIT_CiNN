@@ -1,8 +1,6 @@
-# 多框架 CINN 模型测试仓
+# PaddleFormers CINN Model Test Suite
 
-按模型组织的动态图/CINN 测试仓，模型分别来自 **PaddleFormers、PaddleClas、PaddleX、PaddleScience** 四个仓库，
-每个来源的运行条件不同（见“运行条件”）。每个模型目录提供统一的 `run_model.sh` / `run_model_cinn.sh` 入口、
-模型说明和结果记录；其余源码、兼容处理由各目录自行组织。
+这是一个按模型组织的 PaddleFormers 动态图/CINN 测试仓。每个模型目录提供统一的运行入口和模型说明；其他文件由模型实现按需组织，不作为跨模型的固定模板。
 
 本仓库特别针对Metax平台（C500）和Ampere平台（A100）提供统一的资源记录和运行入口。
 
@@ -85,8 +83,9 @@ GhostNetV3 使用的历史提交需要先应用 `ghostnetv3/patches/import-synta
 
 ### PaddleX
 
-不需要 `PADDLEFORMERS_DIR` / `PADDLECLAS_DIR`，但当前 Python 环境必须能 `import paddlex`（本机是
-`/data/PaddleX-release-3.7` 的 dev 安装）。权重默认从 PaddleX 官方缓存读取：
+保证paddlex已在当前 Python 环境中安装(`import paddlex`).
+
+PaddleX 的 `PaddleStaticRunner` 只在 `gpu`/`dcu` 分支里打开 CINN，`metax_gpu` 分支没有接，所以这些目录直接配置 `paddle.inference`。可选 `PADDLE_DEVICE`、`INPUTS_NPZ`（复用另一平台的输入）。
 
 ```bash
 # 默认 $PADDLEX_MODELS_DIR/<模型名>，未设置时为 ~/.paddlex/official_models/<模型名>
@@ -95,12 +94,10 @@ export CHECKPOINT_DIR=/path/to/<模型名>   # 可选，覆盖默认目录；入
 ./run_model_cinn.sh   # cinn：AnalysisConfig.enable_cinn()
 ```
 
-PaddleX 的 `PaddleStaticRunner` 只在 `gpu`/`dcu` 分支里打开 CINN，`metax_gpu` 分支没有接，所以这些目录直接
-配置 `paddle.inference`。可选 `PADDLE_DEVICE`、`INPUTS_NPZ`（复用另一平台的输入）。
-
 ### PaddleScience
 
-需要 PaddleScience 源码，且其 HEAD 等于 `paddlescience.commit`（当前 `34819214`）：
+- 需要导出当前PaddleScience的位置到环境变量, 并保证已安装
+- 测试使用 PaddleScience HEAD = `34819214b3f616b1112012a71131193116301283`
 
 ```bash
 export PADDLE_PSCI_DIR=/data/PaddleScience
@@ -111,7 +108,18 @@ export PADDLE_PSCI_DIR=/data/PaddleScience
 不使用外部权重：dynamic 在 CPU 上按固定种子初始化模型与批次并写入
 `results/dynamic-infer/{init.pdparams,inputs.npz}`，cinn 自动复用；`CHECKPOINT_DIR` / `INPUTS_NPZ` 可指定另一
 平台导出的同一份权重/输入，`inference.json` 的 `weights_sha256` / `inputs_sha256` 用于核对。
-训练阶段用上游 `test/cinn/run_cinn_test.py --cases <case> --stages train`。
+
+本目录入口只覆盖推理前向。**训练可以测**，用上游 harness（它自己同时跑 dynamic/CINN，比较 loss 轨迹；
+默认 `--iters 600`、验收窗口 400-500）：
+
+```bash
+cd "$PADDLE_PSCI_DIR"
+python test/cinn/run_cinn_test.py --cases darcy --stages train --devices 0
+```
+
+2026-11-20 在 MetaX 上实测：`xpinn` PASS（400-500 步最大差 3.7e-3，0 个离群步，CINN 训练快 1.23×）；
+`earthformer` 缩短窗口 PASS（`--iters 200 --window 150,200`，最大差 1.3e-1，5 个离群步，CINN 训练快 2.29×）；
+`darcy` 能跑但默认验收 **ACC_FAIL**（400-500 步最大差 5.6e-2，37 步超过 1e-2，CINN 训练快 1.84×）。
 
 ## 跨平台（A100 / Metax C500）
 

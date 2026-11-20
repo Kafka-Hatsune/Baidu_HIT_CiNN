@@ -47,5 +47,6 @@ cd /data/Baidu_HIT_CiNN/darcy
 2026-11-20 单次短测（metax_gpu:0）：dynamic 0.981 ms，cinn 1.061 ms（CINN 慢 7.5%），
 `max_abs_diff = 0.0`，比对 PASS；两模式 `weights_sha256` / `inputs_sha256` 一致。仅作入口/数值验证。
 
-训练：上游 harness 支持 train 阶段，可在 PaddleScience 中运行
-`python test/cinn/run_cinn_test.py --cases darcy --stages train`；本目录只覆盖推理前向。
+训练：本目录只覆盖推理前向；训练走上游 harness。2026-11-20 在 MetaX 实测（`--stages train --iters 500
+--window 400,500`）：CINN 训练快 1.84×，但默认验收 **ACC_FAIL**——400-500 步最大 loss 差 5.6e-2、
+37 步超过 1e-2（允许 10），final loss 差 4.9e-3。查清前不要当作训练结果一致。

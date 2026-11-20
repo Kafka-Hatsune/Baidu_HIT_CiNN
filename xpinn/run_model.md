@@ -47,4 +47,5 @@ cd /data/Baidu_HIT_CiNN/xpinn
 `max_abs_diff = 0.0`，比对 PASS；`weights_sha256` / `inputs_sha256` 一致。小模型 + 18 个输出（含透传张量）时
 CINN 的调度开销占比高，变慢是预期现象，仅作入口/数值验证。
 
-训练：上游 harness 支持 `python test/cinn/run_cinn_test.py --cases xpinn --stages train`；本目录只覆盖推理前向。
+训练：本目录只覆盖推理前向；训练走上游 harness。2026-11-20 在 MetaX 实测
+（`--stages train --iters 500 --window 400,500`）：**PASS**，最大 loss 差 3.7e-3、0 个离群步，CINN 训练快 1.23×。

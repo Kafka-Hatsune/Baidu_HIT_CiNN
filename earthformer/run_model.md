@@ -48,5 +48,6 @@ cd /data/Baidu_HIT_CiNN/earthformer
 2026-11-20 单次短测（metax_gpu:0）：dynamic 114.313 ms，cinn 46.382 ms（**CINN 快 146.5%**，约 2.5×），
 `max_abs_diff = 9.03e-4`，比对 PASS；`weights_sha256` / `inputs_sha256` 一致。
 
-训练：上游 harness 支持 `python test/cinn/run_cinn_test.py --cases earthformer --stages train`；
-本目录只覆盖推理前向。
+训练：本目录只覆盖推理前向；训练走上游 harness。2026-11-20 在 MetaX 实测（缩短窗口：
+`--stages train --iters 200 --window 150,200`）：**PASS**，最大 loss 差 1.3e-1（按相对差判定）、5 个离群步，
+CINN 训练快 2.29×；默认 400-500 窗口尚未跑完。
