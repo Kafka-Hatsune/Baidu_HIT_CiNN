@@ -5,5 +5,15 @@
   "atol": 0.002,
   "warmup": 5,
   "iters": 20,
-  "notes": "case from $PADDLE_PSCI_DIR/test/cinn/cases/earthformer.py; synthetic sst_data/sst_target, MODEL kwargs from examples/earthformer/conf/earthformer_enso_pretrain.yaml"
+  "notes": "case from $PADDLE_PSCI_DIR/test/cinn/cases/earthformer.py; synthetic sst_data/sst_target, MODEL kwargs from examples/earthformer/conf/earthformer_enso_pretrain.yaml",
+  "train": {
+    "warmup": 5,
+    "iters": 500,
+    "window": [
+      400,
+      500
+    ],
+    "tol": 0.01,
+    "max_outliers": 10
+  }
 }

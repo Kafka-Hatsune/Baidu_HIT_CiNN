@@ -38,7 +38,7 @@ PaddleX 只发布 `inference.json` + `inference.pdiparams`，没有动态图代�
 - [PP-OCRv4_server_det](ppocrv4_server_det/run_model.md)：文本检测，输入 960×960。
 - [PP-OCRv4_server_rec](ppocrv4_server_rec/run_model.md)：文本识别，输入 48×320。
 
-### PaddleScience（上游 CINN 用例 + `to_static(backend="CINN")`，仅推理）
+### PaddleScience（上游 CINN 用例 + `to_static(backend="CINN")`，含训练入口）
 
 模型与合成批次取自 `$PaddleScience/test/cinn/cases`，不复制架构。
 
@@ -109,17 +109,24 @@ export PADDLE_PSCI_DIR=/data/PaddleScience
 `results/dynamic-infer/{init.pdparams,inputs.npz}`，cinn 自动复用；`CHECKPOINT_DIR` / `INPUTS_NPZ` 可指定另一
 平台导出的同一份权重/输入，`inference.json` 的 `weights_sha256` / `inputs_sha256` 用于核对。
 
-本目录入口只覆盖推理前向。**训练可以测**，用上游 harness（它自己同时跑 dynamic/CINN，比较 loss 轨迹；
-默认 `--iters 600`、验收窗口 400-500）：
+本目录同时提供推理和训练入口；训练复用上游 case 的 `compute_loss`（Adam、lr 与用例一致、dropout 置 0），
+默认 `WARMUP=5`、`ITERS=500`（总步数 505，前 5 步不计时），权重与批次同样在 CPU 上按固定种子生成：
 
 ```bash
-cd "$PADDLE_PSCI_DIR"
-python test/cinn/run_cinn_test.py --cases darcy --stages train --devices 0
+./train.sh              # dynamic
+MODE=cinn ./train.sh    # CINN，自动复用 dynamic-train 的 init.pdparams / batch.npz
 ```
 
-2026-11-20 在 MetaX 上实测：`xpinn` PASS（400-500 步最大差 3.7e-3，0 个离群步，CINN 训练快 1.23×）；
-`earthformer` 缩短窗口 PASS（`--iters 200 --window 150,200`，最大差 1.3e-1，5 个离群步，CINN 训练快 2.29×）；
-`darcy` 能跑但默认验收 **ACC_FAIL**（400-500 步最大差 5.6e-2，37 步超过 1e-2，CINN 训练快 1.84×）。
+产物：`results/{dynamic,cinn}-train/`（`train.json`、`losses.npz`、`init.pdparams`、`batch.npz`、`final.pdparams`），
+比对写入 `results/comparison-train.json`，口径为 400-500 窗口、tol 1e-2、最多 10 个离群步（与上游 harness 一致）。
+跨平台时用 `CHECKPOINT_DIR`（init.pdparams）+ `BATCH_NPZ`（batch.npz 及其同名 `.json`）复用另一端的权重与批次，
+`train.json` 的 `init_weights_sha256` / `batch_sha256` 可确认两端同源。
+
+2026-11-20 在 MetaX 上实测（默认 5/500）：
+
+- `darcy`：PASS，窗口最大差 1.24e-2、1 个离群步，训练 38.96 → 18.51 ms/step（CINN 2.1×）。
+- `xpinn`：PASS，窗口最大差 2.74e-5、0 个离群步，训练 120.55 → 95.86 ms/step（CINN 1.26×）。
+- `earthformer`：PASS（窗口最大相对差 1.28e-1、9 个离群步，接近 10 的上限），训练 399.68 → 173.15 ms/step（CINN 2.31×）。
 
 ## 跨平台（A100 / Metax C500）
 
@@ -133,7 +140,8 @@ python test/cinn/run_cinn_test.py --cases darcy --stages train --devices 0
 
 跨平台比对：
 
-- PaddleX 用 `INPUTS_NPZ` 复用输入；PaddleScience 用 `CHECKPOINT_DIR` + `INPUTS_NPZ` 复用权重与输入。
+- PaddleX 用 `INPUTS_NPZ` 复用输入；PaddleScience 推理用 `CHECKPOINT_DIR` + `INPUTS_NPZ`，训练用
+  `CHECKPOINT_DIR` + `BATCH_NPZ` 复用权重与批次。
 - `python compare.py --dynamic <平台A/dynamic-infer> --cinn <平台B/dynamic-infer> --report ...`，
   差异按各目录 `model_spec.json` 的 `atol` 判定（不同平台浮点实现不同）。
 
@@ -143,9 +151,9 @@ python test/cinn/run_cinn_test.py --cases darcy --stages train --devices 0
 | --- | --- |
 | `run_model.sh` | dynamic 快速入口。 |
 | `run_model_cinn.sh` | CINN 快速入口。 |
-| `train.sh` | 单独训练入口（PaddleFormers / PaddleClas 目录提供）。 |
+| `train.sh` | 单独训练入口（PaddleFormers / PaddleClas / PaddleScience 目录提供）。 |
 | `infer.sh` | 单独推理入口。 |
-| `run_model.py` / `infer_impl.py` | 构建模型/批次、执行、记录性能与结果。 |
+| `run_model.py` / `infer_impl.py` / `train_impl.py` | 构建模型/批次、执行推理或训练、记录性能与结果。 |
 | `compare.py` | dynamic 与 CINN 输出比对（PaddleX / PaddleScience 目录）。 |
 | `model_spec.json` | 输入规格、种子、比对阈值（PaddleX / PaddleScience 目录）。 |
 | `run_model.md` | 模型专属环境、数据、运行方式和结果说明。 |
@@ -154,10 +162,12 @@ python test/cinn/run_cinn_test.py --cases darcy --stages train --devices 0
 
 - 每个模型应能从自己的 `run_model.md` 中找到入口、环境变量和结果查看方式。
 - `logs/` 和 `results/` 中的产物默认不提交；已存在的结果目录不会被覆盖。
-- PaddleX / PaddleScience 目录没有 `train.sh`（前者无动态图代码，后者训练走上游 harness）。
+- PaddleX 目录没有 `train.sh`（只发布静态推理图）；PaddleScience 的 `train.sh` 复用上游 case 的
+  `compute_loss`，默认 `WARMUP=5`、`ITERS=500`。
 
 ## 验收记录
 
-- PaddleX 5 个模型、PaddleScience 3 个用例：2026-11-20 在 `metax_gpu:0` 上 dynamic/CINN 均通过，
-  数值差异见各目录 `run_model.md`。
+- PaddleX 5 个模型：2026-11-20 在 `metax_gpu:0` 上 dynamic/CINN 推理均通过，数值差异见各目录 `run_model.md`。
+- PaddleScience 3 个用例：推理 dynamic/CINN 均通过；训练（默认 `WARMUP=5`、`ITERS=500`）`darcy`、`xpinn`、
+  `earthformer` 的实测结果见各目录 `run_model.md`。
 - PaddleFormers / PaddleClas 各目录的验收结果记录在各自的 `run_model.md` 中。

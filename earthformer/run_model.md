@@ -48,6 +48,18 @@ cd /data/Baidu_HIT_CiNN/earthformer
 2026-11-20 单次短测（metax_gpu:0）：dynamic 114.313 ms，cinn 46.382 ms（**CINN 快 146.5%**，约 2.5×），
 `max_abs_diff = 9.03e-4`，比对 PASS；`weights_sha256` / `inputs_sha256` 一致。
 
-训练：本目录只覆盖推理前向；训练走上游 harness。2026-11-20 在 MetaX 实测（缩短窗口：
-`--stages train --iters 200 --window 150,200`）：**PASS**，最大 loss 差 1.3e-1（按相对差判定）、5 个离群步，
-CINN 训练快 2.29×；默认 400-500 窗口尚未跑完。
+训练（`train.sh`，复用上游 case 的 `compute_loss`，默认 `WARMUP=5`、`ITERS=500`，总步数 505）：
+
+```bash
+./train.sh              # dynamic
+MODE=cinn ./train.sh    # CINN；自动复用 dynamic-train 的 init.pdparams 与 batch.npz
+```
+
+产物 `results/{dynamic,cinn}-train/`（`train.json`、`losses.npz`、`init.pdparams`、`batch.npz`、`final.pdparams`），
+`results/comparison-train.json` 按 400-500 窗口、tol 1e-2、最多 10 个离群步判定。跨平台用
+`CHECKPOINT_DIR` + `BATCH_NPZ` 复用另一端的权重/批次，`train.json` 的 `init_weights_sha256`、`batch_sha256`
+用于核对。该 case 单步较慢，跑满 505 步约需数分钟。
+
+2026-11-20 实测（metax_gpu:0，默认 5/500，共 505 步）：dynamic 399.68 ms/step，CINN 173.15 ms/step（2.31×）；
+首步 loss 差 0.0，400-500 窗口最大差 1.28e-1（loss > 1 时按相对差）、均值 1.13e-2、9 个离群步 → **PASS**，
+但离 10 个离群步的上限很近；关掉 CINN 或换随机种子时需要重新确认。

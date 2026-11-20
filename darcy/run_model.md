@@ -47,6 +47,18 @@ cd /data/Baidu_HIT_CiNN/darcy
 2026-11-20 单次短测（metax_gpu:0）：dynamic 0.981 ms，cinn 1.061 ms（CINN 慢 7.5%），
 `max_abs_diff = 0.0`，比对 PASS；两模式 `weights_sha256` / `inputs_sha256` 一致。仅作入口/数值验证。
 
-训练：本目录只覆盖推理前向；训练走上游 harness。2026-11-20 在 MetaX 实测（`--stages train --iters 500
---window 400,500`）：CINN 训练快 1.84×，但默认验收 **ACC_FAIL**——400-500 步最大 loss 差 5.6e-2、
-37 步超过 1e-2（允许 10），final loss 差 4.9e-3。查清前不要当作训练结果一致。
+训练（`train.sh`，复用上游 case 的 `compute_loss`，默认 `WARMUP=5`、`ITERS=500`）：
+
+```bash
+./train.sh              # dynamic
+MODE=cinn ./train.sh    # CINN；自动复用 dynamic-train 的 init.pdparams 与 batch.npz
+```
+
+产物 `results/{dynamic,cinn}-train/`（`train.json`、`losses.npz`、`init.pdparams`、`batch.npz`、`final.pdparams`），
+`results/comparison-train.json` 按 400-500 窗口、tol 1e-2、最多 10 个离群步判定。跨平台用
+`CHECKPOINT_DIR` + `BATCH_NPZ` 复用另一端的权重/批次，`train.json` 的 `init_weights_sha256`、`batch_sha256` 用于核对。
+
+2026-11-20 实测（metax_gpu:0，505 步）：dynamic 38.96 ms/step，CINN 18.51 ms/step（2.1×）；
+首步 loss 差 6.6e-8（同权重同批次），400-500 窗口最大差 1.24e-2、均值 2.2e-3、1 个离群步 → **PASS**。
+上游 harness 在同一机器默认口径下曾 ACC_FAIL（5.6e-2、37 个离群步），两者初始权重/批次生成方式不同
+（上游在设备上生成），只适合各自比较 dynamic↔CINN，不能横向对比数值。

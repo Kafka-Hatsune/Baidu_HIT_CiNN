@@ -47,5 +47,15 @@ cd /data/Baidu_HIT_CiNN/xpinn
 `max_abs_diff = 0.0`，比对 PASS；`weights_sha256` / `inputs_sha256` 一致。小模型 + 18 个输出（含透传张量）时
 CINN 的调度开销占比高，变慢是预期现象，仅作入口/数值验证。
 
-训练：本目录只覆盖推理前向；训练走上游 harness。2026-11-20 在 MetaX 实测
-（`--stages train --iters 500 --window 400,500`）：**PASS**，最大 loss 差 3.7e-3、0 个离群步，CINN 训练快 1.23×。
+训练（`train.sh`，复用上游 case 的 `compute_loss`，默认 `WARMUP=5`、`ITERS=500`）：
+
+```bash
+./train.sh              # dynamic
+MODE=cinn ./train.sh    # CINN；自动复用 dynamic-train 的 init.pdparams 与 batch.npz
+```
+
+产物 `results/{dynamic,cinn}-train/`，比对写入 `results/comparison-train.json`（400-500 窗口、tol 1e-2、
+最多 10 个离群步）。跨平台用 `CHECKPOINT_DIR` + `BATCH_NPZ` 复用权重/批次。
+
+2026-11-20 实测（metax_gpu:0，505 步）：dynamic 120.55 ms/step，CINN 95.86 ms/step（1.26×）；
+首步 loss 差 9.0e-8，400-500 窗口最大差 2.74e-5、0 个离群步 → **PASS**。

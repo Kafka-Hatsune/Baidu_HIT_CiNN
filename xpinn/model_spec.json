@@ -5,5 +5,15 @@
   "atol": 0.002,
   "warmup": 5,
   "iters": 50,
-  "notes": "case from $PADDLE_PSCI_DIR/test/cinn/cases/xpinn.py; imports examples/xpinn/model.py (which enables prim eager, as the example does); synthetic points instead of the .mat dataset"
+  "notes": "case from $PADDLE_PSCI_DIR/test/cinn/cases/xpinn.py; imports examples/xpinn/model.py (which enables prim eager, as the example does); synthetic points instead of the .mat dataset",
+  "train": {
+    "warmup": 5,
+    "iters": 500,
+    "window": [
+      400,
+      500
+    ],
+    "tol": 0.01,
+    "max_outliers": 10
+  }
 }

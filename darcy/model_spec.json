@@ -5,5 +5,15 @@
   "atol": 0.002,
   "warmup": 5,
   "iters": 50,
-  "notes": "case from $PADDLE_PSCI_DIR/test/cinn/cases/darcy.py; synthetic collocation points, no external data"
+  "notes": "case from $PADDLE_PSCI_DIR/test/cinn/cases/darcy.py; synthetic collocation points, no external data",
+  "train": {
+    "warmup": 5,
+    "iters": 500,
+    "window": [
+      400,
+      500
+    ],
+    "tol": 0.01,
+    "max_outliers": 10
+  }
 }
