@@ -68,8 +68,12 @@ def compare_losses(dyn_dir, cinn_dir):
     lo, hi = window
     idx = np.arange(len(dyn)) + 1
     mask = (idx >= lo) & (idx <= hi)
-    window_diff = diff[mask] if mask.any() else diff
-    outlier_steps = [int(i) for i in idx[mask][window_diff > tol]]
+    if mask.any():
+        window_idx, window_diff = idx[mask], diff[mask]
+    else:
+        # round of steps shorter than the acceptance window: compare them all
+        window_idx, window_diff = idx, diff
+    outlier_steps = [int(i) for i in window_idx[window_diff > tol]]
     passed = len(outlier_steps) <= max_outliers
     return (
         dict(
