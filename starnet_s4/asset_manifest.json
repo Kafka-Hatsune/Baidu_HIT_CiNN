@@ -1,0 +1,20 @@
+[
+  {
+    "kind": "weight",
+    "file": "inference.json",
+    "bytes": 388840,
+    "sha256": "79c108fde71567a19b6e8e1f0d987c23e8a03ca673c0a1c4252d5ba0d24131fc"
+  },
+  {
+    "kind": "weight",
+    "file": "inference.pdiparams",
+    "bytes": 29998649,
+    "sha256": "ca15936223723d932c2b97de38bc301f0c316609b3c44d64ace08a8e88cef48a"
+  },
+  {
+    "kind": "weight",
+    "file": "inference.yml",
+    "bytes": 28481,
+    "sha256": "bba0f7bc861fd34fda9943ffa743d0c7f69857acca1dd51b31ade4b88b529bf6"
+  }
+]

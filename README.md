@@ -7,6 +7,18 @@
 - [Gemma3](gemma3/run_model.md)
 - [Llama4 text tiny](llama4/run_model.md)：FP32 框架测试，权重仅本地提供；包含独立训推入口和三组推理复核记录。
 
+PaddleX 3.7 官方推理模型（只发布静态 PIR 图，因此对比的是同一张图在默认 PIR 执行器与 `enable_cinn()` 下的运行，
+没有 `train.sh`）：
+
+- [StarNet-S4](starnet_s4/run_model.md)：图像分类，输入 224×224。
+- [MobileNetV4_hybrid_large](mobilenetv4_hybrid_large/run_model.md)：图像分类，输入 448×448。
+- [PP-YOLOE_plus-S](ppyoloe_plus_s/run_model.md)：目标检测，输入 640×640（另有 `scale_factor` 输入）。
+- [PP-OCRv4_server_det](ppocrv4_server_det/run_model.md)：文本检测，输入 960×960。
+- [PP-OCRv4_server_rec](ppocrv4_server_rec/run_model.md)：文本识别，输入 48×320。
+
+这些目录不绑定 Metax：默认在 CUDA 构建上用 `gpu:0`、否则用首个自定义设备（`metax_gpu:0`），
+可用 `PADDLE_DEVICE` 强制；`INPUTS_NPZ` 可复用另一平台保存的 `inputs.npz`，用于 A100 与 MetaX 的精度比对。
+
 下表说明当前仓库对外文件和目录的功能。合作方可以根据模型需要增删辅助文件，不需要遵循统一的附加目录结构。
 
 | 文件或目录 | 功能 |

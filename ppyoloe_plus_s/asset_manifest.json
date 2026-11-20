@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "weight",
+    "file": "inference.json",
+    "bytes": 299179,
+    "sha256": "805baa6fb80c1a32828c487d388408d5257b2ec7f03b02bdda172a277b9b3fac"
+  },
+  {
+    "kind": "weight",
+    "file": "inference.pdiparams",
+    "bytes": 31880547,
+    "sha256": "738c4a249a032d89dc220901febb63c9a20797a36032cd43584cb1ff108a2d40"
+  },
+  {
+    "kind": "weight",
+    "file": "inference.yml",
+    "bytes": 1949,
+    "sha256": "8cbac5dd256bba1afc00bd3c2b10c9701e5b6bdc1216f0a8b76b43f78755c070"
+  },
+  {
+    "kind": "asset",
+    "file": "data/image_640.npz",
+    "bytes": 793453,
+    "sha256": "ee20150e88aeadc10227ca383c507bd62db6468160b5ca423780304f0c4f4cb8"
+  }
+]

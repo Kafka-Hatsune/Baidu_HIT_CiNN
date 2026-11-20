@@ -1,0 +1,17 @@
+{
+  "model_name": "MobileNetV4_hybrid_large",
+  "task": "image_classification",
+  "device": "metax_gpu",
+  "seed": 20261119,
+  "feeds": {
+    "x": {
+      "shape": [1, 3, 448, 448],
+      "dtype": "float32"
+    }
+  },
+  "compare": {
+    "kind": "tensor",
+    "atol": 0.002
+  },
+  "preprocess_reference": "inference.yml: ResizeImage resize_short=448, CropImage 448, ImageNet mean/std, ToCHW"
+}
