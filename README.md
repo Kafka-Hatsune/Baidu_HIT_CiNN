@@ -47,7 +47,8 @@ Metax 平台（C500）与 Ampere 平台（A100）提供统一的资源记录和�
   - PaddleOCR：`pip install shapely pyclipper scikit-image lmdb rapidfuzz albumentations albucore`（约束 `numpy==1.26.4`；albumentations 会把 opencv-headless 升到 4.11，不影响）。
 - **设备白名单**：这 5 个模型不全在 `paddlex/utils/custom_device_list.py:METAX_GPU_WHITELIST`，训练需
   `export PADDLE_PDX_DISABLE_DEV_MODEL_WL=true`（各 `train.sh` 已内置）。
-- **PaddleOCR 设备名 bug**：`PaddleOCR/tools/program.py` 对 metax 拼成 `"metax:{id}"`（应 `"metax_gpu:{id}"`），本仓已本地修正。
+- **PaddleOCR 设备名 bug**：`PaddleOCR/tools/program.py` 对 metax 拼成 `"metax:{id}"`（应 `"metax_gpu:{id}"`），由 OCR 目录的 `patch.sh` 修正。
+- **训练可复现补丁**：det/rec/PP-YOLOE 的 `train.sh` 每次训练前跑 `patch.sh apply`，检查并补上 PaddleOCR / PaddleDetection 的种子补丁（原因见各目录 README「源码补丁」）。
 - **CINN 训练能力差异**：PaddleClas 走 `Global.use_cinn=True → to_static(backend="CINN")` 干净路径；
   PaddleDetection/PaddleOCR 的 `apply_to_static` 无 CINN backend 参数，需 `FLAGS_use_cinn=1 + FLAGS_prim_all=true + Train.dy2st=True`。
   检测类 loss（BCE/dice）在 CINN+prim 下数值不稳：PP-YOLOE 训练 NaN、PP-OCR det 触发 `assert loss<=1`；OCR rec（CTC）与分类模型正常。
@@ -96,6 +97,9 @@ python plot_loss.py --dynamic results/dynamic-train/*.log --cinn results/cinn-tr
 
 PaddleX `PaddleStaticRunner` 只在 `gpu`/`dcu` 分支开 CINN，`metax_gpu` 没接，故推理直接配 `paddle.inference`。
 
+PaddleX 5 目录的 `train.sh`/`run_model*.sh` 跑完会用 `archive.py` 把小型对齐结果归档到 `results/<platform>/`
+（自动识别 `a100`/`metax-c500`，`CINN_PLATFORM` 覆盖）；`.gitignore` 只放行 `results/a100`、`results/metax-c500`，新平台需加白名单。
+
 ### PaddleScience
 
 ```bash
@@ -138,4 +142,9 @@ export PADDLE_PSCI_DIR=/data/PaddleScience          # HEAD=34819214b3f616b111201
   - PP-OCRv4_server_rec：dynamic/CINN 同步下降 21.2→11.7 / 23.8→10.0，CINN 训练无异常。
   - PP-OCRv4_server_det：dynamic 跑满（2.18→1.43），CINN 到 ~step400 被 `assert loss<=1` 中断（非 NaN）。
   - PP-YOLOE_plus-S：dynamic 跑满（4.79→1.44），**CINN 训练 NaN 发散**（检测 BCE loss 在 CINN+prim 下不稳）。
+- PaddleX A100（2026-11-23，`gpu:0`，新版脚本 + 训练可复现补丁，产物 `results/a100/`）：
+  - 推理：5 个模型同进程重复运行输出逐位一致，输入 sha256 与 MetaX 一致；dynamic/CINN 均 PASS（max_abs_diff ≤ 3.6e-7），耗时基本持平。
+  - 训练（dynamic / CINN，最后 50 点均值；step 中位耗时）：StarNet-S4 2.987 / 2.664（-10.8%），227 / 150 ms；
+    MobileNetV4 4.632 / 4.641，181 / 158 ms；OCR rec 10.72 / 10.52，100 / 65 ms；OCR det 1.478 / 1.443，186 / 149 ms；
+    PP-YOLOE 1.606 / 1.621，102 / 78 ms。5 个模型的 CINN 训练均跑满、无 NaN/断言；首步 CINN 编译 4.9–9.5 min。
 - PaddleScience 3 用例、PaddleFormers / PaddleClas 各目录：结果见各自文档。

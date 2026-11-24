@@ -75,7 +75,7 @@ ax.set_xlabel("training step")
 ax.set_ylabel("loss")
 ax.grid(True, alpha=0.3)
 ax.legend()
-plt.title(f"{a.title} ({n} steps, MetaX)")
+plt.title(f"{a.title} ({n} steps)")
 fig.tight_layout()
 png_path = a.out / "loss_curve.png"
 fig.savefig(png_path, dpi=130)
