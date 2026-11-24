@@ -58,5 +58,6 @@ trained-cinn `max_abs_diff = 2.67e-5` PASS）。
 
 - `StarNet-S4` 不在 `paddlex/utils/custom_device_list.py:METAX_GPU_WHITELIST`，`train.sh` 已内置
   `PADDLE_PDX_DISABLE_DEV_MODEL_WL=true` 跳过设备白名单断言。
+- 可复现训练：`train.sh` 默认 `DETERMINISTIC=1`，导出 `FLAGS_cudnn_deterministic=true`。不开时卷积反向会选非确定性算法，同配置两次训练从第 2～3 步开始分叉（A100 实测 StarNet 5 次 dynamic 的最后 50 点均值在 1.79–2.99 之间）；开启后 dynamic、CINN 重跑均逐位一致。`DETERMINISTIC=0` 恢复上游行为。
 - `results/` 下的完整产物只留本地；`train.sh` / `run_model*.sh` 跑完自动把小型对齐结果（train.log、losses.npz、train.json、inference.json、≤2 MiB 的 outputs.npz、comparison.*）归档到 `results/<platform>/` 入库。platform 自动识别（CUDA 取 GPU 型号如 `a100`，`metax_gpu`→`metax-c500`），`CINN_PLATFORM` 可覆盖；已存在的 `results/<mode>-<task>` 不被覆盖。
 - 跨平台：`infer_impl.py` 与 `train.sh` 设备无关（CUDA→`gpu`，否则首个自定义设备），`PADDLE_DEVICE` 可强制；`PADDLEX`、`DATASET_DIR`/`DATASET_ROOT`、`GPU_ID`、`RESULTS_DIR` 可覆盖默认路径。

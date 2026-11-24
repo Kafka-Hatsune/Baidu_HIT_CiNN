@@ -144,7 +144,9 @@ export PADDLE_PSCI_DIR=/data/PaddleScience          # HEAD=34819214b3f616b111201
   - PP-YOLOE_plus-S：dynamic 跑满（4.79→1.44），**CINN 训练 NaN 发散**（检测 BCE loss 在 CINN+prim 下不稳）。
 - PaddleX A100（2026-11-23，`gpu:0`，新版脚本 + 训练可复现补丁，产物 `results/a100/`）：
   - 推理：5 个模型同进程重复运行输出逐位一致，输入 sha256 与 MetaX 一致；dynamic/CINN 均 PASS（max_abs_diff ≤ 3.6e-7），耗时基本持平。
-  - 训练（dynamic / CINN，最后 50 点均值；step 中位耗时）：StarNet-S4 2.987 / 2.664（-10.8%），227 / 150 ms；
-    MobileNetV4 4.632 / 4.641，181 / 158 ms；OCR rec 10.72 / 10.52，100 / 65 ms；OCR det 1.478 / 1.443，186 / 149 ms；
+  - 训练（dynamic / CINN，最后 50 点均值；step 中位耗时）：StarNet-S4 3.209 / 1.798，162 / 138 ms；
+    MobileNetV4 4.616 / 4.638，178 / 156 ms；OCR rec 10.72 / 10.52，100 / 65 ms；OCR det 1.478 / 1.443，186 / 149 ms；
     PP-YOLOE 1.606 / 1.621，102 / 78 ms。5 个模型的 CINN 训练均跑满、无 NaN/断言；首步 CINN 编译 4.9–9.5 min。
+  - StarNet-S4 的训练对微小数值扰动很敏感：关闭 cudnn 确定性时，同配置 dynamic 跑 5 次，最后 50 点均值在 1.79–2.99 之间，
+    所以 dynamic/CINN 的末段差异不能作为精度结论，应看前若干步（相对差在第 16 步才超过 1e-3）。
 - PaddleScience 3 用例、PaddleFormers / PaddleClas 各目录：结果见各自文档。

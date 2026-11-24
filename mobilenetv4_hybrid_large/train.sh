@@ -33,6 +33,12 @@ case "$MODE" in
   cinn)    USE_CINN=True ;;
   *) echo "MODE must be dynamic|cinn" >&2; exit 2 ;;
 esac
+# Reproducible training; DETERMINISTIC=0 keeps upstream behavior. Without
+# FLAGS_cudnn_deterministic the conv backward picks non-deterministic algorithms
+# and two identical runs drift apart from step 2 (last-50 mean 1.79-2.99).
+if [ "${DETERMINISTIC:-1}" = 1 ]; then
+  export FLAGS_cudnn_deterministic=true
+fi
 [[ -d "$CLAS" ]] || { echo "PaddleClas not found under PADDLEX=$PADDLEX" >&2; exit 2; }
 [[ -f "$DATASET/train.txt" ]] || { echo "Dataset not found: $DATASET (set DATASET_DIR)" >&2; exit 2; }
 

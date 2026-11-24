@@ -5,11 +5,11 @@
   "status": "ok",
   "steps_logged": 512,
   "loss_first": 4.90264,
-  "loss_last": 4.63226,
-  "first_step_ms": 412245.89,
-  "steady_step_ms": 1202.0382,
-  "median_step_ms": 158.42,
-  "losses_sha256": "dbf08365cab0e8fe10e5128c30994d0e477fd9863e54e4f3ef7e134fe0d8564d",
-  "log_sha256": "9b074219ecd8203b199ec4065a28442886f6d7b3cdd37d51218bdef202dd4864",
+  "loss_last": 4.63476,
+  "first_step_ms": 401890.34,
+  "steady_step_ms": 1236.5671,
+  "median_step_ms": 156.0,
+  "losses_sha256": "443e1b8b86530d16265a0c7dd1bca43376a6f7ce62c29af8353bd009265ded8f",
+  "log_sha256": "f794c1ff5aa5baf7ecf475a80b593d746b6477e4b150711f113ee999da3be0f8",
   "source_log": "results/cinn-train/train.log"
 }

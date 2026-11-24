@@ -5,11 +5,11 @@
   "status": "ok",
   "steps_logged": 512,
   "loss_first": 5.03638,
-  "loss_last": 3.09057,
-  "first_step_ms": 3746.79,
-  "steady_step_ms": 296.2168,
-  "median_step_ms": 227.29,
-  "losses_sha256": "662f4e623436e23aa0c8980d944f901137396365a9f93722b38b865e58a27d6a",
-  "log_sha256": "cfe67003b99e078e0807467fce2bd379730bf527b033462fd05d0f5730a977aa",
+  "loss_last": 3.33563,
+  "first_step_ms": 3819.12,
+  "steady_step_ms": 236.2379,
+  "median_step_ms": 161.79,
+  "losses_sha256": "61d7c86d09d00ae92ff77d44118b93c678c8818eb9e6cd003725dd3314375c20",
+  "log_sha256": "fe04b2b9ced56e9330e90cd5d76349a506d2c03f8f460210a23fd982f9e92a5b",
   "source_log": "results/dynamic-train/train.log"
 }
