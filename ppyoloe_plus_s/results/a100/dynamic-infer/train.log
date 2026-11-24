@@ -1,16 +1,16 @@
-I1120 02:43:14.364173 25125 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+I1123 03:53:56.302884 135568 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
 [1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
-I1120 02:43:14.404376 25125 print_statistics.cc:50] --- detected [8] subgraphs!
+I1123 03:53:56.342598 135568 print_statistics.cc:50] --- detected [8] subgraphs!
 [1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
 [1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
 [1m[35m--- Running PIR pass [map_op_to_another_pass][0m
 [1m[35m--- Running PIR pass [identity_op_clean_pass][0m
 [1m[35m--- Running PIR pass [silu_fuse_pass][0m
 [1m[35m--- Running PIR pass [conv2d_bn_fuse_pass][0m
-I1120 02:43:14.412694 25125 print_statistics.cc:50] --- detected [56] subgraphs!
+I1123 03:53:56.349653 135568 print_statistics.cc:50] --- detected [56] subgraphs!
 [1m[35m--- Running PIR pass [conv2d_add_act_fuse_pass][0m
 [1m[35m--- Running PIR pass [conv2d_add_fuse_pass][0m
-I1120 02:43:14.442915 25125 print_statistics.cc:50] --- detected [83] subgraphs!
+I1123 03:53:56.378739 135568 print_statistics.cc:50] --- detected [83] subgraphs!
 [1m[35m--- Running PIR pass [embedding_eltwise_layernorm_fuse_pass][0m
 [1m[35m--- Running PIR pass [fused_rotary_position_embedding_pass][0m
 [1m[35m--- Running PIR pass [fused_flash_attn_pass][0m
@@ -26,23 +26,31 @@ I1120 02:43:14.442915 25125 print_statistics.cc:50] --- detected [83] subgraphs!
 [1m[35m--- Running PIR pass [horizontal_fuse_pass][0m
 [1m[35m--- Running PIR pass [transfer_layout_pass][0m
 [1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
-I1120 02:43:14.470901 25125 print_statistics.cc:50] --- detected [185] subgraphs!
+I1123 03:53:56.406200 135568 print_statistics.cc:50] --- detected [185] subgraphs!
 [1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
-I1120 02:43:14.499624 25125 print_statistics.cc:50] --- detected [345] subgraphs!
+I1123 03:53:56.496080 135568 print_statistics.cc:50] --- detected [345] subgraphs!
 [1m[35m--- Running PIR pass [constant_folding_pass][0m
-I1120 02:43:14.503144 25125 pir_interpreter.cc:1605] New Executor is Running ...
-W1120 02:43:14.506464 25125 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
-I1120 02:43:14.506984 25125 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
-I1120 02:43:16.439589 25125 print_statistics.cc:44] --- detected [526, 1142] subgraphs!
+I1123 03:53:56.501605 135568 pir_interpreter.cc:1605] New Executor is Running ...
+W1123 03:53:56.543744 135568 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+I1123 03:53:56.544540 135568 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+I1123 03:53:58.368150 135568 print_statistics.cc:44] --- detected [526, 1142] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:43:16.444944 25125 print_statistics.cc:50] --- detected [677] subgraphs!
+I1123 03:53:58.372977 135568 print_statistics.cc:50] --- detected [677] subgraphs!
 [1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
-I1120 02:43:16.446521 25125 print_statistics.cc:50] --- detected [2] subgraphs!
+I1123 03:53:58.374248 135568 print_statistics.cc:50] --- detected [2] subgraphs!
 [1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
-I1120 02:43:16.463441 25125 print_statistics.cc:50] --- detected [2] subgraphs!
+I1123 03:53:58.391578 135568 print_statistics.cc:50] --- detected [2] subgraphs!
 [1m[35m--- Running PIR pass [inplace_pass][0m
-I1120 02:43:16.496486 25125 print_statistics.cc:50] --- detected [114] subgraphs!
-I1120 02:43:16.496713 25125 analysis_predictor.cc:1214] ======= pir optimization completed =======
-I1120 02:43:16.575184 25125 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+I1123 03:53:58.431879 135568 print_statistics.cc:50] --- detected [114] subgraphs!
+I1123 03:53:58.432181 135568 analysis_predictor.cc:1214] ======= pir optimization completed =======
+I1123 03:53:58.531443 135568 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
 PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-{"model": "PP-YOLOE_plus-S", "mode": "dynamic", "weights": "/root/.paddlex/official_models/PP-YOLOE_plus-S", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "ebb843d40ae04062444afa4449cc337802c342b133a65510d822e228c5d21568", "feeds": {"image": [1, 3, 640, 640], "scale_factor": [1, 2]}, "outputs": {"fetch_name_0": [300, 6], "fetch_name_1": [1]}, "warmup": 5, "iters": 50, "first_call_ms": 440.7431036233902, "steady_batch_ms": 15.602296367287636, "batch_per_second": 64.09312939963363}
+[2026-11-23 03:54:02,158] [    INFO] loader.py:145 - Loading faiss with AVX512 support.
+[2026-11-23 03:54:02,158] [    INFO] loader.py:151 - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[2026-11-23 03:54:02,158] [    INFO] loader.py:160 - Loading faiss with AVX2 support.
+[2026-11-23 03:54:02,158] [    INFO] loader.py:166 - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+[2026-11-23 03:54:02,158] [    INFO] loader.py:186 - Loading faiss.
+[2026-11-23 03:54:02,185] [    INFO] loader.py:189 - Successfully loaded faiss.
+{"model": "PP-YOLOE_plus-S", "mode": "dynamic", "weights": "/root/.paddlex/official_models/PP-YOLOE_plus-S", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "ebb843d40ae04062444afa4449cc337802c342b133a65510d822e228c5d21568", "feeds": {"image": [1, 3, 640, 640], "scale_factor": [1, 2]}, "outputs": {"fetch_name_0": [300, 6], "fetch_name_1": [1]}, "warmup": 5, "iters": 50, "first_call_ms": 473.13548624515533, "steady_batch_ms": 15.658423081040382, "batch_per_second": 63.86339127666218}

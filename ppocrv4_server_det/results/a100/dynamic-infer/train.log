@@ -1,17 +1,17 @@
-I1120 02:45:40.036629 29735 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+I1123 03:53:56.304095 135778 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
 [1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
 [1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
 [1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
 [1m[35m--- Running PIR pass [map_op_to_another_pass][0m
-I1120 02:45:40.152873 29735 print_statistics.cc:50] --- detected [3] subgraphs!
+I1123 03:53:56.436975 135778 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [identity_op_clean_pass][0m
 [1m[35m--- Running PIR pass [silu_fuse_pass][0m
 [1m[35m--- Running PIR pass [conv2d_bn_fuse_pass][0m
-I1120 02:45:40.157712 29735 print_statistics.cc:50] --- detected [43] subgraphs!
+I1123 03:53:56.444060 135778 print_statistics.cc:50] --- detected [43] subgraphs!
 [1m[35m--- Running PIR pass [conv2d_add_act_fuse_pass][0m
-I1120 02:45:40.170192 29735 print_statistics.cc:50] --- detected [40] subgraphs!
+I1123 03:53:56.462226 135778 print_statistics.cc:50] --- detected [40] subgraphs!
 [1m[35m--- Running PIR pass [conv2d_add_fuse_pass][0m
-I1120 02:45:40.186625 29735 print_statistics.cc:50] --- detected [53] subgraphs!
+I1123 03:53:56.483897 135778 print_statistics.cc:50] --- detected [53] subgraphs!
 [1m[35m--- Running PIR pass [embedding_eltwise_layernorm_fuse_pass][0m
 [1m[35m--- Running PIR pass [fused_rotary_position_embedding_pass][0m
 [1m[35m--- Running PIR pass [fused_flash_attn_pass][0m
@@ -26,25 +26,33 @@ I1120 02:45:40.186625 29735 print_statistics.cc:50] --- detected [53] subgraphs!
 [1m[35m--- Running PIR pass [remove_redundant_transpose_pass][0m
 [1m[35m--- Running PIR pass [horizontal_fuse_pass][0m
 [1m[35m--- Running PIR pass [transfer_layout_pass][0m
-I1120 02:45:40.214103 29735 print_statistics.cc:44] --- detected [2, 1] subgraphs!
+I1123 03:53:56.515470 135778 print_statistics.cc:44] --- detected [2, 1] subgraphs!
 [1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
-I1120 02:45:40.216236 29735 print_statistics.cc:50] --- detected [163] subgraphs!
+I1123 03:53:56.517865 135778 print_statistics.cc:50] --- detected [163] subgraphs!
 [1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
-I1120 02:45:40.297004 29735 print_statistics.cc:50] --- detected [354] subgraphs!
+I1123 03:53:56.623060 135778 print_statistics.cc:50] --- detected [354] subgraphs!
 [1m[35m--- Running PIR pass [constant_folding_pass][0m
-I1120 02:45:40.302390 29735 pir_interpreter.cc:1605] New Executor is Running ...
-W1120 02:45:40.303959 29735 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
-I1120 02:45:40.304723 29735 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
-I1120 02:45:41.686638 29735 print_statistics.cc:44] --- detected [430, 986] subgraphs!
+I1123 03:53:56.628610 135778 pir_interpreter.cc:1605] New Executor is Running ...
+W1123 03:53:56.640260 135778 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+I1123 03:53:56.640966 135778 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+I1123 03:53:58.144414 135778 print_statistics.cc:44] --- detected [430, 986] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:45:41.693830 29735 print_statistics.cc:50] --- detected [554] subgraphs!
+I1123 03:53:58.147903 135778 print_statistics.cc:50] --- detected [554] subgraphs!
 [1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
-I1120 02:45:41.695626 29735 print_statistics.cc:50] --- detected [1] subgraphs!
+I1123 03:53:58.149281 135778 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
-I1120 02:45:41.711560 29735 print_statistics.cc:50] --- detected [1] subgraphs!
+I1123 03:53:58.163820 135778 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [inplace_pass][0m
-I1120 02:45:41.740784 29735 print_statistics.cc:50] --- detected [5] subgraphs!
-I1120 02:45:41.741047 29735 analysis_predictor.cc:1214] ======= pir optimization completed =======
-I1120 02:45:41.826447 29735 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+I1123 03:53:58.188052 135778 print_statistics.cc:50] --- detected [5] subgraphs!
+I1123 03:53:58.188269 135778 analysis_predictor.cc:1214] ======= pir optimization completed =======
+I1123 03:53:58.275048 135778 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
 PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-{"model": "PP-OCRv4_server_det", "mode": "dynamic", "weights": "/root/.paddlex/official_models/PP-OCRv4_server_det", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "95fbb22480ed114a62429d5583cf3713b006f03b51e35c6212ef929321b208db", "feeds": {"x": [1, 3, 960, 960]}, "outputs": {"fetch_name_0": [1, 1, 960, 960]}, "warmup": 5, "iters": 50, "first_call_ms": 548.035267740488, "steady_batch_ms": 91.86077080667019, "batch_per_second": 10.886039723143583}
+[2026-11-23 03:54:06,145] [    INFO] loader.py:145 - Loading faiss with AVX512 support.
+[2026-11-23 03:54:06,145] [    INFO] loader.py:151 - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[2026-11-23 03:54:06,145] [    INFO] loader.py:160 - Loading faiss with AVX2 support.
+[2026-11-23 03:54:06,145] [    INFO] loader.py:166 - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+[2026-11-23 03:54:06,145] [    INFO] loader.py:186 - Loading faiss.
+[2026-11-23 03:54:06,168] [    INFO] loader.py:189 - Successfully loaded faiss.
+{"model": "PP-OCRv4_server_det", "mode": "dynamic", "weights": "/root/.paddlex/official_models/PP-OCRv4_server_det", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "95fbb22480ed114a62429d5583cf3713b006f03b51e35c6212ef929321b208db", "feeds": {"x": [1, 3, 960, 960]}, "outputs": {"fetch_name_0": [1, 1, 960, 960]}, "warmup": 5, "iters": 50, "first_call_ms": 531.6704623401165, "steady_batch_ms": 90.08761540055275, "batch_per_second": 11.100304914873618}

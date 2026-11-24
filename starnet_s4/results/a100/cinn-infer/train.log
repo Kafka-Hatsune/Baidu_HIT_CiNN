@@ -1,5 +1,5 @@
-I1120 02:40:24.964432 17313 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
-I1120 02:40:25.062179 17313 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+I1123 03:54:08.448390 149648 schema.cc:66] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+I1123 03:54:08.556250 149648 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
 [1m[35m--- Running PIR pass [reduce_as_to_sum_pass][0m
 [1m[35m--- Running PIR pass [replace_zero_scale_to_full_pass][0m
 [1m[35m--- Running PIR pass [fused_gemm_epilogue_pass][0m
@@ -11,17 +11,17 @@ I1120 02:40:25.062179 17313 add_cinn_pass.cc:334] Compiling subgraph with CINN b
 [1m[35m--- Running PIR pass [convert_MEA_to_FA][0m
 [1m[35m--- Running PIR pass [convert_FA_to_QKVMHA][0m
 [1m[35m--- Running PIR pass [pd_to_cinn_pass][0m
-I1120 02:40:25.075655 17313 print_statistics.cc:50] --- detected [121] subgraphs!
+I1123 03:54:08.566969 149648 print_statistics.cc:50] --- detected [121] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:40:25.076583 17313 print_statistics.cc:50] --- detected [120] subgraphs!
+I1123 03:54:08.567914 149648 print_statistics.cc:50] --- detected [120] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:40:25.078747 17313 print_statistics.cc:50] --- detected [3] subgraphs!
+I1123 03:54:08.569764 149648 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [pd_to_dyn_shape_cinn_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:40:25.080340 17313 print_statistics.cc:50] --- detected [8] subgraphs!
+I1123 03:54:08.571321 149648 print_statistics.cc:50] --- detected [8] subgraphs!
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [build_cinn_pass][0m
-I1120 02:40:25.183043 17313 print_statistics.cc:50] --- detected [48] subgraphs!
+I1123 03:54:08.667265 149648 print_statistics.cc:50] --- detected [48] subgraphs!
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
@@ -459,9 +459,9 @@ I1120 02:40:25.183043 17313 print_statistics.cc:50] --- detected [48] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
 [1m[35m--- Running PIR pass [cinn_group_cluster_pass][0m
-I1120 02:40:25.248632 17313 print_statistics.cc:50] --- detected [48] subgraphs!
+I1123 03:54:08.724404 149648 print_statistics.cc:50] --- detected [48] subgraphs!
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
-I1120 02:40:25.249814 17313 print_statistics.cc:50] --- detected [20] subgraphs!
+I1123 03:54:08.725764 149648 print_statistics.cc:50] --- detected [20] subgraphs!
 [1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
@@ -752,10 +752,10 @@ I1120 02:40:25.249814 17313 print_statistics.cc:50] --- detected [20] subgraphs!
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
 [1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
 [1m[35m--- Running PIR pass [lower_cinn_dynamic_shape_fusion_op][0m
-I1120 02:41:02.031263 17313 print_statistics.cc:50] --- detected [96] subgraphs!
+I1123 03:54:46.304721 149648 print_statistics.cc:50] --- detected [96] subgraphs!
 [1m[35m--- Running PIR pass [split_generate_shape_into_shape_ops_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_full_int_array_pass][0m
-I1120 02:41:02.033139 17313 print_statistics.cc:50] --- detected [18] subgraphs!
+I1123 03:54:46.307120 149648 print_statistics.cc:50] --- detected [18] subgraphs!
 [1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
 [1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
 [1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
@@ -781,21 +781,29 @@ I1120 02:41:02.033139 17313 print_statistics.cc:50] --- detected [18] subgraphs!
 [1m[35m--- Running PIR pass [transfer_layout_pass][0m
 [1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
 [1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
-I1120 02:41:02.107631 17313 print_statistics.cc:50] --- detected [450] subgraphs!
+I1123 03:54:46.388074 149648 print_statistics.cc:50] --- detected [450] subgraphs!
 [1m[35m--- Running PIR pass [constant_folding_pass][0m
-I1120 02:41:02.109875 17313 pir_interpreter.cc:1605] New Executor is Running ...
-W1120 02:41:02.111909 17313 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
-I1120 02:41:02.112594 17313 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
-I1120 02:41:02.333892 17313 print_statistics.cc:44] --- detected [72, 770] subgraphs!
+I1123 03:54:46.391511 149648 pir_interpreter.cc:1605] New Executor is Running ...
+W1123 03:54:46.393162 149648 gpu_resources.cc:116] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 12.6, Runtime API Version: 12.9
+I1123 03:54:46.394182 149648 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
+I1123 03:54:46.587666 149648 print_statistics.cc:44] --- detected [72, 770] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:41:02.337375 17313 print_statistics.cc:50] --- detected [121] subgraphs!
+I1123 03:54:46.590674 149648 print_statistics.cc:50] --- detected [121] subgraphs!
 [1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
-I1120 02:41:02.339519 17313 print_statistics.cc:50] --- detected [1] subgraphs!
+I1123 03:54:46.592721 149648 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
-I1120 02:41:02.367460 17313 print_statistics.cc:50] --- detected [1] subgraphs!
+I1123 03:54:46.614570 149648 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [inplace_pass][0m
-I1120 02:41:02.404628 17313 print_statistics.cc:50] --- detected [26] subgraphs!
-I1120 02:41:02.405025 17313 analysis_predictor.cc:1214] ======= pir optimization completed =======
-I1120 02:41:02.483922 17313 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+I1123 03:54:46.651036 149648 print_statistics.cc:50] --- detected [26] subgraphs!
+I1123 03:54:46.651331 149648 analysis_predictor.cc:1214] ======= pir optimization completed =======
+I1123 03:54:46.726148 149648 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
 PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-{"model": "StarNet-S4", "mode": "cinn", "weights": "/root/.paddlex/official_models/StarNet-S4", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "eee8e2f1a676fc44871ab58856311de50fef28c3f8a7e0156397f451372971a1", "feeds": {"x": [1, 3, 224, 224]}, "outputs": {"fetch_name_0": [1, 1000]}, "warmup": 5, "iters": 50, "first_call_ms": 304.9059323966503, "steady_batch_ms": 17.753175497055054, "batch_per_second": 56.32795102858544}
+[2026-11-23 03:54:50,170] [    INFO] loader.py:145 - Loading faiss with AVX512 support.
+[2026-11-23 03:54:50,170] [    INFO] loader.py:151 - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[2026-11-23 03:54:50,170] [    INFO] loader.py:160 - Loading faiss with AVX2 support.
+[2026-11-23 03:54:50,170] [    INFO] loader.py:166 - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+[2026-11-23 03:54:50,170] [    INFO] loader.py:186 - Loading faiss.
+[2026-11-23 03:54:50,192] [    INFO] loader.py:189 - Successfully loaded faiss.
+{"model": "StarNet-S4", "mode": "cinn", "weights": "/root/.paddlex/official_models/StarNet-S4", "device": "gpu:0", "paddle_version": "3.5.0.dev20261116+10a99906f58", "paddle_compiled_with_cinn": true, "paddlex_version": "3.7.2", "seed": 20261119, "inputs_sha256": "eee8e2f1a676fc44871ab58856311de50fef28c3f8a7e0156397f451372971a1", "feeds": {"x": [1, 3, 224, 224]}, "outputs": {"fetch_name_0": [1, 1000]}, "warmup": 5, "iters": 50, "first_call_ms": 312.45265156030655, "steady_batch_ms": 17.123748138546944, "batch_per_second": 58.39842959082767}
