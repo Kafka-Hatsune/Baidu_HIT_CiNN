@@ -1,20 +1,20 @@
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1120 02:28:39.637568 2912328 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
-I1120 02:28:39.637600 2912328 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
-I1120 02:28:39.637687 2912328 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
-I1120 02:28:39.638002 2912328 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
-I1120 02:28:39.638417 2912328 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
-I1120 02:28:39.918869 2912328 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
-I1120 02:28:39.918882 2912328 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1125 10:34:28.712800 1458583 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1125 10:34:28.712827 1458583 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1125 10:34:28.712904 1458583 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1125 10:34:28.713227 1458583 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1125 10:34:28.713652 1458583 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1125 10:34:29.040019 1458583 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1125 10:34:29.040032 1458583 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1120 02:28:40.065021 2912328 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
-I1120 02:28:46.194800 2912328 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
-I1120 02:28:46.194846 2912328 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
-I1120 02:28:46.211231 2912328 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
-I1120 02:28:46.211668 2912328 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
-I1120 02:28:46.211714 2912328 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
-I1120 02:28:46.571472 2912328 schema.cc:75] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
-I1120 02:28:46.628172 2912328 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+I1125 10:34:29.173929 1458583 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1125 10:34:35.185906 1458583 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1125 10:34:35.185949 1458583 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1125 10:34:35.202169 1458583 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1125 10:34:35.202598 1458583 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1125 10:34:35.202632 1458583 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+I1125 10:34:35.572418 1458583 schema.cc:75] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+I1125 10:34:35.628533 1458583 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
 [1m[35m--- Running PIR pass [reduce_as_to_sum_pass][0m
 [1m[35m--- Running PIR pass [replace_zero_scale_to_full_pass][0m
 [1m[35m--- Running PIR pass [fuse_parallel_matmul_pass][0m
@@ -25,17 +25,17 @@ I1120 02:28:46.628172 2912328 add_cinn_pass.cc:334] Compiling subgraph with CINN
 [1m[35m--- Running PIR pass [convert_MEA_to_FA][0m
 [1m[35m--- Running PIR pass [convert_FA_to_QKVMHA][0m
 [1m[35m--- Running PIR pass [pd_to_cinn_pass][0m
-I1120 02:28:46.634671 2912328 print_statistics.cc:50] --- detected [121] subgraphs!
+I1125 10:34:35.635118 1458583 print_statistics.cc:50] --- detected [121] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.635375 2912328 print_statistics.cc:50] --- detected [120] subgraphs!
+I1125 10:34:35.635833 1458583 print_statistics.cc:50] --- detected [120] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.636452 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.636920 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [pd_to_dyn_shape_cinn_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.637629 2912328 print_statistics.cc:50] --- detected [8] subgraphs!
+I1125 10:34:35.638113 1458583 print_statistics.cc:50] --- detected [8] subgraphs!
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [build_cinn_pass][0m
-I1120 02:28:46.721509 2912328 print_statistics.cc:50] --- detected [71] subgraphs!
+I1125 10:34:35.721302 1458583 print_statistics.cc:50] --- detected [71] subgraphs!
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
@@ -121,14 +121,14 @@ I1120 02:28:46.721509 2912328 print_statistics.cc:50] --- detected [71] subgraph
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.724207 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.723987 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.724261 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.724040 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.724540 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.724313 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -140,25 +140,25 @@ I1120 02:28:46.724540 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.724766 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.724541 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.724797 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.724570 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.725062 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.724836 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.725109 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.724880 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.725136 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.724907 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.725404 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.725176 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -170,25 +170,25 @@ I1120 02:28:46.725404 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.725692 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.725461 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.725718 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.725487 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.725988 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.725754 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.726034 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.725798 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.726059 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.725824 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.726327 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.726092 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -200,25 +200,25 @@ I1120 02:28:46.726327 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.726591 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.726358 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.726617 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.726384 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.726884 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.726652 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.726933 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.726701 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.726958 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.726727 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.727227 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.726995 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -230,25 +230,25 @@ I1120 02:28:46.727227 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.727440 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.727205 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.727464 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.727231 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.727730 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.727499 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.727774 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.727540 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.727798 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.727566 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.728068 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.727834 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -260,25 +260,25 @@ I1120 02:28:46.728068 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.728327 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.728091 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.728351 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.728116 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.728623 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.728389 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.728667 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.728432 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.728691 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.728456 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.728962 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.728726 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -290,25 +290,25 @@ I1120 02:28:46.728962 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.729220 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.728982 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.729244 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.729008 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.729516 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.729279 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.729560 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.729326 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.729586 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.729350 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.729858 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.729621 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -320,25 +320,25 @@ I1120 02:28:46.729858 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.730068 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.729833 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.730093 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.729857 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.730362 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.730127 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.730405 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.730167 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.730429 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.730191 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.730702 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.730464 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -350,25 +350,25 @@ I1120 02:28:46.730702 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.730957 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.730718 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.730979 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.730743 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.731248 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.731014 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.731292 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.731055 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.731315 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.731079 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.731587 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.731351 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -380,25 +380,25 @@ I1120 02:28:46.731587 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.731843 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.731607 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.731868 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.731631 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.732139 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.731904 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.732182 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.731946 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.732205 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.731971 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.732483 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.732246 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -410,25 +410,25 @@ I1120 02:28:46.732483 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.732743 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.732510 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.732766 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.732534 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.733039 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.732805 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.733081 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.732847 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.733105 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.732872 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.733381 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.733146 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -440,25 +440,25 @@ I1120 02:28:46.733381 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.733635 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.733402 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.733659 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.733426 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.733932 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.733700 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.733974 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.733740 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.733999 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.733764 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.734275 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.734040 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -470,25 +470,25 @@ I1120 02:28:46.734275 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.734532 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.734297 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.734555 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.734323 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.734829 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.734596 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.734872 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.734637 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.734896 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.734661 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.735173 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.734939 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -500,25 +500,25 @@ I1120 02:28:46.735173 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.735432 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.735194 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.735455 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.735219 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.735730 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.735492 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.735772 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.735534 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.735797 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.735558 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.736074 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.735836 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -530,25 +530,25 @@ I1120 02:28:46.736074 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.736330 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.736091 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.736353 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.736115 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.736630 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.736395 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.736673 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.736438 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.736697 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.736462 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.736975 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.736742 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -560,25 +560,25 @@ I1120 02:28:46.736975 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.737231 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.736999 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.737255 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.737023 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.737531 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.737300 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.737573 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.737341 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.737597 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.737365 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.737876 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.737645 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -590,25 +590,25 @@ I1120 02:28:46.737876 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.738132 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.737900 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.738157 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.737924 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.738432 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.738201 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.738474 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.738243 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.738498 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.738267 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.738778 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.738548 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -620,25 +620,25 @@ I1120 02:28:46.738778 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.739039 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.738806 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.739063 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.738829 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.739341 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.739108 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.739383 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.739149 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.739408 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.739173 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.739689 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.739456 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -650,25 +650,25 @@ I1120 02:28:46.739689 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.739950 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.739714 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.739974 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.739738 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.740257 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.740020 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.740301 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.740064 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.740327 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.740090 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.740613 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.740375 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -680,25 +680,25 @@ I1120 02:28:46.740613 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.740831 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.740592 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.740855 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.740617 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.741135 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.740897 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.741178 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.740938 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.741201 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.740962 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.741485 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.741245 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -710,25 +710,25 @@ I1120 02:28:46.741485 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.741743 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.741505 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.741767 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.741529 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.742048 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.741815 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.742089 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.741858 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.742112 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.741881 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.742395 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.742165 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -740,25 +740,25 @@ I1120 02:28:46.742395 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.742652 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.742425 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.742676 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.742449 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.742957 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.742731 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.742998 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.742772 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.743022 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.742796 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.743307 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.743081 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -770,25 +770,25 @@ I1120 02:28:46.743307 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.743564 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.743340 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.743588 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.743363 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.743870 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.743645 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.743912 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.743686 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.743937 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.743710 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.744221 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.743995 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -800,14 +800,14 @@ I1120 02:28:46.744221 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:28:46.744484 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.744258 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:28:46.744508 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:35.744282 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:46.744791 2912328 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:34:35.744570 1458583 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -818,9 +818,9 @@ I1120 02:28:46.744791 2912328 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
 [1m[35m--- Running PIR pass [cinn_group_cluster_pass][0m
-I1120 02:28:46.791931 2912328 print_statistics.cc:50] --- detected [71] subgraphs!
+I1125 10:34:35.791625 1458583 print_statistics.cc:50] --- detected [71] subgraphs!
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
-I1120 02:28:46.792866 2912328 print_statistics.cc:50] --- detected [27] subgraphs!
+I1125 10:34:35.792630 1458583 print_statistics.cc:50] --- detected [27] subgraphs!
 [1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
@@ -1101,45 +1101,45 @@ I1120 02:28:46.792866 2912328 print_statistics.cc:50] --- detected [27] subgraph
 [1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
 [1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_0.co /tmp/cinn_metax_2912328_0.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_1.co /tmp/cinn_metax_2912328_1.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_2.co /tmp/cinn_metax_2912328_2.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_3.co /tmp/cinn_metax_2912328_3.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_4.co /tmp/cinn_metax_2912328_4.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_5.co /tmp/cinn_metax_2912328_5.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_6.co /tmp/cinn_metax_2912328_6.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_7.co /tmp/cinn_metax_2912328_7.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_8.co /tmp/cinn_metax_2912328_8.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_9.co /tmp/cinn_metax_2912328_9.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_10.co /tmp/cinn_metax_2912328_10.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_11.co /tmp/cinn_metax_2912328_11.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_12.co /tmp/cinn_metax_2912328_12.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_13.co /tmp/cinn_metax_2912328_13.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_14.co /tmp/cinn_metax_2912328_14.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_15.co /tmp/cinn_metax_2912328_15.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2912328_16.co /tmp/cinn_metax_2912328_16.cu
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_1.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_2.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_10.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_0.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_4.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_3.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_11.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_5.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_13.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_6.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_12.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_7.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_15.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_9.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_8.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_14.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2912328_16.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_0.co /tmp/cinn_metax_1458583_0.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_1.co /tmp/cinn_metax_1458583_1.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_2.co /tmp/cinn_metax_1458583_2.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_3.co /tmp/cinn_metax_1458583_3.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_4.co /tmp/cinn_metax_1458583_4.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_5.co /tmp/cinn_metax_1458583_5.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_6.co /tmp/cinn_metax_1458583_6.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_7.co /tmp/cinn_metax_1458583_7.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_8.co /tmp/cinn_metax_1458583_8.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_9.co /tmp/cinn_metax_1458583_9.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_10.co /tmp/cinn_metax_1458583_10.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_11.co /tmp/cinn_metax_1458583_11.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_12.co /tmp/cinn_metax_1458583_12.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_13.co /tmp/cinn_metax_1458583_13.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_14.co /tmp/cinn_metax_1458583_14.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_15.co /tmp/cinn_metax_1458583_15.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1458583_16.co /tmp/cinn_metax_1458583_16.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_3.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_2.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_0.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_4.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_1.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_8.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_11.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_13.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_5.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_6.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_9.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_10.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_12.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_7.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_15.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_14.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1458583_16.co
 [1m[35m--- Running PIR pass [lower_cinn_dynamic_shape_fusion_op][0m
-I1120 02:28:54.730105 2912328 print_statistics.cc:50] --- detected [93] subgraphs!
+I1125 10:34:43.693293 1458583 print_statistics.cc:50] --- detected [93] subgraphs!
 [1m[35m--- Running PIR pass [split_generate_shape_into_shape_ops_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_full_int_array_pass][0m
-I1120 02:28:54.732880 2912328 print_statistics.cc:50] --- detected [25] subgraphs!
+I1125 10:34:43.696380 1458583 print_statistics.cc:50] --- detected [25] subgraphs!
 [1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
 [1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
 [1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
@@ -1163,20 +1163,31 @@ I1120 02:28:54.732880 2912328 print_statistics.cc:50] --- detected [25] subgraph
 [1m[35m--- Running PIR pass [transfer_layout_pass][0m
 [1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
 [1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
-I1120 02:28:54.819754 2912328 print_statistics.cc:50] --- detected [450] subgraphs!
+I1125 10:34:43.783313 1458583 print_statistics.cc:50] --- detected [450] subgraphs!
 [1m[35m--- Running PIR pass [constant_folding_pass][0m
-I1120 02:28:54.822088 2912328 pir_interpreter.cc:1605] New Executor is Running ...
-I1120 02:28:54.822659 2912328 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
-I1120 02:28:54.953253 2912328 print_statistics.cc:44] --- detected [53, 774] subgraphs!
+I1125 10:34:43.785588 1458583 pir_interpreter.cc:1611] New Executor is Running ...
+I1125 10:34:43.786129 1458583 pir_interpreter.cc:1635] pir interpreter is running by multi-thread mode ...
+I1125 10:34:43.911422 1458583 print_statistics.cc:44] --- detected [53, 774] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:28:54.955547 2912328 print_statistics.cc:50] --- detected [75] subgraphs!
+I1125 10:34:43.913780 1458583 print_statistics.cc:50] --- detected [75] subgraphs!
 [1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
-I1120 02:28:54.956952 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:43.915205 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
-I1120 02:28:54.984549 2912328 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:34:43.942878 1458583 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [inplace_pass][0m
-I1120 02:28:55.037362 2912328 print_statistics.cc:50] --- detected [2] subgraphs!
-I1120 02:28:55.037675 2912328 analysis_predictor.cc:1213] ======= pir optimization completed =======
-I1120 02:28:55.134474 2912328 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+I1125 10:34:43.995080 1458583 print_statistics.cc:50] --- detected [2] subgraphs!
+I1125 10:34:43.995388 1458583 analysis_predictor.cc:1213] ======= pir optimization completed =======
+I1125 10:34:44.095129 1458583 pir_interpreter.cc:1632] pir interpreter is running by trace mode ...
 PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-{"model": "StarNet-S4", "mode": "cinn", "weights": "/root/.paddlex/official_models/StarNet-S4", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "paddlex_version": "0.1.0.dev4387+gffb64904d.d20261119", "seed": 20261119, "inputs_sha256": "eee8e2f1a676fc44871ab58856311de50fef28c3f8a7e0156397f451372971a1", "feeds": {"x": [1, 3, 224, 224]}, "outputs": {"fetch_name_0": [1, 1000]}, "warmup": 5, "iters": 50, "first_call_ms": 5063.673020340502, "steady_batch_ms": 16.67506285943091, "batch_per_second": 59.969788925529016}
+[2026-11-25 10:34:55,217] [    INFO] loader.py:130 - Loading faiss with AVX512-SPR support.
+[2026-11-25 10:34:55,217] [    INFO] loader.py:136 - Could not load library with AVX512-SPR support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512_spr'")
+[2026-11-25 10:34:55,217] [    INFO] loader.py:145 - Loading faiss with AVX512 support.
+[2026-11-25 10:34:55,217] [    INFO] loader.py:151 - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[2026-11-25 10:34:55,217] [    INFO] loader.py:160 - Loading faiss with AVX2 support.
+[2026-11-25 10:34:55,217] [    INFO] loader.py:166 - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+[2026-11-25 10:34:55,217] [    INFO] loader.py:186 - Loading faiss.
+[2026-11-25 10:34:55,316] [    INFO] loader.py:189 - Successfully loaded faiss.
+{"model": "StarNet-S4", "mode": "cinn", "weights": "/root/.paddlex/official_models/StarNet-S4", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "paddlex_version": "0.1.0.dev4387+gffb64904d.d20261119", "seed": 20261119, "inputs_sha256": "eee8e2f1a676fc44871ab58856311de50fef28c3f8a7e0156397f451372971a1", "feeds": {"x": [1, 3, 224, 224]}, "outputs": {"fetch_name_0": [1, 1000]}, "warmup": 5, "iters": 50, "first_call_ms": 5010.029652155936, "steady_batch_ms": 13.75537795946002, "batch_per_second": 72.69883844320451}

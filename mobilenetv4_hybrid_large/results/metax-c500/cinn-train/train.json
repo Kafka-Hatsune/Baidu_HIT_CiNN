@@ -1,14 +1,15 @@
 {
   "model": "mobilenetv4_hybrid_large",
   "mode": "cinn",
-  "device": "metax_gpu:0",
+  "device": "metax_gpu",
   "status": "ok",
   "steps_logged": 512,
-  "loss_first": 4.90387,
-  "loss_last": 4.61408,
-  "first_step_ms": 151995.33,
-  "steady_step_ms": 324.23999999999995,
-  "losses_sha256": "09f56af24d35583ab308b3a6c38f8231784a9f479147407e48a50eebb9174d22",
-  "log_sha256": "e3b5bd34b1263a48cc5dbd068ae0926fbacce3faa9f5b17b38018ed25baca84e",
+  "loss_first": 4.90376,
+  "loss_last": 4.63062,
+  "first_step_ms": 152564.76,
+  "steady_step_ms": 917.6094,
+  "median_step_ms": 318.33,
+  "losses_sha256": "163abbff661f7389dde1a4234a4b0aa74df7a12dc0041f903fa0947409e882d3",
+  "log_sha256": "7d427f019dc6ef4d528945db3b5b76c4bb23af5a11e9617f5f7bb1e1b6bb5e08",
   "source_log": "results/cinn-train/train.log"
 }

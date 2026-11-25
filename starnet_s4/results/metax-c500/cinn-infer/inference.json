@@ -24,7 +24,7 @@
   },
   "warmup": 5,
   "iters": 50,
-  "first_call_ms": 5063.673020340502,
-  "steady_batch_ms": 16.67506285943091,
-  "batch_per_second": 59.969788925529016
+  "first_call_ms": 5010.029652155936,
+  "steady_batch_ms": 13.75537795946002,
+  "batch_per_second": 72.69883844320451
 }

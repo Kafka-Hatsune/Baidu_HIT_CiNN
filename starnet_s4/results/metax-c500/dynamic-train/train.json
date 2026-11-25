@@ -1,14 +1,15 @@
 {
   "model": "starnet_s4",
   "mode": "dynamic",
-  "device": "metax_gpu:0",
+  "device": "metax_gpu",
   "status": "ok",
   "steps_logged": 512,
-  "loss_first": 5.03656,
-  "loss_last": 2.21675,
-  "first_step_ms": 6800.049999999999,
-  "steady_step_ms": 252.92999999999998,
-  "losses_sha256": "63351126ed7c50e1beed402b482b93f09a4a30d4ba1f4fced2c94dd55b8471d9",
-  "log_sha256": "56f7231036da513a8d685f881376b30b06a5ae871ed331479909ad5779b3cad9",
+  "loss_first": 5.03655,
+  "loss_last": 1.96358,
+  "first_step_ms": 6548.23,
+  "steady_step_ms": 378.2425,
+  "median_step_ms": 238.84,
+  "losses_sha256": "11a53a148c8470dea719e03a080717ccb114adc020631e8b78f4a0e3edef60b6",
+  "log_sha256": "21cfe4ce56bee771f4074d1912e1828b21ae3a7ddc45f89d4eac830bc159659c",
   "source_log": "results/dynamic-train/train.log"
 }

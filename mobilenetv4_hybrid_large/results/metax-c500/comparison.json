@@ -1,0 +1,16 @@
+{
+  "model": "MobileNetV4_hybrid_large",
+  "kind": "tensor",
+  "atol": 0.002,
+  "outputs": {
+    "fetch_name_0": {
+      "shape": [
+        1,
+        1000
+      ],
+      "max_abs_diff": 2.3677945137023926e-05,
+      "ok": true
+    }
+  },
+  "ok": true
+}

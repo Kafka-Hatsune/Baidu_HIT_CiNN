@@ -1,19 +1,19 @@
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1120 02:29:16.835163 2914206 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
-I1120 02:29:16.835194 2914206 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
-I1120 02:29:16.835279 2914206 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
-I1120 02:29:16.835600 2914206 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
-I1120 02:29:16.836011 2914206 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
-I1120 02:29:17.123215 2914206 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
-I1120 02:29:17.123229 2914206 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1125 10:35:21.010097 1460769 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1125 10:35:21.010126 1460769 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1125 10:35:21.010208 1460769 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1125 10:35:21.010538 1460769 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1125 10:35:21.010954 1460769 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1125 10:35:21.338069 1460769 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1125 10:35:21.338083 1460769 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1120 02:29:17.268133 2914206 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
-I1120 02:29:23.411999 2914206 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
-I1120 02:29:23.412045 2914206 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
-I1120 02:29:23.428426 2914206 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
-I1120 02:29:23.428849 2914206 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
-I1120 02:29:23.428887 2914206 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
-I1120 02:29:23.793105 2914206 schema.cc:75] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+I1125 10:35:21.474123 1460769 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1125 10:35:27.503125 1460769 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1125 10:35:27.503170 1460769 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1125 10:35:27.519567 1460769 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1125 10:35:27.519999 1460769 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1125 10:35:27.520038 1460769 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+I1125 10:35:27.911646 1460769 schema.cc:75] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
 [1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
 [1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
 [1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
@@ -21,41 +21,52 @@ I1120 02:29:23.793105 2914206 schema.cc:75] can't find dialect onednn_op's compr
 [1m[35m--- Running PIR pass [identity_op_clean_pass][0m
 [1m[35m--- Running PIR pass [silu_fuse_pass][0m
 [1m[35m--- Running PIR pass [conv2d_bn_fuse_pass][0m
-I1120 02:29:23.905298 2914206 print_statistics.cc:50] --- detected [59] subgraphs!
+I1125 10:35:28.021819 1460769 print_statistics.cc:50] --- detected [59] subgraphs!
 [1m[35m--- Running PIR pass [conv2d_add_act_fuse_pass][0m
 [1m[35m--- Running PIR pass [conv2d_add_fuse_pass][0m
-I1120 02:29:23.930678 2914206 print_statistics.cc:50] --- detected [59] subgraphs!
+I1125 10:35:28.047098 1460769 print_statistics.cc:50] --- detected [59] subgraphs!
 [1m[35m--- Running PIR pass [embedding_eltwise_layernorm_fuse_pass][0m
 [1m[35m--- Running PIR pass [fused_rotary_position_embedding_pass][0m
 [1m[35m--- Running PIR pass [multihead_matmul_fuse_pass][0m
 [1m[35m--- Running PIR pass [matmul_add_act_fuse_pass][0m
-I1120 02:29:23.936578 2914206 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:35:28.052959 1460769 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fc_elementwise_layernorm_fuse_pass][0m
 [1m[35m--- Running PIR pass [group_norm_silu_fuse_pass][0m
 [1m[35m--- Running PIR pass [matmul_scale_fuse_pass][0m
 [1m[35m--- Running PIR pass [matmul_transpose_fuse_pass][0m
 [1m[35m--- Running PIR pass [transpose_flatten_concat_fuse_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_transpose_pass][0m
-I1120 02:29:23.951551 2914206 print_statistics.cc:50] --- detected [24] subgraphs!
+I1125 10:35:28.067819 1460769 print_statistics.cc:50] --- detected [24] subgraphs!
 [1m[35m--- Running PIR pass [horizontal_fuse_pass][0m
 [1m[35m--- Running PIR pass [transfer_layout_pass][0m
 [1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
-I1120 02:29:23.971519 2914206 print_statistics.cc:50] --- detected [287] subgraphs!
+I1125 10:35:28.087543 1460769 print_statistics.cc:50] --- detected [287] subgraphs!
 [1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
-I1120 02:29:24.053970 2914206 print_statistics.cc:50] --- detected [666] subgraphs!
+I1125 10:35:28.172801 1460769 print_statistics.cc:50] --- detected [666] subgraphs!
 [1m[35m--- Running PIR pass [constant_folding_pass][0m
-I1120 02:29:24.058104 2914206 pir_interpreter.cc:1605] New Executor is Running ...
-I1120 02:29:24.058617 2914206 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
-I1120 02:29:25.427016 2914206 print_statistics.cc:44] --- detected [553, 1733] subgraphs!
+I1125 10:35:28.176987 1460769 pir_interpreter.cc:1611] New Executor is Running ...
+I1125 10:35:28.177496 1460769 pir_interpreter.cc:1635] pir interpreter is running by multi-thread mode ...
+I1125 10:35:29.527994 1460769 print_statistics.cc:44] --- detected [553, 1733] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:29:25.432060 2914206 print_statistics.cc:50] --- detected [715] subgraphs!
+I1125 10:35:29.532958 1460769 print_statistics.cc:50] --- detected [715] subgraphs!
 [1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
-I1120 02:29:25.434319 2914206 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:35:29.535187 1460769 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
-I1120 02:29:25.471685 2914206 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:35:29.575387 1460769 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [inplace_pass][0m
-I1120 02:29:25.566644 2914206 print_statistics.cc:50] --- detected [117] subgraphs!
-I1120 02:29:25.567015 2914206 analysis_predictor.cc:1213] ======= pir optimization completed =======
-I1120 02:29:25.737382 2914206 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+I1125 10:35:29.671983 1460769 print_statistics.cc:50] --- detected [117] subgraphs!
+I1125 10:35:29.672376 1460769 analysis_predictor.cc:1213] ======= pir optimization completed =======
+I1125 10:35:29.842942 1460769 pir_interpreter.cc:1632] pir interpreter is running by trace mode ...
 PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-{"model": "MobileNetV4_hybrid_large", "mode": "dynamic", "weights": "/root/.paddlex/official_models/MobileNetV4_hybrid_large", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "paddlex_version": "0.1.0.dev4387+gffb64904d.d20261119", "seed": 20261119, "inputs_sha256": "6cdb10f60d9827152524f25df8d9c6738a3c36b76b2555ad17031b26383d015f", "feeds": {"x": [1, 3, 448, 448]}, "outputs": {"fetch_name_0": [1, 1000]}, "warmup": 5, "iters": 50, "first_call_ms": 5097.147558815777, "steady_batch_ms": 23.619352653622627, "batch_per_second": 42.33816288977017}
+[2026-11-25 10:35:41,187] [    INFO] loader.py:130 - Loading faiss with AVX512-SPR support.
+[2026-11-25 10:35:41,187] [    INFO] loader.py:136 - Could not load library with AVX512-SPR support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512_spr'")
+[2026-11-25 10:35:41,187] [    INFO] loader.py:145 - Loading faiss with AVX512 support.
+[2026-11-25 10:35:41,187] [    INFO] loader.py:151 - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[2026-11-25 10:35:41,187] [    INFO] loader.py:160 - Loading faiss with AVX2 support.
+[2026-11-25 10:35:41,187] [    INFO] loader.py:166 - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+[2026-11-25 10:35:41,187] [    INFO] loader.py:186 - Loading faiss.
+[2026-11-25 10:35:41,275] [    INFO] loader.py:189 - Successfully loaded faiss.
+{"model": "MobileNetV4_hybrid_large", "mode": "dynamic", "weights": "/root/.paddlex/official_models/MobileNetV4_hybrid_large", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "paddlex_version": "0.1.0.dev4387+gffb64904d.d20261119", "seed": 20261119, "inputs_sha256": "6cdb10f60d9827152524f25df8d9c6738a3c36b76b2555ad17031b26383d015f", "feeds": {"x": [1, 3, 448, 448]}, "outputs": {"fetch_name_0": [1, 1000]}, "warmup": 5, "iters": 50, "first_call_ms": 5045.109772123396, "steady_batch_ms": 19.53173842281103, "batch_per_second": 51.198719660924006}

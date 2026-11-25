@@ -1,23 +1,23 @@
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1120 02:32:35.427546 2931997 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
-I1120 02:32:35.427568 2931997 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
-I1120 02:32:35.427652 2931997 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
-I1120 02:32:35.427968 2931997 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
-I1120 02:32:35.428383 2931997 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
-I1120 02:32:35.714042 2931997 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
-I1120 02:32:35.714056 2931997 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1125 10:39:42.715899 1478092 custom_device_backend_api.cc:420] STATIC INIT: Triggering CINN Custom Device Registration !!!
+I1125 10:39:42.715929 1478092 custom_device_intrinsics.cc:31] Registering CINN Custom Device Host API...
+I1125 10:39:42.716013 1478092 custom_device_intrinsics.cc:74] Registering CINN Custom Device Intrinsics for Target Name: unknown_custom_device
+I1125 10:39:42.716333 1478092 custom_device_intrinsics_reduce.cc:36] Force Registering Custom Device Intrinsics Reduce  for Target Name: unknown_custom_device
+I1125 10:39:42.716779 1478092 custom_device_intrinsics_float16.cc:39] Registering CINN Custom Device Intrinsics Float16 for Target Name: unknown_custom_device
+I1125 10:39:43.044797 1478092 init.cc:254] ENV [CUSTOM_DEVICE_ROOT]=/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device
+I1125 10:39:43.044811 1478092 init.cc:162] Try loading custom device libs from: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I1120 02:32:35.859375 2931997 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
-I1120 02:32:41.993887 2931997 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
-I1120 02:32:41.993932 2931997 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
-I1120 02:32:42.010296 2931997 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
-I1120 02:32:42.010733 2931997 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
-I1120 02:32:42.010771 2931997 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
-I1120 02:32:42.367506 2931997 schema.cc:75] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
-I1120 02:32:43.965097 2931997 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
+I1125 10:39:43.179181 1478092 runtime.cc:1659] [MetaX] CINN Interface registered successfully.
+I1125 10:39:49.203332 1478092 custom_device_load.cc:51] Succeed in loading custom runtime in lib: /opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so
+I1125 10:39:49.203372 1478092 custom_device_load.cc:58] Skipped lib [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device/libpaddle-metax-gpu.so]: no custom engine Plugin symbol in this lib.
+I1125 10:39:49.219656 1478092 custom_kernel.cc:68] Succeed in loading 973 custom kernel(s) from loaded lib(s), will be used like native ones.
+I1125 10:39:49.220084 1478092 init.cc:174] Finished in LoadCustomDevice with libs_path: [/opt/conda/envs/metax/lib/python3.12/site-packages/paddle/paddle_custom_device]
+I1125 10:39:49.220124 1478092 init.cc:260] CustomDevice: metax_gpu, visible devices count: 1
+I1125 10:39:49.588826 1478092 schema.cc:75] can't find dialect onednn_op's compress id, return original dialectname, it's better to insert compress id in DialectIdMap() func
+I1125 10:39:51.176244 1478092 add_cinn_pass.cc:334] Compiling subgraph with CINN backend ...
 [1m[35m--- Running PIR pass [reduce_as_to_sum_pass][0m
-W1120 02:32:43.980391 2931997 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
-I1120 02:32:43.980399 2931997 print_statistics.cc:50] --- detected [70] subgraphs!
+W1125 10:39:51.191406 1478092 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1125 10:39:51.191414 1478092 print_statistics.cc:50] --- detected [70] subgraphs!
 [1m[35m--- Running PIR pass [replace_zero_scale_to_full_pass][0m
 [1m[35m--- Running PIR pass [fuse_parallel_matmul_pass][0m
 [1m[35m--- Running PIR pass [remove_assign_out_pass][0m
@@ -27,16 +27,16 @@ I1120 02:32:43.980399 2931997 print_statistics.cc:50] --- detected [70] subgraph
 [1m[35m--- Running PIR pass [convert_MEA_to_FA][0m
 [1m[35m--- Running PIR pass [convert_FA_to_QKVMHA][0m
 [1m[35m--- Running PIR pass [pd_to_cinn_pass][0m
-W1120 02:32:44.007364 2931997 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
-I1120 02:32:44.007377 2931997 print_statistics.cc:50] --- detected [231] subgraphs!
+W1125 10:39:51.218235 1478092 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1125 10:39:51.218248 1478092 print_statistics.cc:50] --- detected [231] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.008231 2931997 print_statistics.cc:50] --- detected [154] subgraphs!
+I1125 10:39:51.219111 1478092 print_statistics.cc:50] --- detected [154] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
 [1m[35m--- Running PIR pass [pd_to_dyn_shape_cinn_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [build_cinn_pass][0m
-I1120 02:32:44.079924 2931997 print_statistics.cc:50] --- detected [23] subgraphs!
+I1125 10:39:51.290135 1478092 print_statistics.cc:50] --- detected [23] subgraphs!
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
@@ -64,7 +64,7 @@ I1120 02:32:44.079924 2931997 print_statistics.cc:50] --- detected [23] subgraph
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.083526 2931997 print_statistics.cc:50] --- detected [9] subgraphs!
+I1125 10:39:51.293782 1478092 print_statistics.cc:50] --- detected [9] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
@@ -73,7 +73,7 @@ I1120 02:32:44.083526 2931997 print_statistics.cc:50] --- detected [9] subgraphs
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.084118 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.294382 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
@@ -82,40 +82,19 @@ I1120 02:32:44.084118 2931997 print_statistics.cc:50] --- detected [1] subgraphs
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.084419 2931997 print_statistics.cc:50] --- detected [6] subgraphs!
+I1125 10:39:51.294678 1478092 print_statistics.cc:50] --- detected [6] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.084837 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.295083 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.085114 2931997 print_statistics.cc:50] --- detected [5] subgraphs!
+I1125 10:39:51.295356 1478092 print_statistics.cc:50] --- detected [5] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.085574 2931997 print_statistics.cc:50] --- detected [9] subgraphs!
+I1125 10:39:51.295818 1478092 print_statistics.cc:50] --- detected [9] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.085644 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
-[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
-[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
-[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
-[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
-[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.085944 2931997 print_statistics.cc:50] --- detected [6] subgraphs!
-[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
-[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.086308 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
-[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.086529 2931997 print_statistics.cc:50] --- detected [5] subgraphs!
-[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
-[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
-[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
-[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.086987 2931997 print_statistics.cc:50] --- detected [9] subgraphs!
-[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.087056 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.295888 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
@@ -124,40 +103,19 @@ I1120 02:32:44.087056 2931997 print_statistics.cc:50] --- detected [1] subgraphs
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.087369 2931997 print_statistics.cc:50] --- detected [6] subgraphs!
+I1125 10:39:51.296183 1478092 print_statistics.cc:50] --- detected [6] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.087743 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.296574 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.087970 2931997 print_statistics.cc:50] --- detected [5] subgraphs!
+I1125 10:39:51.296801 1478092 print_statistics.cc:50] --- detected [5] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.088431 2931997 print_statistics.cc:50] --- detected [9] subgraphs!
+I1125 10:39:51.297258 1478092 print_statistics.cc:50] --- detected [9] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.088496 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
-[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
-[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
-[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
-[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
-[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.088795 2931997 print_statistics.cc:50] --- detected [6] subgraphs!
-[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
-[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.089169 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
-[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.089394 2931997 print_statistics.cc:50] --- detected [5] subgraphs!
-[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
-[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
-[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
-[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.089855 2931997 print_statistics.cc:50] --- detected [9] subgraphs!
-[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.089922 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.297326 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
@@ -166,68 +124,102 @@ I1120 02:32:44.089922 2931997 print_statistics.cc:50] --- detected [1] subgraphs
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1125 10:39:51.297622 1478092 print_statistics.cc:50] --- detected [6] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.090433 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.298000 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.090637 2931997 print_statistics.cc:50] --- detected [5] subgraphs!
+I1125 10:39:51.298231 1478092 print_statistics.cc:50] --- detected [5] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.090979 2931997 print_statistics.cc:50] --- detected [9] subgraphs!
+I1125 10:39:51.298692 1478092 print_statistics.cc:50] --- detected [9] subgraphs!
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1125 10:39:51.298756 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1125 10:39:51.299053 1478092 print_statistics.cc:50] --- detected [6] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1125 10:39:51.299427 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1125 10:39:51.299656 1478092 print_statistics.cc:50] --- detected [5] subgraphs!
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1125 10:39:51.300123 1478092 print_statistics.cc:50] --- detected [9] subgraphs!
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1125 10:39:51.300192 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.091387 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.300700 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.091743 2931997 print_statistics.cc:50] --- detected [2] subgraphs!
+I1125 10:39:51.300902 1478092 print_statistics.cc:50] --- detected [5] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.092056 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.301240 1478092 print_statistics.cc:50] --- detected [9] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.092396 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.301643 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.092701 2931997 print_statistics.cc:50] --- detected [2] subgraphs!
+I1125 10:39:51.301996 1478092 print_statistics.cc:50] --- detected [2] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.093012 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.302314 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.093879 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.302654 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.094655 2931997 print_statistics.cc:50] --- detected [2] subgraphs!
+I1125 10:39:51.302958 1478092 print_statistics.cc:50] --- detected [2] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.094965 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.303269 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.095925 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.304137 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.096652 2931997 print_statistics.cc:50] --- detected [2] subgraphs!
+I1125 10:39:51.304919 1478092 print_statistics.cc:50] --- detected [2] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.096990 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.305230 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+I1125 10:39:51.306191 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+I1125 10:39:51.306907 1478092 print_statistics.cc:50] --- detected [2] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+I1125 10:39:51.307243 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
@@ -253,7 +245,15 @@ I1120 02:32:44.096990 2931997 print_statistics.cc:50] --- detected [3] subgraphs
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.098029 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+[1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
+[1m[35m--- Running PIR pass [insert_broadcast_pass][0m
+[1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
+[1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
+[1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
+[1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
+[1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
+[1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
+I1125 10:39:51.308277 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
@@ -264,42 +264,42 @@ I1120 02:32:44.098029 2931997 print_statistics.cc:50] --- detected [1] subgraphs
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.098337 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.308590 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.098382 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.308636 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.098695 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.308947 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
-I1120 02:32:44.098732 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:39:51.308983 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.098913 2931997 print_statistics.cc:50] --- detected [3] subgraphs!
+I1125 10:39:51.309165 1478092 print_statistics.cc:50] --- detected [3] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.099041 2931997 print_statistics.cc:50] --- detected [5] subgraphs!
+I1125 10:39:51.309297 1478092 print_statistics.cc:50] --- detected [5] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.099426 2931997 print_statistics.cc:50] --- detected [9] subgraphs!
+I1125 10:39:51.309680 1478092 print_statistics.cc:50] --- detected [9] subgraphs!
 [1m[35m--- Running PIR pass [add_broadcast_to_elementwise_pass][0m
 [1m[35m--- Running PIR pass [add_cast_to_elementwise_add_pass][0m
 [1m[35m--- Running PIR pass [insert_broadcast_pass][0m
-I1120 02:32:44.100009 2931997 print_statistics.cc:50] --- detected [2] subgraphs!
+I1125 10:39:51.310258 1478092 print_statistics.cc:50] --- detected [2] subgraphs!
 [1m[35m--- Running PIR pass [fuse_shape_ops_into_generate_shape_op_pass][0m
-I1120 02:32:44.100106 2931997 print_statistics.cc:50] --- detected [4] subgraphs!
+I1125 10:39:51.310349 1478092 print_statistics.cc:50] --- detected [4] subgraphs!
 [1m[35m--- Running PIR pass [move_generate_shape_ops_to_prologue][0m
 [1m[35m--- Running PIR pass [cinn_dynamic_reshape_op_pass][0m
 [1m[35m--- Running PIR pass [fold_manipulation_ops_pass][0m
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:32:44.100464 2931997 print_statistics.cc:50] --- detected [6] subgraphs!
+I1125 10:39:51.310696 1478092 print_statistics.cc:50] --- detected [6] subgraphs!
 [1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
 [1m[35m--- Running PIR pass [cinn_group_cluster_pass][0m
-I1120 02:32:44.347177 2931997 print_statistics.cc:50] --- detected [23] subgraphs!
+I1125 10:39:51.556210 1478092 print_statistics.cc:50] --- detected [23] subgraphs!
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
-I1120 02:32:44.348351 2931997 print_statistics.cc:50] --- detected [13] subgraphs!
+I1125 10:39:51.557394 1478092 print_statistics.cc:50] --- detected [13] subgraphs!
 [1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
@@ -457,96 +457,96 @@ I1120 02:32:44.348351 2931997 print_statistics.cc:50] --- detected [13] subgraph
 [1m[35m--- Running PIR pass [remove_redundant_group_output_pass][0m
 [1m[35m--- Running PIR pass [single_op_fallback_to_phi][0m
 [1m[35m--- Running PIR pass [shape_ops_fallback_to_phi_pass][0m
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_0.co /tmp/cinn_metax_2931997_0.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_1.co /tmp/cinn_metax_2931997_1.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_2.co /tmp/cinn_metax_2931997_2.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_3.co /tmp/cinn_metax_2931997_3.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_4.co /tmp/cinn_metax_2931997_4.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_5.co /tmp/cinn_metax_2931997_5.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_6.co /tmp/cinn_metax_2931997_6.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_7.co /tmp/cinn_metax_2931997_7.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_8.co /tmp/cinn_metax_2931997_8.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_9.co /tmp/cinn_metax_2931997_9.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_10.co /tmp/cinn_metax_2931997_10.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_12.co /tmp/cinn_metax_2931997_12.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_11.co /tmp/cinn_metax_2931997_11.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_13.co /tmp/cinn_metax_2931997_13.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_14.co /tmp/cinn_metax_2931997_14.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_15.co /tmp/cinn_metax_2931997_15.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_16.co /tmp/cinn_metax_2931997_16.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_17.co /tmp/cinn_metax_2931997_17.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_18.co /tmp/cinn_metax_2931997_18.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_19.co /tmp/cinn_metax_2931997_19.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_20.co /tmp/cinn_metax_2931997_20.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_21.co /tmp/cinn_metax_2931997_21.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_22.co /tmp/cinn_metax_2931997_22.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_23.co /tmp/cinn_metax_2931997_23.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_24.co /tmp/cinn_metax_2931997_24.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_25.co /tmp/cinn_metax_2931997_25.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_26.co /tmp/cinn_metax_2931997_26.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_28.co /tmp/cinn_metax_2931997_28.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_27.co /tmp/cinn_metax_2931997_27.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_29.co /tmp/cinn_metax_2931997_29.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_31.co /tmp/cinn_metax_2931997_31.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_30.co /tmp/cinn_metax_2931997_30.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_32.co /tmp/cinn_metax_2931997_32.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_33.co /tmp/cinn_metax_2931997_33.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_34.co /tmp/cinn_metax_2931997_34.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_35.co /tmp/cinn_metax_2931997_35.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_36.co /tmp/cinn_metax_2931997_36.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_37.co /tmp/cinn_metax_2931997_37.cu
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_14.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_10.co
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_38.co /tmp/cinn_metax_2931997_38.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_39.co /tmp/cinn_metax_2931997_39.cu
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_40.co /tmp/cinn_metax_2931997_40.cu
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_8.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_1.co
-Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_2931997_41.co /tmp/cinn_metax_2931997_41.cu
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_3.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_2.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_5.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_12.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_7.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_9.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_11.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_16.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_15.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_19.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_17.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_18.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_23.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_21.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_22.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_6.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_24.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_25.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_27.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_0.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_28.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_30.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_29.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_4.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_34.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_13.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_33.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_31.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_20.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_32.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_36.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_35.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_26.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_37.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_39.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_38.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_40.co
-[MetaX Success] Compiled: /tmp/cinn_metax_2931997_41.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_0.co /tmp/cinn_metax_1478092_0.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_1.co /tmp/cinn_metax_1478092_1.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_2.co /tmp/cinn_metax_1478092_2.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_3.co /tmp/cinn_metax_1478092_3.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_4.co /tmp/cinn_metax_1478092_4.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_5.co /tmp/cinn_metax_1478092_5.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_6.co /tmp/cinn_metax_1478092_6.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_7.co /tmp/cinn_metax_1478092_7.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_8.co /tmp/cinn_metax_1478092_8.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_9.co /tmp/cinn_metax_1478092_9.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_10.co /tmp/cinn_metax_1478092_10.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_11.co /tmp/cinn_metax_1478092_11.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_12.co /tmp/cinn_metax_1478092_12.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_13.co /tmp/cinn_metax_1478092_13.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_14.co /tmp/cinn_metax_1478092_14.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_15.co /tmp/cinn_metax_1478092_15.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_16.co /tmp/cinn_metax_1478092_16.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_17.co /tmp/cinn_metax_1478092_17.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_18.co /tmp/cinn_metax_1478092_18.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_19.co /tmp/cinn_metax_1478092_19.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_20.co /tmp/cinn_metax_1478092_20.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_21.co /tmp/cinn_metax_1478092_21.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_22.co /tmp/cinn_metax_1478092_22.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_23.co /tmp/cinn_metax_1478092_23.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_24.co /tmp/cinn_metax_1478092_24.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_25.co /tmp/cinn_metax_1478092_25.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_26.co /tmp/cinn_metax_1478092_26.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_27.co /tmp/cinn_metax_1478092_27.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_28.co /tmp/cinn_metax_1478092_28.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_29.co /tmp/cinn_metax_1478092_29.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_30.co /tmp/cinn_metax_1478092_30.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_31.co /tmp/cinn_metax_1478092_31.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_32.co /tmp/cinn_metax_1478092_32.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_33.co /tmp/cinn_metax_1478092_33.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_34.co /tmp/cinn_metax_1478092_34.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_35.co /tmp/cinn_metax_1478092_35.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_36.co /tmp/cinn_metax_1478092_36.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_37.co /tmp/cinn_metax_1478092_37.cu
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_38.co /tmp/cinn_metax_1478092_38.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_0.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_39.co /tmp/cinn_metax_1478092_39.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_9.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_4.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_3.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_6.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_40.co /tmp/cinn_metax_1478092_40.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_8.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_14.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_15.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_2.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_10.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_16.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_7.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_5.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_11.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_19.co
+Command: /opt/maca/mxgpu_llvm/bin/mxcc -O3 -std=c++17 -w --fatbin --offload-arch=native -fvisibility=default -I/opt/maca/include -I/opt/maca/tools/cu-bridge/include -o /tmp/cinn_metax_1478092_41.co /tmp/cinn_metax_1478092_41.cu
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_18.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_12.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_22.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_17.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_25.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_26.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_23.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_20.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_24.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_21.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_30.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_28.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_31.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_27.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_29.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_32.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_13.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_34.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_1.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_35.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_33.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_36.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_37.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_39.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_40.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_38.co
+[MetaX Success] Compiled: /tmp/cinn_metax_1478092_41.co
 [1m[35m--- Running PIR pass [lower_cinn_dynamic_shape_fusion_op][0m
-W1120 02:33:16.649871 2931997 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
-I1120 02:33:16.649900 2931997 print_statistics.cc:50] --- detected [112] subgraphs!
+W1125 10:40:24.631932 1478092 pattern_rewrite_driver.cc:235] The pattern rewrite did not converge after scanning 10 times
+I1125 10:40:24.631958 1478092 print_statistics.cc:50] --- detected [112] subgraphs!
 [1m[35m--- Running PIR pass [split_generate_shape_into_shape_ops_pass][0m
 [1m[35m--- Running PIR pass [remove_redundant_full_int_array_pass][0m
-I1120 02:33:16.651772 2931997 print_statistics.cc:50] --- detected [11] subgraphs!
+I1125 10:40:24.633785 1478092 print_statistics.cc:50] --- detected [11] subgraphs!
 [1m[35m--- Running PIR pass [add_shadow_output_after_dead_parameter_pass][0m
 [1m[35m--- Running PIR pass [delete_quant_dequant_linear_op_pass][0m
 [1m[35m--- Running PIR pass [delete_weight_dequant_linear_op_pass][0m
@@ -568,23 +568,34 @@ I1120 02:33:16.651772 2931997 print_statistics.cc:50] --- detected [11] subgraph
 [1m[35m--- Running PIR pass [remove_redundant_transpose_pass][0m
 [1m[35m--- Running PIR pass [horizontal_fuse_pass][0m
 [1m[35m--- Running PIR pass [transfer_layout_pass][0m
-I1120 02:33:16.679867 2931997 print_statistics.cc:44] --- detected [2, 1] subgraphs!
+I1125 10:40:24.659600 1478092 print_statistics.cc:44] --- detected [2, 1] subgraphs!
 [1m[35m--- Running PIR pass [common_subexpression_elimination_pass][0m
-I1120 02:33:16.683440 2931997 print_statistics.cc:50] --- detected [5] subgraphs!
+I1125 10:40:24.661299 1478092 print_statistics.cc:50] --- detected [5] subgraphs!
 [1m[35m--- Running PIR pass [params_sync_among_devices_pass][0m
-I1120 02:33:16.784893 2931997 print_statistics.cc:50] --- detected [354] subgraphs!
+I1125 10:40:24.754657 1478092 print_statistics.cc:50] --- detected [354] subgraphs!
 [1m[35m--- Running PIR pass [constant_folding_pass][0m
-I1120 02:33:16.787202 2931997 pir_interpreter.cc:1605] New Executor is Running ...
-I1120 02:33:16.787850 2931997 pir_interpreter.cc:1629] pir interpreter is running by multi-thread mode ...
-I1120 02:33:16.923854 2931997 print_statistics.cc:44] --- detected [36, 572] subgraphs!
+I1125 10:40:24.757037 1478092 pir_interpreter.cc:1611] New Executor is Running ...
+I1125 10:40:24.757648 1478092 pir_interpreter.cc:1635] pir interpreter is running by multi-thread mode ...
+I1125 10:40:24.893445 1478092 print_statistics.cc:44] --- detected [36, 572] subgraphs!
 [1m[35m--- Running PIR pass [dead_code_elimination_pass][0m
-I1120 02:33:16.926177 2931997 print_statistics.cc:50] --- detected [251] subgraphs!
+I1125 10:40:24.895819 1478092 print_statistics.cc:50] --- detected [251] subgraphs!
 [1m[35m--- Running PIR pass [replace_fetch_with_shadow_output_pass][0m
-I1120 02:33:16.927335 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:40:24.897034 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [remove_shadow_feed_pass][0m
-I1120 02:33:16.948489 2931997 print_statistics.cc:50] --- detected [1] subgraphs!
+I1125 10:40:24.917887 1478092 print_statistics.cc:50] --- detected [1] subgraphs!
 [1m[35m--- Running PIR pass [inplace_pass][0m
-I1120 02:33:16.990270 2931997 analysis_predictor.cc:1213] ======= pir optimization completed =======
-I1120 02:33:17.091698 2931997 pir_interpreter.cc:1626] pir interpreter is running by trace mode ...
+I1125 10:40:24.959021 1478092 analysis_predictor.cc:1213] ======= pir optimization completed =======
+I1125 10:40:25.058943 1478092 pir_interpreter.cc:1632] pir interpreter is running by trace mode ...
 PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-{"model": "PP-OCRv4_server_det", "mode": "cinn", "weights": "/root/.paddlex/official_models/PP-OCRv4_server_det", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "paddlex_version": "0.1.0.dev4387+gffb64904d.d20261119", "seed": 20261119, "inputs_sha256": "95fbb22480ed114a62429d5583cf3713b006f03b51e35c6212ef929321b208db", "feeds": {"x": [1, 3, 960, 960]}, "outputs": {"fetch_name_0": [1, 1, 960, 960]}, "warmup": 5, "iters": 50, "first_call_ms": 4675.032773055136, "steady_batch_ms": 49.772357419133186, "batch_per_second": 20.091473497608256}
+[2026-11-25 10:40:37,561] [    INFO] loader.py:130 - Loading faiss with AVX512-SPR support.
+[2026-11-25 10:40:37,561] [    INFO] loader.py:136 - Could not load library with AVX512-SPR support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512_spr'")
+[2026-11-25 10:40:37,561] [    INFO] loader.py:145 - Loading faiss with AVX512 support.
+[2026-11-25 10:40:37,561] [    INFO] loader.py:151 - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[2026-11-25 10:40:37,561] [    INFO] loader.py:160 - Loading faiss with AVX2 support.
+[2026-11-25 10:40:37,561] [    INFO] loader.py:166 - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+[2026-11-25 10:40:37,561] [    INFO] loader.py:186 - Loading faiss.
+[2026-11-25 10:40:37,658] [    INFO] loader.py:189 - Successfully loaded faiss.
+{"model": "PP-OCRv4_server_det", "mode": "cinn", "weights": "/root/.paddlex/official_models/PP-OCRv4_server_det", "device": "metax_gpu:0", "paddle_version": "3.5.0.dev20260516", "paddle_compiled_with_cinn": true, "paddlex_version": "0.1.0.dev4387+gffb64904d.d20261119", "seed": 20261119, "inputs_sha256": "95fbb22480ed114a62429d5583cf3713b006f03b51e35c6212ef929321b208db", "feeds": {"x": [1, 3, 960, 960]}, "outputs": {"fetch_name_0": [1, 1, 960, 960]}, "warmup": 5, "iters": 50, "first_call_ms": 4643.42921320349, "steady_batch_ms": 47.48689986765385, "batch_per_second": 21.058439333521527}
